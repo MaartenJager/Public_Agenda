@@ -7,14 +7,24 @@
         <meta name="description" content="omschrijving" />
         <meta name="copyright" content="Copyright (c) 2012" />
         <meta name="author" content="Projectgroep 1241" />
+
+        <script>
+            <!-- Create HTML5 tags for IE compatibility -->
+            document.createElement('header');
+            document.createElement('footer');
+            document.createElement('section');
+            document.createElement('aside');
+            document.createElement('nav');
+            document.createElement('article');
+        </script>
     </head>
 
     <body>
         <div id="wrapper">
             <div id="header"></div>
             <nav id="topMenu"></nav>
-            <div id="main">
-                <h1>Titel</h1>
+            <section id="main">
+                <header><h1>Titel</h1></header>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 Mauris vel magna. Mauris risus nunc, tristique varius, gravida
                 in, lacinia vel, elit. Nam ornare, felis non faucibus molestie,
