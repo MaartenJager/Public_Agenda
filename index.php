@@ -31,7 +31,7 @@
                 nulla augue adipiscing mauris, a nonummy diam ligula ut risus.
                 Praesent varius. Cum sociis natoque penatibus et magnis dis
                 parturient montes, nascetur ridiculus mus.</p>
-            </div>
+            </section>
             <div id="sidebar"></div>
             <div id="footer">&copy; 2012</div>
         </div>
