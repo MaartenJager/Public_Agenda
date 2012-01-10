@@ -9,7 +9,7 @@
         <meta name="author" content="Projectgroep 1241" />
 
         <script>
-            <!-- Create HTML5 tags for IE compatibility -->
+            // Create HTML5 tags for IE compatibility
             document.createElement('header');
             document.createElement('footer');
             document.createElement('section');
