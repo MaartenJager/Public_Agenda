@@ -8,6 +8,9 @@
         <meta name="copyright" content="Copyright (c) 2012" />
         <meta name="author" content="Projectgroep 1241" />
 
+        <!-- Style sheets -->
+        <link rel="stylesheet" href="style.css" />
+
         <script>
             // Create HTML5 tags for IE compatibility
             document.createElement('header');
