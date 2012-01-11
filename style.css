@@ -61,6 +61,7 @@ html{
 }
 
 header.pageTitle{
+    /* Two nested block elements, move title to top */
     margin-top: -30px;
 }
 
