@@ -24,9 +24,20 @@
 
     <body>
         <div id="wrapper">
-            <div id="header"></div>
-            <nav id="topMenu"></nav>
-            <section id="main">
+            <div id="header">Header</div>
+            <nav id="topMenu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Info</a></li>
+                    <li><a href="#">Agenda</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Event toevoegen</a></li>
+                    <li><a href="#">Events accepteren</a></li>
+                    <li><a href="#">Gebruikers beheren</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+            <section id="content">
                 <header><h1>Titel</h1></header>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 Mauris vel magna. Mauris risus nunc, tristique varius, gravida
@@ -35,7 +46,7 @@
                 Praesent varius. Cum sociis natoque penatibus et magnis dis
                 parturient montes, nascetur ridiculus mus.</p>
             </section>
-            <div id="sidebar"></div>
+            <div id="sidebar">sidebar</div>
             <div id="footer">&copy; 2012</div>
         </div>
     </body>
