@@ -41,7 +41,7 @@ html{
 /* Get them all in line */
 #topMenu li{
     float: left;
-    margin: 0 25px;
+    margin: 0 15px;
 }
 
 #topMenu li a:link, a:visited{
