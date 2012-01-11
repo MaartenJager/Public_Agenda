@@ -37,7 +37,7 @@
                 </ul>
             </nav>
             <section id="main">
-                <header><h1>Fappie's Feestpalijs</h1></header>
+                <header class="pageTitle"><h1>Fappie's Feestpalijs</h1></header>
 
                 <p>Fappie's Feestpalijs is een van de bekendste death metal podia van Nederland en daarbuiten. Het bijzondere aan Fappie's Feestpalijs is de programmering. Vijf kunstdisciplines worden onder een dak verenigd: muziek, dans/theater, film, fotografie en mediakunst, waarvoor in \'e9\'e9n zalen concerten, dance-events, theater- en dansvoorstellingen, filmvoorstellingen, mediakunstpresentaties en foto-exposities worden georganiseerd.</p>
 
