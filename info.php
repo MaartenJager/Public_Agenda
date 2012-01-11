@@ -26,7 +26,7 @@
             <div id="header">Header</div>
             <nav id="topMenu">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="#">Info</a></li>
                     <li><a href="#">Agenda</a></li>
                     <li><a href="#">Contact</a></li>
