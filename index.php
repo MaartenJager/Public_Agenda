@@ -41,7 +41,7 @@
                 Praesent varius. Cum sociis natoque penatibus et magnis dis
                 parturient montes, nascetur ridiculus mus.</p>
             </section>
-            <aside>sidebar</aside>
+            <aside id="sidebar-left">sidebar</aside>
             <div id="footer">&copy; 2012</div>
         </div>
     </body>
