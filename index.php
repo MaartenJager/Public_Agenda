@@ -13,7 +13,7 @@
 
         <!-- Create HTML5 tags for IE compatibility> -->
         <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <script src="js/html5.js"></script>
         <![endif]-->
     </head>
 
