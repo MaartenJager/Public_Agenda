@@ -19,7 +19,7 @@
 
     <body>
         <div id="wrapper">
-            <div id="header">Header</div>
+            <div id="header">Pagina titel</div>
             <nav id="topMenu">
                 <ul>
                     <li><a href="#">Home</a></li>

@@ -19,6 +19,7 @@ html{
 #header{
     height: 128px;
     background-image: url(header.png);
+    text-indent: -9999px; /* Hide title for humans */
 
     border-bottom-style:solid;
     border-bottom-width:1px;
@@ -60,8 +61,8 @@ html{
 }
 
 #topMenu li a:active, #topMenu li a:hover{
-    padding-bottom: 15px;
-    border-bottom: none;
+    padding-bottom: 16px;
+    border-bottom-style: hidden;
 }
 
 #main{
@@ -130,7 +131,7 @@ display:block;
 }
 
 #submit:hover {
-        opacity:0.9;
+        opacity:0.6;
 }
 
 #footer{
