@@ -27,30 +27,41 @@ html{
 #topMenu{
     border-bottom-style:solid;
     border-bottom-width:1px;
+
+    height: 32px; /* Move buttons down */
+    text-align: center;
 }
 
 /* Remove bullets */
 #topMenu ul{
     list-style: none;
     padding: 0;
-    margin: 0;
-
+    margin: 15px 0px 0px 0px; /* P */
     height: 20px;
 }
 
 /* Get them all in line */
 #topMenu li{
-    float: left;
-    margin: 0 15px;
+    /*float: left;*/
+    display:inline;
+    margin: 0px;
 }
 
 #topMenu li a:link, a:visited{
     color: black;
     text-decoration: none; /* Do not underline links*/
+
+    /* Create box around link */
+    border-style:solid;
+    border-width:1px;
+    padding: 5px; /* Larger box around the links */
+
+    font-variant: small-caps;
 }
 
 #topMenu li a:active, #topMenu li a:hover{
-    color:red;
+    color: red;
+
 }
 
 #main{
@@ -101,7 +112,6 @@ input, textarea {
     -webkit-border-radius:5px;
 }
 
-
 input:focus, textarea:focus {
     border:1px solid #97d6eb;
 }
@@ -122,7 +132,6 @@ display:block;
 #submit:hover {
         opacity:0.9;
 }
-
 
 #footer{
     /* Push the footer down. Clear will tell the footer that
