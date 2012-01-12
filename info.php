@@ -4,7 +4,7 @@
 
     <body>
         <div id="container">
-            <div id="header" role="banner">Pagina titel</div>
+            <div id="header" role="banner">Paginatitel</div>
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main" role="main">
