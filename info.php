@@ -8,7 +8,7 @@
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main">
-                <header class="pageTitle"><h1>Fappie's Feestpalijs</h1></header>
+                <header class="pageTitle"><h1>Info</h1></header>
 
                 <p>Fappie's Feestpalijs is een van de bekendste death metal podia
                 van Nederland en daarbuiten. Het bijzondere aan Fappie's
