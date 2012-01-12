@@ -69,17 +69,16 @@ aside{
     border-style:solid;
     border-width:1px;
 
+    /* Space around the sidebar */
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-
-
 
     /* Place columns side by side */
     float: left;
     width: 240px;
     height: 300px;
-    background:#c9c;
+    /*background:#c9c;*/
 }
 
 #footer{
