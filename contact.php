@@ -13,13 +13,13 @@
 
                 <form>
                     <label>Name</label>
-                    <input name="name" placeholder="Type Here">
+                    <input name="name" placeholder="Type Here" autofocus required>
 
                     <label>Email</label>
-                    <input name="email" type="email" placeholder="Type Here">
+                    <input name="email" type="email" placeholder="Type Here" required>
 
                     <label>Message</label>
-                    <textarea name="message" placeholder="Type Here"></textarea>
+                    <textarea name="message" placeholder="Type Here" required></textarea>
 
                     <input id="submit" name="submit" type="submit" value="Submit">
                 </form>
