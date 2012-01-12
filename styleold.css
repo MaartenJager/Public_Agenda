@@ -1,0 +1,144 @@
+/*Wrapper, bevat alle DIV's*/
+/*Dit stukje comment is eigenlijk gewoon een github test*/
+body,
+html{
+    margin:0;
+    padding:0;
+    color:#000;
+    background:#a7a09a;
+}
+
+#wrapper{
+    border-style:solid;
+    border-width:1px;
+
+    width:960px;
+    margin:0 auto;
+    background:#FFF;
+}
+
+#header{
+    height: 128px;
+    background-image: url(header.png);
+    text-indent: -9999px; /* Hide title for humans */
+
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+}
+
+#topMenu{
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+
+    height: 34px; /* Move buttons down */
+    text-align: center;
+}
+
+/* Remove bullets */
+#topMenu ul{
+    list-style: none;
+    padding: 0;
+    margin: 15px 0px 0px 0px; /* P */
+    height: 20px;
+}
+
+/* Get them all in line */
+#topMenu li{
+    /*float: left;*/
+    display:inline;
+    margin: 0px;
+}
+
+#topMenu li a:link, a:visited{
+    color: black;
+    text-decoration: none; /* Do not underline links*/
+
+    /* Create box around link */
+    border-style:solid;
+    border-width:1px;
+    padding: 5px; /* Larger box around the links */
+
+    font-variant: small-caps;
+}
+
+#topMenu li a:active, #topMenu li a:hover{
+    padding-bottom: 16px;
+    border-bottom-style: hidden;
+}
+
+#main{
+    padding: 25px 25px 15px 15px;
+    /* Place columns side by side */
+    float: right;
+    width: 650px;
+}
+
+header.pageTitle{
+    /* Two nested block elements, move title to top */
+    margin-top: -30px;
+}
+
+#sidebar-left{
+    border-style:solid;
+    border-width:1px;
+
+    /* Space around the sidebar */
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    /* Place columns side by side */
+    float: left;
+    width: 240px;
+    height: 300px;
+    /*background:#c9c;*/
+}
+
+label {
+    display:block;
+    margin-top:10px;
+    letter-spacing:2px;
+}
+
+input, textarea {
+    width:350px;
+    height:12px;
+    background:#efefef;
+    border:1px solid #dedede;
+    padding:10px;
+    margin-top:3px;
+    font-size:0.9em;
+    color:#3a3a3a;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+
+input:focus, textarea:focus {
+    border:1px solid #97d6eb;
+}
+
+textarea {
+    height:213px;
+    background:url(img/form-bg.png) bottom right no-repeat #efefef;
+}
+
+#submit {
+display:block;
+    width:127px;
+    height:38px;
+    margin-top:20px;
+    cursor:pointer;
+}
+
+#submit:hover {
+        opacity:0.6;
+}
+
+#footer{
+    /* Push the footer down. Clear will tell the footer that
+     * it can't have any elements next to it */
+    clear: both;
+
+    text-align: center;
+}
