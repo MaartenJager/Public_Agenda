@@ -1,98 +1,158 @@
-/*Wrapper, bevat alle DIV's*/
-/*Dit stukje comment is eigenlijk gewoon een github test*/
-body,
-html{
-    margin:0;
-    padding:0;
-    color:#000;
-    background:#a7a09a;
+/* Universal **************************************************************** */
+
+body {
+	/* Properties of text */
+	font: 16px Calibri, Arial, "Times New Roman";
+	line-height: 100%;
+	text-align: left;
+	color: #000;
+
+	/* Properties of size */
+	width: 960px;
+
+	/* Properties of background */
+	background: #CCC;
+
+	/* Properties of boundaries */
+	border-style: solid;
+	border-width: 1px;
+
+	/* Properties of placement */
+	margin: 0 auto 0 auto;
 }
 
-#wrapper{
-    border-style:solid;
-    border-width:1px;
-
-    width:960px;
-    margin:0 auto;
-    background:#FFF;
+p {
+	margin-bottom: 16px;
 }
 
-#header{
-    height: 128px;
-    background-image: url(header.png);
-    text-indent: -9999px; /* Hide title for humans */
-
-    border-bottom-style:solid;
-    border-bottom-width:1px;
+h1 {
+	font-size: 40px;
+	line-height: 50%;
+	text-align: left;
+	color: #000;
 }
 
-#topMenu{
-    border-bottom-style:solid;
-    border-bottom-width:1px;
-
-    height: 34px; /* Move buttons down */
-    text-align: center;
+h2 {
+	font-size: 32px;
+	line-height: 50%;
+	text-align: left;
+	color: #000;
 }
 
-/* Remove bullets */
-#topMenu ul{
-    list-style: none;
-    padding: 0;
-    margin: 15px 0px 0px 0px; /* P */
-    height: 20px;
+h3, h4, h5 {
+	font-size: 24px;
+	line-height: 50%;
+	text-align: left;
+	color: #000;
 }
 
-/* Get them all in line */
-#topMenu li{
-    /*float: left;*/
-    display:inline;
-    margin: 0px;
+/* Library ****************************************************************** */
+
+/* Style for buttons */
+#submit
+
+/* Layout ******************************************************************* */
+
+#container {
+	/* Properties of background */
+	background: #FFF;
 }
 
-#topMenu li a:link, a:visited{
-    color: black;
-    text-decoration: none; /* Do not underline links*/
+#header {
+	/* Properties of size */
+	height: 128px;
 
-    /* Create box around link */
-    border-style:solid;
-    border-width:1px;
-    padding: 5px; /* Larger box around the links */
+	/* Properties of background */
+	background: #FFF;
+	background-image: /* insert image here */; 
 
-    font-variant: small-caps;
+	/* Properties of boundaries */
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
 }
 
-#topMenu li a:active, #topMenu li a:hover{
-    padding-bottom: 16px;
-    border-bottom-style: hidden;
+#menu {
+	/* Properties of text */
+	text-align: center;
+	list-style: none;
+
+	/* Properties of size */
+	height: 35px;
+
+	/* Properties of background */
+	background: #FFF;
+
+	/* Properties of boundaries */
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
 }
 
-#main{
-    padding: 25px 25px 15px 15px;
-    /* Place columns side by side */
-    float: right;
-    width: 650px;
+#menu ul {
+	/* Properties of text */
+	list-style: none;
+	padding: 0;
 }
 
-header.pageTitle{
-    /* Two nested block elements, move title to top */
-    margin-top: -30px;
+#menu li {
+	/* Properties of text */
+	display: inline;
 }
 
-#sidebar-left{
-    border-style:solid;
-    border-width:1px;
+#menu li a:link, a:visited {
+	/* Properties of text */
+	color: black;
+	text-decoration: none;
+	font-variant: small-caps;
 
-    /* Space around the sidebar */
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+	/* Create box around the buttons */
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
 
-    /* Place columns side by side */
-    float: left;
-    width: 240px;
-    height: 300px;
-    /*background:#c9c;*/
 }
+
+#menu li a:active, #topMenu li a:hover {
+	/* Create effect when a button is pressed */
+	padding-bottom: 16px;
+	border-bottom-style: hidden;
+}
+
+#main {
+	/* Properties of size */
+	width: 650px;
+
+	/* Properties of placement */
+	float: right;
+}
+
+
+#sidebar {
+	/* Properties of size */
+	width: 240px;
+	height: 300px;
+
+	/* Properties of background */
+	background: #FFF;
+
+	/* Properties of boundaries */
+	margin: 10px 0px 10px 10px;
+	border-style: solid;
+	border-width: 1px;
+
+	/* Properties of placement */
+	float: left;
+}
+
+#footer {
+	/* Properties of text */
+	text-align: center;
+	color: #777;
+
+	/* Properties of placement */
+	clear: both;
+}
+
+/* TODO: THESE REMAIN UNCHANGED UNTIL I KNOW WHAT THEY DO! */
 
 label {
     display:block;
@@ -133,12 +193,4 @@ display:block;
 
 #submit:hover {
         opacity:0.6;
-}
-
-#footer{
-    /* Push the footer down. Clear will tell the footer that
-     * it can't have any elements next to it */
-    clear: both;
-
-    text-align: center;
 }

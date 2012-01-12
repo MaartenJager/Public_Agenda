@@ -22,9 +22,9 @@
     </head>
 
     <body>
-        <div id="wrapper">
+        <div id="container">
             <div id="header">Header</div>
-            <nav id="topMenu">
+            <nav id="menu">
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="#">Info</a></li>

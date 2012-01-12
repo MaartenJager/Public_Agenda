@@ -1,1 +1,27 @@
-de zoveelste test, lekker handig dat git
+"CSS Handleiding"
+
+Een korte documentatie van onze CSS en een voorstel voor de stijl ervan.
+
+Inmiddels is de CSS volledig herschreven naar een nieuwe stijl, met als doel dat deze beter leesbaar is. We hebben gekozen voor één CSS bestand voor de hele site. Dat is handig, maar dan moet die wel leesbaar blijven. Hieronder geef ik een voorstel voor de opbouw van onze CSS, gebasseerd op informatie op het internet en wat eigen input. Vrijdag beslissen we hierover.
+
+1. De CSS bestaat uit vier grote onderdelen:
+	- UNIVERSAL
+	Bevat specificaties voor alle belangrijke html tags zoals <body>, <p>, <h1>, etc.
+	Dit kun je zien als een soort "default" waarde.
+
+	- LIBRARY
+	Bevat specificaties die handig zijn voor meerdere plekken op de site.
+	Denk aan een standaard formaat en omlijsting voor plaatjes, etc.
+
+	- LAYOUT
+	Bevat specificaties voor de klassen, zoals MAIN en SIDEBAR.
+
+	- SPECIFIC
+	Bevat specificaties die slechts op één onderdeel van de site gebruikt wordt, en daarmee niet boeiend zijn voor de library.
+
+2. Ieder CSS onderdeel wordt duidelijk benoemd:
+	- Er zijn vijf standaard onderdelen die benoemd worden in onze CSS code:
+	  Properties of text, size, background, boundaries, en placement.
+	- Alles wat niet onder deze vijf standaarden valt, moet duidelijk commenten worden.
+
+Ik hoop dat de CSS zo duidelijk voor iedereen is en zou iedereen willen vragen alle CSS voortaan in deze stijl te schrijven. 
