@@ -33,7 +33,7 @@
                 </ul>
             </nav>
             <section id="main">
-                <header class="pageTitle"><h1>Titel</h1></header>
+                <header class="pageTitle"><h1>Titel...</h1></header>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 Mauris vel magna. Mauris risus nunc, tristique varius, gravida
                 in, lacinia vel, elit. Nam ornare, felis non faucibus molestie,
