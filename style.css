@@ -1,49 +1,49 @@
 /* Universal **************************************************************** */
 
 body {
-	/* Properties of text */
-	font: 16px Calibri, Arial, "Times New Roman";
-	line-height: 100%;
-	text-align: left;
-	color: #000;
+    /* Properties of text */
+    font: 16px Calibri, Arial, "Times New Roman";
+    line-height: 100%;
+    text-align: left;
+    color: #000;
 
-	/* Properties of size */
-	width: 960px;
+    /* Properties of size */
+    width: 960px;
 
-	/* Properties of background */
-	background: #CCC;
+    /* Properties of background */
+    background: #CCC;
 
-	/* Properties of boundaries */
-	border-style: solid;
-	border-width: 1px;
+    /* Properties of boundaries */
+    border-style: solid;
+    border-width: 1px;
 
-	/* Properties of placement */
-	margin: 0 auto 0 auto;
+    /* Properties of placement */
+    margin: 0 auto 0 auto;
 }
 
 p {
-	margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 h1 {
-	font-size: 40px;
-	line-height: 50%;
-	text-align: left;
-	color: #000;
+    font-size: 40px;
+    line-height: 50%;
+    text-align: left;
+    color: #000;
 }
 
 h2 {
-	font-size: 32px;
-	line-height: 50%;
-	text-align: left;
-	color: #000;
+    font-size: 32px;
+    line-height: 50%;
+    text-align: left;
+    color: #000;
 }
 
 h3, h4, h5 {
-	font-size: 24px;
-	line-height: 50%;
-	text-align: left;
-	color: #000;
+    font-size: 24px;
+    line-height: 50%;
+    text-align: left;
+    color: #000;
 }
 
 /* Library ****************************************************************** */
@@ -52,106 +52,107 @@ h3, h4, h5 {
 /* Layout ******************************************************************* */
 
 #container {
-	/* Properties of background */
-	background: #FFF;
+    /* Properties of background */
+    background: #FFF;
 }
 
 #header {
-	/* Properties of size */
-	height: 128px;
+    /* Properties of size */
+    height: 128px;
 
-	/* Properties of background */
-	background: #FFF;
-	background-image: /* insert image here */; 
+    /* Properties of background */
+    background: #FFF;
+    background-image: /* insert image here */;
 
-	/* Properties of boundaries */
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
+    /* Properties of boundaries */
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
 }
 
 #menu {
-	/* Properties of text */
-	text-align: center;
-	list-style: none;
+    /* Properties of text */
+    text-align: center;
+    list-style: none;
 
-	/* Properties of size */
-	height: 35px;
+    /* Properties of size */
+    height: 35px;
 
-	/* Properties of background */
-	background: #FFF;
+    /* Properties of background */
+    background: #FFF;
 
-	/* Properties of boundaries */
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
+    /* Properties of boundaries */
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
 }
 
 #menu ul {
-	/* Properties of text */
-	list-style: none;
-	padding: 0;
+    /* Properties of text */
+    list-style: none;
+    padding: 0;
 }
 
 #menu li {
-	/* Properties of text */
-	display: inline;
+    /* Properties of text */
+    display: inline;
 }
 
 #menu li a:link, a:visited {
-	/* Properties of text */
-	color: black;
-	text-decoration: none;
-	font-variant: small-caps;
+    /* Properties of text */
+    color: black;
+    text-decoration: none;
+    font-variant: small-caps;
 
-	/* Create box around the buttons */
-	border-style: solid;
-	border-width: 1px;
-	padding: 5px;
+    /* Create box around the buttons */
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
 
 }
 
 #menu li a:active, #topMenu li a:hover {
-	/* Create effect when a button is pressed */
-	padding-bottom: 16px;
-	border-bottom-style: hidden;
+    /* Create effect when a button is pressed */
+    padding-bottom: 16px;
+    border-bottom-style: hidden;
 }
 
 #main {
-	/* Properties of size */
-	width: 650px;
+    /* Properties of size */
+    width: 650px;
 
-	/* Properties of placement */
-	float: right;
+    /* Properties of placement */
+    float: right;
 }
 
 
 #sidebar {
-	/* Properties of size */
-	width: 240px;
-	height: 300px;
+    /* Properties of size */
+    width: 240px;
+    height: 300px;
 
-	/* Properties of background */
-	background: #FFF;
+    /* Properties of background */
+    background: #FFF;
 
-	/* Properties of boundaries */
-	margin: 10px 0px 10px 10px;
-	border-style: solid;
-	border-width: 1px;
+    /* Properties of boundaries */
+    margin: 10px 0px 10px 10px;
+    border-style: solid;
+    border-width: 1px;
 
-	/* Properties of placement */
-	float: left;
+    /* Properties of placement */
+    float: left;
 }
 
 #footer {
-	/* Properties of text */
-	text-align: center;
-	color: #777;
+    /* Properties of text */
+    text-align: center;
+    color: #777;
 
-	/* Properties of placement */
-	clear: both;
+    /* Properties of placement */
+    clear: both;
 }
 
 /* TODO: THESE REMAIN UNCHANGED UNTIL I KNOW WHAT THEY DO! */
 
+/* Used to format forms (used on contact page) */
 label {
     display:block;
     margin-top:10px;
