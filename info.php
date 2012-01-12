@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="nl">
-    <?php require_once("header.inc"); ?>
+    <?php require_once("inc/header.inc"); ?>
 
     <body>
         <div id="container">
             <div id="header">Pagina titel</div>
-            <?php require_once("nav.inc"); ?>
+            <?php require_once("inc/nav.inc"); ?>
 
             <section id="main">
                 <header class="pageTitle"><h1>Fappie's Feestpalijs</h1></header>
@@ -42,8 +42,8 @@
                 (gemeentelijke) subsidies. </p>
             </section>
 
-            <?php require_once("sidebar.inc"); ?>
-            <?php require_once("footer.inc"); ?>
+            <?php require_once("inc/sidebar.inc"); ?>
+            <?php require_once("inc/footer.inc"); ?>
         </div>
     </body>
 </html>
