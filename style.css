@@ -81,10 +81,15 @@ aside{
     /*background:#c9c;*/
 }
 
+
 label {
     display:block;
-    margin-top:20px;
-    letter-spacing:2px;
+    margin-top:10px;
+}
+
+textarea {
+    height:213px;
+    background:url(img/form-bg.png) bottom right no-repeat #efefef;
 }
 
 #footer{
