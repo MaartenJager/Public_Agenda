@@ -1,7 +1,4 @@
-<body>
-        <div id="wrapper">
-            <div id="header">Pagina titel</div>
-            <nav id="topMenu">
+            <nav id="menu">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="info.php">Info</a></li>
