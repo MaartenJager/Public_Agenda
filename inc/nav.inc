@@ -1,5 +1,5 @@
 
-            <nav id="menu">
+            <nav id="menu" role="navigation">
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="info.php">Info</a></li>

@@ -4,10 +4,10 @@
 
     <body>
         <div id="container">
-            <div id="header">Paginatitel</div>
+            <div id="header" role="banner">Paginatitel</div>
             <?php require_once("inc/nav.inc"); ?>
 
-            <section id="main">
+            <section id="main" role="main">
                 <header class="pageTitle"><h1>Agenda</h1></header>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 Mauris vel magna. Mauris risus nunc, tristique varius, gravida

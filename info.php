@@ -4,10 +4,10 @@
 
     <body>
         <div id="container">
-            <div id="header">Pagina titel</div>
+            <div id="header" role="banner">Pagina titel</div>
             <?php require_once("inc/nav.inc"); ?>
 
-            <section id="main">
+            <section id="main" role="main">
                 <header class="pageTitle"><h1>Info</h1></header>
 
                 <p>Fappie's Feestpalijs is een van de bekendste death metal podia
