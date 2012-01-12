@@ -3,9 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Paginatitel</title>
-        <link rel="shortcut icon" href="" />
+        <!-- <link rel="shortcut icon" href="" /> -->
         <meta name="description" content="omschrijving" />
-        <meta name="copyright" content="Copyright (c) 2012" />
         <meta name="author" content="Projectgroep 1241" />
 
         <!-- Style sheets -->
@@ -42,7 +41,7 @@
                 parturient montes, nascetur ridiculus mus.</p>
             </section>
             <aside id="sidebar-left">sidebar</aside>
-            <div id="footer">&copy; 2012</div>
+            <div id="footer">&copy; 2012 <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwebsec.science.uva.nl%2Fwebdb1241%2F&charset=%28detect+automatically%29&doctype=Inline&group=0">Validate HTML</a> </div>
         </div>
     </body>
 </html>
