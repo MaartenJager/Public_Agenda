@@ -11,15 +11,10 @@
         <!-- Style sheets -->
         <link rel="stylesheet" href="style.css" />
 
-        <script>
-            // Create HTML5 tags for IE compatibility
-            document.createElement('header');
-            document.createElement('footer');
-            document.createElement('section');
-            document.createElement('aside');
-            document.createElement('nav');
-            document.createElement('article');
-        </script>
+        <!-- Create HTML5 tags for IE compatibility> -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
     </head>
 
     <body>
