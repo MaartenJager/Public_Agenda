@@ -81,16 +81,48 @@ aside{
     /*background:#c9c;*/
 }
 
-
 label {
     display:block;
     margin-top:10px;
+    letter-spacing:2px;
+}
+
+input, textarea {
+    width:350px;
+    height:12px;
+    background:#efefef;
+    border:1px solid #dedede;
+    padding:10px;
+    margin-top:3px;
+    font-size:0.9em;
+    color:#3a3a3a;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+
+
+input:focus, textarea:focus {
+    border:1px solid #97d6eb;
 }
 
 textarea {
     height:213px;
     background:url(img/form-bg.png) bottom right no-repeat #efefef;
 }
+
+#submit {
+display:block;
+    width:127px;
+    height:38px;
+    margin-top:20px;
+    cursor:pointer;
+}
+
+#submit:hover {
+        opacity:0.9;
+}
+
 
 #footer{
     /* Push the footer down. Clear will tell the footer that
