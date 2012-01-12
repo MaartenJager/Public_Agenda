@@ -86,4 +86,6 @@ aside{
     /* Push the footer down. Clear will tell the footer that
      * it can't have any elements next to it */
     clear: both;
+
+    text-align: center;
 }
