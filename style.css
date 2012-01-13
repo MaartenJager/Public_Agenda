@@ -3,7 +3,6 @@
 body {
     /* Properties of text */
     font: 16px Calibri, Arial, Verdana;
-    line-height: 100%;
     text-align: left;
     color: #000;
 
@@ -206,3 +205,57 @@ textarea {
 	width: 130px;
 }
 
+#agenda{
+    /*border:1px solid #000; /* tmp, make borders visible while devving*/
+    height: 85px;
+}
+
+#dateWrapper{
+    /*border:1px solid #000; /* tmp, make borders visible while devving*/
+    /*display: inline;*/
+    width: 85px;
+    height:85px;
+
+    float: left;
+}
+
+#commentWrapper{
+    /*border:1px solid red; /* tmp, make borders visible while devving*/
+    display: inline;
+
+    width: 250px;
+    height: 50px;
+    
+}
+
+#photoWrapper{
+    float: right;    
+}
+
+.eventPhoto {
+    height: 85px;
+    width: 85px;
+
+    float: right;
+}
+
+#event{
+    height: 85px;
+    margin-bottom: 5px;
+}
+
+.even{
+    /* Create box around the buttons */
+    border-style: solid;
+    border-color: blue;
+    border-width: 1px;
+    border-right-style: none;    
+}
+
+.odd{
+    /* Create box around the buttons */
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+    border-right-style: none;    
+}
