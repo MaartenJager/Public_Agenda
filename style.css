@@ -2,7 +2,7 @@
 
 body {
     /* Properties of text */
-    font: 16px Calibri, Arial, "Times New Roman";
+    font: 16px Calibri, Arial, Verdana;
     line-height: 100%;
     text-align: left;
     color: #000;
@@ -47,7 +47,17 @@ h3, h4, h5 {
 }
 
 /* Library ****************************************************************** */
+form.button {
+display:block;
+    width:127px;
+    height:38px;
+    margin-top:20px;
+    cursor:pointer;
+}
 
+form.button:hover {
+        opacity:0.6;
+}
 
 /* Layout ******************************************************************* */
 
@@ -182,14 +192,4 @@ textarea {
     background:url(img/form-bg.png) bottom right no-repeat #efefef;
 }
 
-#submit {
-display:block;
-    width:127px;
-    height:38px;
-    margin-top:20px;
-    cursor:pointer;
-}
 
-#submit:hover {
-        opacity:0.6;
-}
