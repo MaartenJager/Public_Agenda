@@ -8,7 +8,7 @@
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main" role="main">
-                <header class="pageTitle"><h1>Evenement toevoegen</h1></header>
+                <header class="pageTitle"><h1>Evenement accepteren</h1></header>
                 <p>Neem contact met ons op!</p>
 
                 <form name="event-add">
@@ -19,7 +19,8 @@
 			        <input name="datumEvent" />
 			
 			        <label>Beschrijving van het event</label>
-			        <textarea id="beschrijvingEvent"></textarea>			        		
+			        <textarea id="beschrijvingEvent"></textarea>	
+			        		
 			        
 			        <label>Kies de categorieeen die bij het event horen</label>
 			        <ul id="checkbox">

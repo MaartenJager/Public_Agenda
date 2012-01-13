@@ -19,7 +19,8 @@
 			        <input name="datumEvent" />
 			
 			        <label>Beschrijving van het event</label>
-			        <textarea id="beschrijvingEvent"></textarea>			        		
+			        <textarea id="beschrijvingEvent"></textarea>	
+			        		
 			        
 			        <label>Kies de categorieeen die bij het event horen</label>
 			        <ul id="checkbox">
