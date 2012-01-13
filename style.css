@@ -217,6 +217,7 @@ textarea {
     height:85px;
 
     float: left;
+    text-align: center;
 }
 
 #commentWrapper{
@@ -258,4 +259,13 @@ textarea {
     border-color: red;
     border-width: 1px;
     border-right-style: none;    
+}
+
+.day{
+    font-size: 28pt;
+    margin-bottom:20px;
+}
+
+.month{
+    margin-top: -20px;
 }
