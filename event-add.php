@@ -36,7 +36,7 @@
 			        <label>Blader hier voor het toevoegen van een plaatje</label>
 			        <input type="file" name="datafile" />
 			        
-			        <input type="submit" value="Submit" id="submitbutton" />
+			        <input type="submit" value="Submit" class="button" />
 
 		        </form>   
 
