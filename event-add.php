@@ -8,7 +8,7 @@
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main" role="main">
-                <header class="pageTitle"><h1>Contact</h1></header>
+                <header class="pageTitle"><h1>Evenement toevoegen</h1></header>
                 <p>Neem contact met ons op!</p>
 
                 <form name="event-add">
