@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     
-                    <div id="odd" class="even" itemscope itemtype="http://data-vocabulary.org/Event">
+                    <div id="event" class="odd" itemscope itemtype="http://data-vocabulary.org/Event">
                         <div id="dateWrapper">
                             <div class="day">12</div>
                             <div class="month">JANUARI</div>
