@@ -223,10 +223,11 @@ textarea {
 #commentWrapper{
     /*border:1px solid red; /* tmp, make borders visible while devving*/
     display: inline;
-    width: 250px;
+    width: 450px;
     height: 50px;
     margin-top: 5px;
-    float:left;    
+    float:left;
+    font-size: 11pt;
 }
 
 #photoWrapper{
@@ -251,12 +252,30 @@ textarea {
 
 .even{
     background-color: #9AF6BF;
-}
 
+}
 .odd{
     background-color: #FFF3A0;   
 }
 
 .day{
     font-size: 28pt;
+}
+
+#commentWrapper p{ /* http://css-tricks.com/multiple-class-id-selectors/ */
+    font-size: 10pt;
+    margin-top: 0px;
+}
+
+#commentWrapper .title{
+    font-weight: bold;
+}
+
+#commentWrapper .summary{
+    margin-bottom: 15px;
+}
+
+#commentWrapper .meta{
+    color: gray;
+    font-size: 8pt;
 }
