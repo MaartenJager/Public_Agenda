@@ -223,10 +223,10 @@ textarea {
 #commentWrapper{
     /*border:1px solid red; /* tmp, make borders visible while devving*/
     display: inline;
-
     width: 250px;
     height: 50px;
-    
+    margin-top: 5px;
+    float:left;    
 }
 
 #photoWrapper{
@@ -242,30 +242,21 @@ textarea {
 
 #event{
     height: 85px;
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* space between two events */
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-right-style:none; 
 }
 
 .even{
-    /* Create box around the buttons */
-    border-style: solid;
-    border-color: blue;
-    border-width: 1px;
-    border-right-style: none;    
+    background-color: #9AF6BF;
 }
 
 .odd{
-    /* Create box around the buttons */
-    border-style: solid;
-    border-color: red;
-    border-width: 1px;
-    border-right-style: none;    
+    background-color: #FFF3A0;   
 }
 
 .day{
     font-size: 28pt;
-    margin-bottom:20px;
-}
-
-.month{
-    margin-top: -20px;
 }
