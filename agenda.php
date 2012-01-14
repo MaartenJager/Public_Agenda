@@ -43,6 +43,33 @@
                         </div>
                     </div>
 
+                    <div id="event" class="even" itemscope itemtype="http://data-vocabulary.org/Event">
+                        <div id="dateWrapper">
+                            <div class="day">12</div>
+                            <div class="month">JANUARI</div>
+                        </div>
+                        <div id="commentWrapper">
+                            <a name="0"></a> <!-- HTML anchor  -->
+                            ​<a href="#0" itemprop="url" ><span itemprop="summary">Titel</span></a> <!-- Link to HTML anchor  -->
+                        </div>
+                        <div id="photoWrapper">
+                            <img class="eventPhoto" itemprop="photo" src="img/img.jpg"/>
+                        </div>
+                    </div>
+                    
+                    <div id="event" class="odd" itemscope itemtype="http://data-vocabulary.org/Event">
+                        <div id="dateWrapper">
+                            <div class="day">12</div>
+                            <div class="month">JANUARI</div>
+                        </div>
+                        <div id="commentWrapper">
+                            <a name="0"></a> <!-- HTML anchor  -->
+                            ​<a href="#0" itemprop="url" ><span itemprop="summary">Titel</span></a> <!-- Link to HTML anchor  -->
+                        </div>
+                        <div id="photoWrapper">
+                            <img class="eventPhoto" itemprop="photo" src="img/img.jpg"/>
+                        </div>
+                    </div>
                     
                 </div>
             </section>
