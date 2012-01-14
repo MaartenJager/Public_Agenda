@@ -14,7 +14,7 @@
                 in, lacinia vel, elit.</p>
 
                 <div id="agenda">
-                    
+                    <!-- Begin item ------------------------------------------------------------------>
                     <div id="event" class="even" itemscope itemtype="http://data-vocabulary.org/Event">
                         <div id="dateWrapper">
                             <div class="day">12</div>
@@ -22,25 +22,25 @@
                         </div>
                         <div id="commentWrapper">
                             <a name="0"></a> <!-- HTML anchor  -->
-                            ​<a href="#0" itemprop="url" ><span itemprop="summary">Titel</span></a> <!-- Link to HTML anchor  -->
-                            <p itemprop="description">My big event is going to be fun. You should come.</p>
-                            <div id="time">
+                            ​<a href="#0" itemprop="url" ><span class="title" itemprop="summary">My big event</span></a> <!-- Link to HTML anchor  -->
+                            <div class="summary" itemprop="description">My big event is going to be fun. You should come.</div>
+                            <div class="meta">
                                 <span itemprop="startDate" datetime="2022-07-04T18:00">July 4th, 2022 at 6:00pm</span> tot
                                 <span itemprop="endDate" datetime="2022-07-04T22:00">July 4th, 2022 at 10:00pm</span>
                             </div>
-                            <div id="location">@
+                            <div class="meta">@
                                 ​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
-                                    ​<span itemprop="name">Warfield Theatre</span>
+                                    ​<span itemprop="name">UvA</span>
                                     ​
                                     <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-                                        <span itemprop="street-address">982 Market St</span>, 
-                                        <span itemprop="locality">San Francisco</span>, 
-                                        <span itemprop="region">CA</span>
+                                        <span itemprop="street-address">Science Park 904</span>, 
+                                        <span itemprop="locality">Amsterdam</span>, 
+                                        <span itemprop="country-name">Nederland</span>
                                     </span>
 
                                     <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/​Geo">
-                                        <meta itemprop="latitude" content="37.774929" />
-                                        <meta itemprop="longitude" content="-122.419416" />
+                                        <meta itemprop="latitude" content="52.354496" />
+                                        <meta itemprop="longitude" content="4.954206" />
                                     </span>
                                 </span>
                             </div>
@@ -49,13 +49,9 @@
                             <img class="eventPhoto" itemprop="photo" src="img/img.jpg"/>
                         </div>
                     </div>
+                    <!-- Eind item ------------------------------------------------------------------>
 
-
-
-
-
-
-                    
+                    <!-- Begin item ------------------------------------------------------------------>
                     <div id="event" class="odd" itemscope itemtype="http://data-vocabulary.org/Event">
                         <div id="dateWrapper">
                             <div class="day">12</div>
@@ -63,13 +59,36 @@
                         </div>
                         <div id="commentWrapper">
                             <a name="0"></a> <!-- HTML anchor  -->
-                            ​<a href="#0" itemprop="url" ><span itemprop="summary">Titel</span></a> <!-- Link to HTML anchor  -->
+                            ​<a href="#0" itemprop="url" ><span class="title" itemprop="summary">My big event</span></a> <!-- Link to HTML anchor  -->
+                            <div class="summary" itemprop="description">My big event is going to be fun. You should come.</div>
+                            <div class="meta">
+                                <span itemprop="startDate" datetime="2022-07-04T18:00">July 4th, 2022 at 6:00pm</span> tot
+                                <span itemprop="endDate" datetime="2022-07-04T22:00">July 4th, 2022 at 10:00pm</span>
+                            </div>
+                            <div class="meta">@
+                                ​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
+                                    ​<span itemprop="name">UvA</span>
+                                    ​
+                                    <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+                                        <span itemprop="street-address">Science Park 904</span>, 
+                                        <span itemprop="locality">Amsterdam</span>, 
+                                        <span itemprop="country-name">Nederland</span>
+                                    </span>
+
+                                    <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/​Geo">
+                                        <meta itemprop="latitude" content="52.354496" />
+                                        <meta itemprop="longitude" content="4.954206" />
+                                    </span>
+                                </span>
+                            </div>
                         </div>
                         <div id="photoWrapper">
                             <img class="eventPhoto" itemprop="photo" src="img/img.jpg"/>
                         </div>
                     </div>
+                    <!-- Eind item ------------------------------------------------------------------>
 
+                    <!-- Begin item ------------------------------------------------------------------>
                     <div id="event" class="even" itemscope itemtype="http://data-vocabulary.org/Event">
                         <div id="dateWrapper">
                             <div class="day">12</div>
@@ -77,13 +96,36 @@
                         </div>
                         <div id="commentWrapper">
                             <a name="0"></a> <!-- HTML anchor  -->
-                            ​<a href="#0" itemprop="url" ><span itemprop="summary">Titel</span></a> <!-- Link to HTML anchor  -->
+                            ​<a href="#0" itemprop="url" ><span class="title" itemprop="summary">My big event</span></a> <!-- Link to HTML anchor  -->
+                            <div class="summary" itemprop="description">My big event is going to be fun. You should come.</div>
+                            <div class="meta">
+                                <span itemprop="startDate" datetime="2022-07-04T18:00">July 4th, 2022 at 6:00pm</span> tot
+                                <span itemprop="endDate" datetime="2022-07-04T22:00">July 4th, 2022 at 10:00pm</span>
+                            </div>
+                            <div class="meta">@
+                                ​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
+                                    ​<span itemprop="name">UvA</span>
+                                    ​
+                                    <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+                                        <span itemprop="street-address">Science Park 904</span>, 
+                                        <span itemprop="locality">Amsterdam</span>, 
+                                        <span itemprop="country-name">Nederland</span>
+                                    </span>
+
+                                    <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/​Geo">
+                                        <meta itemprop="latitude" content="52.354496" />
+                                        <meta itemprop="longitude" content="4.954206" />
+                                    </span>
+                                </span>
+                            </div>
                         </div>
                         <div id="photoWrapper">
                             <img class="eventPhoto" itemprop="photo" src="img/img.jpg"/>
                         </div>
                     </div>
-                    
+                    <!-- Eind item ------------------------------------------------------------------>
+
+                    <!-- Begin item ------------------------------------------------------------------>
                     <div id="event" class="odd" itemscope itemtype="http://data-vocabulary.org/Event">
                         <div id="dateWrapper">
                             <div class="day">12</div>
@@ -91,13 +133,35 @@
                         </div>
                         <div id="commentWrapper">
                             <a name="0"></a> <!-- HTML anchor  -->
-                            ​<a href="#0" itemprop="url" ><span itemprop="summary">Titel</span></a> <!-- Link to HTML anchor  -->
+                            ​<a href="#0" itemprop="url" ><span class="title" itemprop="summary">My big event</span></a> <!-- Link to HTML anchor  -->
+                            <div class="summary" itemprop="description">My big event is going to be fun. You should come.</div>
+                            <div class="meta">
+                                <span itemprop="startDate" datetime="2022-07-04T18:00">July 4th, 2022 at 6:00pm</span> tot
+                                <span itemprop="endDate" datetime="2022-07-04T22:00">July 4th, 2022 at 10:00pm</span>
+                            </div>
+                            <div class="meta">@
+                                ​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
+                                    ​<span itemprop="name">UvA</span>
+                                    ​
+                                    <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+                                        <span itemprop="street-address">Science Park 904</span>, 
+                                        <span itemprop="locality">Amsterdam</span>, 
+                                        <span itemprop="country-name">Nederland</span>
+                                    </span>
+
+                                    <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/​Geo">
+                                        <meta itemprop="latitude" content="52.354496" />
+                                        <meta itemprop="longitude" content="4.954206" />
+                                    </span>
+                                </span>
+                            </div>
                         </div>
                         <div id="photoWrapper">
                             <img class="eventPhoto" itemprop="photo" src="img/img.jpg"/>
                         </div>
                     </div>
-                    
+                    <!-- Eind item ------------------------------------------------------------------>
+                                        
                 </div>
             </section>
 
