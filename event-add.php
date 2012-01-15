@@ -23,14 +23,16 @@
 			        
                         <label>Kies de categorieeen die bij het event horen</label>
                         <div>
-                            <checkboxZone><input id="checkbox" type="checkbox" name="pop"/> Pop</checkboxZone>
-                            <checkboxZone><input id="checkbox" type="checkbox" name="rock"/> Rock</label></checkboxZone>
-                            <checkboxZone><input id="checkbox" type="checkbox" name="metal"/> Metal</label></checkboxZone>
-                            <checkboxZone><input id="checkbox" type="checkbox" name="hiphop"/> Hip-hop</label></checkboxZone>
-                            <checkboxZone><input id="checkbox" type="checkbox" name="blues"/> Blues</label></checkboxZone>
-                            <checkboxZone><input id="checkbox" type="checkbox" name="classic"/> Klassiek</label></checkboxZone>
-                            <checkboxZone><input id="checkbox" type="checkbox" name="church"/> Kerk</label></checkboxZone>
-                            <checkboxZone><input id="checkbox" type="checkbox" name="other"/> Overig</label></checkboxZone>
+                            <checkboxlabel><input id="formCheckbox" type="checkbox" /> Pop</checkboxlabel>
+                            <checkboxlabel><input id="formCheckbox" type="checkbox" /> Rock</checkboxlabel>
+                            <checkboxlabel><input id="formCheckbox" type="checkbox" /> Metal</checkboxlabel>
+                            <checkboxlabel><input id="formCheckbox" type="checkbox" /> Hiphop</checkboxlabel>
+                        </div>
+                        <div>
+                            <checkboxlabel><input id="formCheckbox" type="checkbox" /> Blues</checkboxlabel>
+                            <checkboxlabel><input id="formCheckbox" type="checkbox" /> Klassiek</checkboxlabel>
+                            <checkboxlabel><input id="formCheckbox" type="checkbox" /> Kerk</checkboxlabel>
+                            <checkboxlabel><input id="formCheckbox" type="checkbox" /> Overig</checkboxlabel>
                         </div>
 		
                         <label>Voeg een afbeelding toe</label>

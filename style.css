@@ -283,13 +283,14 @@ textarea {
 
 /* Hieronder: Dit is voor de event-add pagina */
 
-#checkboxZone {
-    display: block;
+checkboxlabel {
+    display: inline;
     padding-left: 15px;
     text-indent: -15px;
 }
 
-checkbox {
+
+formCheckbox {
     width: 13px;
     height: 13px;
     padding: 0;
@@ -297,5 +298,7 @@ checkbox {
     vertical-align: bottom;
     position: relative;
     top: -1px;
+    *overflow: hidden;
+}
 }
 /* Hierboven: Dit is voor de event-add pagina */
