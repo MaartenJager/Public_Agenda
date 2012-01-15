@@ -15,7 +15,7 @@ body {
     width: 960px;
 
     /* Properties of background */
-    background: #6AA528;
+    background: #A2CD5A;
 
     /* Properties of boundaries */
     border-style: solid;
@@ -68,7 +68,7 @@ form.button:hover {
 
 #container {
     /* Properties of background */
-    background: #84CC31;
+    background: #000;
 }
 
 #header {
@@ -76,7 +76,7 @@ form.button:hover {
     height: 128px;
 
     /* Properties of background */
-    background: #FFF;
+    background: #BCEE68;
     /*background-image:  insert image here */;
 
     /* Properties of boundaries */
@@ -93,7 +93,7 @@ form.button:hover {
     height: 35px;
 
     /* Properties of background */
-    background: #F2CD3A;
+    background: #BCEE68;
 
     /* Properties of boundaries */
     border-bottom-style: solid;
@@ -121,7 +121,7 @@ form.button:hover {
     border-style: solid;
     border-width: 1px;
     padding: 5px;
-    background-color: #CCAD31;
+    background-color: #FFB90F;
 
 }
 
@@ -146,7 +146,7 @@ form.button:hover {
 
 
     /* Properties of background */
-    background: #A68D28;
+    background: #C1FFC1;
 
     /* Properties of boundaries */
     margin: 10px 0px 10px 10px;
