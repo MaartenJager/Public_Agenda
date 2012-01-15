@@ -15,7 +15,7 @@ body {
     width: 960px;
 
     /* Properties of background */
-    background: #CCC;
+    background: #6AA528;
 
     /* Properties of boundaries */
     border-style: solid;
@@ -68,7 +68,7 @@ form.button:hover {
 
 #container {
     /* Properties of background */
-    background: #FFF;
+    background: #84CC31;
 }
 
 #header {
@@ -93,7 +93,7 @@ form.button:hover {
     height: 35px;
 
     /* Properties of background */
-    background: #FFF;
+    background: #F2CD3A;
 
     /* Properties of boundaries */
     border-bottom-style: solid;
@@ -121,6 +121,7 @@ form.button:hover {
     border-style: solid;
     border-width: 1px;
     padding: 5px;
+    background-color: #CCAD31;
 
 }
 
@@ -145,7 +146,7 @@ form.button:hover {
 
 
     /* Properties of background */
-    background: #FFF;
+    background: #A68D28;
 
     /* Properties of boundaries */
     margin: 10px 0px 10px 10px;
