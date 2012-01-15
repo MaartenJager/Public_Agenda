@@ -46,7 +46,7 @@ h3, h4, h5 {
 }
 
 /* Library ****************************************************************** */
-/*
+
 form.button {
 	display:block;
     width:127px;
@@ -54,7 +54,6 @@ form.button {
     margin-top:20px;
     cursor:pointer;
 }
-*/
 
 form.button:hover {
         opacity:0.6;
@@ -172,7 +171,7 @@ label {
 
 input, textarea {
     width:350px;
-    height:12px;
+   
     background:#efefef;
     border:1px solid #dedede;
     padding:10px;
@@ -287,11 +286,12 @@ textarea {
 checkboxlabel {
 	margin-top: 15px;
     display: inline;
+    margin-left: 5px;
 }
 
 
 
-#formCheckbox {
+input.formCheckbox{
     width: 13px;
     height: 13px;
     padding: 0;
