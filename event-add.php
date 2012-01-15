@@ -9,35 +9,35 @@
 
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Evenement toevoegen</h1></header>
-                <p>Neem contact met ons op!</p>
+                <p>Wilt u het volgende formulier invullen? Alle velden zijn verplicht. Kies tenminste één categorie.</p>
 
                 <form name="event-add">
-    		        <label>Naam event</label>
-		            <input name="naamEvent" />		
+    		        <label>Naam evenement</label>
+		        <input name="eventName" placeholder="Voer naam in" autofocus required>		
 						
-			        <label>Datum</label>
-			        <input name="datumEvent" />
+                        <label>Datum</label>
+                        <input name="eventDate" placeholder="bv. 01-01-2012" required>
 			
-			        <label>Beschrijving van het event</label>
-			        <textarea id="beschrijvingEvent"></textarea>			        		
+                        <label>Beschrijving van het event</label>
+                        <textarea name="eventDescription" placeholder="Voer beschrijving in" required></textarea>			        		
 			        
-			        <label>Kies de categorieeen die bij het event horen</label>
-			        <ul id="checkbox">
-				        <li><input type="checkbox" name="pop" />pop</li>
-				        <li><input type="checkbox" name="blues" />blues</li>
-				        <li><input type="checkbox" name="metal" />metal</li>
-				        <li><input type="checkbox" name="klassiek" />klassiek</li>
-				        <li><input type="checkbox" name="jazz" />jazz</li>
-				        <li><input type="checkbox" name="hiphop" />hip-hop</li>
-				        <li><input type="checkbox" name="kerkmuziek" />kerkmuziek</li>				
-			        </ul>	
+                        <label>Kies de categorieeen die bij het event horen</label>
+                        <div id="checkbox">
+                            <input type="checkbox" name="pop" />Pop
+                            <input type="checkbox" name="blues" />Blues
+                            <input type="checkbox" name="metal" />Metal
+                            <input type="checkbox" name="classic" />Klassiek
+                            <input type="checkbox" name="jazz" />Jazz</li>
+                            <input type="checkbox" name="hiphop" />Hip-hop
+                            <input type="checkbox" name="church" />Kerkmuziek
+                            <input type="checkbox" name="other" />Overig
+                        </div>	
 		
-			        <label>Blader hier voor het toevoegen van een plaatje</label>
-			        <input type="file" name="datafile" />
-			        
-			        <input type="submit" value="Submit" class="button" />
+                        <label>Voeg een afbeelding toe</label>
+                        <input type="file" name="datafile" />
 
-		        </form>   
+                        <input id="submit" name="submit" type="submit" value="Submit">
+                    </form>
 
             </section>
 
