@@ -4,6 +4,9 @@
 */
 
 /* Universal **************************************************************** */
+html {
+    overflow-y: scroll; /* Always display scrollbars */
+}
 
 body {
     /* Properties of text */
@@ -22,6 +25,7 @@ body {
 
     /* Properties of placement */
     margin: 0 auto 0 auto;
+
 }
 
 p {
