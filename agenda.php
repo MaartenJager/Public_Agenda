@@ -14,7 +14,7 @@
                 in, lacinia vel, elit.</p>
 
                 <div id="agenda">
-                    <!-- Begin item ------------------------------------------------------------------>
+                    <!-- Begin item -->
                     <div class="event even" itemscope itemtype="http://data-vocabulary.org/Event">
                         <div class="date">
                             <div class="day">12</div>
@@ -46,7 +46,7 @@
                         </div>
                             <img itemprop="photo" src="img/img.jpg"/>
                     </div>
-                    <!-- Eind item ------------------------------------------------------------------>
+                    <!-- Eind item -->
 
 
                 </div>
