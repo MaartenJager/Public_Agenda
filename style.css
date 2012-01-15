@@ -284,11 +284,9 @@ textarea {
 /* Hieronder: Dit is voor de event-add pagina */
 
 #checkboxZone {
-    border-style: solid;
-    width: 200px;
-    display: inline;
-    margin-right: 20px;
-    border-width: 1px;
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
 }
 
 checkbox {

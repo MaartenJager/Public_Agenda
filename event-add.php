@@ -22,15 +22,15 @@
                         <textarea name="eventDescription" placeholder="Voer beschrijving in" required></textarea>			        		
 			        
                         <label>Kies de categorieeen die bij het event horen</label>
-                        <div id="checkboxZone">
-                            <input id="checkbox" type="checkbox" name="pop"/> Pop</label>
-                            <input id="checkbox" type="checkbox" name="rock"/> Rock</label>
-                            <input id="checkbox" type="checkbox" name="metal"/> Metal</label>
-                            <input id="checkbox" type="checkbox" name="hiphop"/> Hip-hop</label>
-                            <input id="checkbox" type="checkbox" name="blues"/> Blues</label>
-                            <input id="checkbox" type="checkbox" name="classic"/> Klassiek</label>
-                            <input id="checkbox" type="checkbox" name="church"/> Kerk</label>
-                            <input id="checkbox" type="checkbox" name="other"/> Overig</label>
+                        <div>
+                            <checkboxZone><input id="checkbox" type="checkbox" name="pop"/> Pop</checkboxZone>
+                            <checkboxZone><input id="checkbox" type="checkbox" name="rock"/> Rock</label></checkboxZone>
+                            <checkboxZone><input id="checkbox" type="checkbox" name="metal"/> Metal</label></checkboxZone>
+                            <checkboxZone><input id="checkbox" type="checkbox" name="hiphop"/> Hip-hop</label></checkboxZone>
+                            <checkboxZone><input id="checkbox" type="checkbox" name="blues"/> Blues</label></checkboxZone>
+                            <checkboxZone><input id="checkbox" type="checkbox" name="classic"/> Klassiek</label></checkboxZone>
+                            <checkboxZone><input id="checkbox" type="checkbox" name="church"/> Kerk</label></checkboxZone>
+                            <checkboxZone><input id="checkbox" type="checkbox" name="other"/> Overig</label></checkboxZone>
                         </div>
 		
                         <label>Voeg een afbeelding toe</label>
