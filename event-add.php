@@ -23,15 +23,15 @@
 			        
                         <label>Kies de categorieeen die bij het event horen</label>
                         <div id="checkbox">
-                            <input type="checkbox" name="pop" />Pop
-                            <input type="checkbox" name="blues" />Blues
-                            <input type="checkbox" name="metal" />Metal
-                            <input type="checkbox" name="classic" />Klassiek
-                            <input type="checkbox" name="jazz" />Jazz</li>
-                            <input type="checkbox" name="hiphop" />Hip-hop
-                            <input type="checkbox" name="church" />Kerkmuziek
-                            <input type="checkbox" name="other" />Overig
-                        </div>	
+                            <formCheckbox><input type="checkbox" name="pop"/> Pop</label>
+                            <formCheckbox><input type="checkbox" name="rock"/> Rock</label>
+                            <formCheckbox><input type="checkbox" name="metal"/> Metal</label>
+                            <formCheckbox><input type="checkbox" name="hiphop"/> Hip-hop</label>
+                            <formCheckbox><input type="checkbox" name="blues"/> Blues</label>
+                            <formCheckbox><input type="checkbox" name="classic"/> Klassiek</label>
+                            <formCheckbox><input type="checkbox" name="church"/> Kerk</label>
+                            <formCheckbox><input type="checkbox" name="other"/> Overig</label>
+                        </div>
 		
                         <label>Voeg een afbeelding toe</label>
                         <input type="file" name="datafile" />
