@@ -285,22 +285,10 @@ textarea {
 
 #checkbox {
     border-style: solid;
-    width: 400px;
+    width: 200px;
     display: inline;
     margin-right: 20px;
     border-width: 1px;
     
 }
-
-input {
-    width: 13px;
-    height: 13px;
-    padding: 0;
-    margin:0;
-    vertical-align: bottom;
-    position: relative;
-    top: -1px;
-    *overflow: hidden;
-}
-
 /* Hierboven: Dit is voor de event-add pagina */
