@@ -292,7 +292,7 @@ checkboxlabel {
 }
 
 
-formCheckbox {
+#formCheckbox {
     width: 13px;
     height: 13px;
     padding: 0;
