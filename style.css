@@ -160,11 +160,6 @@ form.button:hover {
     clear: both;
 }
 
-#checkboxGenres{
-	float:left;
-	text-align:left;
-}
-
 /* TODO: THESE REMAIN UNCHANGED UNTIL I KNOW WHAT THEY DO! */
 
 /* Used to format forms (used on contact page) */
@@ -292,6 +287,8 @@ checkboxlabel {
     display: inline;
     padding-left: 15px;
     text-indent: -15px;
+    text-align:left;
+    float:left;
 }
 
 
