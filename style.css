@@ -52,7 +52,7 @@ h3, h4, h5 {
 /* Library ****************************************************************** */
 
 form.button {
-	display:block;
+    display:block;
     width: 350px;
     height: 38px;
     margin-top: 20px;
@@ -181,7 +181,7 @@ label {
 
 input, textarea {
     width: 350px;
-   
+
     background:#efefef;
     border:1px solid #dedede;
     padding:10px;
@@ -203,17 +203,17 @@ textarea {
 }
 
 #sidebar-imglist{
-	text-align: center;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	margin-top: 15px;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
 }
 
 #sidebar img{
-	margin-bottom: 15px;
-	height: 130px;
-	width: 130px;
+    margin-bottom: 15px;
+    height: 130px;
+    width: 130px;
 }
 
 #agenda{
@@ -242,21 +242,21 @@ textarea {
 }
 
 *.eventPicture{
-    float: right;  
+    float: right;
     height: 85px;
     width: 85px;
 
-    float: right;  
+    float: right;
 }
 
 
-#event{
+*.event{
     height: 85px;
     margin-bottom: 5px; /* space between two events */
     border-style: solid;
     border-color: black;
     border-width: 1px;
-    border-right-style:none; 
+    border-right-style:none;
 }
 
 *.even{
@@ -265,7 +265,7 @@ textarea {
 }
 
 *.odd{
-    background-color: #FFF3A0;   
+    background-color: #FFF3A0;
 }
 
 *.day{
@@ -284,10 +284,10 @@ textarea {
 .comment .summary{
     margin-bottom: 0px; /* space between summary and meta-info*/
     height: 60%;
-    text-overflow:ellipsis; 
-		overflow:hidden; 
-		white-space:nowrap
-    
+    text-overflow:ellipsis;
+        overflow:hidden;
+        white-space:nowrap
+
 }
 
 .comment .meta{
@@ -298,7 +298,7 @@ textarea {
 /* Hieronder: Dit is voor de event-add pagina */
 
 checkboxlabel {
-	display: inline;
+    display: inline;
 }
 
 
