@@ -221,35 +221,6 @@ textarea {
     height: 85px;
 }
 
-*.date {
-    /*border:1px solid #000; /* tmp, make borders visible while devving*/
-    /*display: inline;*/
-    width: 85px;
-    height:85px;
-
-    float: left;
-    text-align: center;
-}
-
-*.comment {
-    /*border:1px solid red; /* tmp, make borders visible while devving*/
-    display: inline;
-    width: 450px;
-    height: 50px;
-    margin-top: 5px;
-    float:left;
-    font-size: 11pt;
-}
-
-*.eventPicture{
-    float: right;
-    height: 85px;
-    width: 85px;
-
-    float: right;
-}
-
-
 *.event{
     height: 85px;
     margin-bottom: 5px; /* space between two events */
@@ -259,14 +230,46 @@ textarea {
     border-right-style:none;
 }
 
-*.even{
+.event.even{
     background-color: #9AF6BF;
 
 }
 
-*.odd{
+.event.odd{
     background-color: #FFF3A0;
 }
+
+.event .date {
+    /*border:1px solid #000; /* tmp, make borders visible while devving*/
+    /*display: inline;*/
+    width: 85px;
+    height:85px;
+
+    float: left;
+    text-align: center;
+}
+
+.event .comment {
+    /*border:1px solid red; /* tmp, make borders visible while devving*/
+    display: inline;
+    width: 450px;
+    height: 50px;
+    margin-top: 5px;
+    float:left;
+    font-size: 11pt;
+}
+
+.event img{
+    float: right;
+    height: 85px;
+    width: 85px;
+
+    float: right;
+}
+
+
+
+
 
 *.day{
     font-size: 28pt;
