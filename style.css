@@ -54,9 +54,9 @@ h3, h4, h5 {
 
 form.button {
 	display:block;
-    width:175px;
-    height:38px;
-    margin-top:20px;
+    width: 350px;
+    height: 38px;
+    margin-top: 20px;
     cursor:pointer;
 }
 
@@ -72,8 +72,6 @@ form.button:hover {
 }
 
 #header {
-    /* Properties of text */
-
     /* Properties of size */
     height: 128px;
 
@@ -178,7 +176,7 @@ label {
 }
 
 input, textarea {
-    width:350px;
+    width: 350px;
    
     background:#efefef;
     border:1px solid #dedede;

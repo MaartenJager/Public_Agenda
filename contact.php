@@ -12,16 +12,16 @@
                 <p>Neem contact met ons op!</p>
 
                 <form>
-                    <label>Name</label>
-                    <input name="name" placeholder="Type Here" autofocus required>
+                    <label>Uw naam</label>
+                    <input name="name" placeholder="Type uw naam" autofocus required>
 
                     <label>Email</label>
-                    <input name="email" type="email" placeholder="Type Here" required>
+                    <input name="email" type="email" placeholder="Type uw email" required>
 
-                    <label>Message</label>
-                    <textarea name="message" placeholder="Type Here" required></textarea>
+                    <label>Bericht</label>
+                    <textarea name="message" placeholder="Type uw bericht" required></textarea>
 
-                    <input id="submit" name="submit" type="submit" value="Submit">
+                    <input id="button" name="submit" type="submit" value="Verstuur bericht">
                 </form>
 
             </section>

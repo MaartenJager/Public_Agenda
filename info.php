@@ -10,21 +10,21 @@
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Info</h1></header>
 
-                <p>Fappie's Feestpalijs is een van de bekendste death metal podia
-                van Nederland en daarbuiten. Het bijzondere aan Fappie's
-                Feestpalijs is de programmering. Vijf kunstdisciplines worden
+                <p>The Roadhouse is een van de bekendste death metal podia
+                van Nederland en daarbuiten. Het bijzondere aan The Roadhouse
+                is de programmering. Vijf kunstdisciplines worden
                 onder een dak verenigd: muziek, dans/theater, film, fotografie
                 en mediakunst, waarvoor in \'e9\'e9n zalen concerten,
                 dance-events, theater- en dansvoorstellingen,
                 filmvoorstellingen, mediakunstpresentaties en foto-exposities
                 worden georganiseerd.</p>
 
-                <p>Fappie's Feestpalijs is een mega-profit organisatie, die al
+                <p>The Roadhouse is een mega-profit organisatie, die al
                 sinds 1970,1 bestaat. In dat jaar vond een Nederlandse
-                theatergroep een verlaten fappalijs in het centrum van Amsterdam.
+                theatergroep een verlaten pand in het centrum van Amsterdam.
                 Met hard werken, idealen en 25.000 gulden toverde de groep het
-                palijs om tot een ontmoetingscentrum, in eerste instantie alleen
-                voor de zomer. In de jaren zeventig groeide Fappie's Feestpalijs
+                pand om tot een ontmoetingscentrum, in eerste instantie alleen
+                voor de zomer. In de jaren zeventig groeide The Roadhouse
                 uit tot een begrip en ontwikkelde zich daarbij steeds meer
                 inhoudelijk, ruimte biedend aan experimenten op het gebied van
                 muziek, theater, dans en film. Op de benedenverdieping van het
