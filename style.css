@@ -235,13 +235,6 @@ textarea {
     background-color: #FFF3A0;
 }
 
-#agenda .event .date {
-    width: 85px;
-    height:85px;
-    float: left;
-    text-align: center;
-}
-
 #agenda .event .comment {
     /*border:1px solid red; /* tmp, make borders visible while devving*/
     display: inline;
@@ -252,28 +245,16 @@ textarea {
     font-size: 11pt;
 }
 
-#agenda .event .comment .title{
+#agenda .event .comment .summary{
     font-weight: bold;
 }
 
-#agenda .event img{
-    float: right;
-    height: 85px;
-    width: 85px;
 
-    float: right;
-}
-
-#agenda .event .day{
-    font-size: 28pt;
-}
 
 #agenda .event .comment p{ /* http://css-tricks.com/multiple-class-id-selectors/ */
     font-size: 10pt;
     margin-top: 0px;
 }
-
-
 
 #agenda .event .comment .description{
     margin-bottom: 0px; /* space between summary and meta-info*/
@@ -285,10 +266,32 @@ textarea {
     white-space: nowrap
 }
 
+
+#agenda .event .date {
+    width: 85px;
+    height:85px;
+    float: left;
+    text-align: center;
+}
+
+#agenda .event .day{
+    font-size: 28pt;
+}
+
+
+#agenda .event img{
+    float: right;
+    height: 85px;
+    width: 85px;
+    float: right;
+}
+
 #agenda .event .comment .meta{
     color: gray;
     font-size: 9pt;
 }
+
+
 
 /* Hieronder: Dit is voor de event-add pagina */
 checkboxlabel {
