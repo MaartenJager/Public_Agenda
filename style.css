@@ -14,7 +14,7 @@ body {
     width: 960px;
 
     /* Properties of background */
-    background: #A2CD5A;
+    background: #F1EDC2;
 
     /* Properties of boundaries */
     border-style: solid;
@@ -123,7 +123,7 @@ form.button:hover {
     border-style: solid;
     border-width: 1px;
     padding: 5px;
-    background-color: #FFB90F;
+    background-color: #66CD00;
 
 }
 
@@ -151,7 +151,7 @@ form.button:hover {
 
 
     /* Properties of background */
-    background: #C1FFC1;
+    background: #66CD00;
 
     /* Properties of boundaries */
     margin: 10px 0px 10px 10px;
