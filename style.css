@@ -217,7 +217,7 @@ textarea {
     width: 130px;
 }
 
-*.event{
+#agenda .event{
     height: 85px;
     margin-bottom: 5px; /* space between two events */
     border-style: solid;
@@ -226,26 +226,23 @@ textarea {
     border-right-style:none;
 }
 
-.event.even{
+#agenda .event.even{
     background-color: #9AF6BF;
 
 }
 
-.event.odd{
+#agenda .event.odd{
     background-color: #FFF3A0;
 }
 
-.event .date {
-    /*border:1px solid #000; /* tmp, make borders visible while devving*/
-    /*display: inline;*/
+#agenda .event .date {
     width: 85px;
     height:85px;
-
     float: left;
     text-align: center;
 }
 
-.event .comment {
+#agenda .event .comment {
     /*border:1px solid red; /* tmp, make borders visible while devving*/
     display: inline;
     width: 450px;
@@ -255,7 +252,7 @@ textarea {
     font-size: 11pt;
 }
 
-.event img{
+#agenda .event img{
     float: right;
     height: 85px;
     width: 85px;
@@ -263,39 +260,35 @@ textarea {
     float: right;
 }
 
-
-
-
-
-*.day{
+#agenda .event .day{
     font-size: 28pt;
 }
 
-.comment p{ /* http://css-tricks.com/multiple-class-id-selectors/ */
+#agenda .event .comment p{ /* http://css-tricks.com/multiple-class-id-selectors/ */
     font-size: 10pt;
     margin-top: 0px;
 }
 
-.comment .title{
+#agenda .event .comment .title{
     font-weight: bold;
 }
 
-.comment .summary{
+#agenda .event .comment .summary{
     margin-bottom: 0px; /* space between summary and meta-info*/
     height: 60%;
     text-overflow:ellipsis;
-        overflow:hidden;
-        white-space:nowrap
 
+    /* Create '..." in case of overflow */
+    overflow: hidden;
+    white-space: nowrap
 }
 
-.comment .meta{
+#agenda .event .comment .meta{
     color: gray;
     font-size: 9pt;
 }
 
 /* Hieronder: Dit is voor de event-add pagina */
-
 checkboxlabel {
     display: inline;
 }
