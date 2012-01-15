@@ -1,3 +1,8 @@
+/* Goede tutorial over CSS selectors: http://www.w3.org/TR/CSS2/selector.html
+ *
+ *
+*/
+
 /* Universal **************************************************************** */
 
 body {
@@ -211,7 +216,7 @@ textarea {
     height: 85px;
 }
 
-#dateWrapper{
+*.date {
     /*border:1px solid #000; /* tmp, make borders visible while devving*/
     /*display: inline;*/
     width: 85px;
@@ -221,7 +226,7 @@ textarea {
     text-align: center;
 }
 
-#commentWrapper{
+*.comment {
     /*border:1px solid red; /* tmp, make borders visible while devving*/
     display: inline;
     width: 450px;
@@ -231,16 +236,14 @@ textarea {
     font-size: 11pt;
 }
 
-#photoWrapper{
-    float: right;    
-}
-
-*.eventPhoto {
+*.eventPicture{
+    float: right;  
     height: 85px;
     width: 85px;
 
-    float: right;
+    float: right;  
 }
+
 
 #event{
     height: 85px;
@@ -264,16 +267,16 @@ textarea {
     font-size: 28pt;
 }
 
-#commentWrapper p{ /* http://css-tricks.com/multiple-class-id-selectors/ */
+.comment p{ /* http://css-tricks.com/multiple-class-id-selectors/ */
     font-size: 10pt;
     margin-top: 0px;
 }
 
-#commentWrapper .title{
+.comment .title{
     font-weight: bold;
 }
 
-#commentWrapper .summary{
+.comment .summary{
     margin-bottom: 0px; /* space between summary and meta-info*/
     height: 60%;
     text-overflow:ellipsis; 
@@ -282,7 +285,7 @@ textarea {
     
 }
 
-#commentWrapper .meta{
+.comment .meta{
     color: gray;
     font-size: 9pt;
 }
