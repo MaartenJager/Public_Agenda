@@ -46,14 +46,15 @@ h3, h4, h5 {
 }
 
 /* Library ****************************************************************** */
-
+/*
 form.button {
-display:block;
+	display:block;
     width:127px;
     height:38px;
     margin-top:20px;
     cursor:pointer;
 }
+*/
 
 form.button:hover {
         opacity:0.6;
@@ -282,12 +283,13 @@ textarea {
 }
 
 /* Hieronder: Dit is voor de event-add pagina */
-/*
+
 checkboxlabel {
-    text-align:left;
-    float:left;
+	margin-top: 15px;
+    display: inline;
 }
-*/
+
+
 
 #formCheckbox {
     width: 13px;

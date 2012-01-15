@@ -36,9 +36,10 @@
                         <div>
 							<label>Voeg een afbeelding toe</label>
 							<input type="file" name="datafile" />
+							<input id="submit" name="submit" type="submit" value="Submit" />
                         </div>
-
-                        <input id="submit" name="submit" type="submit" value="Submit">
+                        
+                       
                     </form>
 
             </section>
