@@ -9,7 +9,7 @@
 
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Evenement toevoegen</h1></header>
-                <p>Wilt u het volgende formulier invullen? Alle velden zijn verplicht. Kies tenminste één categorie.</p>
+                <p>Wilt u het volgende formulier invullen? Alle velden zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
 
                 <form name="event-add">
     		        <label>Naam evenement</label>
@@ -21,7 +21,7 @@
                         <label>Beschrijving van het event</label>
                         <textarea name="eventDescription" placeholder="Voer beschrijving in" required></textarea>			        		
 			        
-                        <label>Kies de categorieeen die bij het event horen</label>
+                        <label>Kies de categorie&#235;n die bij het event horen</label>
                         <div>
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Pop</checkboxlabel>
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Rock</checkboxlabel>

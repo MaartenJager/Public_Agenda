@@ -282,15 +282,12 @@ textarea {
 }
 
 /* Hieronder: Dit is voor de event-add pagina */
-
+/*
 checkboxlabel {
-    display: inline;
-    padding-left: 15px;
-    text-indent: -15px;
     text-align:left;
     float:left;
 }
-
+*/
 
 #formCheckbox {
     width: 13px;
