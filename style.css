@@ -235,7 +235,7 @@ textarea {
     float: right;    
 }
 
-.eventPhoto {
+*.eventPhoto {
     height: 85px;
     width: 85px;
 
@@ -251,15 +251,16 @@ textarea {
     border-right-style:none; 
 }
 
-.even{
+*.even{
     background-color: #9AF6BF;
 
 }
-.odd{
+
+*.odd{
     background-color: #FFF3A0;   
 }
 
-.day{
+*.day{
     font-size: 28pt;
 }
 
@@ -273,12 +274,17 @@ textarea {
 }
 
 #commentWrapper .summary{
-    margin-bottom: 15px;
+    margin-bottom: 0px; /* space between summary and meta-info*/
+    height: 60%;
+    text-overflow:ellipsis; 
+		overflow:hidden; 
+		white-space:nowrap
+    
 }
 
 #commentWrapper .meta{
     color: gray;
-    font-size: 8pt;
+    font-size: 9pt;
 }
 
 /* Hieronder: Dit is voor de event-add pagina */
@@ -296,7 +302,6 @@ checkboxlabel {
     vertical-align: bottom;
     position: relative;
     top: -1px;
-    *overflow: hidden;
     margin-left:3px;
     margin-top: 15px;
 }
