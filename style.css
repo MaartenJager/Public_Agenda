@@ -77,7 +77,7 @@ form.button:hover {
 
     /* Properties of background */
     background: #BCEE68;
-    background-image: img/header.jpg
+    background-image: img/header.jpg;
 
     /* Properties of boundaries */
     border-bottom-style: solid;
