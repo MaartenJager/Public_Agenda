@@ -23,7 +23,7 @@
                         <div id="commentWrapper">
                             <a name="0"></a> <!-- HTML anchor  -->
                             ​<a href="#0" itemprop="url" ><span class="title" itemprop="summary">My big event</span></a> <!-- Link to HTML anchor  -->
-                            <div class="summary" itemprop="description">My big event is going to be fun. You should come.</div>
+                            <div class="summary" itemprop="description">Lorem ipsum dolor sit amet, tacimates pericula per an, malis mediocrem molestiae quo no. Quo cu mazim omittam, an nulla simul recteque duo. Quod periculis prodesset ut eum. Clita posidonium ea vel, id eos senserit repudiare aliquando, hinc decore forensibus cu sea. Cum cu vero impetus dolorum, iriure diceret scriptorem eam at.</div>
                             <div class="meta">
                                 <span itemprop="startDate" datetime="2022-07-04T18:00">July 4th, 2022 at 6:00pm</span> tot
                                 <span itemprop="endDate" datetime="2022-07-04T22:00">July 4th, 2022 at 10:00pm</span>
