@@ -283,7 +283,7 @@ textarea {
 
 /* Hieronder: Dit is voor de event-add pagina */
 
-#checkbox {
+#checkboxZone {
     border-style: solid;
     width: 200px;
     display: inline;
@@ -291,7 +291,7 @@ textarea {
     border-width: 1px;
 }
 
-siteCheckbox {
+checkbox {
     width: 13px;
     height: 13px;
     padding: 0;

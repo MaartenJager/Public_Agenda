@@ -22,15 +22,15 @@
                         <textarea name="eventDescription" placeholder="Voer beschrijving in" required></textarea>			        		
 			        
                         <label>Kies de categorieeen die bij het event horen</label>
-                        <div id="checkbox">
-                            <input="siteCheckbox" type="checkbox" name="pop"/> Pop</label>
-                            <input="siteCheckbox" type="checkbox" name="rock"/> Rock</label>
-                            <input="siteCheckbox" type="checkbox" name="metal"/> Metal</label>
-                            <input="siteCheckbox" type="checkbox" name="hiphop"/> Hip-hop</label>
-                            <input="siteCheckbox" type="checkbox" name="blues"/> Blues</label>
-                            <input="siteCheckbox" type="checkbox" name="classic"/> Klassiek</label>
-                            <input="siteCheckbox" type="checkbox" name="church"/> Kerk</label>
-                            <input="siteCheckbox" type="checkbox" name="other"/> Overig</label>
+                        <div id="checkboxZone">
+                            <input id="checkbox" type="checkbox" name="pop"/> Pop</label>
+                            <input id="checkbox" type="checkbox" name="rock"/> Rock</label>
+                            <input id="checkbox" type="checkbox" name="metal"/> Metal</label>
+                            <input id="checkbox" type="checkbox" name="hiphop"/> Hip-hop</label>
+                            <input id="checkbox" type="checkbox" name="blues"/> Blues</label>
+                            <input id="checkbox" type="checkbox" name="classic"/> Klassiek</label>
+                            <input id="checkbox" type="checkbox" name="church"/> Kerk</label>
+                            <input id="checkbox" type="checkbox" name="other"/> Overig</label>
                         </div>
 		
                         <label>Voeg een afbeelding toe</label>
