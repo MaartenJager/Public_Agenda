@@ -33,13 +33,10 @@
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Overig</checkboxlabel>
                         </div>
                         
-                        <div>
-							<label>Voeg een afbeelding toe</label>
-							<input type="file" name="datafile" />
-							<input id="submit" name="submit" type="submit" value="Submit" />
-                        </div>
-                        
-                       
+						<label>Voeg een afbeelding toe</label>
+						<input type="file" name="datafile" />
+						<input id="submit" name="submit" type="submit" value="Submit" />
+						
                     </form>
 
             </section>
