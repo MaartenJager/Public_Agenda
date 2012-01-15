@@ -216,11 +216,6 @@ textarea {
     width: 130px;
 }
 
-#agenda{
-    /*border:1px solid #000; /* tmp, make borders visible while devving*/
-    height: 85px;
-}
-
 *.event{
     height: 85px;
     margin-bottom: 5px; /* space between two events */
