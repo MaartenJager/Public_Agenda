@@ -95,6 +95,8 @@ form.button:hover {
     background: #BCEE68;
 
     /* Properties of boundaries */
+    border-top-style: solid;
+    border-top-style: 1px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
 }
