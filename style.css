@@ -286,12 +286,12 @@ textarea {
 checkboxlabel {
 	margin-top: 15px;
     display: inline;
-    margin-left: 5px;
+
 }
 
 
 
-input.formCheckbox{
+.formCheckbox{
     width: 13px;
     height: 13px;
     padding: 0;
@@ -300,5 +300,6 @@ input.formCheckbox{
     position: relative;
     top: -1px;
     *overflow: hidden;
+    margin-left:3px;
 }
 /* Hierboven: Dit is voor de event-add pagina */
