@@ -72,6 +72,9 @@ form.button:hover {
 }
 
 #header {
+    /* Properties of text */
+    opacity: 0;
+
     /* Properties of size */
     height: 128px;
 
@@ -90,13 +93,12 @@ form.button:hover {
     list-style: none;
 
     /* Properties of size */
-    height: 55px;
+    height: 35px;
 
     /* Properties of background */
     background: #BCEE68;
 
     /* Properties of boundaries */
-    margin-top: -10px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
 }
