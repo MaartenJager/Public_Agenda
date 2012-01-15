@@ -235,6 +235,17 @@ textarea {
     background-color: #FFF3A0;
 }
 
+#agenda .event .date {
+    width: 85px;
+    height:85px;
+    float: left;
+    text-align: center;
+}
+
+#agenda .event .day{
+    font-size: 28pt;
+}
+
 #agenda .event .comment {
     /*border:1px solid red; /* tmp, make borders visible while devving*/
     display: inline;
@@ -249,13 +260,6 @@ textarea {
     font-weight: bold;
 }
 
-
-
-#agenda .event .comment p{ /* http://css-tricks.com/multiple-class-id-selectors/ */
-    font-size: 10pt;
-    margin-top: 0px;
-}
-
 #agenda .event .comment .description{
     margin-bottom: 0px; /* space between summary and meta-info*/
     height: 60%;
@@ -266,18 +270,10 @@ textarea {
     white-space: nowrap
 }
 
-
-#agenda .event .date {
-    width: 85px;
-    height:85px;
-    float: left;
-    text-align: center;
+#agenda .event .comment .meta{
+    color: gray;
+    font-size: 9pt;
 }
-
-#agenda .event .day{
-    font-size: 28pt;
-}
-
 
 #agenda .event img{
     float: right;
@@ -286,10 +282,6 @@ textarea {
     float: right;
 }
 
-#agenda .event .comment .meta{
-    color: gray;
-    font-size: 9pt;
-}
 
 
 
