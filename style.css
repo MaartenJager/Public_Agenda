@@ -9,7 +9,6 @@ body {
     /* Properties of text */
     font: 16px Calibri, Arial, Verdana;
     text-align: left;
-    color: #000;
 
     /* Properties of size */
     width: 960px;
@@ -68,7 +67,7 @@ form.button:hover {
 
 #container {
     /* Properties of background */
-    background: #FFF;
+    background: #BCEE68;
 }
 
 #header {
@@ -132,6 +131,9 @@ form.button:hover {
 }
 
 #main {
+    /* Properties of background */
+    background: #FFF;
+
     /* Properties of size */
     width: 650px;
 
