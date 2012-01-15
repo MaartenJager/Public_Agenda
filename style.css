@@ -289,6 +289,15 @@ textarea {
     display: inline;
     margin-right: 20px;
     border-width: 1px;
-    
+}
+
+siteCheckbox {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
 }
 /* Hierboven: Dit is voor de event-add pagina */
