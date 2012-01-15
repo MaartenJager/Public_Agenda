@@ -46,6 +46,7 @@ h3, h4, h5 {
 }
 
 /* Library ****************************************************************** */
+
 form.button {
 display:block;
     width:127px;
@@ -278,4 +279,11 @@ textarea {
 #commentWrapper .meta{
     color: gray;
     font-size: 8pt;
+}
+
+#checkbox {
+    width: 400px;
+    display: inline;
+    margin-right: 20px;
+    
 }
