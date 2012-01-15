@@ -77,7 +77,7 @@ form.button:hover {
 
     /* Properties of background */
     background: #BCEE68;
-    /*background-image:  insert image here */;
+    background-image: img/header.jpg
 
     /* Properties of boundaries */
     border-bottom-style: solid;
@@ -96,6 +96,7 @@ form.button:hover {
     background: #BCEE68;
 
     /* Properties of boundaries */
+    margin-top: -10px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
 }
