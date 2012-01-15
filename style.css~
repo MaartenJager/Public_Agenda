@@ -160,11 +160,6 @@ form.button:hover {
     clear: both;
 }
 
-#checkboxGenres{
-	float:left;
-	text-align:left;
-}
-
 /* TODO: THESE REMAIN UNCHANGED UNTIL I KNOW WHAT THEY DO! */
 
 /* Used to format forms (used on contact page) */
@@ -304,5 +299,6 @@ formCheckbox {
     position: relative;
     top: -1px;
     *overflow: hidden;
+}
 }
 /* Hierboven: Dit is voor de event-add pagina */

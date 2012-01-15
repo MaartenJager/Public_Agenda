@@ -22,13 +22,11 @@
                         <textarea name="eventDescription" placeholder="Voer beschrijving in" required></textarea>			        		
 			        
                         <label>Kies de categorieeen die bij het event horen</label>
-                        <div>
+                        <div id="checkboxGenres">
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Pop</checkboxlabel>
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Rock</checkboxlabel>
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Metal</checkboxlabel>
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Hiphop</checkboxlabel>
-                        </div>
-                        <div>
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Blues</checkboxlabel>
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Klassiek</checkboxlabel>
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Kerk</checkboxlabel>
