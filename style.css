@@ -252,6 +252,10 @@ textarea {
     font-size: 11pt;
 }
 
+#agenda .event .comment .title{
+    font-weight: bold;
+}
+
 #agenda .event img{
     float: right;
     height: 85px;
@@ -269,11 +273,9 @@ textarea {
     margin-top: 0px;
 }
 
-#agenda .event .comment .title{
-    font-weight: bold;
-}
 
-#agenda .event .comment .summary{
+
+#agenda .event .comment .description{
     margin-bottom: 0px; /* space between summary and meta-info*/
     height: 60%;
     text-overflow:ellipsis;
