@@ -22,7 +22,7 @@
                         <textarea name="eventDescription" placeholder="Voer beschrijving in" required></textarea>			        		
 			        
                         <label>Kies de categorieeen die bij het event horen</label>
-                        <div id="checkboxGenres">
+                        <div>
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Pop</checkboxlabel>
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Rock</checkboxlabel>
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Metal</checkboxlabel>
@@ -32,9 +32,11 @@
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Kerk</checkboxlabel>
                             <checkboxlabel><input id="formCheckbox" type="checkbox" /> Overig</checkboxlabel>
                         </div>
-		
-                        <label>Voeg een afbeelding toe</label>
-                        <input type="file" name="datafile" />
+                        
+                        <div>
+							<label>Voeg een afbeelding toe</label>
+							<input type="file" name="datafile" />
+                        </div>
 
                         <input id="submit" name="submit" type="submit" value="Submit">
                     </form>
