@@ -20,7 +20,7 @@
                     <input name="email" type="email" placeholder="Email" required></textarea>
 
                     <label>Wachtwoord</label>
-                    <input name="email" placeholder="Wachtwoord" required></textarea>
+                    <input name="password" placeholder="Wachtwoord" required></textarea>
 
                     <label>Toegangsniveau</label>
                     <select name="accessLevel">
