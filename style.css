@@ -186,7 +186,7 @@ label {
 }
 
 input, textarea {
-    width: 100px;
+    width: 300px;
 
     background:#efefef;
     border:1px solid #dedede;
