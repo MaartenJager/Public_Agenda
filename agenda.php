@@ -30,7 +30,7 @@
                             </div>
                             <div class="meta">@
                                 ​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
-                                    ​<span itemprop="name">UvA</span>
+                                    ​<span itemprop="name">the Roadhouse</span>
                                     ​
                                     <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
                                         <span itemprop="street-address">Science Park 904</span>,
@@ -65,7 +65,7 @@
                             </div>
                             <div class="meta">@
                                 ​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
-                                    ​<span itemprop="name">UvA</span>
+                                    ​<span itemprop="name">the Roadhouse</span>
                                     ​
                                     <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
                                         <span itemprop="street-address">Science Park 904</span>,
@@ -100,7 +100,7 @@
                             </div>
                             <div class="meta">@
                                 ​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
-                                    ​<span itemprop="name">UvA</span>
+                                    ​<span itemprop="name">the Roadhouse</span>
                                     ​
                                     <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
                                         <span itemprop="street-address">Science Park 904</span>,
@@ -135,7 +135,7 @@
                             </div>
                             <div class="meta">@
                                 ​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
-                                    ​<span itemprop="name">UvA</span>
+                                    ​<span itemprop="name">the Roadhouse</span>
                                     ​
                                     <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
                                         <span itemprop="street-address">Science Park 904</span>,
