@@ -9,26 +9,26 @@
 
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Gebruikers toevoegen</h1></header>
-                <form>
+                <form action="newuser.php" method="post">
                     <label>Voornaam</label>
                     <input name="firstName" placeholder="Voornaam" autofocus required>
 
                     <label>Tussenvoegels, dan achternaam</label>
                     <input name="name" placeholder="Achternaam" required>
 
-                    <label>Bericht</label>
+                    <label>Email (tevens de login naam)</label>
                     <input name="email" type="email" placeholder="Email" required></textarea>
 
                     <label>Wachtwoord</label>
-                    <input name="email" placeholder="Wachtwoord" required></textarea>
+                    <input name="password" placeholder="Wachtwoord" required></textarea>
 
                     <label>Toegangsniveau</label>
                     <select name="accessLevel">
-						<option value="1">1 (Enkel evenementen toevoegen)</option>
-						<option value="2">2 (Volledige rechten)</option>
+                        <option value="1">1 (Enkel evenementen toevoegen)</option>
+                        <option value="2">2 (Volledige rechten)</option>
                     </select>
 
-                    <input id="button" name="submit" type="submit" value="Verstuur bericht">
+                    <input id="button" name="submit" type="submit" value="Voeg gebruiker toe">
                 </form>
 
             </section>
