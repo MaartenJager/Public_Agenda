@@ -55,7 +55,7 @@ h3, h4, h5 {
 
 /* Library ****************************************************************** */
 
-input.button {
+#button {
     display:block;
     width: 350px;
     height: 38px;
@@ -63,7 +63,7 @@ input.button {
     cursor:pointer;
 }
 
-input.button:hover {
+#button:hover {
         opacity:0.6;
 }
 

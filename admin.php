@@ -28,7 +28,7 @@
                     <option value="2">2 (Volledige rechten)</option>
                     </select>
 
-                    <input class="button" name="submit" type="submit" value="Verstuur bericht">
+                    <input id="button" name="submit" type="submit" value="Verstuur bericht">
                 </form>
 
             </section>
