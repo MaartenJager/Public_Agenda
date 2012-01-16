@@ -80,7 +80,7 @@ h3, h4, h5 {
     /* Properties of background */
     background: #BCEE68;
     background-image: url(img/header-top.png);
-    text-indent: -100em; }
+    text-indent: -100em;
 
     /* Properties of boundaries */
     border-bottom-style: solid;
