@@ -8,6 +8,7 @@
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main" role="main">
+                <header class="pageTitle"><h1>Events Accepteren</h1></header>
             </section>
 
             <?php require_once("inc/sidebar.inc"); ?>
