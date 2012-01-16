@@ -8,7 +8,7 @@
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main" role="main">
-                <header class="pageTitle"><h1>IGOR GIT SSH TESTWINDOWS LAPTOP</h1></header>
+                <header class="pageTitle"><h1>IGOR GIT SSH TESTWINOWS LAPTOP</h1></header>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 Mauris vel magna. Mauris risus nunc, tristique varius, gravida
                 in, lacinia vel, elit. Nam ornare, felis non faucibus molestie,
