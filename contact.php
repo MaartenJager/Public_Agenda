@@ -21,12 +21,6 @@
                     <label>Bericht</label>
                     <textarea name="message" placeholder="Type uw bericht" required></textarea>
 
-                    <label>Toegangsniveau</label>
-                    <select name="accessLevel">
-                    <option value="1">1 (Enkel evenementen toevoegen)</option>
-                    <option value="2">2 (Volledige rechten)</option>
-                    </select>
-
                     <input id="button" name="submit" type="submit" value="Verstuur bericht">
                 </form>
 
