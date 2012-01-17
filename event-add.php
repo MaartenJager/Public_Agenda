@@ -4,7 +4,7 @@
         echo("form called");
         
     }
-
+?>
 
 <!DOCTYPE html>
 <html lang="nl">
