@@ -11,7 +11,9 @@ $result=mysql_query($query);
 mysql_close();
 $num=mysql_numrows($result);
 $i=0;
+echo "hoi";
 while ($i < $num) {
+echo "hoi";
 $field1=mysql_result($result,$i,"title");
 $field2=mysql_result($result,$i,"createdBy");
 $field3=mysql_result($result,$i,"eventid");
