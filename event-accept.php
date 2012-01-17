@@ -16,7 +16,7 @@
                     <th>Review</th>
                 </tr>
                 <? 
-                virtual("/printNewEvents.php"); 
+                virtual("printNewEvents.php"); 
                 ?> 
                 <tr>
                     <td>Grand opening The Roadhouse</td>
