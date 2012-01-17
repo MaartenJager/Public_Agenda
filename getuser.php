@@ -8,7 +8,10 @@ if (!$con)
 mysql_select_db("webdb1241", $con);
 
 $name = $_POST['name'];
-$result = mysql_query("SELECT * FROM users WHERE name=$name");
+
+echo $name;
+
+$result = mysql_query("SELECT * FROM users WHERE name='Willems'");
 
 while($row = mysql_fetch_array($result))
     {
