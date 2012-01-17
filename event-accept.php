@@ -15,6 +15,9 @@
                     <th>Created by</th>
                     <th>Review</th>
                 </tr>
+                <? 
+                <?php include ('printNewEvents.php'); ?>
+                ?> 
                 <tr>
                     <td>Grand opening The Roadhouse</td>
                     <td>Maarten Jager</td>
