@@ -9,14 +9,12 @@ mysql_select_db("webdb1241", $con);
 
 $name = $_POST['name'];
 
-echo $name;
-
-$result = mysql_query("SELECT * FROM users WHERE name='Willems'");
+$result = mysql_query("SELECT * FROM users WHERE name='$name'");
 
 while($row = mysql_fetch_array($result))
     {
     echo "   ";
-    echo $row['id'] . " " . $row['firstName'] . " " . $row['name'];
+    echo "ID/Voornaam/Achternaam: " . $row['id'] . "/" . $row['firstName'] . "/" . $row['name'];
     echo "   ";
     }
 mysql_close($con);
