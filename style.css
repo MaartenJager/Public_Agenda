@@ -96,6 +96,7 @@ h3, h4, h5 {
     height: 35px;
 
     /* Properties of background */
+    
     background: #BCEE68;
     background-image: url(img/header-bottom.png);
 
@@ -128,8 +129,7 @@ h3, h4, h5 {
     border-style: solid;
     border-width: 1px;
     padding: 5px;
-    background-color: #66CD00;
-
+    background: -moz-linear-gradient(left, #66CD00 5%, #fff 100%)
 }
 
 #menu li a:active, #topMenu li a:hover {
@@ -157,7 +157,7 @@ h3, h4, h5 {
 
 
     /* Properties of background */
-    background: #f5f868;
+    background: -moz-linear-gradient(left, #f5f868 5%, #fff 100%)
 
     /* Properties of boundaries */
 
