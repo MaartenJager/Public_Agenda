@@ -147,6 +147,7 @@ h3, h4, h5 {
 
     /* Properties of placement */
     float: right;
+    margin-right:30px;
 }
 
 
@@ -159,9 +160,6 @@ h3, h4, h5 {
     background: #BCEE68;
 
     /* Properties of boundaries */
-    margin: 10px 0px 10px 10px;
-    border-style: solid;
-    border-width: 1px;
 
     /* Properties of placement */
     float: left;
