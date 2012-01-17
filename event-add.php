@@ -1,8 +1,8 @@
 <?php
     if ( ! empty( $_POST ) )
     {
-        // Do form stuff in here
-    }  
+        echo("test");
+    }
 ?>
 
 <!DOCTYPE html>
