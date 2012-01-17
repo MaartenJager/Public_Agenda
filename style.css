@@ -129,7 +129,7 @@ h3, h4, h5 {
     border-style: solid;
     border-width: 1px;
     padding: 5px;
-    background: -moz-linear-gradient(left, #66CD00 5%, #fff 100%)
+    background: -moz-linear-gradient(left, #66CD00 10%, #fff 100%);
 }
 
 #menu li a:active, #topMenu li a:hover {
