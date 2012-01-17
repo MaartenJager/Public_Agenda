@@ -157,12 +157,26 @@ h3, h4, h5 {
 
 
     /* Properties of background */
-    background: #BCEE68;
+    background: #f5f868;
 
     /* Properties of boundaries */
 
     /* Properties of placement */
     float: left;
+}
+
+#sidebar-imglist{
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+}
+
+#sidebar img{
+    margin-bottom: 15px;
+    height: 130px;
+    width: 130px;
 }
 
 #footer {
@@ -203,20 +217,6 @@ input:focus, textarea:focus {
 textarea {
     height:213px;
     background:url(img/form-bg.png) bottom right no-repeat #efefef;
-}
-
-#sidebar-imglist{
-    text-align: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-top: 15px;
-}
-
-#sidebar img{
-    margin-bottom: 15px;
-    height: 130px;
-    width: 130px;
 }
 
 #agenda .event{
