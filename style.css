@@ -157,7 +157,7 @@ h3, h4, h5 {
 
 
     /* Properties of background */
-    background: -moz-linear-gradient(left, #f5f868 5%, #fff 100%)
+    background: -moz-linear-gradient(left, #f5f868 5%, #fff 100%);
 
     /* Properties of boundaries */
 
