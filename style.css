@@ -154,13 +154,14 @@ h3, h4, h5 {
 #sidebar {
     /* Properties of size */
     width: 240px;
-
+    
 
     /* Properties of background */
-    background: -moz-linear-gradient(left, #f5f868 5%, #fff 100%);
+    background: -moz-linear-gradient(left, #f5f868 15%, #fff 100%);
 
     /* Properties of boundaries */
-
+    border-right: solid 1px;
+    border-bottom: solid 1px;
     /* Properties of placement */
     float: left;
 }
@@ -186,6 +187,8 @@ h3, h4, h5 {
 
     /* Properties of placement */
     clear: both;
+    
+    background: -moz-linear-gradient(left, #f5f868 15%, #fff 100%);
 }
 
 /* TODO: THESE REMAIN UNCHANGED UNTIL I KNOW WHAT THEY DO! */
