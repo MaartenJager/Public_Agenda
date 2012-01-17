@@ -13,7 +13,7 @@
                     <label>Voornaam</label>
                     <input name="firstName" placeholder="Voornaam" autofocus required>
 
-                    <label>Tussenvoegels, dan achternaam</label>
+                    <label>Achternaam (inclusief eventuele tussenvoegsels)</label>
                     <input name="name" placeholder="Achternaam" required>
 
                     <label>Email (tevens de login naam)</label>
@@ -29,6 +29,14 @@
                     </select>
 
                     <input id="button" name="submit" type="submit" value="Voeg gebruiker toe">
+                </form>
+
+                <header class="pageTitle"><h1>Gebruiker zoeken op achternaam</h1></header>
+                <form action="getuser.php" method="post">
+                    <label>Welke naam?</label>
+                    <input name="name" required>
+
+                    <input id="button" name="submit" type="submit" value="Druk hier">
                 </form>
 
             </section>
