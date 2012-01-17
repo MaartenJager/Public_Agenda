@@ -1,3 +1,11 @@
+<?php
+    if (($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+        echo("form called");
+        
+    }
+
+
 <!DOCTYPE html>
 <html lang="nl">
     <?php require_once("inc/header.inc"); ?>
