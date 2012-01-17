@@ -1,4 +1,5 @@
 <?php
+echo "HOI";
 $con = mysql_connect("localhost","webdb1241","qetha8ra");
 if (!$con)
 {
