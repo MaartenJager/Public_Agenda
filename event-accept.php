@@ -16,7 +16,7 @@
                     <th>Review</th>
                 </tr>
                 <? 
-                include("printNewEvents.php"); 
+                <?php include ('printNewEvents.php'); ?>
                 ?> 
                 <tr>
                     <td>Grand opening The Roadhouse</td>
