@@ -21,6 +21,6 @@ echo "<td>$field1</td>";
 echo "<td>$field2</td>";
 echo "<td>$field3</td>";
 echo "</tr>";
-$i++
+$i++;
 }
 ?>
