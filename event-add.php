@@ -1,9 +1,8 @@
 <?php
-    if (($_SERVER['REQUEST_METHOD'] == 'POST')
+    if ( ! empty( $_POST ) )
     {
-        echo("form called");
-        
-    }
+        // Do form stuff in here
+    }  
 ?>
 
 <!DOCTYPE html>
