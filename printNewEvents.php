@@ -1,5 +1,4 @@
 <?php
-echo "HOI";
 $con = mysql_connect("localhost","webdb1241","qetha8ra");
 if (!$con)
 {
@@ -12,17 +11,15 @@ $result=mysql_query($sql);
 mysql_close();
 $num=mysql_numrows($result);
 $i=0;
-echo "werk het al";
 while ($i < $num) {
-echo "hoi";
 $field1=mysql_result($result,$i,"title");
 $field2=mysql_result($result,$i,"createdBy");
-$field3=mysql_result($result,$i,"eventid");
+$field3=mysql_result($result,$i,"id");
 
 echo "<tr>";
 echo "<th>$field1</th>";
 echo "<th>$field2</th>";
-echo "<th>$field3</th>";
+echo "<th><a href=event-review.php?=$field3>Edit</th>";
 echo "</tr>";
 $i++;
 }
