@@ -15,19 +15,7 @@
                     <th>Created by</th>
                     <th>Review</th>
                 </tr>
-                <? 
                 <?php include ('printNewEvents.php'); ?>
-                ?> 
-                <tr>
-                    <td>Grand opening The Roadhouse</td>
-                    <td>Maarten Jager</td>
-                    <td><a href="event-review.php">Review</a></td>
-                </tr>
-                <tr>
-                    <td>2nd party n stuffs</td>
-                    <td>Maarten Jager</td>
-                    <td><a href="event-review.php">Review</a></td>
-                </tr>
                 </table> 
             </section>
 
