@@ -17,9 +17,9 @@ $field2=mysql_result($result,$i,"createdBy");
 $field3=mysql_result($result,$i,"eventid");
 
 echo "<tr>";
-echo "<td>$field1</td>"
-echo "<td>$field2</td>"
-echo "<td>$field3</td>"
+echo "<td>$field1</td>";
+echo "<td>$field2</td>";
+echo "<td>$field3</td>";
 echo "</tr>";
 $i++
 }
