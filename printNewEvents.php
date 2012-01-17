@@ -11,7 +11,7 @@ $result=mysql_query($query);
 mysql_close();
 $num=mysql_numrows($result);
 $i=0;
-echo "hoi";
+echo "<tr><td>hoi</td><td>teringzooi</td><td>werkt dit?</td></tr>";
 while ($i < $num) {
 echo "hoi";
 $field1=mysql_result($result,$i,"title");
