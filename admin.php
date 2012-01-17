@@ -39,6 +39,11 @@
                     <input id="button" name="submit" type="submit" value="Druk hier">
                 </form>
 
+                <header class="pageTitle"><h1>Alle gebruikers weergeven</h1></header>
+                <form action="get_alluser.php" method="post">
+                    <input id="button" name="submit" type="submit" value="Druk hier">
+                </form>
+
             </section>
 
             <?php require_once("inc/sidebar.inc"); ?>
