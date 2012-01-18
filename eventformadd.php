@@ -6,9 +6,9 @@ if (!$con)
     }
 mysql_select_db("webdb1241", $con);
 
-$sql="INSERT INTO events (title, beginDate, endDate, description, createdBy, image, creationDate, approvedBy)
+$sql="INSERT INTO events (title, beginDate, endDate, description)
 VALUES
-('$_POST[eventName]', '$_POST[eventDate]', '$_POST[eventDate]', '$_POST[eventDescription]')"
+('$_POST[eventName]', '$_POST[eventDate]', '$_POST[eventDate]', '$_POST[eventDescription]')";
 
 if (!mysql_query($sql,$con))
 {
