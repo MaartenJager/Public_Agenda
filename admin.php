@@ -9,7 +9,7 @@
 
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Gebruikers toevoegen</h1></header>
-                <form action="formhandler.php" method="post">
+                <form action="formhandler_pdo.php" method="post">
                     <label>Voornaam</label>
                     <input name="firstName" placeholder="Voornaam" autofocus required>
 
@@ -32,7 +32,7 @@
                 </form>
 
                 <header class="pageTitle"><h1>Gebruiker zoeken op achternaam</h1></header>
-                <form action="formhandler.php" method="post">
+                <form action="formhandler_pdo.php" method="post">
                     <label>Welke naam?</label>
                     <input name="name" required>
 
@@ -40,7 +40,7 @@
                 </form>
 
                 <header class="pageTitle"><h1>Alle gebruikers weergeven</h1></header>
-                <form action="formhandler.php" method="post">
+                <form action="formhandler_pdo.php" method="post">
                     <input id="button" name="getAllUsers" type="submit" value="Druk hier">
                 </form>
 
