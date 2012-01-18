@@ -8,6 +8,10 @@
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main" role="main">
+                <header class="pageTitle"><h1>Evenement bewerken</h1></header>
+                <p>Wilt u het volgende formulier invullen? Alle velden zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
+
+                <form action="formhandler.php?event_id=<?php echo $event_id; ?>" method="post">
                     <?php
                     $con = mysql_connect("localhost","webdb1241","qetha8ra");
                     if (!$con)
@@ -21,10 +25,9 @@
                     $result=mysql_query($sql);
                     mysql_close();
                     ?>
-                <header class="pageTitle"><h1>Evenement bewerken</h1></header>
-                <p>Wilt u het volgende formulier invullen? Alle velden zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
 
-                <form action="formhandler.php?event_id=<?php echo $event_id; ?>" method="post">
+                    <input type="hidden" name="event_id" value="<?php echo $event_id; ?>">
+
                     <label>Naam evenement</label>
                     <input name="eventName" value="<?php echo mysql_result($result,0,"title"); ?>" autofocus required>		
 
