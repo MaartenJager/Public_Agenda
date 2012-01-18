@@ -11,11 +11,13 @@ function isDatumValide()
 	if (checkdate($mm,$dd,$yy) && is_numeric($dd) && is_numeric($mm) && is_numeric($yy))
 	{
 		echo "Entry date is correct";
-		$date = $_POST[eventDate]	
+		$date = $_POST[eventDate];
+		return TRUE;
 	}
 	else
 	{
 		echo "invalid date";
+		return FALSE;
 	}
 }
 
@@ -32,13 +34,13 @@ if (isDatumVailde)
 	VALUES
 	('$_POST[eventName]', '$date', '$date', '$_POST[eventDescription]')";
 	
-	echo "TESTEN LUL";
+	echo "het werkt";
 	
 	mysql_close($con);
 }
 else
 {
-	echo "datumfoutttt";
+	echo "het werkt niet";
 }
 /*
 if (!mysql_query($sql,$con))
