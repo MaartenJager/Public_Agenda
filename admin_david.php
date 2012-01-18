@@ -22,7 +22,7 @@
         
         echo "De gebruiker is succesvol toegevoegd.";
 
-        mysql_close($con)
+        mysql_close($con);
     }
 ?>
 
