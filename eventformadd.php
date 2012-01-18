@@ -7,14 +7,15 @@ function isDatumValide($date)
 	$stamp = strtotime($date);
 	if (!is_numeric($stamp))
 	{
+		echo "date format is not correct = not numeric";
 		return FALSE;
-		echo "date format is not correct";
 	}
 	if (checkdate(date('d', $stamp), date('m', $stamp), date('Y', $stamp)))
 	{
-		return TRUE;
 		echo "date correct";
+		return TRUE;
 	}
+	echo "geen kalender datum wel correcte format";
 	return FALSE;
 }
 
@@ -37,7 +38,7 @@ if (isDatumVailde)
 }
 else
 {
-	echo "werkt niet Igor!";
+	echo "datumfoutttt";
 }
 /*
 if (!mysql_query($sql,$con))
