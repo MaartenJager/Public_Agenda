@@ -6,6 +6,7 @@
             die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt worden.');
         }
 
+        echo("vebinding met DB");
 
     }
 ?>
