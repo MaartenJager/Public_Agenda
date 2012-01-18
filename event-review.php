@@ -11,7 +11,7 @@
                 <header class="pageTitle"><h1>Evenement bewerken</h1></header>
                 <p>Wilt u het volgende formulier invullen? Alle velden zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
 
-                <form name="event-add" action="eventformadd.php" method="post">
+                <form action="formhandler.php" method="post">
                     <?php
                     $con = mysql_connect("localhost","webdb1241","qetha8ra");
                     if (!$con)
@@ -48,8 +48,8 @@
 
                     <label>Voeg een afbeelding toe</label>
                     <input type="file" name="datafile" />
-                    <input id="button" name="submit" type="submit" value="Submit" />
-                    <input id="button" name="delete" type="delete" value="Delete" />
+                    <input id="button" name="editEvent" type="submit" value="Submit" />
+                    <input id="button" name="deleteEvent" type="delete" value="Delete" />
                 </form>
             </section>
 
