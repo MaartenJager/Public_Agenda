@@ -1,7 +1,7 @@
 <?php
     if ( ! empty( $_POST ) )
     {
-
+        echo("test...");
     }
 ?>
 
