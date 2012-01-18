@@ -1,10 +1,3 @@
-<?php
-    if ( ! empty( $_POST ) )
-    {
-        echo("test");
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="nl">
     <?php require_once("inc/header.inc"); ?>
