@@ -8,7 +8,7 @@
             echo("Get user form gebruikt");
         }
 
-        else if (isset($_POST['getAllUsers '])) {
+        else if (isset($_POST['getAllUsers'])) {
             echo("Get user form gebruikt");
         }
     }
