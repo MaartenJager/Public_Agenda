@@ -44,7 +44,6 @@
         if (isset($_POST['getAllUsers'])) {
             echo("getAllUsers form gebruikt");
             
-            $name = $_POST['name'];
             $result = mysql_query("call test()");
             while($row = mysql_fetch_array($result))
                 {
