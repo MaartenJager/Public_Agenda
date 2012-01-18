@@ -5,7 +5,8 @@
         {
             die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt worden.');
         }
-            
+
+        /* addUser post action*/    
         if (isset($_POST['addUser'])) {
             mysql_select_db("webdb1241", $con);
 
@@ -22,10 +23,12 @@
             mysql_close($con)
         }
         
+        /* getUser post action*/  
         if (isset($_POST['getUser'])) {
             echo("Get user form gebruikt");
         }
 
+        /* getAllUsers post action*/
         if (isset($_POST['getAllUsers'])) {
             echo("Get user form gebruikt");
         }
