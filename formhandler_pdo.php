@@ -9,6 +9,7 @@
 
         try{
             $DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+            echo("Verbinding succesvol!");
         }
 
         catch(PDOException $e) {
