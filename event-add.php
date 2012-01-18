@@ -44,7 +44,6 @@
                         <input type="file" name="datafile" />
                         <input id="button" name="submit" type="submit" value="Submit" />
                 </form>
-
             </section>
 
             <?php require_once("inc/sidebar.inc"); ?>

@@ -1,14 +1,37 @@
 <?php
 $con = mysql_connect("localhost","webdb1241","qetha8ra");
 if (!$con)
-    {
-    die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt worden.');
-    }
+{
+	die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt worden.');
+}
 mysql_select_db("webdb1241", $con);
 
+$date = '$_POST[eventDate]';
+
+function isDatumValide($date)
+{
+	$stamp = strtotime($date)
+	if (!is_numeric($stamp))
+	{
+		return FALSE;
+		echo "date format is not correct";
+	}
+	if (checkdate(date('m', $stamp), date('d', $stamp), date('Y', $stamp)))
+	{
+		return TRUE;
+	}
+	return FALSE;
+}
+
+if (isDatumVailde)
+{
 $sql="INSERT INTO events (title, beginDate, endDate, description)
 VALUES
-('$_POST[eventName]', '$_POST[eventDate]', '$_POST[eventDate]', '$_POST[eventDescription]')";
+('$_POST[eventName]', '$date', '$date', '$_POST[eventDescription]')";
+
+
+}
+
 /*
 if (!mysql_query($sql,$con))
 {
