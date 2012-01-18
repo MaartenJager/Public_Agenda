@@ -8,7 +8,7 @@
         mysql_select_db("webdb1241", $con);
 
         /* addUser post action*/    
-        elseif (isset($_POST['addUser'])) {
+        if (isset($_POST['addUser'])) {
             echo("addUser form gebruikt");
 
             $sql="INSERT INTO users (name, firstName, email, password, accessLevel)
@@ -25,12 +25,12 @@
         }
         
         /* getUser post action*/  
-        elseif (isset($_POST['getUser'])) {
+        if (isset($_POST['getUser'])) {
             echo("Get user form gebruikt");
         }
 
         /* getAllUsers post action*/
-        elseif (isset($_POST['getAllUsers'])) {
+        if (isset($_POST['getAllUsers'])) {
             echo("Get user form gebruikt");
         }
 
