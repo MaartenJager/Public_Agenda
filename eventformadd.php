@@ -1,23 +1,22 @@
 <?php
+$date = "INITIALIZE";
 
-$date = $_POST[eventDate];
-
-function isDatumValide($date)
+function isDatumValide()
 {
-
-	if (date('d-m-Y', strtotime($date))
+	$arr=split("-", $_POST[eventDate]); // splitting the array
+	
+	$dd=$arr[0]; // first element is day
+	$mm=$arr[1]; // second element of the array is month
+	$yy=$arr[2]; // third element is year
+	if (checkdate($mm,$dd,$yy) && is_numeric($dd) && is_numeric($mm) && is_numeric($yy))
 	{
-		echo "date correct";
-		return TRUE;
+		echo "Entry date is correct";
+		$date = $_POST[eventDate]	
 	}
-	$stamp = strtotime($date);
-	if (!is_numeric($stamp))
+	else
 	{
-		echo "date format is not correct = not numeric";
-		return FALSE;
+		echo "invalid date";
 	}
-	echo "geen kalender datum wel correcte format";
-	return FALSE;
 }
 
 if (isDatumVailde)
