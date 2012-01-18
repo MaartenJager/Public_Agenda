@@ -9,6 +9,19 @@
         /* addUser post action*/    
         if (isset($_POST['addUser'])) {
             echo("addUser form gebruikt");
+            mysql_select_db("webdb1241", $con);
+
+            $sql="INSERT INTO users (name, firstName, email, password, accessLevel)
+            VALUES
+            ('$_POST[name]','$_POST[firstName]','$_POST[email]','$_POST[password]','$_POST[accessLevel]')";
+
+            if (!mysql_query($sql,$con))
+            {
+                die('Er is een fout opgetreden.');
+            }
+
+            echo "De gebruiker is succesvol toegevoegd.";
+            mysql_close($con)
         }
         
         /* getUser post action*/  
