@@ -27,6 +27,17 @@
         /* getUser post action*/  
         if (isset($_POST['getUser'])) {
             echo("Get user form gebruikt");
+
+            $name = $_POST['name'];
+            $result = mysql_query("SELECT * FROM users WHERE name='$name'");
+
+            while($row = mysql_fetch_array($result))
+                {
+                echo "   ";
+                echo "ID/Voornaam/Achternaam: " . $row['id'] . "/" . $row['firstName'] . "/" . $row['name'];
+                echo "   ";
+                }
+            mysql_close($con);
         }
 
         /* getAllUsers post action*/
