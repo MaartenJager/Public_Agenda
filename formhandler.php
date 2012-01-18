@@ -5,11 +5,11 @@
         {
             die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt worden.');
         }
+        mysql_select_db("webdb1241", $con);
 
         /* addUser post action*/    
-        if (isset($_POST['addUser'])) {
+        elseif (isset($_POST['addUser'])) {
             echo("addUser form gebruikt");
-            mysql_select_db("webdb1241", $con);
 
             $sql="INSERT INTO users (name, firstName, email, password, accessLevel)
             VALUES
@@ -25,12 +25,12 @@
         }
         
         /* getUser post action*/  
-        if (isset($_POST['getUser'])) {
+        elseif (isset($_POST['getUser'])) {
             echo("Get user form gebruikt");
         }
 
         /* getAllUsers post action*/
-        if (isset($_POST['getAllUsers'])) {
+        elseif (isset($_POST['getAllUsers'])) {
             echo("Get user form gebruikt");
         }
 
