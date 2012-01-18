@@ -17,7 +17,7 @@
 
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Gebruikers toevoegen</h1></header>
-                <form action="newuser.php" method="post">
+                <form action="admin_david.php" method="post">
                     <label>Voornaam</label>
                     <input name="firstName" placeholder="Voornaam" autofocus required>
 
