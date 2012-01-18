@@ -4,16 +4,17 @@ $date = $_POST[eventDate];
 
 function isDatumValide($date)
 {
+
+	if (date('d-m-Y', strtotime($date))
+	{
+		echo "date correct";
+		return TRUE;
+	}
 	$stamp = strtotime($date);
 	if (!is_numeric($stamp))
 	{
 		echo "date format is not correct = not numeric";
 		return FALSE;
-	}
-	if (checkdate(date('d', $stamp), date('m', $stamp), date('Y', $stamp)))
-	{
-		echo "date correct";
-		return TRUE;
 	}
 	echo "geen kalender datum wel correcte format";
 	return FALSE;
