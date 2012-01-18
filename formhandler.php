@@ -58,7 +58,7 @@
         if (isset($_POST['deleteEvent'])) {
             echo("deleteEvent form gebruikt");
 
-            $sql="DELETE FROM `webdb1241`.`events` WHERE `events`.`id` = ".$event_id;
+            $sql="DELETE FROM `webdb1241`.`events` WHERE `events`.`id` = ".&_GET['event_id'];
 
             if (!mysql_query($sql,$con))
             {
