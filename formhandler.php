@@ -26,7 +26,7 @@
         
         /* getUser post action*/  
         if (isset($_POST['getUser'])) {
-            echo("Get user form gebruikt");
+            echo("getUser form gebruikt");
 
             $name = $_POST['name'];
             $result = mysql_query("SELECT * FROM users WHERE name='$name'");
@@ -42,7 +42,7 @@
 
         /* getAllUsers post action*/
         if (isset($_POST['getAllUsers'])) {
-            echo("Get user form gebruikt");
+            echo("getAllUsers form gebruikt");
             
             $name = $_POST['name'];
             $result = mysql_query("call test()");
