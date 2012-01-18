@@ -9,7 +9,7 @@ mysql_select_db("webdb1241", $con);
 
 $name = $_POST['name'];
 
-$result = mysql_query("call test()");
+$result = mysql_query("SELECT * FROM users WHERE name='$name'");
 
 while($row = mysql_fetch_array($result))
     {
