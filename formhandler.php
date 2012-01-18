@@ -54,5 +54,19 @@
             mysql_close($con);
         }
 
+        /* deleteEvent post action*/
+        if (isset($_POST['deleteEvent'])) {
+            echo("deleteEvent form gebruikt");
+
+            $sql="DELETE FROM `webdb1241`.`events` WHERE `events`.`id` = ".$event_id;
+
+            if (!mysql_query($sql,$con))
+            {
+                die('Er is een fout opgetreden.');
+            }
+
+            echo "Het event is succesvol verwijderd.";
+            mysql_close($con);
+        }
     }
 ?>
