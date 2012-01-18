@@ -1,15 +1,3 @@
-<?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if (isset($_POST['addUser'])) {
-            echo("Add user form gebruikt");
-        }
-        else if (isset($_POST['getUser'])) {
-            echo("Get user form gebruikt");
-        }
-    }
-?>
-
-
 <!DOCTYPE html>
 <html lang="nl">
     <?php require_once("inc/header.inc"); ?>
@@ -21,7 +9,7 @@
 
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Gebruikers toevoegen</h1></header>
-                <form action="" name="addUser" method="post">
+                <form action="formhandler.php" name="addUser" method="post">
                     <label>Voornaam</label>
                     <input name="firstName" placeholder="Voornaam" autofocus required>
 
@@ -44,7 +32,7 @@
                 </form>
 
                 <header class="pageTitle"><h1>Gebruiker zoeken op achternaam</h1></header>
-                <form action="" name="getUser" method="post">
+                <form action="formhandler.php" name="getUser" method="post">
                     <label>Welke naam?</label>
                     <input name="name" required>
 
@@ -52,7 +40,7 @@
                 </form>
 
                 <header class="pageTitle"><h1>Alle gebruikers weergeven</h1></header>
-                <form action="get_alluser.php" method="post">
+                <form action="formhandler.php" name="getAllUsers" method="post">
                     <input id="button" name="submit" type="submit" value="Druk hier">
                 </form>
 
