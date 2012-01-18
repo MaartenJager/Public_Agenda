@@ -12,8 +12,21 @@
                 <p>Wilt u het volgende formulier invullen? Alle velden zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
 
                 <form name="event-add" action="eventformadd.php" method="post">
+                    <?php
+                    $con = mysql_connect("localhost","webdb1241","qetha8ra");
+                    if (!$con)
+                    {
+                    die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt worden.');
+                    }
+
+                    mysql_select_db("webdb1241", $con);
+                    $event_id=$_GET["event_id"];
+                    $sql="SELECT * FROM events WHERE id=" . $event_id;
+                    $result=mysql_query($sql);
+                    mysql_close();
+                    ?>
                     <label>Naam evenement</label>
-                    <input name="eventName" placeholder="Voer naam in" autofocus required>		
+                    <input name="eventName" placeholder="<?php echo mysql_result($result,0,"title"; ?>" autofocus required>		
 
                     <label>Datum</label>
                     <input name="eventDate" placeholder="bv. 01-01-2012" required>
