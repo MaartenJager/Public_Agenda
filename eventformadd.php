@@ -21,7 +21,7 @@ function isDatumValide($date)
 	return FALSE;
 }
 
-if (isDatumVailde($date))
+if (isDatumVailde)
 {
 	$con = mysql_connect("localhost","webdb1241","qetha8ra");
 	if (!$con)
