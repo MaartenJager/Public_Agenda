@@ -1,9 +1,6 @@
 <?php
 
-/*
 $date = $_POST[eventDate];
-*/
-$date = "10-10-2000";
 
 function isDatumValide($date)
 {
