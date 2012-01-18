@@ -19,7 +19,7 @@ $field3=mysql_result($result,$i,"id");
 echo "<tr>";
 echo "<th>$field1</th>";
 echo "<th>$field2</th>";
-echo "<th><a href=event-review.php?=$field3>Edit</th>";
+echo "<th><a href=event-review.php?event_id=$field3>Edit</th>";
 echo "</tr>";
 $i++;
 }
