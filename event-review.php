@@ -26,7 +26,7 @@
                     mysql_close();
                     ?>
                     <label>Naam evenement</label>
-                    <input name="eventName" placeholder="<?php echo mysql_result($result,0,"title"); ?>" autofocus required>		
+                    <input name="eventName" value="<?php echo mysql_result($result,0,"title"); ?>" autofocus required>		
 
                     <label>Datum</label>
                     <input name="eventDate" placeholder="bv. 01-01-2012" required>
