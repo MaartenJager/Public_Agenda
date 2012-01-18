@@ -1,5 +1,5 @@
 <?php
-    <?php require_once("conf.php    "); ?>
+    <?php require_once("conf.php"); ?>
 
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
