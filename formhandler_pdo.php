@@ -1,14 +1,12 @@
 <?php
-    $host   = "localhost";
-    $dbname = "webdb1241";
-    $user   = "webdb1241";
-    $pass   = "qetha8ra";
+    <?php require_once("conf.php    "); ?>
 
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+        /* Create DB connection */
         try{
-            $DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+            $DBH = new PDO("mysql:host=$DB_host;dbname=$DB_name", $DB_user, $DB_pass);
             echo("Verbinding succesvol!");
         }
 
@@ -33,5 +31,8 @@
             mysql_close($con);
         }
         */
+
+        /* Close connection */
+        $DBH = null;
     }
 ?>
