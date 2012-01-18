@@ -6,7 +6,20 @@
             die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt worden.');
         }
 
-        echo("vebinding met DB");
+        /* addUser post action*/    
+        if (isset($_POST['addUser'])) {
+            echo("addUser form gebruikt");
+        }
+        
+        /* getUser post action*/  
+        if (isset($_POST['getUser'])) {
+            echo("Get user form gebruikt");
+        }
+
+        /* getAllUsers post action*/
+        if (isset($_POST['getAllUsers'])) {
+            echo("Get user form gebruikt");
+        }
 
     }
 ?>
