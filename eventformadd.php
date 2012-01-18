@@ -6,7 +6,7 @@ if (!$con)
 }
 mysql_select_db("webdb1241", $con);
 
-$date = '$_POST[eventDate]';
+$date = $_POST[eventDate];
 
 function isDatumValide($date)
 {
@@ -16,9 +16,10 @@ function isDatumValide($date)
 		return FALSE;
 		echo "date format is not correct";
 	}
-	if (checkdate(date('m', $stamp), date('d', $stamp), date('Y', $stamp)))
+	if (checkdate(date('d', $stamp), date('m', $stamp), date('Y', $stamp)))
 	{
 		return TRUE;
+		echo "date correct";
 	}
 	return FALSE;
 }
@@ -28,8 +29,6 @@ if (isDatumVailde)
 $sql="INSERT INTO events (title, beginDate, endDate, description)
 VALUES
 ('$_POST[eventName]', '$date', '$date', '$_POST[eventDescription]')";
-
-
 }
 
 /*
