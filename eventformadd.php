@@ -19,7 +19,7 @@ function isDatumValide($date)
 	return FALSE;
 }
 
-if (isDatumVailde)
+if (isDatumVailde($date))
 {
 	$con = mysql_connect("localhost","webdb1241","qetha8ra");
 	if (!$con)
@@ -36,12 +36,15 @@ if (isDatumVailde)
 	
 	mysql_close($con);
 }
-
+else
+{
+	echo "werkt niet Igor!";
+}
 /*
 if (!mysql_query($sql,$con))
 {
 	die('Error: ' . mysql_error());
 }
 */
-echo "werkt niet Igor!";
+
 ?> 
