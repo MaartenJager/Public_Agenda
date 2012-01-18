@@ -1,17 +1,38 @@
 <?php
+    /* http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/ */
     require_once("conf.php");
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-        /* Create DB connection */
+        /* Try to create a new DB connection
+         * DBH: Database Handle
+         */
         try{
             $DBH = new PDO("mysql:host=$DB_host;dbname=$DB_name", $DB_user, $DB_pass);
+
+            /* Set error mode. Fire an exception in case of errors */
+            $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo("Verbinding succesvol!");
         }
 
         catch(PDOException $e) {
             echo $e->getMessage();
         }
+
+        try{
+            # STH: "Statement Handle"
+            echo("in tweede try..");
+            $STH = $DBH->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
+                values
+                ('$_POST[name]','$_POST[firstName]','$_POST[email]','$_POST[password]','$_POST[accessLevel]') ");
+            $STH->execute();
+        }
+
+        catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+
+
 
         /* addUser post action
         if (isset($_POST['addUser'])) {
