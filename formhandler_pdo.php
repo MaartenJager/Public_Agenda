@@ -25,7 +25,7 @@
             $STH = $DBH->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
                 values
                 ('$_POST[name]','$_POST[firstName]','$_POST[email]','$_POST[password]','$_POST[accessLevel]') ");
-            $STH->execute();
+            //$STH->execute();
         }
 
         catch(PDOException $e) {
