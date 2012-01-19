@@ -22,7 +22,7 @@
                     require_once("inc-conf.php");
                     require("inc-dbcon.php");
 
-                    $sth = $dbh->prepare("SELECT name, colour FROM fruit");
+                    $sth = $dbh->prepare("SELECT * FROM events WHERE approvedBy=0");
                     $sth->execute();
 
                 ?>
