@@ -31,13 +31,14 @@
                         <?php
                             // showing the results
                             while($row = $sth->fetch() ){
-                                echo $row->id . "\n";
-                                echo $row->name . "\n";
-                                echo $row->firstName . "\n";
-                                echo $row->email . "\n";
-                                echo $row->password . "\n";
-                                echo $row->accessLevel . "\n";
-                                echo "\n";
+                                echo "<tr>";
+                                echo "<td>" . $row->id . "</td>\n";
+                                echo "<td>" . $row->name . "</td>\n";
+                                echo "<td>" . $row->firstName . "</td>\n";
+                                echo "<td>" . $row->email . "</td>\n";
+                                echo "<td>" . $row->password . "</td>\n";
+                                echo "<td>" . $row->accessLevel . "</td>\n";
+                                echo "</tr>\n";
                             }
                         ?>
                     </td>
