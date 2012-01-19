@@ -22,7 +22,7 @@
                     require_once("inc-conf.php");
                     require("inc-dbcon.php");
 
-                    $sth = $dbh->query("SELECT * FROM events WHERE approvedBy=0");
+                    $sth = $dbh->query("SELECT * FROM users");
                     //config fetch mode (return an object)
                     $sth->setFetchMode(PDO::FETCH_OBJ);
 
