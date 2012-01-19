@@ -3,11 +3,8 @@
     require_once("inc-conf.php");
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-        /* Try to create a new DB connection
-         * DBH: Database Handle
-         */
-
+        /* Connect to DB */
+        require("inc-dbcon.php");
 
         try{
             # STH: "Statement Handle"
@@ -15,6 +12,7 @@
             $STH = $DBH->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
                 values
                 ('$_POST[name]','$_POST[firstName]','$_POST[email]','$_POST[password]','$_POST[accessLevel]') ");
+
             $STH->execute();
         }
 
