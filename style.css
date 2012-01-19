@@ -137,6 +137,37 @@ textarea {
     margin-top: 15px;
 }
 
+/* Generic table layout */
+table{
+    border-collapse: collapse;
+    border: 1px solid ;
+    font-size: 10pt;
+}
+
+td, th{
+    border: 1px dotted #03476F;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 25px;    /* Extra width of every cell */
+}
+
+thead th, tfoot th{
+    font-size: 12px;
+    border: 1px solid #03476F;
+    background: #FF9933; /* Background color table header */
+    color: #FFFFFF; /* Text white in table header */
+    padding-top:3px;
+}
+
+
+
+
+.odd {
+  background: #AEE239;
+  }
+
+
+
 /* PAGE-SPECIFIC ************************************************************ */
 
 /* If you add stuff to this portion, describe what page uses it, why you
