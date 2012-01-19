@@ -22,13 +22,14 @@
                     require_once("inc-conf.php");
                     require("inc-dbcon.php");
 
-                    $sth = $dbh->prepare("SELECT * FROM events WHERE approvedBy=0");
+                    $sth = $dbh->query("SELECT * FROM events WHERE approvedBy=0");
                     $sth->execute();
 
                     /* Fetch all of the remaining rows in the result set */
                     print("Fetch all of the remaining rows in the result set:\n");
                     $result = $sth->fetchAll();
                     print_r($result);
+
                 ?>
 
                 <div id="addUser">
