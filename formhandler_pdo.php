@@ -33,6 +33,15 @@
         }
 
 
+        try{
+            echo("in derde try..");
+            -$STH->execute();
+        }
+
+        catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+
 
         /* addUser post action
         if (isset($_POST['addUser'])) {
