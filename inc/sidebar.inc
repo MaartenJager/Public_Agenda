@@ -1,7 +1,5 @@
 
             <aside id="sidebar">
-                <ul id="sidebar-imglist">
-					<li><img src="img/sidebar-1.jpg" alt="Image concerthall 1" /></li>
-					<li><img src="img/sidebar-2.jpg" alt="Image concerthall 2" /></li>
-				</ul>
+			    <p><img src="sidebar-1.jpg" alt="Image concerthall 1" /></p>
+				<p><img src="sidebar-2.jpg" alt="Image concerthall 2" /></p>
             </aside>

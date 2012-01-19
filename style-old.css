@@ -1,0 +1,335 @@
+/* Goede tutorial over CSS selectors: http://www.w3.org/TR/CSS2/selector.html
+ * "CSS Handleiding"
+ *
+ * Een korte documentatie van onze CSS en een voorstel voor de stijl ervan.
+ *
+ * Inmiddels is de CSS volledig herschreven naar een nieuwe stijl, met als doel dat deze beter leesbaar is. We hebben gekozen voor één CSS bestand voor de hele site. Dat is handig, maar dan moet die wel leesbaar blijven. Hieronder geef ik een voorstel voor de opbouw van onze CSS, gebasseerd op informatie op het internet en wat eigen input. Vrijdag beslissen we hierover.
+ *
+ * 1. De CSS bestaat uit vier grote onderdelen:
+ *  - UNIVERSAL
+ *  Bevat specificaties voor alle belangrijke html tags zoals <body>, <p>, <h1>, etc.
+ *  Dit kun je zien als een soort "default" waarde.
+ *
+ *  - LIBRARY
+ *  Bevat specificaties die handig zijn voor meerdere plekken op de site.
+ *  Denk aan een standaard formaat en omlijsting voor plaatjes, etc.
+ *
+ *  - LAYOUT
+ *  Bevat specificaties voor de klassen, zoals MAIN en SIDEBAR.
+ *
+ *  - SPECIFIC
+ *  Bevat specificaties die slechts op één onderdeel van de site gebruikt wordt, en daarmee niet boeiend zijn voor de library.
+ *
+ * 2. Ieder CSS onderdeel wordt duidelijk benoemd:
+ *  - Er zijn vijf standaard onderdelen die benoemd worden in onze CSS code:
+ * Properties of text, size, background, boundaries, en placement.
+ *- Alles wat niet onder deze vijf standaarden valt, moet duidelijk commenten worden.
+ *
+ * Ik hoop dat de CSS zo duidelijk voor iedereen is en zou iedereen willen vragen alle CSS voortaan in deze stijl te schrijven.
+ *
+*/
+
+/* Universal **************************************************************** */
+html {
+    overflow-y: scroll; /* Always display scrollbars */
+}
+
+body {
+    /* Properties of text */
+    font: 16px Calibri, Arial, Verdana;
+    text-align: left;
+
+    /* Properties of size */
+    width: 960px;
+
+    /* Properties of background */
+    background: #F1EDC2;
+
+    /* Properties of boundaries */
+    border-style: solid;
+    border-width: 1px;
+
+    /* Properties of placement */
+    margin: 0 auto 0 auto;
+
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 50%;
+    text-align: left;
+    color: #000;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 50%;
+    text-align: left;
+    color: #000;
+}
+
+h3, h4, h5 {
+    font-size: 24px;
+    line-height: 50%;
+    text-align: left;
+    color: #000;
+}
+
+/* Library ****************************************************************** */
+
+#button {
+    display:block;
+    height: 38px;
+    margin-top: 20px;
+    cursor:pointer;
+}
+
+#button:hover {
+        opacity:0.6;
+}
+
+/* Layout ******************************************************************* */
+
+#container {
+    /* Properties of background */
+    background: #FFF;
+}
+
+#header {
+    /* Properties of size */
+    height: 128px;
+
+    /* Properties of background */
+    background: #BCEE68;
+    background-image: url(img/header-top.png);
+    text-indent: -100em;
+
+    /* Properties of boundaries */
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+#menu {
+    /* Properties of text */
+    text-align: center;
+    list-style: none;
+
+    /* Properties of size */
+    height: 35px;
+
+    /* Properties of background */
+
+    background: #BCEE68;
+    background-image: url(img/header-bottom.png);
+
+    /* Properties of boundaries */
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+#menu ul {
+    /* Properties of text */
+    margin-top: -10px;
+    list-style: none;
+    padding: 0;
+    text-align:center;
+}
+
+#menu li {
+    /* Properties of text */
+    display: inline;
+}
+
+#menu li a:link, a:visited {
+    /* Properties of text */
+    color: black;
+    text-decoration: none;
+    font-variant: small-caps;
+
+    /* Create box around the buttons */
+    margin-top: 30px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+    background: -moz-linear-gradient(left, #66CD00 10%, #fff 100%);
+}
+
+#menu li a:active, #topMenu li a:hover {
+    /* Create effect when a button is pressed */
+    padding-bottom: 16px;
+    border-bottom-style: hidden;
+}
+
+#main {
+    /* Properties of background */
+    background: #FFF;
+
+    /* Properties of size */
+    width: 650px;
+
+    /* Properties of placement */
+    float: right;
+    margin-right:30px;
+}
+
+
+#sidebar {
+    /* Properties of size */
+    width: 240px;
+
+
+    /* Properties of background */
+    background: -moz-linear-gradient(left, #f5f868 15%, #fff 100%);
+
+    /* Properties of boundaries */
+    border-right: solid 1px;
+    border-bottom: solid 1px;
+    /* Properties of placement */
+    float: left;
+}
+
+#sidebar-imglist{
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+}
+
+#sidebar img{
+    margin-bottom: 15px;
+    height: 130px;
+    width: 130px;
+}
+
+#footer {
+    /* Properties of text */
+    text-align: center;
+
+    /* Properties of placement */
+    clear: both;
+
+    background: -moz-linear-gradient(left, #f5f868 15%, #fff 100%);
+}
+
+/* TODO: THESE REMAIN UNCHANGED UNTIL I KNOW WHAT THEY DO! */
+
+/* Used to format forms (used on contact page) */
+label {
+    display:block;
+    margin-top:10px;
+    letter-spacing:2px;
+}
+
+input, textarea {
+    width: 300px;
+    background:#efefef;
+    border:1px solid #dedede;
+    padding:6px;
+    margin-top:3px;
+    font-size:0.9em;
+    color:#3a3a3a;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+
+input:focus, textarea:focus {
+    border:1px solid #97d6eb;
+}
+
+textarea {
+    height:213px;
+    background:url(img/form-bg.png) bottom right no-repeat #efefef;
+}
+
+#agenda .event{
+    height: 85px;
+    margin-bottom: 5px; /* space between two events */
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-right-style:none;
+}
+
+#agenda .event.even{
+    background-color: #9AF6BF;
+
+}
+
+#agenda .event.odd{
+    background-color: #FFF3A0;
+}
+
+#agenda .event .date {
+    width: 85px;
+    height:85px;
+    float: left;
+    text-align: center;
+}
+
+#agenda .event .day{
+    font-size: 28pt;
+}
+
+#agenda .event .comment {
+    /*border:1px solid red; /* tmp, make borders visible while devving*/
+    display: inline;
+    width: 450px;
+    height: 50px;
+    margin-top: 5px;
+    float:left;
+    font-size: 11pt;
+}
+
+#agenda .event .comment .summary{
+    font-weight: bold;
+}
+
+#agenda .event .comment .description{
+    margin-bottom: 0px; /* space between summary and meta-info*/
+    height: 60%;
+    text-overflow:ellipsis;
+
+    /* Create '..." in case of overflow */
+    overflow-x: hidden;
+    /*white-space: nowrap*/
+}
+
+#agenda .event .comment .meta{
+    color: gray;
+    font-size: 9pt;
+}
+
+#agenda .event img{
+    float: right;
+    height: 85px;
+    width: 85px;
+    float: right;
+}
+
+
+
+
+/* Hieronder: Dit is voor de event-add pagina */
+checkboxlabel {
+    display: inline;
+}
+
+
+#formCheckbox{
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    margin-left:3px;
+    margin-top: 15px;
+}
+/* Hierboven: Dit is voor de event-add pagina */
