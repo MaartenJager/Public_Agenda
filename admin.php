@@ -10,36 +10,41 @@
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Gebruikersbeheer</h1></header>
 
-                <table border="1">
-                    <tr>
-                        <th>Event title</th>
-                        <th>Created by</th>
-                        <th>Review</th>
-                    </tr>
-                </table>
-
                 <?php
                     require_once("inc-conf.php");
                     require("inc-dbcon.php");
 
                     $sth = $dbh->query("SELECT * FROM users");
-                    //config fetch mode (return an object)
                     $sth->setFetchMode(PDO::FETCH_OBJ);
-
                     $sth->execute();
-
-                    # showing the results
-                    while($row = $sth->fetch() ){
-                        echo $row->id . "\n";
-                        echo $row->name . "\n";
-                        echo $row->firstName . "\n";
-                        echo $row->email . "\n";
-                        echo $row->password . "\n";
-                        echo $row->accessLevel . "\n";
-                        echo "\n";
-                        }
-
                 ?>
+
+
+                <table border="1">
+                    <tr>
+                        <th>Voornaam</th>
+                        <th>Achternaam</th>
+                        <th>E-mail</th>
+                        <th>Toegansniveau</th>
+                    </tr>
+                    <td>
+                        <?php
+                            // showing the results
+                            while($row = $sth->fetch() ){
+                                echo $row->id . "\n";
+                                echo $row->name . "\n";
+                                echo $row->firstName . "\n";
+                                echo $row->email . "\n";
+                                echo $row->password . "\n";
+                                echo $row->accessLevel . "\n";
+                                echo "\n";
+                            }
+                        ?>
+                    </td>
+
+                </table>
+
+
 
                 <div id="addUser">
                     <form action="formhandler_pdo.php" method="post">
