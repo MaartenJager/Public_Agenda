@@ -8,9 +8,8 @@
         /* Connect to DB */
         require("inc-dbcon.php");
 
-        /* addUser post action */
-        if (isset($_POST['addUser'])) {
-            try{
+
+        try{
                 echo("in tweede try..");
 
                 /* Prepare statement */
@@ -31,6 +30,9 @@
             catch(PDOException $e) {
                 echo $e->getMessage();
             }
+
+        /* addUser post action
+        if (isset($_POST['addUser'])) {
 
         }
         */
