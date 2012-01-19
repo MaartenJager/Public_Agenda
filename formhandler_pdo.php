@@ -10,6 +10,18 @@
 
         /* addUser post action */
         if (isset($_POST['addUser'])) {
+            try{
+                echo("in tweede try..");
+
+                //Prepare statement
+                $STH = $DBH->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
+                    values
+                    (:name, :firstName, :email, :password, :accessLevel) ");
+            }
+
+            catch(PDOException $e) {
+                echo $e->getMessage();
+            }
 
         }
 
