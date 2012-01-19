@@ -16,8 +16,12 @@
                         <th>Created by</th>
                         <th>Review</th>
                     </tr>
-                    <?php include ('printNewEvents.php'); ?>
                 </table>
+
+                <?php
+                    require_once("inc-conf.php");
+                    require("inc-dbcon.php");
+                ?>
 
                 <form action="formhandler_pdo.php" method="post">
                     <label>Voornaam</label>
@@ -39,14 +43,6 @@
                     </select>
 
                     <input id="button" name="addUser" type="submit" value="Voeg gebruiker toe">
-                </form>
-
-                <header class="pageTitle"><h1>Gebruiker zoeken op achternaam</h1></header>
-                <form action="formhandler_pdo.php" method="post">
-                    <label>Welke naam?</label>
-                    <input name="name" required>
-
-                    <input id="button" name="getUser" type="submit" value="Druk hier">
                 </form>
 
             </section>
