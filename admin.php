@@ -23,12 +23,21 @@
                     require("inc-dbcon.php");
 
                     $sth = $dbh->query("SELECT * FROM events WHERE approvedBy=0");
+                    //config fetch mode (return an object)
+                    $STH->setFetchMode(PDO::FETCH_OBJ);
+
                     $sth->execute();
 
-                    /* Fetch all of the remaining rows in the result set */
-                    print("Fetch all of the remaining rows in the result set:\n");
-                    $result = $sth->fetchAll();
-                    print_r($result);
+                    # showing the results
+                    while($row = $STH->fetch()) {
+                    echo $row->id . "\n";
+                    echo $row->name . "\n";
+                    echo $row->firstName . "\n";
+                    echo $row->email . "\n";
+                    echo $row->password . "\n";
+                    echo $row->accessLevel . "\n";
+                    echo "\n";
+                }
 
                 ?>
 
