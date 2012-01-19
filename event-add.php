@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
     <head>
-        <title>The Roadhouse - Home</title>
+        <title>The Roadhouse - Een evenement toevoegen</title>
         <?php require_once("inc/header.inc"); ?>
     </head>
     
@@ -21,10 +21,10 @@
                     <label>Datum</label>
                     <input name="eventDate" placeholder="bv. 01-01-2012" required>
 
-                    <label>Beschrijving van het event</label>
+                    <label>Beschrijving van het evenement</label>
                     <textarea name="eventDescription" placeholder="Voer beschrijving in" required></textarea>			        		
 
-                    <label>Kies de categorie&#235;n die bij het event horen</label>
+                    <label>Kies de categorie&#235;n die bij het evenement horen</label>
                     <div id="checkbox_list">
                         <ul>
                             <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
