@@ -9,8 +9,7 @@
         require("inc-dbcon.php");
 
         /* addUser post action */
-        if (isset($_POST['addUser'])) {
-
+        if(isset($_POST['addUser'])){
             try{
                 //Prepare statement
                 $STH = $DBH->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
@@ -30,6 +29,12 @@
             catch(PDOException $e) {
                 echo $e->getMessage();
             }
+
+            $DBH = null;
+        }
+
+        elseif(isset($_POST['addUser'])){
+
         }
     }
 ?>

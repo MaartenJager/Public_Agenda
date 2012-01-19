@@ -8,41 +8,44 @@
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main" role="main">
-                <header class="pageTitle"><h1>Gebruikers toevoegen</h1></header>
-                <form action="formhandler_pdo.php" method="post">
-                    <label>Voornaam</label>
-                    <input name="firstName" placeholder="Voornaam" autofocus required>
+                <header class="pageTitle"><h1>Gebruikersbeheer</h1></header>
 
-                    <label>Achternaam (inclusief eventuele tussenvoegsels)</label>
-                    <input name="name" placeholder="Achternaam" required>
+                <table border="1">
+                    <tr>
+                        <th>Event title</th>
+                        <th>Created by</th>
+                        <th>Review</th>
+                    </tr>
+                </table>
 
-                    <label>Email (tevens de login naam)</label>
-                    <input name="email" type="email" placeholder="Email" required></textarea>
+                <?php
+                    require_once("inc-conf.php");
+                    require("inc-dbcon.php");
+                ?>
 
-                    <label>Wachtwoord</label>
-                    <input name="password" placeholder="Wachtwoord" required></textarea>
+                <div id="addUser">
+                    <form action="formhandler_pdo.php" method="post">
+                        <label>Voornaam</label>
+                        <input name="firstName" placeholder="Voornaam" autofocus required>
 
-                    <label>Toegangsniveau</label>
-                    <select name="accessLevel">
-                        <option value="1">1 (Enkel evenementen toevoegen)</option>
-                        <option value="2">2 (Volledige rechten)</option>
-                    </select>
+                        <label>Achternaam (inclusief eventuele tussenvoegsels)</label>
+                        <input name="name" placeholder="Achternaam" required>
 
-                    <input id="button" name="addUser" type="submit" value="Voeg gebruiker toe">
-                </form>
+                        <label>Email (tevens de login naam)</label>
+                        <input name="email" type="email" placeholder="Email" required></textarea>
 
-                <header class="pageTitle"><h1>Gebruiker zoeken op achternaam</h1></header>
-                <form action="formhandler_pdo.php" method="post">
-                    <label>Welke naam?</label>
-                    <input name="name" required>
+                        <label>Wachtwoord</label>
+                        <input name="password" placeholder="Wachtwoord" required></textarea>
 
-                    <input id="button" name="getUser" type="submit" value="Druk hier">
-                </form>
+                        <label>Toegangsniveau</label>
+                        <select name="accessLevel">
+                            <option value="1">1 (Enkel evenementen toevoegen)</option>
+                            <option value="2">2 (Volledige rechten)</option>
+                        </select>
 
-                <header class="pageTitle"><h1>Alle gebruikers weergeven</h1></header>
-                <form action="formhandler_pdo.php" method="post">
-                    <input id="button" name="getAllUsers" type="submit" value="Druk hier">
-                </form>
+                        <input id="button" name="addUser" type="submit" value="Voeg gebruiker toe">
+                    </form>
+                </div>
 
             </section>
 
