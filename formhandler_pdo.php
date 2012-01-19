@@ -5,6 +5,9 @@
     require_once("inc-conf.php");
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+        echo $_POST['addUser'];
+
         /* Connect to DB */
         require("inc-dbcon.php");
 
@@ -38,6 +41,6 @@
         */
 
         /* Close connection */
-        $DBH = null;
+        //$DBH = null;
     }
 ?>
