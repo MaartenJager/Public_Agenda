@@ -24,6 +24,8 @@
                 $STH->bindParam(':email'      , $_POST[email]);
                 $STH->bindParam(':password'   , $_POST[password]);
                 $STH->bindParam(':accessLevel', $_POST[accessLevel]);
+
+                $STH->execute();
             }
 
             catch(PDOException $e) {
