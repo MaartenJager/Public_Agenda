@@ -12,25 +12,25 @@
         if(isset($_POST['addUser'])){
             try{
                 //Prepare statement
-                $STH = $DBH->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
+                $sth = $dbh->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
                     values
                     (:name, :firstName, :email, :password, :accessLevel) ");
 
                 //Prepare data
-                $STH->bindParam(':name'       , $_POST[name]);
-                $STH->bindParam(':firstName'  , $_POST[firstName]);
-                $STH->bindParam(':email'      , $_POST[email]);
-                $STH->bindParam(':password'   , $_POST[password]);
-                $STH->bindParam(':accessLevel', $_POST[accessLevel]);
+                $sth->bindParam(':name'       , $_POST[name]);
+                $sth->bindParam(':firstName'  , $_POST[firstName]);
+                $sth->bindParam(':email'      , $_POST[email]);
+                $sth->bindParam(':password'   , $_POST[password]);
+                $sth->bindParam(':accessLevel', $_POST[accessLevel]);
 
-                $STH->execute();
+                $sth->execute();
             }
 
             catch(PDOException $e) {
                 echo $e->getMessage();
             }
 
-            $DBH = null;
+            $dbh = null;
         }
 
         elseif(isset($_POST['addUser'])){

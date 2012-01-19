@@ -21,6 +21,10 @@
                 <?php
                     require_once("inc-conf.php");
                     require("inc-dbcon.php");
+
+                    $sth = $dbh->prepare("SELECT name, colour FROM fruit");
+                    $sth->execute();
+
                 ?>
 
                 <div id="addUser">
