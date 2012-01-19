@@ -5,22 +5,25 @@
     require_once("inc-conf.php");
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-        echo $_POST['addUser'];
-
         /* Connect to DB */
         require("inc-dbcon.php");
 
+        /* addUser post action */
+        if (isset($_POST['addUser'])) {
 
+        }
+
+
+/*
         try{
                 echo("in tweede try..");
 
-                /* Prepare statement */
+                //Prepare statement
                 $STH = $DBH->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
                     values
                     (:name, :firstName, :email, :password, :accessLevel) ");
 
-                /* Prepare data */
+                //Prepare data
                 $STH->bindParam(':name'       , $_POST[name]);
                 $STH->bindParam(':firstName'  , $_POST[firstName]);
                 $STH->bindParam(':email'      , $_POST[email]);
@@ -33,12 +36,9 @@
             catch(PDOException $e) {
                 echo $e->getMessage();
             }
+*/
 
-        /* addUser post action
-        if (isset($_POST['addUser'])) {
 
-        }
-        */
 
         /* Close connection */
         //$DBH = null;
