@@ -19,7 +19,7 @@ body {
 
 #header {
     height: 128px;
-    background-image: url(header.png); /* link to header img */
+    background-image: url(img/header.png); /* link to header img */
     border-bottom-style: solid; /* seperate header from menu */
     border-bottom-width: 1px;
 }
