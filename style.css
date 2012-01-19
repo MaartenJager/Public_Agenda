@@ -111,7 +111,7 @@ input, textarea {
 
 textarea {
     height: 200px;
-    background: url(form-bg.png) bottom right no-repeat #EFEFEF;
+    background: url(img/form-bg.png) bottom right no-repeat #EFEFEF;
 }
 
 #button {
