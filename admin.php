@@ -8,7 +8,17 @@
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main" role="main">
-                <header class="pageTitle"><h1>Gebruikers toevoegen</h1></header>
+                <header class="pageTitle"><h1>Gebruikersbeheer</h1></header>
+
+                <table border="1">
+                    <tr>
+                        <th>Event title</th>
+                        <th>Created by</th>
+                        <th>Review</th>
+                    </tr>
+                    <?php include ('printNewEvents.php'); ?>
+                </table>
+
                 <form action="formhandler_pdo.php" method="post">
                     <label>Voornaam</label>
                     <input name="firstName" placeholder="Voornaam" autofocus required>
@@ -37,11 +47,6 @@
                     <input name="name" required>
 
                     <input id="button" name="getUser" type="submit" value="Druk hier">
-                </form>
-
-                <header class="pageTitle"><h1>Alle gebruikers weergeven</h1></header>
-                <form action="formhandler_pdo.php" method="post">
-                    <input id="button" name="getAllUsers" type="submit" value="Druk hier">
                 </form>
 
             </section>
