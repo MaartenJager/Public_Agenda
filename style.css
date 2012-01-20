@@ -79,6 +79,7 @@ body {
 #main {
     float: right;
     width: 720px; /* aka 75% of site */
+    margin-right: 20px;
 }
 
 #sidebar {
