@@ -35,26 +35,22 @@
         elseif(isset($_POST['addUser'])){
 
         }
-    }
 
-
-    /* Old crappy code
-     *
-     * 
         if (isset($_POST['deleteEvent'])) {
-            echo("deleteEvent form gebruikt");
+            try{
+                //Prepare statement
+                $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . &_POST['event_id']);
 
-            $sql="DELETE FROM events WHERE `id` = ".&_POST['event_id'];
-
-            if (!mysql_query($sql,$con))
-            {
-                die('Er is een fout opgetreden.');
+                $sth->execute();
             }
 
-            echo "Het event is succesvol verwijderd.";
-            mysql_close($con);
+            catch(PDOException $e) {
+                echo $e->getMessage();
+            }
+
+            $dbh = null;
         }
-        */
+    }
 ?>
 
 
