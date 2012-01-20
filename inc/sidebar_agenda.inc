@@ -1,5 +1,5 @@
 
-            <aside id="sidebar">
+            <aside id="sidebar_agenda">
                 <label>Zoeken op woord</label>
                 <input_small name="eventName" placeholder="Naam of zoekterm" autofocus required>	
             
