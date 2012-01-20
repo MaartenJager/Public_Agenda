@@ -4,7 +4,7 @@ $date = $_POST['eventDate'];
 
 function isDatumValid()
 {
-	list($dd, $mm, $yy) = split('-', $date);
+	list($dd, $mm, $yy) = explode('-', $date);
 	if (is_numeric($dd) && is_numeric($mm) && is_numeric($yy))
 	{
 		if (checkdate($mm,$dd,$yy))
