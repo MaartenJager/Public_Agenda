@@ -55,6 +55,8 @@
                 <form action="sqldeletes.php?event_id=" method="post">
                     <input id="button" name="deleteEvent" type="submit" value="Delete" />
                 </form>
+
+                <?php print_r($row); ?>
             </section>
 
             <?php require_once("inc/sidebar.inc"); ?>
