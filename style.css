@@ -82,6 +82,10 @@ body {
     margin-right: 20px;
 }
 
+#main input {
+    width: 300px;
+}
+
 #sidebar {
     float: left;
     width: 239px; /* aka 25% of site */
