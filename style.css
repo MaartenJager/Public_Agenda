@@ -82,13 +82,16 @@ body {
     margin-right: 20px;
 }
 
-#sidebar, #sidebar_agenda {
+#sidebar {
     float: left;
     width: 219px; /* aka 25% of site, -1px to fix some rare align problems, -20px for margin on left */
     text-align: center;
+    margin-left: 20px;
 }
 
 #sidebar_agenda {
+    float: left;
+    width: 219px; /* aka 25% of site, -1px to fix some rare align problems, -20px for margin on left */
     text-align: left;
     margin-left: 20px;
 }
@@ -159,6 +162,7 @@ a.button{
     padding: 0;
     margin:0;
     vertical-align: bottom;
+    text-align: left;
     position: relative;
     top: -1px;
     margin-left: 3px;
