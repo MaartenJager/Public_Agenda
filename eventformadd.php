@@ -80,7 +80,7 @@ function checkboxAtLeastOnechecked()
 	return FALSE;
 }
 vulCheckBoxes();
-if (isDatumValid() && checkboxAtLeastOnechecked($arrayCheckboxes))
+if (isDatumValid() && checkboxAtLeastOnechecked())
 {
 	$con = mysql_connect("localhost","webdb1241","qetha8ra");
 	if (!$con)
