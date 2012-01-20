@@ -40,7 +40,14 @@
                                 echo "  <td>" . $row->name . "</td>\n";
                                 echo "  <td>" . $row->email . "</td>\n";
                                 echo "  <td>" . $row->accessLevel . "</td>\n";
-                                echo "  <td> <a href=\"#\"> <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\"></a> </td>\n";
+                                echo "  <td> \n"
+                                echo "      <a href=\"#\"> \n";
+                                echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
+                                echo "      </a> \n";
+                                echo "      <a href=\"#\"> \n";
+                                echo "          <img src=\"img/btn-edit.png\" title=\"Edit\" alt=\"Edit\" width=\"16\" height=\"16\">\n";
+                                echo "      </a> \n";
+                                echo "  </td>\n";
                                 echo "</tr>\n";
                             }
                         ?>
