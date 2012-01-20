@@ -169,6 +169,14 @@
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                     </ul>
                 </div>
+                <div id="checkbox_list">
+                    <ul>
+                        <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                        <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                        <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                        <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                    </ul>
+                </div>
                 
                 <div id="checkbox_below">
                     <label>Zoeken op datum</label>
