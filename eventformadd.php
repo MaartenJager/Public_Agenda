@@ -1,13 +1,10 @@
 <?php
+
 $date = $_POST['eventDate'];
 
 function isDatumValid()
 {
-	$arr=split("-", $date); // splitting the array
-	
-	$dd=$arr[0]; // first element is day
-	$mm=$arr[1]; // second element of the array is month
-	$yy=$arr[2]; // third element is year
+	list($dd, $mm, $yy) = explode('-', $date);
 	if (is_numeric($dd) && is_numeric($mm) && is_numeric($yy))
 	{
 		if (checkdate($mm,$dd,$yy))
@@ -29,7 +26,7 @@ function isDatumValid()
 	return FALSE;
 }
 
-if (isDatumValid)
+if (isDatumValid())
 {
 	$con = mysql_connect("localhost","webdb1241","qetha8ra");
 	if (!$con)
