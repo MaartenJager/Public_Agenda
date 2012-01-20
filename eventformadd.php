@@ -1,24 +1,31 @@
 <?php
-$date = "INITIALIZE";
 
 function isDatumValide()
 {
-	$arr=split("-", $_POST[eventDate]); // splitting the array
+	$arr=split("-", $_POST['eventDate']); // splitting the array
 	
 	$dd=$arr[0]; // first element is day
 	$mm=$arr[1]; // second element of the array is month
 	$yy=$arr[2]; // third element is year
-	if (checkdate($mm,$dd,$yy) && is_numeric($dd) && is_numeric($mm) && is_numeric($yy))
+	if (is_numeric($dd) && is_numeric($mm) && is_numeric($yy))
 	{
-		echo "Entry date is correct";
-		$date = $_POST[eventDate];
-		return TRUE;
+		if (checkdate($mm,$dd,$yy))
+		{
+			echo("Entry date is correct<br/>");
+			return TRUE;
+		}
+		else
+		{
+			echo "date is numeric but not a valid date<br/>";
+			return FALSE;
+		}
 	}
 	else
 	{
-		echo "invalid date";
+		echo "date is not numeric or in format dd-mm-yyyy<br/>";
 		return FALSE;
 	}
+	return FALSE;
 }
 
 if (isDatumVailde)
@@ -29,24 +36,20 @@ if (isDatumVailde)
 		die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt worden.');
 	}
 	mysql_select_db("webdb1241", $con);	
-	
 	$sql="INSERT INTO events (title, beginDate, endDate, description)
 	VALUES
-	('$_POST[eventName]', '$date', '$date', '$_POST[eventDescription]')";
+	('$_POST[eventName]', '$_POST[eventDate]', '$_POST[eventDate]', '$_POST[eventDescription]')";
 	
-	echo "het werkt";
-	
+	if (!mysql_query($sql,$con))
+	{
+		die('Er is een fout opgetreden met de verbinding.');
+	}	
+	echo "het werkt<br/>";
 	mysql_close($con);
 }
 else
 {
-	echo "het werkt niet";
+	echo "het werkt niet<br/>";
 }
-/*
-if (!mysql_query($sql,$con))
-{
-	die('Error: ' . mysql_error());
-}
-*/
 
 ?> 
