@@ -35,21 +35,6 @@
         elseif(isset($_POST['addUser'])){
 
         }
-
-        if (isset($_POST['deleteEvent'])) {
-            try{
-                //Prepare statement
-                $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . &_POST['event_id']);
-
-                $sth->execute();
-            }
-
-            catch(PDOException $e) {
-                echo $e->getMessage();
-            }
-
-            $dbh = null;
-        }
     }
 ?>
 
