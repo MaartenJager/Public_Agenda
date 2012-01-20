@@ -52,10 +52,7 @@
                             }
                         ?>
                     </tbody>
-                </table>
-
-
-                
+                </table>                
             </section>
 
             <?php require_once("inc/sidebar.inc"); ?>
