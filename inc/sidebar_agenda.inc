@@ -5,7 +5,7 @@
                     <input name="eventName" placeholder="Naam of zoekterm" autofocus required>
                 </div>
                 
-                <div>
+                <div id="checkbox_list">
                     <input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                 </div>
             </aside>
