@@ -67,6 +67,8 @@ function vulCheckBoxes()
 	}
 }
 
+
+/*
 function checkboxAtLeastOnechecked()
 {
 	for($i=0; $i<8; $i++)
@@ -79,8 +81,10 @@ function checkboxAtLeastOnechecked()
 	echo "<br/>moet tenminste een genre gekozen worden<br/>";
 	return FALSE;
 }
+*/
+
 vulCheckBoxes();
-if (isDatumValid() && checkboxAtLeastOnechecked())
+if (isDatumValid())
 {
 	$con = mysql_connect("localhost","webdb1241","qetha8ra");
 	if (!$con)
