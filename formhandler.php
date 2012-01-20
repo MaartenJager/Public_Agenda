@@ -37,16 +37,20 @@
         if(isset($_POST['addEvent'])){
             try{
                 //Prepare statement
-                $sth = $dbh->prepare("INSERT INTO event (title, beginDate, beginDate, location, description, createdBy, image, creationDate, approvedBy)
+                $sth = $dbh->prepare("INSERT INTO event (title, beginDate, endDate, location, description, createdBy, image, creationDate, approvedBy)
                     values
-                    (:name, :firstName, :email, :password, :accessLevel) ");
+                    (:title, :beginDate, :endDate, :location, :description, :createdBy, :image, :creationDate, :approvedBy) ");
                     
                 //Prepare data
-                $sth->bindParam(':name'       , $_POST['name']);
-                $sth->bindParam(':firstName'  , $_POST['firstName']);
-                $sth->bindParam(':email'      , $_POST['email']);
-                $sth->bindParam(':password'   , $_POST['password']);
-                $sth->bindParam(':accessLevel', $_POST['accessLevel']);
+                $sth->bindParam(':title'       , $_POST['title']);
+                $sth->bindParam(':beginDate'   , $_POST['beginDate']);
+                $sth->bindParam(':endDate'     , $_POST['endDate']);
+                $sth->bindParam(':location'    , $_POST['location']);
+                $sth->bindParam(':description' , $_POST['description']);
+                $sth->bindParam(':createdBy'   , $_POST['createdBy']);
+                $sth->bindParam(':image'       , $_POST['image']);
+                $sth->bindParam(':creationDate', $_POST['creationDate']);
+                $sth->bindParam(':approvedBy'  , $_POST['approvedBy']);
 
                 $sth->execute();
             }
