@@ -53,7 +53,7 @@ mysql_close();
                     <input type="file" name="datafile" />
                     <input id="button" name="editEvent" type="submit" value="Submit" />
                 </form>
-                <form action="sqlaction.php" method="post">
+                <form action="sqldeletes.php" method="post">
                     <input type="hidden" name="event_id" value="<?php echo $event_id; ?>">
                     <input id="button" name="deleteEvent" type="submit" value="Delete" />
                 </form>

@@ -3,11 +3,9 @@
      * http://www.kitebird.com/articles/php-pdo.html
      * */
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         /* Connect to DB */
         require("inc-dbcon.php");
 
-        if (isset($_POST['deleteEvent'])) {
             try{
                 //Prepare statement
                 $event_id = $_POST['event_id'];
@@ -21,8 +19,6 @@
             }
 
             $dbh = null;
-        }
-    }
 ?>
 
 

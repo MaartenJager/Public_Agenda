@@ -41,7 +41,7 @@
                                 echo "  <td>" . $row->createdBy . "</td>\n";
                                 echo "  <td>" . $row->creationDate . "</td>\n";
                                 echo "  <td> \n";
-                                echo "      <a class=\"button\" href=\"formhandler?action=delete&event_id=".$row->id."\"> \n";
+                                echo "      <a class=\"button\" href=\"sqldeletes.php?event_id=".$row->id."\"> \n";
                                 echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
                                 echo "      </a> \n";
                                 echo "      <a class=\"button\" href=\"event-review.php?event_id=".$row->id."\"> \n";
