@@ -189,13 +189,6 @@ included the code you did, and what exactly uses it. */
     list-style: none; /* remove bullet points */
 }
 
-/* Used by agenda sidebar to line out checkbox options correctly. */
-#checkbox_list_ag ul {
-    margin-left: 20px; /* set distance between columns of checkboxes */
-    float: left; /* cause blocks of checkboxes to float right next to eachother */
-    list-style: none; /* remove bullet points */
-}
-
 /* Used by event-add to correct CSS glitches on the content below checkboxes. */
 #checkbox_below {
     clear: both;

@@ -156,12 +156,12 @@
                 </div>
             </section>
             
-            <aside id="sidebar">
+            <aside id="sidebar_agenda">
                 <label>Zoeken op woord</label>                    
                 <input name="eventName" placeholder="Naam of zoekterm">
                 
                 <label>Zoeken op catagorie</label>
-                <div id="checkbox_list_ag">
+                <div id="checkbox_list">
                     <ul>
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
@@ -169,7 +169,7 @@
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                     </ul>
                 </div>
-                <div id="checkbox_list_ag">
+                <div id="checkbox_list">
                     <ul>
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
