@@ -1,6 +1,5 @@
 <?php
 
-
 function isDatumValid()
 {
 	$date = $_POST['eventDate'];
@@ -26,7 +25,63 @@ function isDatumValid()
 	return FALSE;
 }
 
-if (isDatumValid())
+$arrayCheckboxes = array();
+for($i = 0; $i < 8; $i++)
+{
+	$arrayCheckboxes[i] = FALSE;
+}
+
+function vulCheckBoxes()
+{
+	if( isset($_POST['genre_pop']) )
+	{
+		$arrayCheckboxes[0] = TRUE;
+	}
+	if( isset($_POST['genre_rock']) )
+	{
+		$arrayCheckboxes[1] = TRUE;
+	}
+	if( isset($_POST['genre_metal']) )
+	{
+		$arrayCheckboxes[2] = TRUE;
+	}
+	if( isset($_POST['genre_hiphop']) )
+	{
+		$arrayCheckboxes[3] = TRUE;
+	}
+	if( isset($_POST['genre_blues']) )
+	{
+		$arrayCheckboxes[4] = TRUE;
+	}
+	if( isset($_POST['genre_classic']) )
+	{
+		$arrayCheckboxes[5] = TRUE;
+	}
+	if( isset($_POST['genre_church']) )
+	{
+		$arrayCheckboxes[6] = TRUE;
+	}
+	if( isset($_POST['genre_other']) )
+	{
+		$arrayCheckboxes[7] = TRUE;
+	}
+}
+
+function checkboxAtLeastOnechecked($arrayCheckboxes)
+{
+	for($i=0; $i<8; $i++)
+	{
+		if ($arrayCheckboxes[i])
+		{
+			return TRUE;
+		}
+	}
+	echo "moet tenminste een genre gekozen worden";
+	return FALSE;
+}
+
+vulCheckBoxes();
+if (isDatumValid() && checkboxAtLeastOnechecked($arrayCheckboxes))
 {
 	$con = mysql_connect("localhost","webdb1241","qetha8ra");
 	if (!$con)
@@ -38,11 +93,26 @@ if (isDatumValid())
 	VALUES
 	('$_POST[eventName]', '$_POST[eventDate]', '$_POST[eventDate]', '$_POST[eventDescription]')";
 	
+
+	
+	for($i=0; $i<8; $i++)
+	{
+		if ($arrayCheckboxes[$i])
+		{
+			echo "EEN GENRE OPGESLAVEN <br/>";
+			$sql="SELECT LAST (id) FROM events";
+			$result=mysql_query($sql);
+			$sql="INSERT INTO genre_event_koppeling (eventId, genreId)
+			VALUES
+			('$result', '$i')";			
+		}
+	}
+	
 	if (!mysql_query($sql,$con))
 	{
 		die('Er is een fout opgetreden met de verbinding.');
 	}	
-	echo "het werkt<br/>";
+	
 	mysql_close($con);
 }
 else
