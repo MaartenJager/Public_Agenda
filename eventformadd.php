@@ -1,9 +1,9 @@
 <?php
 
-$date = $_POST['eventDate'];
 
 function isDatumValid()
 {
+	$date = $_POST['eventDate'];
 	list($dd, $mm, $yy) = explode('-', $date);
 	if (is_numeric($dd) && is_numeric($mm) && is_numeric($yy))
 	{
