@@ -1,7 +1,7 @@
 <?php
 $date = $_POST['eventDate'];
 
-public function isDatumValid()
+function isDatumValid()
 {
 	$arr=split("-", $date); // splitting the array
 	
