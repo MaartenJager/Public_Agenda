@@ -10,7 +10,7 @@ body {
     width: 960px; /* Width of entire site */
     margin: 5px auto 0px auto; /* distances from the browser edges: top-right-down-left */
     border: 1px solid;
-    background: -webkit-gradient(linear, left top, right top, from(#FFCC33), to(#FFFFFF)); /* Safari, Chrome */
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFCC33), to(#FFFFFF)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFCC33, #FFFFFF) repeat-x; /* Firefox */
 
 }
@@ -29,7 +29,8 @@ body {
     text-align: center; /* Puts buttons to center */
     list-style: none; /* Removes <li> bulletpoints */
     height: 30px; /* Height of the brown background beyond the buttons */
-    background: -moz-linear-gradient(top, orange, brown);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFCC33), to(#A52A2A)); /* Safari, Chrome */
+    background: -moz-linear-gradient(top, #FFA500, #A52A2A); /* Firefox */
     border-bottom: 1px solid;
 }
 
@@ -54,15 +55,19 @@ body {
     margin-top: 30px;
     border: 1px solid;
     padding: 5px;
-    background: -moz-linear-gradient(top, yellow, brown); /* Button colors when not pressed/touched */
+    /* Button color when not pressed/touched */
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#A52A2A)); /* Safari, Chrome */
+    background: -moz-linear-gradient(top, #FFFF00, #A52A2A); /* Firefox */
 }
 
 #menu li a:active, #menu li a:hover {
-    background: -moz-linear-gradient(bottom, yellow, brown); /* Button colors when pressed/touched */
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#A52A2A)); /* Safari, Chrome */
+    background: -moz-linear-gradient(top, #A52A2A, #FFFF00); /* Firefox */
 }
 
 #container { /* contains main and sidebar only */
-    background: -moz-linear-gradient(left, gold, white); /* defines the gradient for the sidebar effect */
+    background: -webkit-gradient(linear, left top, right top, from(#FFD700), to(#FFFFFF)); /* Safari, Chrome */
+    background: -moz-linear-gradient(left, #FFD700, #FFFFFF);
     background-size: 280px, 1px; /* defines the length of the gradient, set y-length to 1px always */
     background-repeat: repeat-y; /* prevents horizontal repeat */
     background-color: white; /* sets the background color for the area not affected by the gradient */
