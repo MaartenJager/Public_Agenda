@@ -36,6 +36,7 @@ function vulCheckBoxes()
 	if( isset($_POST['genre_pop']) )
 	{
 		$arrayCheckboxes[0] = TRUE;
+		echo "<br/>testvulcheckbox 1<br/>";
 	}
 	if( isset($_POST['genre_rock']) )
 	{
