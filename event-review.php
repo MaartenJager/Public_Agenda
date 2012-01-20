@@ -55,7 +55,7 @@
                     <input type="file" name="datafile" value="<?php echo $row->image; ?>" />
                     <input id="button" name="editEvent" type="submit" value="Submit" />
                 </form>
-                <form action="sqldeletes.php?event_id=<?php $row->id; ?>" method="post">
+                <form action="sqldeletes.php?event_id=<?php echo $row->id; ?>" method="post">
                     <input id="button" name="deleteEvent" type="submit" value="Delete" />
                 </form>
 
