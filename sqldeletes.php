@@ -1,32 +1,26 @@
 <?php
-    /* http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/
-     * http://www.kitebird.com/articles/php-pdo.html
-     * */
+/* http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/
+ * http://www.kitebird.com/articles/php-pdo.html
+ */
 
-        /* Connect to DB */
-        require("inc-dbcon.php");
+    /* Connect to DB */
+    require("inc-dbcon.php");
 
-            try{
-                //Prepare statement
-                try{
-                    $event_id = $_GET['event_id'];
-                }
+    try{
+        //Prepare variables
+        $event_id = $_GET['event_id'];
 
-                catch(Exception $e) {
-                    echo "ja poep";
-                    $event_id = $_POST['event_id'];
-                }
+        //Prepare statement
+        $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . $event_id);
 
-                $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . $event_id);
+        $sth->execute();
+    }
 
-                $sth->execute();
-            }
+    catch(PDOException $e) {
+        echo $e->getMessage();
+    }
 
-            catch(PDOException $e) {
-                echo $e->getMessage();
-            }
-
-            $dbh = null;
+    $dbh = null;
 ?>
 
 

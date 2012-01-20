@@ -25,19 +25,14 @@ function isDatumValid()
 	return FALSE;
 }
 
-$arrayCheckboxes = array();
-for($i = 0; $i < 8; $i++)
-{
-	$arrayCheckboxes[$i] = FALSE;
-	echo "<br/> LINE<br/>";
-}
+$arrayCheckboxes = array_fill(0, 8, FALSE);
 
 function vulCheckBoxes()
 {
 	if( isset($_POST['genre_pop']) )
 	{
 		$arrayCheckboxes[0] = TRUE;
-		echo "<br/>testvulcheckbox 1<br/>";
+		echo $arrayCheckboxes[0];
 	}
 	if( isset($_POST['genre_rock']) )
 	{
@@ -102,7 +97,7 @@ if (isDatumValid())
 	
 	for($i=0; $i<8; $i++)
 	{
-		if ($arrayCheckboxes[$i])
+		if ($arrayCheckboxes[$i] == TRUE)
 		{
 			echo "EEN GENRE OPGESLAVEN <br/>";
 			$sql="SELECT LAST (id) FROM events";
