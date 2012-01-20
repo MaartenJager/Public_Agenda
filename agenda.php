@@ -156,7 +156,7 @@
                 </div>
             </section>
             
-            <aside id="sidebar_agenda">
+            <aside id="sidebar">
                 <div id="checkbox_below">
                     <label>Zoeken op woord</label>                    
                     <input name="eventName" placeholder="Naam of zoekterm" autofocus required>
