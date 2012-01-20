@@ -10,7 +10,8 @@
         if (isset($_POST['deleteEvent'])) {
             try{
                 //Prepare statement
-                $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . &_POST['event_id']);
+                $event_id = &_post['event_id'];
+                $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . $event_id);
 
                 $sth->execute();
             }
