@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
     <head>
-        <title>The Roadhouse - Home</title>
+        <title>The Roadhouse - Contact</title>
         <?php require_once("inc/header.inc"); ?>
     </head>
     
@@ -13,7 +13,7 @@
         <div id="container">
             <section id="main">
                 <h1>Contact</h1>
-                <p>Neem contact met ons op!</p>
+                <p>Neem contact met ons op door het onderstaande formulier in te vullen. Alle velden zijn verplicht.</p>
                 <form>
                     <label>Uw naam</label>
                     <input name="name" placeholder="Type uw naam" autofocus required>
