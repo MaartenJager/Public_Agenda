@@ -65,6 +65,7 @@ function vulCheckBoxes()
 }
 
 $arrayCheckboxes = array_fill(0, 8, FALSE);
+echo $arrayCheckboxes[6];
 vulCheckBoxes();
 if (isDatumValid())
 {
