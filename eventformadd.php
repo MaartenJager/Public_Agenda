@@ -1,6 +1,6 @@
 <?php
 
-function isDatumValide()
+function isDatumValid()
 {
 	$arr=split("-", $_POST['eventDate']); // splitting the array
 	
@@ -12,7 +12,7 @@ function isDatumValide()
 		if (checkdate($mm,$dd,$yy))
 		{
 			echo("Entry date is correct<br/>");
-			//return TRUE;
+			return TRUE;
 		}
 		else
 		{
@@ -28,7 +28,7 @@ function isDatumValide()
 	return FALSE;
 }
 
-if (isDatumVailde)
+if (isDatumValid)
 {
 	$con = mysql_connect("localhost","webdb1241","qetha8ra");
 	if (!$con)
