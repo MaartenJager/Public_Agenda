@@ -163,7 +163,9 @@
                 </div>
                 
                 <div id="checkbox_list">
-                    <input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                    <ul>
+                        <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                    </ul>
                 </div>
             </aside>
             
