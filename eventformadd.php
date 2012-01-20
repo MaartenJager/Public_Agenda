@@ -25,7 +25,7 @@ function isDatumValid()
 	return FALSE;
 }
 
-$arrayCheckboxes = array();
+global $arrayCheckboxes = array();
 for($i = 0; $i < 8; $i++)
 {
 	$arrayCheckboxes[$i] = FALSE;
@@ -71,7 +71,7 @@ function checkboxAtLeastOnechecked()
 {
 	for($i=0; $i<8; $i++)
 	{
-		if (global $arrayCheckboxes[$i])
+		if ($arrayCheckboxes[$i])
 		{
 			return TRUE;
 		}
