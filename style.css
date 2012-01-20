@@ -29,9 +29,9 @@ body {
     text-align: center; /* Puts buttons to center */
     list-style: none; /* Removes <li> bulletpoints */
     height: 30px; /* Height of the brown background beyond the buttons */
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFCC33), to(#A52A2A)); /* Safari, Chrome */
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFA500), to(#A52A2A)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFA500, #A52A2A); /* Firefox */
-    background: -ms-linear-gradient(top, #FFA500, #A52A2A); /* IE9 */
+    background: filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFA500', endColorstr='#A52A2A'); /* IE9 */
     border-bottom: 1px solid;
 }
 
