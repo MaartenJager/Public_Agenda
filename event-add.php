@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
     <head>
-        <title>The Roadhouse - Een evenement toevoegen</title>
+        <title>The Roadhouse - Evenement toevoegen</title>
         <?php require_once("inc/header.inc"); ?>
     </head>
     

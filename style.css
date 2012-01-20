@@ -84,8 +84,9 @@ body {
 
 #sidebar {
     float: left;
-    width: 239px; /* aka 25% of site, -1px to fix some rare align problems */
-    text-align: center;
+    width: 219px; /* aka 25% of site, -1px to fix some rare align problems, -20px for margin on left */
+    text-align: left;
+    margin-left: 20px;
 }
 
 #footer {
@@ -169,13 +170,10 @@ thead th, tfoot th{
     padding-top: 3px;
 }
 
-
-
-
-.odd {
-  background: #AEE239;
-  }
-
+picture{
+    text-align: center;
+    border: 1px solid;
+}
 
 
 /* PAGE-SPECIFIC ************************************************************ */
