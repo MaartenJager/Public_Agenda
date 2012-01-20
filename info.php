@@ -7,7 +7,7 @@
 
     <body>
         <div id="container">
-            <div id="header" role="banner">Paginatitel</div>
+            <div id="header" role="banner"></div>
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main" role="main">
