@@ -25,14 +25,13 @@ function isDatumValid()
 	return FALSE;
 }
 
-$arrayCheckboxes = array_fill(0, 8, FALSE);
+
 
 function vulCheckBoxes()
 {
 	if( isset($_POST['genre_pop']) )
 	{
 		$arrayCheckboxes[0] = TRUE;
-		echo $arrayCheckboxes[0];
 	}
 	if( isset($_POST['genre_rock']) )
 	{
@@ -64,22 +63,7 @@ function vulCheckBoxes()
 	}
 }
 
-
-/*
-function checkboxAtLeastOnechecked()
-{
-	for($i=0; $i<8; $i++)
-	{
-		if ($arrayCheckboxes[$i])
-		{
-			return TRUE;
-		}
-	}
-	echo "<br/>moet tenminste een genre gekozen worden<br/>";
-	return FALSE;
-}
-*/
-
+$arrayCheckboxes = array_fill(0, 8, FALSE);
 vulCheckBoxes();
 if (isDatumValid())
 {
@@ -97,7 +81,7 @@ if (isDatumValid())
 	
 	for($i=0; $i<8; $i++)
 	{
-		if ($arrayCheckboxes[$i] == TRUE)
+		if ($arrayCheckboxes[$i])
 		{
 			echo "EEN GENRE OPGESLAVEN <br/>";
 			$sql="SELECT LAST (id) FROM events";
