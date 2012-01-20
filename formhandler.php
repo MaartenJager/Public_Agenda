@@ -36,10 +36,6 @@
 
         }
 
-
-    /* Old crappy code
-     *
-     * 
         if (isset($_POST['deleteEvent'])) {
             try{
                 //Prepare statement
@@ -54,7 +50,6 @@
 
             $dbh = null;
         }
-        */
     }
 ?>
 
