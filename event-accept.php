@@ -3,7 +3,7 @@
     require_once("inc-conf.php");
     require("inc-dbcon.php");
 
-    $sth = $dbh->query("SELECT * FROM events WHERE approvedBy=0");
+    $sth = $dbh->query("SELECT * FROM events WHERE approvedBy IS NULL");
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
 ?>
