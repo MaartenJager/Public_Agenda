@@ -1,7 +1,7 @@
 
             <aside id="sidebar_agenda">
                 <label>Zoeken op woord</label>
-                <input_small name="eventName" placeholder="Naam of zoekterm" autofocus required>	
+                <input name="eventName" placeholder="Naam of zoekterm" autofocus required>	
             
                 <label>Zoeken op catagorie</label>
                 <div id="checkbox_list">
