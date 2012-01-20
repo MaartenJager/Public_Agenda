@@ -9,10 +9,8 @@ body {
     font: 16px Calibri, Arial; /* Font and backup fonts */
     width: 960px; /* Width of entire site */
     margin: 5px auto 0px auto; /* distances from the browser edges: top-right-down-left */
-    border-style: solid;
-    border-width: 1px;
-    background: -moz-linear-gradient(top, #FFCC33, #FFFFFF); /* background color of all elements outside of the site */
-    background-repeat: repeat-x; /* prevents y-repeat of the gradient set above */
+    border: 1px solid;
+    background: -moz-linear-gradient(top, #FFCC33, #FFFFFF) repeat-x;
 }
 
 /* LAYOUT ******************************************************************* */
@@ -20,8 +18,7 @@ body {
 #header {
     height: 128px;
     background-image: url(img/header.png); /* link to header img */
-    border-bottom-style: solid; /* seperate header from menu */
-    border-bottom-width: 1px;
+    border-bottom: 1px solid;
 }
 
 #menu {
@@ -31,8 +28,7 @@ body {
     list-style: none; /* Removes <li> bulletpoints */
     height: 30px; /* Height of the brown background beyond the buttons */
     background: -moz-linear-gradient(top, orange, brown);
-    border-bottom-style: solid; /* seperate menu from container */
-    border-bottom-width: 1px;
+    border-bottom: 1px solid;
 }
 
 #menu ul {
@@ -54,8 +50,7 @@ body {
 
     /* Button art */
     margin-top: 30px;
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid;
     padding: 5px;
     background: -moz-linear-gradient(top, yellow, brown); /* Button colors when not pressed/touched */
 }
@@ -73,12 +68,12 @@ body {
 
 #main {
     float: right;
-    width: 672px; /* aka 70% of site */
+    width: 720px; /* aka 75% of site */
 }
 
 #sidebar {
     float: left;
-    width: 206px; /* aka 30% of site, minus 1px to fix some rare align problems */
+    width: 239px; /* aka 25% of site, minus 1px to fix some rare align problems */
     text-align: center;
 }
 
@@ -140,8 +135,8 @@ textarea {
 /* Generic table layout */
 table{
     border-collapse: collapse;
-    border: 1px solid ;
-    font-size: 10pt;
+    border: 1px solid;
+    font-size: 14px;
 }
 
 td, th{
@@ -156,7 +151,7 @@ thead th, tfoot th{
     border: 1px solid #03476F;
     background: #FF9933; /* Background color table header */
     color: #FFFFFF; /* Text white in table header */
-    padding-top:3px;
+    padding-top: 3px;
 }
 
 
