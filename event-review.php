@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<?php
+$con = mysql_connect("localhost","webdb1241","qetha8ra");
+if (!$con)
+{
+die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt worden.');
+}
+
+mysql_select_db("webdb1241", $con);
+$event_id=$_GET["event_id"];
+$sql="SELECT * FROM events WHERE id=" . $event_id;
+$result=mysql_query($sql);
+mysql_close();
+?>
 <html lang="nl">
     <?php require_once("inc/header.inc"); ?>
 
@@ -11,20 +24,7 @@
                 <header class="pageTitle"><h1>Evenement bewerken</h1></header>
                 <p>Wilt u het volgende formulier invullen? Alle velden zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
 
-                <form action="formhandler.php?event_id=<?php echo $event_id; ?>" method="post">
-                    <?php
-                    $con = mysql_connect("localhost","webdb1241","qetha8ra");
-                    if (!$con)
-                    {
-                    die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt worden.');
-                    }
-
-                    mysql_select_db("webdb1241", $con);
-                    $event_id=$_GET["event_id"];
-                    $sql="SELECT * FROM events WHERE id=" . $event_id;
-                    $result=mysql_query($sql);
-                    mysql_close();
-                    ?>
+                <form action="formhandler.php" method="post">
 
                     <input type="hidden" name="event_id" value="<?php echo $event_id; ?>">
 
@@ -52,7 +52,10 @@
                     <label>Voeg een afbeelding toe</label>
                     <input type="file" name="datafile" />
                     <input id="button" name="editEvent" type="submit" value="Submit" />
-                    <input id="button" name="deleteEvent" type="delete" value="Delete" />
+                </form>
+                <form action="formhandler.php" method="post">
+                    <input type="hidden" name="event_id" value="<?php echo $event_id; ?>">
+                    <input id="button" name="deleteEvent" type="submit" value="Delete" />
                 </form>
             </section>
 
