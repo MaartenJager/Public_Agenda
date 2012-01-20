@@ -170,8 +170,10 @@
                     </ul>
                 </div>
                 
-                <label>Zoeken op datum</label>
-                <p>Hier komt een klik-kalender.</p>
+                <div id="checkbox_below">
+                    <label>Zoeken op datum</label>
+                    <p>Hier komt een klik-kalender.</p>
+                </div>
             </aside>
             
             <?php require_once("inc/footer.inc"); ?>
