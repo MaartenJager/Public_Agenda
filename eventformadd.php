@@ -2,6 +2,7 @@
 
 function isDatumValid()
 {
+		echo "test3";
 	$date = $_POST['eventDate'];
 	list($dd, $mm, $yy) = explode('-', $date);
 	if (is_numeric($dd) && is_numeric($mm) && is_numeric($yy))
@@ -32,6 +33,7 @@ function vulCheckBoxes()
 	if( isset($_POST['genre_pop']) )
 	{
 		$arrayCheckboxes[0] = TRUE;
+		echo "test1";
 	}
 	if( isset($_POST['genre_rock']) )
 	{
@@ -64,6 +66,7 @@ function vulCheckBoxes()
 }
 
 $arrayCheckboxes = array_fill(0, 8, FALSE);
+		echo "test2";
 vulCheckBoxes();
 if (isDatumValid())
 {
@@ -81,9 +84,10 @@ if (isDatumValid())
 	
 	for($i=0; $i<8; $i++)
 	{
+		echo "test4<br/>";
 		if ($arrayCheckboxes[$i])
 		{
-			echo "EEN GENRE OPGESLAVEN <br/>";
+			echo "EEN GENRE OPGESLAGEN <br/>";
 			$sql="SELECT LAST (id) FROM events";
 			$result=mysql_query($sql);
 			$sql="INSERT INTO genre_event_koppeling (eventId, genreId)
