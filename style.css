@@ -78,7 +78,7 @@ body {
 
 #main {
     float: right;
-    width: 720px; /* aka 75% of site */
+    width: 700px; /* aka 75% of site, -20px for the margin on the right */
     margin-right: 20px;
 }
 
