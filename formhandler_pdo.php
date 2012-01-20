@@ -2,7 +2,6 @@
     /* http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/
      * http://www.kitebird.com/articles/php-pdo.html
      * */
-    require_once("inc-conf.php");
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         /* Connect to DB */
