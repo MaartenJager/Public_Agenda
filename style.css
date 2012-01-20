@@ -31,6 +31,7 @@ body {
     height: 30px; /* Height of the brown background beyond the buttons */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFCC33), to(#A52A2A)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFA500, #A52A2A); /* Firefox */
+    background: -ms-linear-gradient(top, #FFA500, #A52A2A); /* IE9 */
     border-bottom: 1px solid;
 }
 
