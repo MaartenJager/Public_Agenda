@@ -156,7 +156,7 @@
                 </div>
             </section>
             
-            <aside id="sidebar">
+            <aside id="sidebar_agenda">
                 <label>Zoeken op woord</label>                    
                 <input name="eventName" placeholder="Naam of zoekterm">
                 
