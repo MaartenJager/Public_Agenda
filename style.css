@@ -82,10 +82,6 @@ body {
     margin-right: 20px;
 }
 
-#main input {
-    width: 300px;
-}
-
 #sidebar {
     float: left;
     width: 239px; /* aka 25% of site */
@@ -114,7 +110,7 @@ label {
 }
 
 input, textarea {
-    width: 140px;
+    width: 300px;
     background: #EFEFEF;
     border: 1px solid #DEDEDE;
     padding: 6px;
