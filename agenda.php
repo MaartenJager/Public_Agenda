@@ -9,9 +9,8 @@
 
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Agenda</h1></header>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Mauris vel magna. Mauris risus nunc, tristique varius, gravida
-                in, lacinia vel, elit.</p>
+                <p>Alle aankomende elementen zijn opgenomen in onze agenda. Zoekt u een bepaald evenement?
+                Gebruik dan de zoekopties rechts van de agenda.</p>
 
                 <div id="agenda">
 
@@ -157,7 +156,7 @@
                 </div>
             </section>
 
-            <?php require_once("inc/sidebar.inc"); ?>
+            <?php require_once("inc/sidebar_agenda.inc"); ?>
             <?php require_once("inc/footer.inc"); ?>
         </div>
     </body>
