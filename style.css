@@ -84,13 +84,14 @@ body {
 
 #sidebar {
     float: left;
-    width: 219px; /* aka 25% of site, -1px to fix some rare align problems, -20px for margin on left */
+    width: 239px; /* aka 25% of site */
     text-align: center;
 }
 
 #sidebar_agenda {
     float: left;
     width: 219px; /* aka 25% of site, -1px to fix some rare align problems, -20px for margin on left */
+    margin-left: 20px;
     text-align: left;
 }
 
