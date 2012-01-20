@@ -26,9 +26,9 @@ function isDatumValid()
 }
 
 
+$arrayCheckboxes = array_fill(0, 8, FALSE);
 
-function vulCheckBoxes()
-{
+
 	if( isset($_POST['genre_pop']) )
 	{
 		$arrayCheckboxes[0] = TRUE;
@@ -62,11 +62,8 @@ function vulCheckBoxes()
 	{
 		$arrayCheckboxes[7] = TRUE;
 	}
-}
-
-$arrayCheckboxes = array_fill(0, 8, FALSE);
-echo $arrayCheckboxes[6];
-vulCheckBoxes();
+	
+	echo $arrayCheckboxes[6];
 if (isDatumValid())
 {
 	$con = mysql_connect("localhost","webdb1241","qetha8ra");
@@ -78,6 +75,7 @@ if (isDatumValid())
 	$sql="INSERT INTO events (title, beginDate, endDate, description)
 	VALUES
 	('$_POST[eventName]', '$_POST[eventDate]', '$_POST[eventDate]', '$_POST[eventDescription]')";
+	
 	
 
 	
