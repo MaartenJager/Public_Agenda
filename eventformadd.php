@@ -66,30 +66,22 @@ $arrayCheckboxes = array_fill(0, 8, FALSE);
 	echo $arrayCheckboxes[6];
 if (isDatumValid())
 {
-	$con = mysql_connect("localhost","webdb1241","qetha8ra");
-	if (!$con)
-	{
-		die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt worden.');
-	}
-	mysql_select_db("webdb1241", $con);	
-	$sql="INSERT INTO events (title, beginDate, endDate, description)
+    require("inc-dbcon.php");
+	$sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, description, approvedBy)
 	VALUES
-	('$_POST[eventName]', '$_POST[eventDate]', '$_POST[eventDate]', '$_POST[eventDescription]')";
-	
-	
+	('$_POST[eventName]', '$_POST[eventDate]', '$_POST[eventDate]', '$_POST[eventDescription]', NULL)");
+        $sth->execute();
 
-	
 	for($i=0; $i<8; $i++)
 	{
-		echo $arrayCheckboxes[$i];
 		if ($arrayCheckboxes[$i])
 		{
 			echo "EEN GENRE OPGESLAGEN <br/>";
-			$sql="SELECT LAST (id) FROM events";
+			$sql="SELECT LAST (`id`) FROM events";
 			$result=mysql_query($sql);
-			$sql="INSERT INTO genre_event_koppeling (eventId, genreId)
+			$sql="INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
 			VALUES
-			('$result', '$i')";			
+			($result, $i)";
 		}
 	}
 	
