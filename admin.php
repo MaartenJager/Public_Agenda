@@ -41,7 +41,7 @@
                                 echo "  <td>" . $row->email . "</td>\n";
                                 echo "  <td>" . $row->accessLevel . "</td>\n";
                                 echo "  <td> \n";
-                                echo "      <a class="button" href=\"#\"> \n";
+                                echo "      <a class=\"button\" href=\"#\"> \n";
                                 echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
                                 echo "      </a> \n";
                                 echo "      <a class="button" href=\"#\"> \n";
