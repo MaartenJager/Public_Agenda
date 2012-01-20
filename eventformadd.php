@@ -84,7 +84,7 @@ if (isDatumValid())
 	
 	for($i=0; $i<8; $i++)
 	{
-		echo "test4<br/>";
+		echo $arrayCheckboxes[$i] . "test4<br/>";
 		if ($arrayCheckboxes[$i])
 		{
 			echo "EEN GENRE OPGESLAGEN <br/>";
