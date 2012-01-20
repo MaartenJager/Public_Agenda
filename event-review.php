@@ -1,17 +1,16 @@
-<!DOCTYPE html>
 <?php
-$con = mysql_connect("localhost","webdb1241","qetha8ra");
-if (!$con)
-{
-die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt worden.');
-}
+    /* Fetch event with ID.. */
+    require_once("inc-conf.php");
+    require("inc-dbcon.php");
 
-mysql_select_db("webdb1241", $con);
-$event_id=$_GET["event_id"];
-$sql="SELECT * FROM events WHERE id=" . $event_id;
-$result=mysql_query($sql);
-mysql_close();
+    $sth = $dbh->prepare("SELECT * FROM events WHERE id=:id");
+    $sth->bindParam(':id'       , $_GET['id']);
+    $sth->setFetchMode(PDO::FETCH_OBJ);
+    $sth->execute();
+    $row = $sth->fetch()
 ?>
+
+<!DOCTYPE html>
 <html lang="nl">
     <?php require_once("inc/header.inc"); ?>
 
@@ -26,10 +25,10 @@ mysql_close();
 
                 <form action="sqlaction.php" method="post">
 
-                    <input type="hidden" name="event_id" value="<?php echo $event_id; ?>">
+                    <input type="hidden" name="event_id" value="">
 
                     <label>Naam evenement</label>
-                    <input name="eventName" value="<?php echo mysql_result($result,0,"title"); ?>" autofocus required>		
+                    <input name="eventName" value="" autofocus required>		
 
                     <label>Datum</label>
                     <input name="eventDate" placeholder="bv. 01-01-2012" required>
@@ -53,8 +52,7 @@ mysql_close();
                     <input type="file" name="datafile" />
                     <input id="button" name="editEvent" type="submit" value="Submit" />
                 </form>
-                <form action="sqldeletes.php" method="post">
-                    <input type="hidden" name="event_id" value="<?php echo $event_id; ?>">
+                <form action="sqldeletes.php?event_id=" method="post">
                     <input id="button" name="deleteEvent" type="submit" value="Delete" />
                 </form>
             </section>
