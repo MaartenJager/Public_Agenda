@@ -55,7 +55,7 @@
                 </table>
 
                 <div id="addUser">
-                    <form action="formhandler_pdo.php" method="post">
+                    <form action="formhandler.php" method="post">
                         <label>Voornaam</label>
                         <input name="firstName" placeholder="Voornaam" autofocus required>
 
