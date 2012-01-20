@@ -212,14 +212,14 @@ included the code you did, and what exactly uses it. */
 #agenda .event.even{
     background: #FF3333;
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#A52A2A)); /* Safari, Chrome */
-    background: -moz-linear-gradient(top, white, yellow); /* Firefox */
+    background: -moz-linear-gradient(top, #FFFFFF, #ADD8E6); /* Firefox */
 
 }
 
 #agenda .event.odd{
     background: #FF3333;
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#A52A2A)); /* Safari, Chrome */
-    background: -moz-linear-gradient(top, white, green); /* Firefox */
+    background: -moz-linear-gradient(top, #FFFFFF, #90EE90); /* Firefox */
 }
 
 #agenda .event .date {
