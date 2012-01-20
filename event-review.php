@@ -28,7 +28,7 @@
                     <input type="hidden" name="event_id" value="<?php $row->id; ?>">
 
                     <label>Naam evenement</label>
-                    <input name="eventName" value="" autofocus required>		
+                    <input name="eventName" value="<?php echo $row->title; ?>" required>		
 
                     <label>Begindatum/-tijd</label>
                     <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>
@@ -52,7 +52,7 @@
                     </div>
 
                     <label>Voeg een afbeelding toe</label>
-                    <input type="file" name="datafile" />
+                    <input type="file" name="datafile" value="<?php echo $row->image; ?>" />
                     <input id="button" name="editEvent" type="submit" value="Submit" />
                 </form>
                 <form action="sqldeletes.php?event_id=" method="post">
