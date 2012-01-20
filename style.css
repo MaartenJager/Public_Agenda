@@ -191,7 +191,6 @@ included the code you did, and what exactly uses it. */
     margin-left: -40px; /* fix incorrect margin caused by invisibile bullet points */
     margin-right: 20px; /* set distance between columns of checkboxes */
     float: left; /* cause blocks of checkboxes to float right next to eachother */
-    width: auto; /* set length to longest word */
     list-style: none; /* remove bullet points */
 }
 
