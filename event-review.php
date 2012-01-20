@@ -31,13 +31,13 @@
                     <input name="eventName" value="" autofocus required>		
 
                     <label>Begindatum/-tijd</label>
-                    <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php $row->beginDate; ?>"required>
+                    <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>
 
                     <label>Einddatum/-tijd</label>
-                    <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php $row->endDate; ?>"required>
+                    <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
 
                     <label>Beschrijving van het event</label>
-                    <textarea name="description" placeholder="Voer beschrijving in" value="<?php $row->description; ?>" required></textarea>			        		
+                    <textarea name="description" placeholder="Voer beschrijving in" value="<?php echo $row->description; ?>" required></textarea>			        		
 
                     <label>Kies de categorie&#235;n die bij het event horen</label>
                     <div>
