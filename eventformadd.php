@@ -1,8 +1,9 @@
 <?php
+$date = $_POST['eventDate'];
 
 public function isDatumValid()
 {
-	$arr=split("-", $_POST['eventDate']); // splitting the array
+	$arr=split("-", $date); // splitting the array
 	
 	$dd=$arr[0]; // first element is day
 	$mm=$arr[1]; // second element of the array is month
@@ -11,7 +12,7 @@ public function isDatumValid()
 	{
 		if (checkdate($mm,$dd,$yy))
 		{
-			echo("Entry date is correct<br/>");
+			echo "Entry date is correct<br/>";
 			return TRUE;
 		}
 		else
