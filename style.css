@@ -10,7 +10,7 @@ body {
     width: 960px; /* Width of entire site */
     margin: 5px auto 0px auto; /* distances from the browser edges: top-right-down-left */
     border: 1px solid;
-    background: #FFCCCC; /* backup color, for browsers that do not support gradients */
+    background: #FFFFCC; /* backup color, for browsers that do not support gradients */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFCC33), to(#FFFFFF)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFCC33, #FFFFFF) repeat-x; /* Firefox */
 }
@@ -29,7 +29,7 @@ body {
     text-align: center; /* Puts buttons to center */
     list-style: none; /* Removes <li> bulletpoints */
     height: 30px; /* Height of the brown background beyond the buttons */
-    background: #993300; /* backup color, for browsers that do not support gradients */
+    background: #FF6633; /* backup color, for browsers that do not support gradients */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFA500), to(#A52A2A)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFA500, #A52A2A); /* Firefox */
     border-bottom: 1px solid;
@@ -57,19 +57,18 @@ body {
     border: 1px solid;
     padding: 5px;
     /* Button color when not pressed/touched */
-    background: #CC6633;
+    background: #FF3333;
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#A52A2A)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFFF00, #A52A2A); /* Firefox */
 }
 
 #menu li a:active, #menu li a:hover {
-    background: #660033;
+    background: #CC0000;
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#A52A2A)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #A52A2A, #FFFF00); /* Firefox */
 }
 
 #container { /* contains main and sidebar only */
-    background: #FFFFCC;
     background: -webkit-gradient(linear, left top, right top, from(#FFD700), to(#FFFFFF)); /* Safari, Chrome */
     background: -moz-linear-gradient(left, #FFD700, #FFFFFF);
     background-size: 280px, 1px; /* defines the length of the gradient, set y-length to 1px always */
