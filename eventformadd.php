@@ -32,7 +32,6 @@ $arrayCheckboxes = array_fill(0, 8, FALSE);
 	if( isset($_POST['genre_pop']) )
 	{
 		$arrayCheckboxes[0] = TRUE;
-		echo $arrayCheckboxes[0];
 	}
 	if( isset($_POST['genre_rock']) )
 	{
@@ -62,8 +61,7 @@ $arrayCheckboxes = array_fill(0, 8, FALSE);
 	{
 		$arrayCheckboxes[7] = TRUE;
 	}
-	
-	echo $arrayCheckboxes[6];
+
 if (isDatumValid())
 {
     require("inc-dbcon.php");
@@ -77,7 +75,7 @@ if (isDatumValid())
 		if ($arrayCheckboxes[$i])
 		{
 			echo "EEN GENRE OPGESLAGEN <br/>";
-			$sql="SELECT LAST (`id`) FROM events";
+			$sql="SELECT id FROM events ORDER BY id DESC LIMIT 1";
 			$result=mysql_query($sql);
 			$sql="INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
 			VALUES
