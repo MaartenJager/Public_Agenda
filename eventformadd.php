@@ -71,15 +71,14 @@ function checkboxAtLeastOnechecked()
 {
 	for($i=0; $i<8; $i++)
 	{
-		if ($arrayCheckboxes[$i])
+		if ($arrayCheckboxes[$i] == TRUE)
 		{
 			return TRUE;
 		}
 	}
-	echo "moet tenminste een genre gekozen worden";
+	echo "<br/>moet tenminste een genre gekozen worden<br/>";
 	return FALSE;
 }
-
 vulCheckBoxes();
 if (isDatumValid() && checkboxAtLeastOnechecked($arrayCheckboxes))
 {
