@@ -12,7 +12,7 @@ function isDatumValide()
 		if (checkdate($mm,$dd,$yy))
 		{
 			echo("Entry date is correct<br/>");
-			return TRUE;
+			//return TRUE;
 		}
 		else
 		{
