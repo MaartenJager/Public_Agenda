@@ -29,7 +29,7 @@ function isDatumValid()
 	return FALSE;
 }
 
-if (isDatumValid)
+if (isDatumValid())
 {
 	$con = mysql_connect("localhost","webdb1241","qetha8ra");
 	if (!$con)
