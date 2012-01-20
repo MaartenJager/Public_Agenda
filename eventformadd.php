@@ -2,7 +2,6 @@
 
 function isDatumValid()
 {
-		echo "test3";
 	$date = $_POST['eventDate'];
 	list($dd, $mm, $yy) = explode('-', $date);
 	if (is_numeric($dd) && is_numeric($mm) && is_numeric($yy))
@@ -33,7 +32,7 @@ function vulCheckBoxes()
 	if( isset($_POST['genre_pop']) )
 	{
 		$arrayCheckboxes[0] = TRUE;
-		echo "test1";
+		echo $arrayCheckboxes[0];
 	}
 	if( isset($_POST['genre_rock']) )
 	{
@@ -66,7 +65,6 @@ function vulCheckBoxes()
 }
 
 $arrayCheckboxes = array_fill(0, 8, FALSE);
-		echo "test2";
 vulCheckBoxes();
 if (isDatumValid())
 {
@@ -84,7 +82,7 @@ if (isDatumValid())
 	
 	for($i=0; $i<8; $i++)
 	{
-		echo $arrayCheckboxes[$i] . "test4<br/>";
+		echo $arrayCheckboxes[$i];
 		if ($arrayCheckboxes[$i])
 		{
 			echo "EEN GENRE OPGESLAGEN <br/>";
