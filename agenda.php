@@ -157,16 +157,21 @@
             </section>
             
             <aside id="sidebar">
-                <div id="checkbox_below">
-                    <label>Zoeken op woord</label>                    
-                    <input name="eventName" placeholder="Naam of zoekterm" autofocus required>
-                </div>
+                <label>Zoeken op woord</label>                    
+                <input name="eventName" placeholder="Naam of zoekterm">
                 
+                <label>Zoeken op catagorie</label>
                 <div id="checkbox_list">
                     <ul>
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                        <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                        <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                        <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                     </ul>
                 </div>
+                
+                <label>Zoeken op datum</label>
+                <p>Hier komt een klik-kalender.</p>
             </aside>
             
             <?php require_once("inc/footer.inc"); ?>
