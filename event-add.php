@@ -16,7 +16,10 @@
                 <p>Wilt u het volgende formulier invullen? Alle velden, op de afbeelding na, zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
                 <form name="event-add" action="eventformadd.php" method="post">
                     <label>Naam evenement</label>
-                    <input name="eventName" placeholder="Voer naam in" autofocus required>		
+                    <input name="eventName" placeholder="Voer naam in" autofocus required>	
+
+                    <label>Datum</label>
+                    <input type="date" name="eventDate" required>	
 
                     <label>Datum</label>
                     <input name="eventDate" placeholder="bv. 01-01-2012" required>
