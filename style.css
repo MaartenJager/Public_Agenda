@@ -10,9 +10,10 @@ body {
     width: 960px; /* Width of entire site */
     margin: 5px auto 0px auto; /* distances from the browser edges: top-right-down-left */
     border: 1px solid;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFCC33', endColorstr='#FFFFFF'); /* for IE */
+    background: #1EF0C1; /* backup color, for browsers that do not support gradients */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFCC33), to(#FFFFFF)); /* Safari, Chrome */
-    background: -moz-linear-gradient(top, #FFCC33, #FFFFFF) repeat-x; /* Firefox */}
+    background: -moz-linear-gradient(top, #FFCC33, #FFFFFF) repeat-x; /* Firefox */
+}
 
 /* LAYOUT ******************************************************************* */
 
@@ -28,6 +29,7 @@ body {
     text-align: center; /* Puts buttons to center */
     list-style: none; /* Removes <li> bulletpoints */
     height: 30px; /* Height of the brown background beyond the buttons */
+    background: #0BAC67; /* backup color, for browsers that do not support gradients */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFA500), to(#A52A2A)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFA500, #A52A2A); /* Firefox */
     border-bottom: 1px solid;
