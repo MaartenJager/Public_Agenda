@@ -14,12 +14,16 @@
             <section id="main">
                 <h1>Welkom bij The Roadhouse!</h1>
 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Mauris vel magna. Mauris risus nunc, tristique varius, gravida
-                in, lacinia vel, elit. Nam ornare, felis non faucibus molestie,
-                nulla augue adipiscing mauris, a nonummy diam ligula ut risus.
-                Praesent varius. Cum sociis natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus.</p>
+                <p>Hier ben je aan het juiste adres wat betreft concerten, feesten,
+                en meer. Vrijwel iedere dag organiseren wij de meest uiteenlopende
+                parties en voorstellingen. Daarnaast houden wij ook een zeer
+                uitgebreide feest agenda bij. Niet alleen van onze feesten in onze
+                eigen feestpaleis The Roadhouse, maar ook van alle andere grote
+                feesten in het hele land. Op onze site zit je dus altijd goed!</p>
+                
+                <p>Wil je een van onze zalen boeken, of staat jouw evenement niet
+                in onze agenda maar zou je dat wel graag willen? Neem dan even
+                contact met ons op.</p>
             </section>
 			
             <?php require_once("inc/sidebar.inc"); ?>
