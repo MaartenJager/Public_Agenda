@@ -94,9 +94,16 @@ body {
 }
 
 #sidebar_agenda input {
-    width: 140px;
-    height: 16px;
-    font-size: 14px;    
+    width: 300px;
+    background: #EFEFEF;
+    border: 1px solid #DEDEDE;
+    padding: 6px;
+    margin-top: 3px;
+    font-size: 0.9em;
+    color: #3A3A3A;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;   
 }
 
 #footer {
