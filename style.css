@@ -86,10 +86,16 @@ body {
     float: left;
     width: 219px; /* aka 25% of site, -1px to fix some rare align problems, -20px for margin on left */
     text-align: center;
+}
+
+#sidebar_agenda {
+    float: left;
+    width: 219px; /* aka 25% of site, -1px to fix some rare align problems, -20px for margin on left */
+    text-align: left;
     margin-left: 20px;
 }
 
-#sidebar input {
+#sidebar_agenda input {
     width: 140px;
 }
 
