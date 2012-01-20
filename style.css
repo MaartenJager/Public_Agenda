@@ -131,6 +131,10 @@ textarea {
     opacity: 0.6;
 }
 
+a.button{
+    text-decoration: none; /* removes lines between two images containing a link*/
+}
+
 #formCheckbox{
     width: 13px;
     height: 13px;
