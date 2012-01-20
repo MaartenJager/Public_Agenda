@@ -16,8 +16,8 @@
                     (:name, :firstName, :email, :password, :accessLevel) ");
 
                 //Prepare data
-                $sth->bindParam(':name'       , $_POST[name]);
-                $sth->bindParam(':firstName'  , $_POST[firstName]);
+                $sth->bindParam(':name'       , $_POST['name']);
+                $sth->bindParam(':firstName'  , $_POST['firstName']);
                 $sth->bindParam(':email'      , $_POST[email]);
                 $sth->bindParam(':password'   , $_POST[password]);
                 $sth->bindParam(':accessLevel', $_POST[accessLevel]);
