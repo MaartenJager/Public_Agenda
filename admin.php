@@ -27,6 +27,7 @@
                             <th>Achternaam</th>
                             <th>E-mail</th>
                             <th>Toegansniveau</th>
+                            <th></th>
                         </tr>
                     </thead>
 
@@ -39,6 +40,7 @@
                                 echo "  <td>" . $row->name . "</td>\n";
                                 echo "  <td>" . $row->email . "</td>\n";
                                 echo "  <td>" . $row->accessLevel . "</td>\n";
+                                echo "  <td> <a href=\"#\"> <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\"></a> </td>\n";
                                 echo "</tr>\n";
                             }
                         ?>
