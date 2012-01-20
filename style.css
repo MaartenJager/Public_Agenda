@@ -95,10 +95,6 @@ body {
     text-align: left;
 }
 
-#sidebar_agenda input {
-    width: 140px;
-}
-
 #footer {
     clear: both; /* Required for footer to show up beneath main/sidebar */
     text-align: center;
@@ -114,7 +110,7 @@ label {
 }
 
 input, textarea {
-    width: 300px;
+    width: 140px;
     background: #EFEFEF;
     border: 1px solid #DEDEDE;
     padding: 6px;
