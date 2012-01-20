@@ -88,6 +88,12 @@ body {
     text-align: center;
 }
 
+#sidebar_agenda {
+    float: left;
+    width: 219px; /* aka 25% of site, -1px to fix some rare align problems, -20px for margin on left */
+    text-align: left;
+}
+
 #footer {
     clear: both; /* Required for footer to show up beneath main/sidebar */
     text-align: center;
@@ -179,6 +185,13 @@ included the code you did, and what exactly uses it. */
     margin-top: -8px; /* fix incorrect margin caused by divs */
     margin-left: -40px; /* fix incorrect margin caused by invisibile bullet points */
     margin-right: 20px; /* set distance between columns of checkboxes */
+    float: left; /* cause blocks of checkboxes to float right next to eachother */
+    list-style: none; /* remove bullet points */
+}
+
+/* Used by agenda sidebar to line out checkbox options correctly. */
+#checkbox_list_ag ul {
+    margin-left: 20px; /* set distance between columns of checkboxes */
     float: left; /* cause blocks of checkboxes to float right next to eachother */
     list-style: none; /* remove bullet points */
 }

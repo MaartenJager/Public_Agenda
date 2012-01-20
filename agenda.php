@@ -161,7 +161,7 @@
                 <input name="eventName" placeholder="Naam of zoekterm">
                 
                 <label>Zoeken op catagorie</label>
-                <div id="checkbox_list">
+                <div id="checkbox_list_ag">
                     <ul>
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
@@ -169,7 +169,7 @@
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                     </ul>
                 </div>
-                <div id="checkbox_list">
+                <div id="checkbox_list_ag">
                     <ul>
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
