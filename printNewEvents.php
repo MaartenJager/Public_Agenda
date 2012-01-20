@@ -6,7 +6,7 @@ die('Er is een fout opgetreden. Er kon geen verbinding met de server gemaakt wor
 }
 
 mysql_select_db("webdb1241", $con);
-$sql="SELECT * FROM events WHERE approvedBy=NULL";
+$sql="SELECT * FROM events WHERE approvedBy IS NULL";
 $result=mysql_query($sql);
 mysql_close();
 $num=mysql_numrows($result);
