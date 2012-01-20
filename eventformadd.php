@@ -25,7 +25,7 @@ function isDatumValid()
 	return FALSE;
 }
 
-global $arrayCheckboxes = array();
+$arrayCheckboxes = array();
 for($i = 0; $i < 8; $i++)
 {
 	$arrayCheckboxes[$i] = FALSE;
