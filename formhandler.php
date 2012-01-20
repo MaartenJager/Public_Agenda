@@ -35,7 +35,6 @@
         elseif(isset($_POST['addUser'])){
 
         }
-    }
 
 
     /* Old crappy code
@@ -56,6 +55,7 @@
             $dbh = null;
         }
         */
+    }
 ?>
 
 
