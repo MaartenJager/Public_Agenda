@@ -198,6 +198,7 @@ included the code you did, and what exactly uses it. */
 /* Used by event-add to correct CSS glitches on the content below checkboxes. */
 #checkbox_below {
     clear: both;
+    float: left;
 }
 
 /* Used by agenda page */
