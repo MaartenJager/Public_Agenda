@@ -44,7 +44,7 @@
                                 echo "      <a class=\"button\" href=\"#\"> \n";
                                 echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
                                 echo "      </a> \n";
-                                echo "      <a class="button" href=\"#\"> \n";
+                                echo "      <a class=\"button\" href=\"#\"> \n";
                                 echo "          <img src=\"img/btn-edit.png\" title=\"Edit\" alt=\"Edit\" width=\"16\" height=\"16\">\n";
                                 echo "      </a> \n";
                                 echo "  </td>\n";
