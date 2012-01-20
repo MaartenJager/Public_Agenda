@@ -171,8 +171,8 @@ thead th, tfoot th{
 }
 
 picture{
+    margin-top: 32px;
     text-align: center;
-    border: 1px solid;
 }
 
 
