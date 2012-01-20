@@ -25,16 +25,19 @@
 
                 <form action="sqlaction.php" method="post">
 
-                    <input type="hidden" name="event_id" value="">
+                    <input type="hidden" name="event_id" value="<?php $row->id; ?>">
 
                     <label>Naam evenement</label>
                     <input name="eventName" value="" autofocus required>		
 
-                    <label>Datum</label>
-                    <input name="eventDate" placeholder="bv. 01-01-2012" required>
+                    <label>Begindatum/-tijd</label>
+                    <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php $row->beginDate; ?>"required>
+
+                    <label>Einddatum/-tijd</label>
+                    <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php $row->endDate; ?>"required>
 
                     <label>Beschrijving van het event</label>
-                    <textarea name="eventDescription" placeholder="Voer beschrijving in" required></textarea>			        		
+                    <textarea name="description" placeholder="Voer beschrijving in" value="<?php $row->description; ?>" required></textarea>			        		
 
                     <label>Kies de categorie&#235;n die bij het event horen</label>
                     <div>
