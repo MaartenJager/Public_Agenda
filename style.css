@@ -85,6 +85,12 @@ body {
 #sidebar {
     float: left;
     width: 219px; /* aka 25% of site, -1px to fix some rare align problems, -20px for margin on left */
+    text-align: center;
+}
+
+#sidebar_agenda {
+    float: left;
+    width: 219px; /* aka 25% of site, -1px to fix some rare align problems, -20px for margin on left */
     text-align: left;
     margin-left: 20px;
 }
@@ -103,7 +109,7 @@ label {
     letter-spacing: 2px;
 }
 
-input, textarea {
+input, input_small, textarea {
     width: 300px;
     background: #EFEFEF;
     border: 1px solid #DEDEDE;
@@ -114,6 +120,13 @@ input, textarea {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+}
+
+input_small {
+    width: 80px;
+    height: 16px;
+    font-size: 14px;
+    color: #3A3A3A;
 }
 
 textarea {
@@ -169,12 +182,6 @@ thead th, tfoot th{
     color: #FFFFFF; /* Text white in table header */
     padding-top: 3px;
 }
-
-picture{
-    margin-top: 32px;
-    text-align: center;
-}
-
 
 /* PAGE-SPECIFIC ************************************************************ */
 
