@@ -169,9 +169,19 @@
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                     </ul>
                 </div>
+                <div id="checkbox_list">
+                    <ul>
+                        <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                        <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                        <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                        <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                    </ul>
+                </div>
                 
-                <label>Zoeken op datum</label>
-                <p>Hier komt een klik-kalender.</p>
+                <div id="checkbox_below">
+                    <label>Zoeken op datum</label>
+                    <p>Hier komt een klik-kalender.</p>
+                </div>
             </aside>
             
             <?php require_once("inc/footer.inc"); ?>

@@ -18,9 +18,9 @@
                 //Prepare data
                 $sth->bindParam(':name'       , $_POST['name']);
                 $sth->bindParam(':firstName'  , $_POST['firstName']);
-                $sth->bindParam(':email'      , $_POST[email]);
-                $sth->bindParam(':password'   , $_POST[password]);
-                $sth->bindParam(':accessLevel', $_POST[accessLevel]);
+                $sth->bindParam(':email'      , $_POST['email']);
+                $sth->bindParam(':password'   , $_POST['password']);
+                $sth->bindParam(':accessLevel', $_POST['accessLevel']);
 
                 $sth->execute();
             }
@@ -31,6 +31,43 @@
 
             $dbh = null;
         }
+
+
+        /* addEvent post action */
+        if(isset($_POST['addEvent'])){
+            try{
+                //Prepare statement
+                $sth = $dbh->prepare("INSERT INTO event (title, beginDate, beginDate, location, description, createdBy, image, creationDate, approvedBy)
+                    values
+                    (:name, :firstName, :email, :password, :accessLevel) ");
+                    
+                //Prepare data
+                $sth->bindParam(':name'       , $_POST['name']);
+                $sth->bindParam(':firstName'  , $_POST['firstName']);
+                $sth->bindParam(':email'      , $_POST['email']);
+                $sth->bindParam(':password'   , $_POST['password']);
+                $sth->bindParam(':accessLevel', $_POST['accessLevel']);
+
+                $sth->execute();
+            }
+
+            catch(PDOException $e) {
+                echo $e->getMessage();
+            }
+
+            $dbh = null;
+        }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 ?>
