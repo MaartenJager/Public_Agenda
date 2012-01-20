@@ -44,7 +44,7 @@
                                 echo "      <a class=\"button\" href=\"sqldeletes.php?event_id=".$row->id."\"> \n";
                                 echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
                                 echo "      </a> \n";
-                                echo "      <a class=\"button\" href=\"event-review.php?event_id=".$row->id."\"> \n";
+                                echo "      <a class=\"button\" href=\"event-review.php?id=".$row->id."\"> \n";
                                 echo "          <img src=\"img/btn-edit.png\" title=\"Edit\" alt=\"Edit\" width=\"16\" height=\"16\">\n";
                                 echo "      </a> \n";
                                 echo "  </td>\n";
