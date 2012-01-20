@@ -37,7 +37,7 @@
                     <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
 
                     <label>Beschrijving van het event</label>
-                    <textarea name="description" placeholder="Voer beschrijving in" value="<?php echo $row->description; ?>" required></textarea>			        		
+                    <textarea name="description" placeholder="Voer beschrijving in" required><?php echo $row->description; ?></textarea>			        		
 
                     <label>Kies de categorie&#235;n die bij het event horen</label>
                     <div>
