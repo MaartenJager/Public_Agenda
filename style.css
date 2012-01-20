@@ -195,6 +195,15 @@ included the code you did, and what exactly uses it. */
     list-style: none; /* remove bullet points */
 }
 
+#checkbox_test {
+    margin-top: -8px; /* fix incorrect margin caused by divs */
+    margin-left: -40px; /* fix incorrect margin caused by invisibile bullet points */
+    margin-right: 20px; /* set distance between columns of checkboxes */
+    float: left; /* cause blocks of checkboxes to float right next to eachother */
+    width: auto; /* set length to longest word */
+    list-style: none; /* remove bullet points */
+}
+
 /* Used by event-add to correct CSS glitches on the content below checkboxes. */
 #checkbox_below {
     clear: both;

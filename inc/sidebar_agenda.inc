@@ -5,7 +5,7 @@
                     <input name="eventName" placeholder="Naam of zoekterm" autofocus required>
                     
                     <label>Zoeken op catagorie</label>
-                    <div id="checkbox_list">
+                    <div id="checkbox_test">
                         <ul>
                             <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                             <li><input name="genre_rock" id="formCheckbox" type="checkbox" /> Rock</li>
@@ -17,5 +17,8 @@
                             <li><input name="genre_other" id="formCheckbox" type="checkbox" /> Overig</li>
                         </ul>
                     </div>
+                    
+                    <label>Zoeken op datum</label>
+                    <p>Hier een klik kalender invoeren.</p>
                 </form>
             </aside>
