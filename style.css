@@ -97,6 +97,7 @@ body {
 
 #footer {
     clear: both; /* Required for footer to show up beneath main/sidebar */
+    margin-top: 16px;
     text-align: center;
     color: grey;
 }
