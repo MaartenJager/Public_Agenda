@@ -69,10 +69,8 @@
                     </tbody>
                 </table>
 
-                <form>
-                    <input type="button" value="google" onclick="toggle('addUser');" />
-                </form>
-                
+                <input type="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="toggle('addUser');" />
+
                 <div id="addUser">
                     <form action="formhandler.php" method="post">
                         <label>Voornaam</label>
