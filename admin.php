@@ -69,8 +69,10 @@
                     </tbody>
                 </table>
 
-                <input type="BUTTON" value="Nieuwe gebruiker toevoegen" onclick="toggle('hidden');">
-
+                <form>
+                    <input type="BUTTON" value="Nieuwe gebruiker toevoegen" onclick="toggle('hidden');">
+                </form>
+                
                 <div id="addUser">
                     <form action="formhandler.php" method="post">
                         <label>Voornaam</label>
