@@ -70,7 +70,7 @@
                 </table>
 
                 <form>
-                    <input type="BUTTON" value="Nieuwe gebruiker toevoegen" onclick="toggle('hidden');">
+                    <input type="button" value="google" onclick="toggle('addUser');" />
                 </form>
                 
                 <div id="addUser">
