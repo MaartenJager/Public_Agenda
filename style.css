@@ -197,7 +197,6 @@ included the code you did, and what exactly uses it. */
 }
 
 /* Used by agenda page */
-
 #agenda .event{
     height: 85px;
     margin-bottom: 5px; /* space between two events */
@@ -265,4 +264,8 @@ included the code you did, and what exactly uses it. */
     height: 85px;
     width: 85px;
     float: right;
+}
+
+#addUser {
+    display: none; /* Hide the addUser interface until it is requested */
 }
