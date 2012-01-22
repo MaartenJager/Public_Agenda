@@ -74,7 +74,6 @@ body {
     background-size: 280px, 1px; /* defines the length of the gradient, set y-length to 1px always */
     background-repeat: repeat-y; /* prevents horizontal repeat */
     background-color: white; /* sets the background color for the area not affected by the gradient */
-    margin-bottom: 16px; /* set distance between content and footer */
 }
 
 #main {
