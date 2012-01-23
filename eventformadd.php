@@ -78,7 +78,7 @@ if( isset($_POST['genre_other']) )
 
 if (isDatumValid())
 {
-
+	/*
 	//Image upload
 
 	$targetDir = 'img/';
@@ -101,7 +101,7 @@ if (isDatumValid())
 
 	//dates
 
-
+	*/
 
 	
 	$date = $_POST['eventBeginDate'];
@@ -129,10 +129,11 @@ if (isDatumValid())
 			$sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
 			VALUES ($event_id, $genreId)");
 			$sth->execute();
-			
+			/*
 			$sth=$dbh->prepare("INSERT INTO events ('image')
 			VALUES ($$urlImage)");
 			$sth->execute();
+			*/
 		}
 	}
 }
