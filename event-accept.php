@@ -37,7 +37,7 @@
                             // showing the results
                             while($row = $sth->fetch() ){
                                 echo "<tr>\n";
-                                echo "  <td><input name=\"select\" id=\"formCheckBox\" type=\"checkbox\" /></td>\n";
+                                echo "  <td><input name=\"deleteSelection\" id=\"tableCheckBox\" type=\"checkbox\" /></td>\n";
                                 echo "  <td>" . $row->title . "</td>\n";
                                 echo "  <td>" . $row->location . "</td>\n";
                                 echo "  <td>" . $row->createdBy . "</td>\n";
