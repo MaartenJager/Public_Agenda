@@ -122,6 +122,10 @@ input, textarea {
     -webkit-border-radius: 5px;
 }
 
+inputshort {
+    width: 144px;
+}
+
 textarea {
     height: 200px;
     background: url(img/form-bg.png) bottom right no-repeat #EFEFEF;
