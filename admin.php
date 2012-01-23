@@ -17,11 +17,11 @@
         <script language="JavaScript">
             function toggle(id) {
                 var state = document.getElementById(id).style.display;
-                if (state == 'block') {
-                    document.getElementById(id).style.display = 'none';
+                if (state == 'none') {
+                    document.getElementById(id).style.display = 'block';
                 }
                 else {
-                    document.getElementById(id).style.display = 'block';
+                    document.getElementById(id).style.display = 'none';
                 }
             }
         </script>
