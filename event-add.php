@@ -14,7 +14,7 @@
             <section id="main">
                 <h1>Evenement toevoegen</h1>
                 <p>Wilt u het volgende formulier invullen? Alle velden, op de afbeelding na, zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
-                <form name="event-add" action="eventformadd.php" method="post">
+                <form name="event-add" action="eventformadd.php" enctype="multipart/form-data" method="post">
                     <label>Naam evenement</label>
                     <input name="eventName" placeholder="Voer naam in" autofocus required>
 
