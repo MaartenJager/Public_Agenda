@@ -14,15 +14,16 @@
 
     <body>
         <div id="container">
-            <div id="header" role="banner">Paginatitel</div>
+            <div id="header" role="banner"></div>
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main" role="main">
-                <header class="pageTitle"><h1>Events Accepteren</h1></header>
+                <header class="pageTitle"><h1>Evenementen Accepteren</h1></header>
 
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Titel</th>
                             <th>Locatie</th>
                             <th>Door</th>
@@ -36,6 +37,7 @@
                             // showing the results
                             while($row = $sth->fetch() ){
                                 echo "<tr>\n";
+                                echo "  <td><input name="genre_pop" id="formCheckbox" type="checkbox" /></td>\n";
                                 echo "  <td>" . $row->title . "</td>\n";
                                 echo "  <td>" . $row->location . "</td>\n";
                                 echo "  <td>" . $row->createdBy . "</td>\n";
