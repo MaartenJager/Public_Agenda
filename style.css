@@ -146,7 +146,7 @@ a.button{
     text-decoration: none; /* removes lines between two images containing a link*/
 }
 
-#formCheckbox, #tableCheckbox{
+#formCheckbox {
     width: 13px;
     height: 13px;
     padding: 0;
@@ -156,18 +156,6 @@ a.button{
     top: -1px;
     margin-left: 3px;
     margin-top: 15px;
-}
-
-#tableCheckbox {
-    margin: auto;
-
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    top: 0px;
-
-    text-align: center;
-    vertical-align: middle;
 }
 
 /* Generic table layout */
@@ -182,6 +170,10 @@ td, th{
     padding-top: 2px;
     padding-left: 2px;
     padding-right: 25px;    /* Extra width of every cell */
+}
+
+#checkboxTable {
+    padding-right: 0px;
 }
 
 thead th, tfoot th{
