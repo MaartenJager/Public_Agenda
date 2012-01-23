@@ -181,7 +181,7 @@ td, th{
     border: 1px dotted #03476F;
     padding-top: 2px;
     padding-left: 2px;
-    padding-right: 2px;    /* Extra width of every cell */
+    padding-right: 25px;    /* Extra width of every cell */
 }
 
 thead th, tfoot th{
