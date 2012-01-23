@@ -30,10 +30,8 @@
             while($continue) {
                 $i++;
                 if(isset($_POST["event_id$i"])) {
-echo " 1";
                     if(isset($_POST["deleteSelection$i"])) {
                         $event_id = $_POST["event_id$i"];
-echo " 2";
 
                         //Prepare statement
                         $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . $event_id);
