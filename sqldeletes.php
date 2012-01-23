@@ -6,18 +6,49 @@
     /* Connect to DB */
     require("inc-dbcon.php");
 
-    try{
-        //Prepare variables
-        $event_id = $_GET['event_id'];
+    if(isset($_POST['deleteEvent'])){
+        try{
+            //Prepare variables
+            $event_id = $_GET['event_id'];
 
-        //Prepare statement
-        $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . $event_id);
+            //Prepare statement
+            $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . $event_id);
 
-        $sth->execute();
+            $sth->execute();
+        }
+
+        catch(PDOException $e) {
+            echo $e->getMessage();
+        }
     }
 
-    catch(PDOException $e) {
-        echo $e->getMessage();
+    if(isset($_POST['deleteEvents'])){
+        try{
+            //Prepare variables
+            $i = 0;
+            $continue = true;
+            while($continue) {
+                $i++;
+                if(defined($_POST["deleteSelection$i"])) {
+                    if(isset($_POST["deleteSelection$i"])) {
+                        $event_id = $_POST["event_id$i"];
+
+                        //Prepare statement
+                        $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . $event_id);
+
+                        $sth->execute();
+                    }
+                }
+                else
+                {
+                    $continue = false;
+                }
+            }
+        }
+
+        catch(PDOException $e) {
+            echo $e->getMessage();
+        }
     }
 
     $dbh = null;

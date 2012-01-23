@@ -20,6 +20,7 @@
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Evenementen Accepteren</h1></header>
 
+                <form action="sqldeletes.php" method="post">
                 <table>
                     <thead>
                         <tr>
@@ -45,7 +46,7 @@
                                 echo "  <td>" . $row->createdBy . "</td>\n";
                                 echo "  <td>" . date('d-m-Y G:i', $row->creationDate) . "</td>\n";
                                 echo "  <td> \n";
-                                echo "      <a class=\"button\" href=\"sqldeletes.php?event_id=".$row->id."\"> \n";
+                                echo "      <a class=\"button\" href=\"sqldeletes.php?event_id=".$row->id."\"name=\"deleteEvent\"> \n";
                                 echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
                                 echo "      </a> \n";
                                 echo "      <a class=\"button\" href=\"event-review.php?id=".$row->id."\"> \n";
@@ -53,12 +54,12 @@
                                 echo "      </a> \n";
                                 echo "  </td>\n";
                                 echo "</tr>\n";
+                                echo "<input name=\"event_id" . $i . "\" value=\"" . $row->id . "\" type=\"hidden\">"
                             }
                         ?>
                     </tbody>
                 </table>
-                <form action="sqldeletes.php?event_id=<?php echo $row->id; ?>" method="post">
-                    <input id="button" name="deleteEvent" type="submit" value="Delete Selection" />
+                    <input id="button" name="deleteEvents" type="submit" value="Delete Selection" />
                 </form>
             </section>
 
