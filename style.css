@@ -95,10 +95,6 @@ body {
     text-align: left;
 }
 
-#sidebar_agenda_searchbar input {
-    width: 144px;
-}
-
 #footer {
     clear: both; /* Required for footer to show up beneath main/sidebar */
     text-align: center;
@@ -198,11 +194,11 @@ td, th{
 }
 
 #checkboxTable {
-    padding-right: 0px;
+    padding-right: 0px; /* overwrite padding from td,th defaults */
 }
 
 #checkboxTable input {
-    width: 15px;
+    width: 15px; /* overwrite default input size of 300px */
 }
 
 thead th, tfoot th{
@@ -303,10 +299,17 @@ included the code you did, and what exactly uses it. */
     float: right;
 }
 
+/* Used on admin.php */
 #addUser {
     display: none; /* Hide the addUser interface until it is requested */
 }
 
+/* Used on admin.php */
 #addUserButton {
     display: block; /* Show button for addUser interface until it is pressed */
+}
+
+/* Used by the sidebar on the agenda, contains the search field */
+#sidebar_agenda_searchbar input {
+    width: 160px; /* overwrite default input size of 300px */
 }
