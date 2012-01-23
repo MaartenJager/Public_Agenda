@@ -74,26 +74,36 @@ if( isset($_POST['genre_other']) )
 	$arrayCheckboxes[7] = TRUE;
 }
 
-//Image upload
 
-$targetDir = 'img/';
-
-$imgFileName = uniqid(rand(),true);
-$targetDir = $targetDir . basename( $_FILES['imgfile']['$imgFileName');
-
-if(move_uploaded_file($_FILES['imgfile']['$imgFileName'], $target)) 
-{ 
-	echo "The file ". basename( $_FILES['imgfile']['$imgFileName']). " has been uploaded";
-	//the file has been succesfully uploaded!!!!!!
-}
-else
-{
-	//error if not correctly
-	echo "Sorry, there was a problem uploading your file.";
-}
 
 if (isDatumValid())
 {
+
+	//Image upload
+
+	$targetDir = 'img/';
+
+	$imgFileName = uniqid(rand(),true);
+	$targetDir = $targetDir . basename( $_FILES['imgfile']['$imgFileName']);
+
+	if(move_uploaded_file($_FILES['imgfile']['$imgFileName'], $target)) 
+	{ 
+		echo "The file ". basename( $_FILES['imgfile']['$imgFileName']). " has been uploaded";
+		//the file has been succesfully uploaded!!!!!!
+	}
+	else
+	{
+		//error if not correctly
+		echo "Sorry, there was a problem uploading your file.";
+	}	
+
+	$urlImage = "http://websec.science.uva.nl/webdb1241/img/$imgFilename";
+
+	//dates
+
+
+
+	
 	$date = $_POST['eventBeginDate'];
 	list($dd, $mm, $yyyy) = explode('-', $date);
 	$beginDateTimeStamp = mktime($_POST['eventBeginTimeHours'], $_POST['eventBeginTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
@@ -118,6 +128,10 @@ if (isDatumValid())
 			$genreId = $i + 1;
 			$sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
 			VALUES ($event_id, $genreId)");
+			$sth->execute();
+			
+			$sth=$dbh->prepare("INSERT INTO events ('image')
+			VALUES ($$urlImage)");
 			$sth->execute();
 		}
 	}
