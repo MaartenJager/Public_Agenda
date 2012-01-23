@@ -37,7 +37,7 @@
                             // showing the results
                             while($row = $sth->fetch() ){
                                 echo "<tr>\n";
-                                echo "  <td TYLE=\"padding-right: 5px; padding-left: 5px;\" ><input name=\"deleteSelection\" id=\"tableCheckbox\" type=\"checkbox\" S/></td>\n";
+                                echo "  <td id=\"checkboxTable\"><input name=\"deleteSelection\" type=\"checkbox\" S/></td>\n";
                                 echo "  <td>" . $row->title . "</td>\n";
                                 echo "  <td>" . $row->location . "</td>\n";
                                 echo "  <td>" . $row->createdBy . "</td>\n";
@@ -53,8 +53,11 @@
                                 echo "</tr>\n";
                             }
                         ?>
+                        <form action="sqldeletes.php?event_id=<?php echo $row->id; ?>" method="post">
+                            <input id="button" name="deleteEvent" type="submit" value="Delete" />
+                        </form>
                     </tbody>
-                </table>                
+                </table>
             </section>
 
             <?php require_once("inc/sidebar.inc"); ?>
