@@ -78,8 +78,9 @@ if (isDatumValid())
 			$sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
 			$sth->execute();
 			$row = $sth->fetch();
+			$event_id = $row['id'];
 			$sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
-			VALUES (" . $row->id . ", $i)");
+			VALUES ($event_id, $i)");
 			$sth->execute();
 		}
 	}
