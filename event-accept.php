@@ -56,7 +56,7 @@
                     </tbody>
                 </table>
                 <form action="sqldeletes.php?event_id=<?php echo $row->id; ?>" method="post">
-                    <input id="button" name="deleteEvent" type="submit" value="Delete" />
+                    <input id="button" name="deleteEvent" type="submit" value="Delete Selection" />
                 </form>
             </section>
 
