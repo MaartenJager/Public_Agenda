@@ -110,6 +110,7 @@ body {
     margin-left: 812px;
     width: 148px;
     height: 90px;
+    visibility: none;
 }
 
 #loginBox input{

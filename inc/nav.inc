@@ -8,7 +8,7 @@
                 <li><a href="event-add.php">Evenement toevoegen</a></li>
                 <li><a href="event-accept.php">Evenementen controleren</a></li>
                 <li><a href="admin.php">Gebruikersbeheer</a></li>
-                <li><a href="#" onclick="toggle_visibility('loginBox');">Login</a></li>
+                <li><a href="#" onclick="toggleVisibility('loginBox');">Login</a></li>
             </ul>
         </nav>
 
