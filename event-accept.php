@@ -35,9 +35,11 @@
                     <tbody>
                         <?php
                             // showing the results
+                            $i=0;
                             while($row = $sth->fetch() ){
+                                i++;
                                 echo "<tr>\n";
-                                echo "  <td id=\"checkboxTable\"><input name=\"deleteSelection\" type=\"checkbox\" S/></td>\n";
+                                echo "  <td id=\"checkboxTable\"><input name=\"deleteSelection$i\" type=\"checkbox\" S/></td>\n";
                                 echo "  <td>" . $row->title . "</td>\n";
                                 echo "  <td>" . $row->location . "</td>\n";
                                 echo "  <td>" . $row->createdBy . "</td>\n";
