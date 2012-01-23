@@ -68,7 +68,7 @@ if (isDatumValid())
 	require("inc-dbcon.php");
 	$sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, description, creationDate, approvedBy)
 	VALUES
-	('$_POST[eventName]', '$beginDateTimeStamp', '$_POST[eventDate]', '$_POST[eventDescription]', " . time() . ", NULL)");
+	('$_POST[eventName]', '$beginDateTimeStamp', '$beginDateTimeStamp', '$_POST[eventDescription]', " . time() . ", NULL)");
         $sth->execute();
 
 	for($i=0; $i<8; $i++)
