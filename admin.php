@@ -15,7 +15,7 @@
         <?php require_once("inc/header.inc"); ?>
 
         <script language="JavaScript">
-            function makeVisibile() {
+            function makeVisible() {
                 document.getElementById('addUser').style.display = 'block';
                 document.getElementById('addUserButton').style.display = 'none';
             }
