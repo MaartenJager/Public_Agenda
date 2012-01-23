@@ -54,7 +54,7 @@
                                 echo "      </a> \n";
                                 echo "  </td>\n";
                                 echo "</tr>\n";
-                                echo "<input name=\"event_id" . $i . "\" value=\"" . $row->id . "\" type=\"hidden\">"
+                                echo "<input name=\"event_id" . $i . "\" value=\"" . $row->id . "\" type=\"hidden\">";
                             }
                         ?>
                     </tbody>
