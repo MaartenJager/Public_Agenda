@@ -84,17 +84,10 @@ if (isDatumValid())
 			$sth->execute();
 		}
 	}
-	
-	if (!mysql_query($sql,$con))
-	{
-		die('Er is een fout opgetreden met de verbinding.');
-	}	
-	
-	mysql_close($con);
 }
 else
 {
-	echo "het werkt niet<br/>";
+	echo "incorrecte datum<br/>";
 }
 
 ?> 
