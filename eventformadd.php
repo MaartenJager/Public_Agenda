@@ -8,19 +8,33 @@ function isDatumValid()
 	{
 		if (checkdate($mm,$dd,$yyyy))
 		{
-			echo "Entry date is correct<br/>";
-			return TRUE;
+			$date = $_POST['eventEndDate'];
+			list($dd, $mm, $yyyy) = explode('-', $date);
+			if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy))
+			{
+				if (checkdate($mm,$dd,$yyyy))
+				{
+					echo "Entry dates are correct<br/>";
+					return TRUE;
+				}
+				else
+				{
+					echo "End date is numeric but not a valid date<br/>";
+				}
+			}
+			else
+			{
+				echo "Begin date is not numeric or in format dd-mm-yyyy<br/>";
+			}
 		}
 		else
 		{
-			echo "date is numeric but not a valid date<br/>";
-			return FALSE;
+			echo "Begin date is numeric but not a valid date<br/>";
 		}
 	}
 	else
 	{
-		echo "date is not numeric or in format dd-mm-yyyy<br/>";
-		return FALSE;
+		echo "Begin date is not numeric or in format dd-mm-yyyy<br/>";
 	}
 	return FALSE;
 }
@@ -62,13 +76,21 @@ if( isset($_POST['genre_other']) )
 
 
 if (isDatumValid())
-{	$date = $_POST['eventBeginDate'];
+{
+	$date = $_POST['eventBeginDate'];
 	list($dd, $mm, $yyyy) = explode('-', $date);
-	$beginDateTimeStamp = mktime($_POST[eventBeginTimeHours], $_POST[eventBeginTimeMinutes], 0, $mm, $dd, $yyyy, -1);
+	$hours = $_POST[eventBeginTimeHours]
+	$minutes = $_POST[eventBeginTimeMinutes]
+	$beginDateTimeStamp = mktime($hours, $minutes, 0, $mm, $dd, $yyyy, -1);
+	$date = $_POST['eventEndDate'];
+	list($dd, $mm, $yyyy) = explode('-', $date);
+	$hours = $_POST[eventEndTimeHours]
+	$minutes = $_POST[eventEndTimeMinutes]
+	$endDateTimeStamp = mktime($hours, $minutes, 0, $mm, $dd, $yyyy, -1);
 	require("inc-dbcon.php");
 	$sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, description, creationDate, approvedBy)
 	VALUES
-	('$_POST[eventName]', '$beginDateTimeStamp', '$beginDateTimeStamp', '$_POST[eventDescription]', " . time() . ", NULL)");
+	('$_POST[eventName]', '$beginDateTimeStamp', '$endDateTimeStamp', '$_POST[eventDescription]', " . time() . ", NULL)");
         $sth->execute();
 
 	for($i=0; $i<8; $i++)
