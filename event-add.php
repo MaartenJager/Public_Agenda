@@ -18,7 +18,7 @@
                     <label>Naam evenement</label>
                     <input name="eventName" placeholder="Voer naam in" autofocus required>
 
-                    <label>Begindatum en tijd</label>
+                    <label>Begindatum (DD-MM-YYYY) en tijd</label>
                     <input name="eventBeginDate" placeholder="bv. 01-01-2012" required>
                     
                     <select name="eventBeginTimeHours">
@@ -63,7 +63,7 @@
                         <option value="55">55</option>
                     </select>
                     
-                    <label>Einddatum en tijd</label>
+                    <label>Einddatum (DD-MM-YYYY) en tijd</label>
                     <input name="eventEndDate" placeholder="bv. 01-01-2012" required>
 
                     <select name="eventEndTimeHours">
