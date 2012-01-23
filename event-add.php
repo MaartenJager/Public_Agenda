@@ -4,23 +4,23 @@
         <title>The Roadhouse - Evenement toevoegen</title>
         <?php require_once("inc/header.inc"); ?>
     </head>
-    
+
     <body>
         <div id="header"></div>
-        
+
         <?php require_once("inc/nav.inc"); ?>
-        
+
         <div id="container">
             <section id="main">
                 <h1>Evenement toevoegen</h1>
                 <p>Wilt u het volgende formulier invullen? Alle velden, op de afbeelding na, zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
-                <form name="event-add" action="eventformadd.php" method="post">
+                <form name="event-add" action="eventformadd.php" enctype="multipart/form-data" method="post">
                     <label>Naam evenement</label>
                     <input name="eventName" placeholder="Voer naam in" autofocus required>
 
                     <label>Begindatum (DD-MM-YYYY) en tijd</label>
                     <input name="eventBeginDate" placeholder="bv. 01-01-2012" required>
-                    
+
                     <select name="eventBeginTimeHours">
                         <option value="00">00</option>
                         <option value="01">01</option>
@@ -47,7 +47,7 @@
                         <option value="22">22</option>
                         <option value="23">23</option>
                     </select>
-                    :
+
                     <select name="eventBeginTimeMinutes">
                         <option value="00">00</option>
                         <option value="05">05</option>
@@ -62,7 +62,7 @@
                         <option value="50">50</option>
                         <option value="55">55</option>
                     </select>
-                    
+
                     <label>Einddatum (DD-MM-YYYY) en tijd</label>
                     <input name="eventEndDate" placeholder="bv. 01-01-2012" required>
 
@@ -107,7 +107,6 @@
                         <option value="50">50</option>
                         <option value="55">55</option>
                     </select>
-                     
 
                     <label>Beschrijving van het evenement</label>
                     <textarea name="eventDescription" placeholder="Voer beschrijving in" required></textarea>			        		
@@ -133,12 +132,11 @@
                     <div id="checkbox_below">
                          <label>Voeg een afbeelding toe</label>
                          <input type="file" name="datafile" />
-
                          <input id="button" name="addUser" type="submit" value="Submit" />
                     </div>
                 </form>
             </section>
-			
+
             <?php require_once("inc/sidebar.inc"); ?>
             <?php require_once("inc/footer.inc"); ?>
 	</div>

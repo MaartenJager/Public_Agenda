@@ -3,7 +3,7 @@
     require_once("inc-conf.php");
     require("inc-dbcon.php");
 
-    $sth = $dbh->query("SELECT * FROM events WHERE approvedBy IS NULL");
+    $sth = $dbh->query("SELECT * FROM events WHERE approvedBy IS NULL ORDER BY creationDate");
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
 ?>
@@ -14,15 +14,16 @@
 
     <body>
         <div id="container">
-            <div id="header" role="banner">Paginatitel</div>
+            <div id="header" role="banner"></div>
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main" role="main">
-                <header class="pageTitle"><h1>Events Accepteren</h1></header>
+                <header class="pageTitle"><h1>Evenementen Accepteren</h1></header>
 
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Titel</th>
                             <th>Locatie</th>
                             <th>Door</th>
@@ -36,10 +37,11 @@
                             // showing the results
                             while($row = $sth->fetch() ){
                                 echo "<tr>\n";
+                                echo "  <td><input name=\"select\" id=\"formCheckBox\" type=\"checkbox\" /></td>\n";
                                 echo "  <td>" . $row->title . "</td>\n";
                                 echo "  <td>" . $row->location . "</td>\n";
                                 echo "  <td>" . $row->createdBy . "</td>\n";
-                                echo "  <td>" . $row->creationDate . "</td>\n";
+                                echo "  <td>" . date('d-m-Y G:i', $row->creationDate) . "</td>\n";
                                 echo "  <td> \n";
                                 echo "      <a class=\"button\" href=\"sqldeletes.php?event_id=".$row->id."\"> \n";
                                 echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
