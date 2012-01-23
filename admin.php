@@ -15,12 +15,13 @@
         <?php require_once("inc/header.inc"); ?>
 
         <script language="JavaScript">
-            function toggle(x) {
-                if (document.getElementById(x).style.display == 'none') {
-                    document.getElementById(x).style.display = 'block';
-                }          
+            function toggle(id) {
+                var state = document.getElementById(id).style.display;
+                if (state == 'block') {
+                    document.getElementById(id).style.display = 'none';
+                }
                 else {
-                    document.getElementById(x).style.display = 'none';
+                    document.getElementById(id).style.display = 'block';
                 }
             }
         </script>
@@ -69,7 +70,7 @@
                 </table>
 
                 <div id="addUserButton">
-                    <input id="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="toggle(addUserButton); toggle(addUser);" />
+                    <input id="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="toggle(addUser);" />
                 </div>
 
                 <div id="addUser">
