@@ -39,7 +39,7 @@
                                 echo "  <td>" . $row->title . "</td>\n";
                                 echo "  <td>" . $row->location . "</td>\n";
                                 echo "  <td>" . $row->createdBy . "</td>\n";
-                                echo "  <td>" . $row->creationDate . "</td>\n";
+                                echo "  <td>" . date('d-m-Y G:i', $row->creationDate) . "</td>\n";
                                 echo "  <td> \n";
                                 echo "      <a class=\"button\" href=\"sqldeletes.php?event_id=".$row->id."\"> \n";
                                 echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
