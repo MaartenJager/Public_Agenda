@@ -65,7 +65,7 @@
                 </table>
 
                 <div id="addUserButton">
-                    <input id="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="toggle('addUser');" />
+                    <input id="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="enableAddUser();" />
                 </div>
 
                 <div id="addUser">
