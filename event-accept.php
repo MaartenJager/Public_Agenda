@@ -53,11 +53,11 @@
                                 echo "</tr>\n";
                             }
                         ?>
-                        <form action="sqldeletes.php?event_id=<?php echo $row->id; ?>" method="post">
-                            <input id="button" name="deleteEvent" type="submit" value="Delete" />
-                        </form>
                     </tbody>
                 </table>
+                <form action="sqldeletes.php?event_id=<?php echo $row->id; ?>" method="post">
+                    <input id="button" name="deleteEvent" type="submit" value="Delete" />
+                </form>
             </section>
 
             <?php require_once("inc/sidebar.inc"); ?>
