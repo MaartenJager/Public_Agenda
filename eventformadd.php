@@ -79,13 +79,13 @@ if (isDatumValid())
 {
 	$date = $_POST['eventBeginDate'];
 	list($dd, $mm, $yyyy) = explode('-', $date);
-	$hours = $_POST[eventBeginTimeHours];
-	$minutes = $_POST[eventBeginTimeMinutes];
+	$hours = $_POST['eventBeginTimeHours'];
+	$minutes = $_POST['eventBeginTimeMinutes'];
 	$beginDateTimeStamp = mktime($hours, $minutes, 0, $mm, $dd, $yyyy, -1);
 	$date = $_POST['eventEndDate'];
 	list($dd, $mm, $yyyy) = explode('-', $date);
-	$hours = $_POST[eventEndTimeHours];
-	$minutes = $_POST[eventEndTimeMinutes];
+	$hours = $_POST['eventEndTimeHours'];
+	$minutes = $_POST['eventEndTimeMinutes'];
 	$endDateTimeStamp = mktime($hours, $minutes, 0, $mm, $dd, $yyyy, -1);
 	require("inc-dbcon.php");
 	$sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, description, creationDate, approvedBy)
