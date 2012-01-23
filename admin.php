@@ -15,14 +15,9 @@
         <?php require_once("inc/header.inc"); ?>
 
         <script language="JavaScript">
-            function toggle(id) {
-                var state = document.getElementById(id).style.display;
-                if (state == 'none') {
-                    document.getElementById(id).style.display = 'block';
-                }
-                else {
-                    document.getElementById(id).style.display = 'none';
-                }
+            function makeVisibile() {
+                document.getElementById('addUser').style.display = 'block';
+                document.getElementById('addUserButton').style.display = 'none';
             }
         </script>
 
@@ -70,7 +65,7 @@
                 </table>
 
                 <div id="addUserButton">
-                    <input id="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="toggle('addUser'); toggle('addUserButton')" />
+                    <input id="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="makeVisible();" />
                 </div>
 
                 <div id="addUser">
