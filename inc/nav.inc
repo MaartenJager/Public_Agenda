@@ -8,11 +8,11 @@
                 <li><a href="event-add.php">Evenement toevoegen</a></li>
                 <li><a href="event-accept.php">Evenementen controleren</a></li>
                 <li><a href="admin.php">Gebruikersbeheer</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="#" onclick="toggle_visibility('loginBox');">Login</a></li>
             </ul>
         </nav>
 
-        <div id="login">
+        <div id="loginBox">
             <form name="login" action="login.php" method="post">
                 <input name="eventName" placeholder="Gebruikersnaam" required>
                 <input name="eventName" type="password" placeholder="Wachtwoord" required>
