@@ -25,49 +25,47 @@ function isDatumValid()
 	return FALSE;
 }
 
-
 $arrayCheckboxes = array_fill(0, 8, FALSE);
 
-
-	if( isset($_POST['genre_pop']) )
-	{
-		$arrayCheckboxes[0] = TRUE;
-	}
-	if( isset($_POST['genre_rock']) )
-	{
-		$arrayCheckboxes[1] = TRUE;
-	}
-	if( isset($_POST['genre_metal']) )
-	{
-		$arrayCheckboxes[2] = TRUE;
-	}
-	if( isset($_POST['genre_hiphop']) )
-	{
-		$arrayCheckboxes[3] = TRUE;
-	}
-	if( isset($_POST['genre_blues']) )
-	{
-		$arrayCheckboxes[4] = TRUE;
-	}
-	if( isset($_POST['genre_classic']) )
-	{
-		$arrayCheckboxes[5] = TRUE;
-	}
-	if( isset($_POST['genre_church']) )
-	{
-		$arrayCheckboxes[6] = TRUE;
-	}
-	if( isset($_POST['genre_other']) )
-	{
-		$arrayCheckboxes[7] = TRUE;
-	}
+if( isset($_POST['genre_pop']) )
+{
+	$arrayCheckboxes[0] = TRUE;
+}
+if( isset($_POST['genre_rock']) )
+{
+	$arrayCheckboxes[1] = TRUE;
+}
+if( isset($_POST['genre_metal']) )
+{
+	$arrayCheckboxes[2] = TRUE;
+}
+if( isset($_POST['genre_hiphop']) )
+{
+	$arrayCheckboxes[3] = TRUE;
+}
+if( isset($_POST['genre_blues']) )
+{
+	$arrayCheckboxes[4] = TRUE;
+}
+if( isset($_POST['genre_classic']) )
+{
+	$arrayCheckboxes[5] = TRUE;
+}
+if( isset($_POST['genre_church']) )
+{
+	$arrayCheckboxes[6] = TRUE;
+}
+if( isset($_POST['genre_other']) )
+{
+	$arrayCheckboxes[7] = TRUE;
+}
 
 if (isDatumValid())
 {
     require("inc-dbcon.php");
-	$sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, description, approvedBy)
+	$sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, description, creationDate, approvedBy)
 	VALUES
-	('$_POST[eventName]', '$_POST[eventDate]', '$_POST[eventDate]', '$_POST[eventDescription]', NULL)");
+	('$_POST[eventName]', '$_POST[eventDate]', '$_POST[eventDate]', '$_POST[eventDescription]', " . getdate() . ", NULL)");
         $sth->execute();
 
 	for($i=0; $i<8; $i++)
@@ -75,7 +73,6 @@ if (isDatumValid())
 		if ($arrayCheckboxes[$i])
 		{
 			echo "EEN GENRE OPGESLAGEN <br/>";
-			echo "$i<br/>";
 			$sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
 			$sth->execute();
 			$row = $sth->fetch();
