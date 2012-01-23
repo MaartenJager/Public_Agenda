@@ -142,7 +142,7 @@ a.button{
     text-decoration: none; /* removes lines between two images containing a link*/
 }
 
-#formCheckbox{
+#formCheckbox, #tableCheckbox{
     width: 13px;
     height: 13px;
     padding: 0;
@@ -152,6 +152,10 @@ a.button{
     top: -1px;
     margin-left: 3px;
     margin-top: 15px;
+}
+
+#tableCheckbox {
+    margin: auto;
 }
 
 /* Generic table layout */
@@ -247,7 +251,7 @@ included the code you did, and what exactly uses it. */
 #agenda .event .comment .description{
     margin-bottom: 0px; /* space between summary and meta-info*/
     height: 60%;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
 
     /* Create '..." in case of overflow */
     overflow-x: hidden;
