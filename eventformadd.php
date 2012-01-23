@@ -2,11 +2,9 @@
 
 function isDatumValid()
 {
-	$date = $_POST['eventDate'];
-	list($dd, $mm, $yy) = explode('-', $date);
-	if (is_numeric($dd) && is_numeric($mm) && is_numeric($yy))
+	if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy))
 	{
-		if (checkdate($mm,$dd,$yy))
+		if (checkdate($mm,$dd,$yyyy))
 		{
 			echo "Entry date is correct<br/>";
 			return TRUE;
@@ -60,12 +58,16 @@ if( isset($_POST['genre_other']) )
 	$arrayCheckboxes[7] = TRUE;
 }
 
+$date = $_POST['eventBeginDate'];
+list($dd, $mm, $yyyy) = explode('-', $date);
+$beginDateTimeStamp = mktime($_POST[eventBeginTimeHours], $_POST[eventBeginTimeMinutes], 0, $mm, $dd, $yyyy, -1);
+
 if (isDatumValid())
 {
-    require("inc-dbcon.php");
+	require("inc-dbcon.php");
 	$sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, description, creationDate, approvedBy)
 	VALUES
-	('$_POST[eventName]', '$_POST[eventDate]', '$_POST[eventDate]', '$_POST[eventDescription]', " . time() . ", NULL)");
+	('$_POST[eventName]', '$beginDateTimeStamp', '$_POST[eventDate]', '$_POST[eventDescription]', " . time() . ", NULL)");
         $sth->execute();
 
 	for($i=0; $i<8; $i++)
