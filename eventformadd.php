@@ -74,6 +74,23 @@ if( isset($_POST['genre_other']) )
 	$arrayCheckboxes[7] = TRUE;
 }
 
+//Image upload
+
+$targetDir = 'img/';
+
+$imgFileName = uniqid(rand(),true);
+$targetDir = $targetDir . basename( $_FILES['imgfile']['$imgFileName');
+
+if(move_uploaded_file($_FILES['imgfile']['$imgFileName'], $target)) 
+{ 
+	echo "The file ". basename( $_FILES['imgfile']['$imgFileName']). " has been uploaded";
+	//the file has been succesfully uploaded!!!!!!
+}
+else
+{
+	//error if not correctly
+	echo "Sorry, there was a problem uploading your file.";
+}
 
 if (isDatumValid())
 {
