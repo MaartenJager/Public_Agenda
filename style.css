@@ -156,6 +156,10 @@ a.button{
 
 #tableCheckbox {
     margin: auto;
+    
+    margin-left: 0px;
+    margin-top: 0px;
+    top: 0px;
 }
 
 /* Generic table layout */
