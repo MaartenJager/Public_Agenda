@@ -11,3 +11,11 @@
                 <li><a href="#">Login</a></li>
             </ul>
         </nav>
+
+        <div id="login">
+            <form name="login" action="login.php" method="post">
+                <input name="eventName" placeholder="Gebruikersnaam" required>
+                <input name="eventName" type="password" placeholder="Wachtwoord" required>
+                <input id="button" name="login" type="submit" value="Login" />
+            </form>
+        </div>

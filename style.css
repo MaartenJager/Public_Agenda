@@ -201,6 +201,10 @@ td, th{
     padding-right: 0px;
 }
 
+#checkboxTable input {
+    width: 15px;
+}
+
 thead th, tfoot th{
     font-size: 12px;
     border: 1px solid #03476F;
