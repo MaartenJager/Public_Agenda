@@ -95,6 +95,10 @@ body {
     text-align: left;
 }
 
+#sidebar_agenda input {
+    width: 144px;
+}
+
 #footer {
     clear: both; /* Required for footer to show up beneath main/sidebar */
     text-align: center;
@@ -120,10 +124,6 @@ input, textarea {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-}
-
-#inputshort {
-    width: 144px;
 }
 
 textarea {
