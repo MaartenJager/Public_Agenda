@@ -75,12 +75,14 @@ if (isDatumValid())
 		if ($arrayCheckboxes[$i])
 		{
 			echo "EEN GENRE OPGESLAGEN <br/>";
+			echo "$i<br/>";
 			$sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
 			$sth->execute();
 			$row = $sth->fetch();
 			$event_id = $row['id'];
+			$genreId = $i + 1;
 			$sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
-			VALUES ($event_id, $i)");
+			VALUES ($event_id, $genreId)");
 			$sth->execute();
 		}
 	}
