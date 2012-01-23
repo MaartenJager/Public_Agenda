@@ -15,15 +15,10 @@
         <?php require_once("inc/header.inc"); ?>
 
         <script language="JavaScript">
-            function toggle(id) {
-                var state = document.getElementById(id).style.display;
-                    if (state == 'block') {
-                        document.getElementById(id).style.display = 'none';
-                    }
-                    else {
-                        document.getElementById(id).style.display = 'block';
-                    }
-                }
+            function enableAddUser() {
+                    document.getElementById(addUser).style.display = 'block';
+                    document.getElementById(adduserButton).style.display = 'none';
+            }
         </script>
 
     </head>
@@ -69,9 +64,12 @@
                     </tbody>
                 </table>
 
-                <input id="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="toggle('addUser');" />
+                <div id="addUserButton">
+                    <input id="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="toggle('addUser');" />
+                </div>
 
                 <div id="addUser">
+                    <header class="pageTitle"><h1>Nieuwe gebruiker toevoegen</h1></header>
                     <form action="formhandler.php" method="post">
                         <label>Voornaam</label>
                         <input name="firstName" placeholder="Voornaam" autofocus required>

@@ -269,3 +269,7 @@ included the code you did, and what exactly uses it. */
 #addUser {
     display: none; /* Hide the addUser interface until it is requested */
 }
+
+#addUserButton {
+    display: block; /* Show button for addUser interface until it is pressed */
+}
