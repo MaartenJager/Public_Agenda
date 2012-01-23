@@ -101,7 +101,7 @@ body {
     color: grey;
 }
 
-#login{
+#loginBox{
     border:1px solid black; /* tmp, make borders visible while devving*/
     border-top: none;
     border-right: none;
@@ -112,13 +112,13 @@ body {
     height: 90px;
 }
 
-#login input{
+#loginBox input{
     height: 5px;
     width: 120px;
     margin-top: 2px;
 }
 
-#login #button{
+#loginBox #button{
     width: 50px;
     height: 30px;
     color: #000;
