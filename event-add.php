@@ -109,7 +109,7 @@
                     </select>
 
                     <label>Beschrijving van het evenement</label>
-                    <textarea name="eventDescription" placeholder="Voer beschrijving in" required></textarea>
+                    <textarea class="formTextbox" name="eventDescription" placeholder="Voer beschrijving in" required></textarea>
 
                     <label>Kies de categorie&#235;n die bij het evenement horen</label>
                     <div id="checkbox_list">
