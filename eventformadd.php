@@ -80,9 +80,13 @@ if (isDatumValid())
 {
 	//Image upload
 	$targetPath = "img/";
+	
+	//random filename between 0 and 99999999 for final storage
 	$imgFileName = mt_rand(0, 99999999);
 	$orgFileName = $_FILES['file']['name'];
-	$extension = end(explode(".", $orgFileName));
+	//get fileextension
+	$fileExtension = end(explode(".", $orgFileName));
+	//define final path for storage of img
 	$targetPath = $targetPath . $imgFileName . ".". $fileExtension;   
 	
 	if ((($_FILES["file"]["type"] == "image/gif")
@@ -109,17 +113,17 @@ if (isDatumValid())
 			}
 			else
 			{
-				echo "There was an error uploading the file, please try again!";
+				echo "There was an error uploading the file, please try again!<br />";
 			}			
 		}
 	}
 	else
 	{
-		echo "Invalid file";
+		echo "Invalid file<br />";
 	}
 	
-	//later moet nog goede extension
-	
+
+	//correct
 	$urlImage = "http://websec.science.uva.nl/webdb1241/" . $targetPath;
 
 	//dates
@@ -151,7 +155,6 @@ if (isDatumValid())
 			$sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
 			VALUES ($event_id, $genreId)");
 			$sth->execute();
-	
 		}
 	}
 
