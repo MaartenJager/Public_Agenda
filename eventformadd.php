@@ -100,7 +100,7 @@ if (isDatumValid())
 			echo "Will be temp stored in: " . $_FILES["file"]["tmp_name"];
 			
 			$extension= end(explode(".", $_FILES['name'])); 
-			echo "<br/><br/>test EXTENSION". $extension!!!! . "<br/>";
+			echo "<br/><br/>test EXTENSION". $extension . "<br/>";
 			$targetPath = $targetPath . $imgFileName . $extension;
 			$urlImage = "http://websec.science.uva.nl/webdb1241/img/". $imgFileName . $extension;
 			
