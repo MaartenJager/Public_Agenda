@@ -107,8 +107,8 @@ if (isDatumValid())
 			if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
 			{
 				echo "The file".  basename( $_FILES['file']['name']). 
-				" has been uploaded and moved to /img with name: ".$imgFileName 
-				.$extension " and full path: ". $targetPath . "and URL" . $urlImage;
+				" has been uploaded and moved to /img with name: ". $imgFileName 
+				. $extension . " and full path: ". $targetPath . "and URL" . $urlImage;
 			}
 			else
 			{
