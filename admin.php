@@ -48,6 +48,7 @@
                                 // showing the results
                                 while($row = $sth->fetch() ){
                                     echo "<tr>\n";
+                                    echo "  <td id=\"checkboxTable\"><input name=\"deleteSelection" . $i . "\" type=\"checkbox\" S/></td>\n";
                                     echo "  <td>" . $row->firstName . "</td>\n";
                                     echo "  <td>" . $row->name . "</td>\n";
                                     echo "  <td>" . $row->email . "</td>\n";
