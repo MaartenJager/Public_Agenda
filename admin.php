@@ -46,6 +46,7 @@
                         <tbody>
                             <?php
                                 // showing the results
+                                $i = 0;
                                 while($row = $sth->fetch() ){
                                     $i++;
                                     echo "<tr>\n";
