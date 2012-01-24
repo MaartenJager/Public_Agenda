@@ -162,7 +162,7 @@
             <aside id="sidebar_agenda">
                 <label>Zoeken op woord</label>
                 <div id="sidebar_agenda_searchbar">
-                    <input class="formTextbox" name="eventName" placeholder="Naam of zoekterm">
+                    <input type="email" name="eventName" placeholder="Naam of zoekterm">
                 </div>
 
                 <label>Zoeken op catagorie</label>

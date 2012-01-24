@@ -79,16 +79,16 @@
                     <header class="pageTitle"><h1>Nieuwe gebruiker toevoegen</h1></header>
                     <form action="formhandler.php" method="post">
                         <label>Voornaam</label>
-                        <input class="formTextbox" name="firstName" placeholder="Voornaam" autofocus required>
+                        <input type="text" name="firstName" placeholder="Voornaam" autofocus required>
 
                         <label>Achternaam (inclusief eventuele tussenvoegsels)</label>
-                        <input class="formTextbox" name="name" placeholder="Achternaam" required>
+                        <input type="text" name="name" placeholder="Achternaam" required>
 
                         <label>Email (tevens de login naam)</label>
-                        <input class="formTextbox" name="email" type="email" placeholder="Email" required></textarea>
+                        <input type="email" name="email" placeholder="Email" required>
 
                         <label>Wachtwoord</label>
-                        <input class="formTextbox" name="password" placeholder="Wachtwoord" required></textarea>
+                        <input type="password" name="password" placeholder="Wachtwoord" required>
 
                         <label>Toegangsniveau</label>
                         <select name="accessLevel">

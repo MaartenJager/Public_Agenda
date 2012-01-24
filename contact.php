@@ -16,15 +16,14 @@
                 <p>Neem contact met ons op door het onderstaande formulier in te vullen. Alle velden zijn verplicht.</p>
                 <form>
                     <label>Uw naam</label>
-                    <input class="formTextbox" name="name" placeholder="Type uw naam" autofocus required>
+                    <input type="text" name="name" placeholder="Type uw naam" autofocus required>
 
                     <label>Email</label>
-                    <input class="formTextbox" name="email" type="email" placeholder="Type uw email" required>
+                    <input type="text" name="email" type="email" placeholder="Type uw email" required>
 
                     <label>Bericht</label>
-                    <textarea class="formTextbox" name="message" placeholder="Type uw bericht" required></textarea>
+                    <textarea name="message" placeholder="Type uw bericht" required></textarea>
 
-                    <label></label>
                     <input id="button" name="submit" type="submit" value="Verstuur bericht">
                 </form>
             </section>
