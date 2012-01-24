@@ -80,27 +80,12 @@ if (isDatumValid())
 {
 	//Image upload
 	$targetPath = "img/";
-	$targetPath = $targetPath . basename( $_FILES['file']['name']);  
-	
-	
-	// komt later
 	$imgFileName = mt_rand();
-
-	if ($_FILES["file"]["error"] > 0)
-	{
-		echo "Error: " . $_FILES["file"]["error"] . "<br />";
-	}
-	else
-	{
-		echo "Upload: " . $_FILES["file"]["name"] . "<br />";
-		echo "Type: " . $_FILES["file"]["type"] . "<br />";
-		echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-		echo "Stored in: " . $_FILES["file"]["tmp_name"];
-	}
+	  
 
 	if ((($_FILES["file"]["type"] == "image/gif")
 	|| ($_FILES["file"]["type"] == "image/jpeg")
-	|| ($_FILES["file"]["type"] == "image/pjpeg"))
+	|| ($_FILES["file"]["type"] == "image/pjpeg")) // oude IE browsers zijn raar
 	&& ($_FILES["file"]["size"] < 20000))
 	{
 		if ($_FILES["file"]["error"] > 0)
@@ -113,11 +98,17 @@ if (isDatumValid())
 			echo "Type: " . $_FILES["file"]["type"] . "<br />";
 			echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
 			echo "Will be temp stored in: " . $_FILES["file"]["tmp_name"];
-
-			if(copy($_FILES['file']['tmp_name'], $targetPath))
+			
+			$extension= end(explode(".", $_FILES['name'])); 
+			echo "<br/><br/>test $ variable extension!!!!<br/>";
+			$targetPath = $targetPath . $imgFileName . $extension;
+			$urlImage = "http://websec.science.uva.nl/webdb1241/img/". $imgFileName . $extension;
+			
+			if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
 			{
-				echo "The file ".  basename( $_FILES['file']['name']). 
-				" has been uploaded";
+				echo "The file".  basename( $_FILES['file']['name']). 
+				" has been uploaded and moved to /img with name: ".$imgFileName 
+				.$extension " and full path: ". $targetPath . "and URL" . $urlImage;
 			}
 			else
 			{
@@ -129,10 +120,6 @@ if (isDatumValid())
 	{
 		echo "Invalid file";
 	}
-	
-	
-	//komt later
-	$urlImage = "http://websec.science.uva.nl/webdb1241/img/$imgFileName";
 
 	//dates
 
@@ -163,11 +150,13 @@ if (isDatumValid())
 			$sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
 			VALUES ($event_id, $genreId)");
 			$sth->execute();
-			/*
+			
+			
+			//image URL
 			$sth=$dbh->prepare("INSERT INTO events ('image')
 			VALUES ($urlImage)");
 			$sth->execute();
-			*/
+			
 		}
 	}
 }
