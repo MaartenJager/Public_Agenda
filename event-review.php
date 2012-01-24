@@ -111,7 +111,10 @@
                     <input id="button" name="editEvent" type="submit" value="Submit" />
                 </form>
 
-                <form action="sqldeletes.php?action=delete&type=event&id=<?php echo $row->id; ?>" method="get">
+                <form action="sqldeletes.php" method="get">
+                    <input type="hidden" name="action" value="delete" />
+                    <input type="hidden" name="type" value="event" />
+                    <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
                     <input id="button" name="deleteEvent" type="submit" value="Delete" />
                 </form>
 
