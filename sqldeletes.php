@@ -23,6 +23,14 @@
     }
 
     /* Delete *ONE* event */
+    if(isset($_GET['action'])){
+        if( ($_GET['action']) == delete ){
+            echo("action is DELETE");
+        }
+    }
+
+
+    /* Delete *ONE* event */
     if(isset($_POST['deleteEvent'])){
         deleteEvent($_GET['event_id']);
     }
