@@ -135,7 +135,7 @@ label {
     letter-spacing: 2px;
 }
 
-.formTextbox {
+input[type="text"] {
     background-image:url(img/form_bg.jpg);
     background-repeat:repeat-x;
     border:1px solid #d1c7ac;
@@ -148,7 +148,7 @@ label {
 
 textarea {
     height: 200px;
-    background: url(img/form-bg.png) bottom right no-repeat #EFEFEF;
+    background: url(img/form-bg.png) bottom right no-repeat #AAA;
 }
 
 a.button{
