@@ -161,6 +161,7 @@ textarea {
 }
 
 #buttonSmall {
+    width: 144px;
     display: block;
     heigth: 32px;
     margin-top: 14px;

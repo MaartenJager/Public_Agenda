@@ -46,7 +46,7 @@
 
                     <label>Begindatum/-tijd</label>
                     <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>\
-                    <input type="button" value="Timestamp Calculator" onclick="showUpperCalc" /> 
+                    <input id="buttonSmall" type="button" value="Timestamp Calculator" onclick="showUpperCalc();" /> 
                     <div id="beginDateCalc">
                         Blablabla
                     </div>
@@ -54,7 +54,7 @@
 
                     <label>Einddatum/-tijd</label>
                     <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
-                    <input type="button" value="Timestamp Calculator" onclick="showLowerCalc" /> 
+                    <input id="buttonSmall" type="button" value="Timestamp Calculator" onclick="showLowerCalc();" /> 
                     <div id="endDateCalc">
                         Blablabla
                     </div>
