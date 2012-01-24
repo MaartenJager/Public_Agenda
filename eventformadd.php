@@ -76,8 +76,7 @@ if( isset($_POST['genre_other']) )
 
 function file_extension($filename)
 {
-	$temp = $filename;
-    return end(explode(".", $temp));
+    return end(explode(".", $filename));
 }
 
 
@@ -86,8 +85,9 @@ if (isDatumValid())
 	//Image upload
 	$targetPath = "img/";
 	$imgFileName = mt_rand(0, 99999999);
-	$targetPath = $targetPath . $imgFileName . ".". (file_extension($_FILES["file"]["name"]));  
-	echo ("<br/>TEST FILE PATH" . $targetPath); 
+	
+	$orgFileName = $_FILES["file"]["name"];
+	$targetPath = $targetPath . $imgFileName . ".". (file_extension($orgFileName));   
 	
 	if ((($_FILES["file"]["type"] == "image/gif")
 	|| ($_FILES["file"]["type"] == "image/jpeg")
@@ -103,7 +103,7 @@ if (isDatumValid())
 			echo "Upload: " . $_FILES["file"]["name"] . "<br />";
 			echo "Type: " . $_FILES["file"]["type"] . "<br />";
 			echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-			echo "Will be temp stored in: " . $_FILES["file"]["tmp_name"];
+			echo "Will be temp stored in: " . $_FILES["file"]["tmp_name"] . "<br />";
 			
 			
 			if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
@@ -146,7 +146,7 @@ if (isDatumValid())
 	{
 		if ($arrayCheckboxes[$i])
 		{
-			echo "EEN GENRE OPGESLAGEN <br/>";
+			echo "<br />EEN GENRE OPGESLAGEN <br />";
 			$sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
 			$sth->execute();
 			$row = $sth->fetch();
