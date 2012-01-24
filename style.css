@@ -160,7 +160,14 @@ textarea {
     cursor: pointer;
 }
 
-#button:hover {
+#buttonSmall {
+    display: block;
+    heigth: 32px;
+    margin-top: 14px;
+    cursor: pointer;
+}
+
+#button:hover, #buttonSmall:hover {
     opacity: 0.6;
 }
 

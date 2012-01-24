@@ -17,14 +17,14 @@
         <?php require_once("inc/header.inc"); ?>
         
         <script language="JavaScript">
-            function toggle(id) {
-                var id = document.getElementById(id);
-                if (id.style.display != 'none') {
-                    id.style.display = 'none');
-                }
-                else {
-                    id.style.display = '');
-                }
+            function showUpperCalc() {
+                document.getElementById('beginDateCalc').style.display = 'block';
+                document.getElementById('endDateCalc').style.display = 'none';
+            }
+            
+            function showLowerCalc() {
+                document.getElementById('endDateCalc').style.display = 'block';
+                document.getElementById('beginDateCalc').style.display = 'none';
             }
         </script>
     </head>
@@ -45,12 +45,16 @@
                     <input name="eventName" value="<?php echo $row->title; ?>" required>		
 
                     <label>Begindatum/-tijd</label>
-                    <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>
+                    <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>\
+                    <input type="button" value="Timestamp Calculator" onclick="showUpperCalc" /> 
+                    <div id="beginDateCalc">
+                        Blablabla
+                    </div>
 
 
                     <label>Einddatum/-tijd</label>
                     <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
-                    <input id="button" value="Timestamp Calculator" onclick="toggle('endDateCalc');" />
+                    <input type="button" value="Timestamp Calculator" onclick="showLowerCalc" /> 
                     <div id="endDateCalc">
                         Blablabla
                     </div>
@@ -78,10 +82,6 @@
                     <input id="button" name="deleteEvent" type="submit" value="Delete" />
                 </form>
                 
-                    <input type="button" value="Click me" onclick="toggle('beginDateCalc');" /> 
-                    <div id="beginDateCalc">
-                        Blablabla
-                    </div>
             </section>
 
             <?php require_once("inc/sidebar.inc"); ?>
