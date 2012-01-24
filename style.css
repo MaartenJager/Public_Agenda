@@ -148,8 +148,8 @@ input[type="text"] {
 
 textarea {
     height: 200px;
-    width: 250px;
-    background: url(img/form-bg.png) bottom right no-repeat #EEE;
+    width: 300px;
+    background: url(img/form-bg.png) bottom right no-repeat #FFF;
 }
 
 a.button{
