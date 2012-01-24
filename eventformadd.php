@@ -122,7 +122,7 @@ if (isDatumValid())
 	
 	//later moet nog goede extension
 	
-	$urlImage = "http://websec.science.uva.nl/webdb1241/img/" .$imgFileName;
+	$urlImage = "http://websec.science.uva.nl/webdb1241/" . $targetPath;
 
 	//dates
 
