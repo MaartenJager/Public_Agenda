@@ -120,8 +120,8 @@ if (isDatumValid())
 			else
 			{
 				move_uploaded_file($_FILES["file"]["tmp_name"],
-				"img/" . $_FILES["file"]["$imgFileName"]);
-				echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
+				"img/" . $_FILES["file"][$imgFileName]);
+				echo "Stored in: " . "upload/" . $_FILES["file"][$imgFileName];
 			}
 		}
 	}
