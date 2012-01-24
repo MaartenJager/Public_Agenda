@@ -314,3 +314,11 @@ included the code you did, and what exactly uses it. */
 #sidebar_agenda_searchbar input {
     width: 160px; /* overwrite default input size of 300px */
 }
+
+#beginDateCalc {
+    display: none;
+}
+
+#endDateCalc {
+    display: none;
+}

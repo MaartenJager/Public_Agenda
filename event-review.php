@@ -12,16 +12,28 @@
 
 <!DOCTYPE html>
 <html lang="nl">
-    <?php require_once("inc/header.inc"); ?>
-
+    <head>
+        <title>Admin - Evenement bewerken</title>
+        <?php require_once(""); ?>
+        
+        <script language="JavaScript">
+            function toggle(id) {
+                var id = document.getElementById(id)
+                if (id.style.display == 'none')
+                    id.style.display = 'block');
+                else
+                    id.style.display = 'none');
+            }
+        </script>
+    </head>
+    
     <body>
         <div id="container">
-            <div id="header" role="banner">Paginatitel</div>
+            <div id="header" role="banner"></div>
             <?php require_once("inc/nav.inc"); ?>
 
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Evenement bewerken</h1></header>
-                <p>Wilt u het volgende formulier invullen? Alle velden zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
 
                 <form action="sqlaction.php" method="post">
 
@@ -32,9 +44,17 @@
 
                     <label>Begindatum/-tijd</label>
                     <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>
+                    <input id="button" type="submit" value="Timestamp Calculator" onclick="toggle('beginDateCalc')" />
+                    <div id="beginDateCalc">
+                        Blablabla
+                    </div>
 
                     <label>Einddatum/-tijd</label>
                     <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
+                    <input id="button" type="submit" value="Timestamp Calculator" onclick="toggle('endDateCalc')" />
+                    <div id="endDateCalc">
+                        Blablabla
+                    </div>
 
                     <label>Beschrijving van het event</label>
                     <textarea name="description" placeholder="Voer beschrijving in" required><?php echo $row->description; ?></textarea>			        		
