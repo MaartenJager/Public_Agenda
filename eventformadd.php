@@ -81,10 +81,11 @@ if (isDatumValid())
 	//Image upload
 	$targetPath = "img/";
 	
-	//random filename between 0 and 99999999 for final storage
+	//random filename between 0 and 1 billion - 1 for final storage
 	$imgFileName = mt_rand(0, 99999999);
+	
 	$orgFileName = $_FILES['file']['name'];
-	//get fileextension
+	//get fileextension.. somehow causes a warning but works perfectly
 	$fileExtension = end(explode(".", $orgFileName));
 	//define final path for storage of img
 	$targetPath = $targetPath . $imgFileName . ".". $fileExtension;   
@@ -146,7 +147,7 @@ if (isDatumValid())
 	{
 		if ($arrayCheckboxes[$i])
 		{
-			echo "<br />EEN GENRE OPGESLAGEN <br />";
+			echo "EEN GENRE OPGESLAGEN <br />";
 			$sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
 			$sth->execute();
 			$row = $sth->fetch();
@@ -157,7 +158,6 @@ if (isDatumValid())
 			$sth->execute();
 		}
 	}
-
 }
 else
 {
