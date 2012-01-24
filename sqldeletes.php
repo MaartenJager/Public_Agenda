@@ -24,19 +24,7 @@
 
     /* Delete *ONE* event */
     if(isset($_POST['deleteEvent'])){
-        try{
-            //Prepare variables
-            $event_id = $_GET['event_id'];
-
-            //Prepare statement
-            $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . $event_id);
-
-            $sth->execute();
-        }
-
-        catch(PDOException $e) {
-            echo $e->getMessage();
-        }
+        deleteEvent($_GET['event_id']);
     }
 
     /* Delete *MULTIPLE* events (used with checkboxes) */
