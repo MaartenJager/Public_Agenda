@@ -27,9 +27,29 @@
         if( ($_GET['action']) == "delete" ){
             echo("action is DELETE");
 
+            /* Controleer wat er verwijderd dient te worden */
             if(isset($_GET['type'])){
                 if( ($_GET['type']) == "event" ){
                     echo("type is EVENT");
+
+                    /* Controleer of er een ID is meegestuurd */
+                    if(isset($_GET['id'])){
+                        $id = ($_GET['id']);
+                        echo $id;
+                    }
+                }
+            }
+
+            /* Controleer wat er verwijderd dient te worden */
+            elseif(isset($_GET['type'])){
+                if( ($_GET['type']) == "user" ){
+                    echo("type is USER");
+
+                    /* Controleer of er een ID is meegestuurd */
+                    if(isset($_GET['id'])){
+                        $id = ($_GET['id']);
+                        echo $id;
+                    }
                 }
             }
         }
@@ -51,12 +71,7 @@
                 $i++;
                 if(isset($_POST["event_id$i"])) {
                     if(isset($_POST["deleteSelection$i"])) {
-                        $event_id = $_POST["event_id$i"];
-
-                        //Prepare statement
-                        $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . $event_id);
-
-                        $sth->execute();
+                        deleteEvent($_POST["event_id$i"]);
                     }
                 }
                 else
