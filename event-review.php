@@ -18,19 +18,20 @@
         
         <script language="JavaScript">            
             function beginDateAndUnix() {
+                document.getElementById('beginDateUnixCalc').style.display = 'block';
                 var temp = document.event.beginDate.value;
                 var date = new Date(temp * 1000);       
                 document.getElementById('beginDate').innerHTML="Datum: " + date;
             }
         
             function endDateAndUnix() {
+                document.getElementById('endDateUnixCalc').style.display = 'block';
                 var temp = document.event.endDate.value;
                 var date = new Date(temp * 1000);       
                 document.getElementById('endDate').innerHTML="Datum: " + date;
             }
         
             function beginDateAutoFill() {
-                document.getElementById('beginDateUnixCalc').style.display = 'block';
                 var temp = document.event.beginDateReal.value;
                 var date = new Date(temp);
                 var string = date.valueOf() / 1000; 
@@ -38,7 +39,6 @@
             }
             
             function endDateAutoFill() {
-                document.getElementById('endDateUnixCalc').style.display = 'block';
                 var temp = document.event.endDateReal.value;
                 var date = new Date(temp);
                 var string = date.valueOf() / 1000; 
