@@ -6,6 +6,7 @@
     /* Connect to DB */
     require("inc-dbcon.php");
 
+    /* Delete *ONE* event */
     if(isset($_POST['deleteEvent'])){
         try{
             //Prepare variables
@@ -22,6 +23,7 @@
         }
     }
 
+    /* Delete *MULTIPLE* events (used with checkboxes) */
     if(isset($_POST['deleteEvents'])){
         try{
             //Prepare variables
@@ -43,22 +45,6 @@
                 {
                     $continue = false;
                 }
-/*
-                if(defined($_POST["deleteSelection$i"])) {
-                    if(isset($_POST["deleteSelection$i"])) {
-                        $event_id = $_POST["event_id$i"];
-
-                        //Prepare statement
-                        $sth = $dbh->prepare("DELETE FROM events WHERE `id` = " . $event_id);
-
-                        $sth->execute();
-                    }
-                }
-                else
-                {
-                    $continue = false;
-                }
-*/
             }
         }
 
