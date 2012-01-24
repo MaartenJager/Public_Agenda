@@ -3,12 +3,14 @@
  * http://www.kitebird.com/articles/php-pdo.html
  */
 
-    /* Connect to DB */
-    require("inc-dbcon.php");
+
 
 
     function deleteEvent($id){
         try{
+            /* Connect to DB */
+            require("inc-dbcon.php");
+
             //Prepare statement
             $sth = $dbh->prepare("DELETE FROM events WHERE `id` = :id");
 
