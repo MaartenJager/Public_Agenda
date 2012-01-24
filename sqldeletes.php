@@ -22,10 +22,16 @@
         }
     }
 
-    /* Delete *ONE* event */
+    /* Controleer op DELETE actie */
     if(isset($_GET['action'])){
         if( ($_GET['action']) == "delete" ){
             echo("action is DELETE");
+
+            if(isset($_GET['type'])){
+                if( ($_GET['type']) == "event" ){
+                    echo("type is EVENT");
+                }
+            }
         }
     }
 
