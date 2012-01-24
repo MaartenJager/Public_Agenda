@@ -19,10 +19,12 @@
         <script language="JavaScript">
             function toggle(id) {
                 var id = document.getElementById(id);
-                if (id.style.display == 'none')
-                    id.style.display = 'block');
-                else
+                if (id.style.display != 'none') {
                     id.style.display = 'none');
+                }
+                else {
+                    id.style.display = '');
+                }
             }
         </script>
     </head>
