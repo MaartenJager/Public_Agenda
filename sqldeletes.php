@@ -30,7 +30,7 @@
         if( ($_GET['action']) == "delete" ){
             echo("action is DELETE");
 
-            /* Controleer wat er verwijderd dient te worden */
+            /* Controleer of er een EVENT verwijderd dient te worden */
             if(isset($_GET['type'])){
                 if( ($_GET['type']) == "event" ){
                     echo("type is EVENT");
@@ -38,12 +38,12 @@
                     /* Controleer of er een ID is meegestuurd */
                     if(isset($_GET['id'])){
                         $id = ($_GET['id']);
-                        echo $id;
+                        deleteEvent($id);
                     }
                 }
             }
 
-            /* Controleer wat er verwijderd dient te worden */
+            /* Controleer of er een USER verwijderd dient te worden */
             elseif(isset($_GET['type'])){
                 if( ($_GET['type']) == "user" ){
                     echo("type is USER");
