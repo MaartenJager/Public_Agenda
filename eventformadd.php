@@ -80,8 +80,7 @@ if (isDatumValid())
 {
 	//Image upload
 
-
-	$imgFileName = uniqid(rand(),true);
+	$imgFileName = mt_rand();
 
 	if ($_FILES["file"]["error"] > 0)
 	{
@@ -98,7 +97,7 @@ if (isDatumValid())
 	if ((($_FILES["file"]["type"] == "image/gif")
 	|| ($_FILES["file"]["type"] == "image/jpeg")
 	|| ($_FILES["file"]["type"] == "image/pjpeg"))
-	&& ($_FILES["file"]["size"] < 250000))
+	&& ($_FILES["file"]["size"] < 20000))
 	{
 		if ($_FILES["file"]["error"] > 0)
 		{
@@ -110,16 +109,17 @@ if (isDatumValid())
 			echo "Type: " . $_FILES["file"]["type"] . "<br />";
 			echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
 			echo "Stored in: " . $_FILES["file"]["tmp_name"];
+
 			
-			if (file_exists("/datastore/webdb1241/Public_Agenda/img/" . $_FILES["file"]["name"]))
+			if (file_exists("img/" . $_FILES["file"]["name"]))
 			{
 				echo $_FILES["file"]["name"] . " already exists. ";
 			}
 			else
 			{
-				move_uploaded_file($_FILES["file"]["tmp_name"],
-				"/datastore/webdb1241/Public_Agenda/img/" . $_FILES["file"]["$imgFileName"]);
-				echo "Stored in: " . "/datastore/webdb1241/Public_Agenda/img/" . $_FILES["file"]["$imgFileName"];
+				
+				move_uploaded_file($imgFileName, "img/$imgFileName");
+				echo "file should be on server bitch!!";
 			}
 		}
 	}
