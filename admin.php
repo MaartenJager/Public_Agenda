@@ -30,39 +30,43 @@
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Gebruikersbeheer</h1></header>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Voornaam</th>
-                            <th>Achternaam</th>
-                            <th>E-mail</th>
-                            <th>Toegansniveau</th>
-                            <th></th>
-                        </tr>
-                    </thead>
+                <form action="sqldeletes.php" method="post">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Voornaam</th>
+                                <th>Achternaam</th>
+                                <th>E-mail</th>
+                                <th>Toegansniveau</th>
+                                <th></th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <?php
-                            // showing the results
-                            while($row = $sth->fetch() ){
-                                echo "<tr>\n";
-                                echo "  <td>" . $row->firstName . "</td>\n";
-                                echo "  <td>" . $row->name . "</td>\n";
-                                echo "  <td>" . $row->email . "</td>\n";
-                                echo "  <td>" . $row->accessLevel . "</td>\n";
-                                echo "  <td> \n";
-                                echo "      <a class=\"button\" href=\"formhandler.pdo?action=delete&id=".$row->id."\"> \n";
-                                echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
-                                echo "      </a> \n";
-                                echo "      <a class=\"button\" href=\"formhandler.pdo?action=edit&id=".$row->id."\"> \n";
-                                echo "          <img src=\"img/btn-edit.png\" title=\"Edit\" alt=\"Edit\" width=\"16\" height=\"16\">\n";
-                                echo "      </a> \n";
-                                echo "  </td>\n";
-                                echo "</tr>\n";
-                            }
-                        ?>
-                    </tbody>
-                </table>
+                        <tbody>
+                            <?php
+                                // showing the results
+                                while($row = $sth->fetch() ){
+                                    echo "<tr>\n";
+                                    echo "  <td>" . $row->firstName . "</td>\n";
+                                    echo "  <td>" . $row->name . "</td>\n";
+                                    echo "  <td>" . $row->email . "</td>\n";
+                                    echo "  <td>" . $row->accessLevel . "</td>\n";
+                                    echo "  <td> \n";
+                                    echo "      <a class=\"button\" href=\"formhandler.pdo?action=delete&id=".$row->id."\"> \n";
+                                    echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
+                                    echo "      </a> \n";
+                                    echo "      <a class=\"button\" href=\"formhandler.pdo?action=edit&id=".$row->id."\"> \n";
+                                    echo "          <img src=\"img/btn-edit.png\" title=\"Edit\" alt=\"Edit\" width=\"16\" height=\"16\">\n";
+                                    echo "      </a> \n";
+                                    echo "  </td>\n";
+                                    echo "</tr>\n";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                <input id="button" name="deleteEvents" type="submit" value="Delete Selection" />
+                </form>
 
                 <div id="addUserButton">
                     <input id="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="makeVisible();" />
