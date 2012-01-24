@@ -22,6 +22,7 @@
         }
     }
 
+
     /* Controleer op DELETE actie */
     if(isset($_GET['action'])){
         if( ($_GET['action']) == "delete" ){
@@ -53,12 +54,6 @@
                 }
             }
         }
-    }
-
-
-    /* Delete *ONE* event */
-    if(isset($_POST['deleteEvent'])){
-        deleteEvent($_GET['event_id']);
     }
 
     /* Delete *MULTIPLE* events (used with checkboxes) */
