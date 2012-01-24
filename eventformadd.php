@@ -81,6 +81,9 @@ if (isDatumValid())
 	//Image upload
 	$targetPath = "img/";
 	$targetPath = $targetPath . basename( $_FILES['file']['name']);  
+	
+	
+	// komt later
 	$imgFileName = mt_rand();
 
 	if ($_FILES["file"]["error"] > 0)
@@ -109,20 +112,9 @@ if (isDatumValid())
 			echo "Upload: " . $_FILES["file"]["name"] . "<br />";
 			echo "Type: " . $_FILES["file"]["type"] . "<br />";
 			echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-			echo "Stored in: " . $_FILES["file"]["tmp_name"];
+			echo "Will be temp stored in: " . $_FILES["file"]["tmp_name"];
 
-			/*
-			if (file_exists("img/" . $_FILES["file"]["name"]))
-			{
-				echo $_FILES["file"]["name"] . " already exists. ";
-			}
-			else
-			{	
-				move_uploaded_file($imgFileName, "img/");
-				echo "file should be on server bitch!!";
-			}
-			*/
-			if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
+			if(copy($_FILES['file']['tmp_name'], $targetPath))
 			{
 				echo "The file ".  basename( $_FILES['file']['name']). 
 				" has been uploaded";
@@ -139,7 +131,7 @@ if (isDatumValid())
 	}
 	
 	
-	
+	//komt later
 	$urlImage = "http://websec.science.uva.nl/webdb1241/img/$imgFileName";
 
 	//dates
@@ -173,7 +165,7 @@ if (isDatumValid())
 			$sth->execute();
 			/*
 			$sth=$dbh->prepare("INSERT INTO events ('image')
-			VALUES ($$urlImage)");
+			VALUES ($urlImage)");
 			$sth->execute();
 			*/
 		}
