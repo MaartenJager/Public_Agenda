@@ -16,15 +16,33 @@
         <title>Admin - Evenement bewerken</title>
         <?php require_once("inc/header.inc"); ?>
         
-        <script language="JavaScript">
-            function showUpperCalc() {
-                document.getElementById('beginDateCalc').style.display = 'block';
-                document.getElementById('endDateCalc').style.display = 'none';
+        <script language="JavaScript">            
+            function beginDateAndUnix() {
+                var temp = document.event.beginDate.value;
+                var date = new Date(temp * 1000);       
+                document.getElementById('beginDate').innerHTML="Datum: " + date;
+            }
+        
+            function endDateAndUnix() {
+                var temp = document.event.endDate.value;
+                var date = new Date(temp * 1000);       
+                document.getElementById('endDate').innerHTML="Datum: " + date;
+            }
+        
+            function beginDateAutoFill() {
+                document.getElementById('beginDateUnixCalc').style.display = 'block';
+                var temp = document.event.beginDateReal.value;
+                var date = new Date(temp);
+                var string = date.valueOf() / 1000; 
+                document.event.beginDate.value = string;
             }
             
-            function showLowerCalc() {
-                document.getElementById('endDateCalc').style.display = 'block';
-                document.getElementById('beginDateCalc').style.display = 'none';
+            function endDateAutoFill() {
+                document.getElementById('endDateUnixCalc').style.display = 'block';
+                var temp = document.event.endDateReal.value;
+                var date = new Date(temp);
+                var string = date.valueOf() / 1000; 
+                document.event.endDate.value = string;
             }
         </script>
     </head>
@@ -37,7 +55,7 @@
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Evenement bewerken</h1></header>
 
-                <form action="sqlaction.php" method="post">
+                <form name="event" action="sqlaction.php" method="post">
 
                     <input type="hidden" name="event_id" value="<?php $row->id; ?>">
 
@@ -45,18 +63,26 @@
                     <input name="eventName" value="<?php echo $row->title; ?>" required>		
 
                     <label>Begindatum/-tijd</label>
-                    <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>\
-                    <input id="buttonSmall" type="button" value="Timestamp Calculator" onclick="showUpperCalc();" /> 
-                    <div id="beginDateCalc">
-                        Blablabla
+                    <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>
+                    <input id="buttonSmall" value="Timestamp Calc" onclick="beginDateAndUnix();" />
+ 
+                    <div id="beginDateUnixCalc">
+                        <p id="beginDate"></p>
+                        <p>Nieuwe datum invoeren:</p>
+                        <input name="beginDateReal" value="vb: 12/31/2013 23:59:59">
+                        <input id="buttonSmall" value="Vul timestamp in" onclick="beginDateAutoFill();" />
                     </div>
 
 
                     <label>Einddatum/-tijd</label>
                     <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
-                    <input id="buttonSmall" type="button" value="Timestamp Calculator" onclick="showLowerCalc();" /> 
-                    <div id="endDateCalc">
-                        Blablabla
+                    <input id="buttonSmall" value="Timestamp Calc" onclick="endDateAndUnix();" />
+
+                    <div id="endDateUnixCalc">
+                        <p id="endDate"></p>
+                        <p>Nieuwe datum invoeren:</p>
+                        <input name="endDateReal" value="vb: 12/31/2013 23:59:59">
+                        <input id="buttonSmall" value="Vul timestamp in" onclick="endDateAutoFill();" />
                     </div>
 
                     <label>Beschrijving van het event</label>
