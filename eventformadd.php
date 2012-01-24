@@ -135,9 +135,9 @@ if (isDatumValid())
 	list($dd, $mm, $yyyy) = explode('-', $date);
 	$endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
 	require("inc-dbcon.php");
-	$sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, description, creationDate, approvedBy)
+	$sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, description, image, creationDate, approvedBy)
 	VALUES
-	('$_POST[eventName]', '$beginDateTimeStamp', '$endDateTimeStamp', '$_POST[eventDescription]', " . time() . ", NULL)");
+	('$_POST[eventName]', '$beginDateTimeStamp', '$endDateTimeStamp', '$_POST[eventDescription]', '$urlImage', " . time() . ", NULL)");
         $sth->execute();
 
 	for($i=0; $i<8; $i++)
@@ -156,10 +156,7 @@ if (isDatumValid())
 	
 		}
 	}
-	//image link url upload
-	$sth=$dbh->prepare("INSERT INTO events (image)
-	VALUES ($urlImage)");
-	$sth->execute();	
+
 }
 else
 {
