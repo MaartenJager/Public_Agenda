@@ -79,7 +79,8 @@ if( isset($_POST['genre_other']) )
 if (isDatumValid())
 {
 	//Image upload
-
+	$targetPath = "img/";
+	$targetPath = $targetPath . basename( $_FILES['file']['name']);  
 	$imgFileName = mt_rand();
 
 	if ($_FILES["file"]["error"] > 0)
@@ -110,7 +111,7 @@ if (isDatumValid())
 			echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
 			echo "Stored in: " . $_FILES["file"]["tmp_name"];
 
-			
+			/*
 			if (file_exists("img/" . $_FILES["file"]["name"]))
 			{
 				echo $_FILES["file"]["name"] . " already exists. ";
@@ -120,6 +121,16 @@ if (isDatumValid())
 				move_uploaded_file($imgFileName, "img/");
 				echo "file should be on server bitch!!";
 			}
+			*/
+			if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path))
+			{
+				echo "The file ".  basename( $_FILES['file']['name']). 
+				" has been uploaded";
+			}
+			else
+			{
+				echo "There was an error uploading the file, please try again!";
+			}			
 		}
 	}
 	else
@@ -129,7 +140,7 @@ if (isDatumValid())
 	
 	
 	
-	$urlImage = "http://websec.science.uva.nl/webdb1241/img/$imgFilename";
+	$urlImage = "http://websec.science.uva.nl/webdb1241/img/$imgFileName";
 
 	//dates
 

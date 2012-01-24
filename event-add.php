@@ -14,7 +14,7 @@
             <section id="main">
                 <h1>Evenement toevoegen</h1>
                 <p>Wilt u het volgende formulier invullen? Alle velden, op de afbeelding na, zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
-                <form name="event-add" action="eventformadd.php" enctype="multipart/form-data" method="post">
+                <form enctype="multipart/form-data" name="event-add" action="eventformadd.php"  method="post">
                     <label>Naam evenement</label>
                     <input name="eventName" placeholder="Voer naam in" autofocus required>
 
@@ -132,7 +132,7 @@
                     <div id="checkbox_below">
                          <label>Voeg een afbeelding toe</label>
                          <input type="file" name="file" id ="file" />
-						 <input type="hidden" name="size" value="350000">
+		
                          <input id="button" name="addUser" type="submit" value="Submit" />
                     </div>
                 </form>
