@@ -162,6 +162,8 @@ textarea {
 
 #buttonSmall {
     width: 144px;
+    height: 24px;
+    float: left;
 }
 
 #button:hover, #buttonSmall:hover {
@@ -328,3 +330,12 @@ included the code you did, and what exactly uses it. */
 #beginDateUnixCalc {
     display: none;
 }
+
+#beginDateUnixButton {
+    display: block;
+}
+
+#endDateUnixButton {
+    display: block;
+}
+

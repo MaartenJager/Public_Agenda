@@ -19,6 +19,7 @@
         <script language="JavaScript">            
             function beginDateAndUnix() {
                 document.getElementById('beginDateUnixCalc').style.display = 'block';
+                document.getElementById('beginDateUnixButton').style.display = 'none';
                 var temp = document.event.beginDate.value;
                 var date = new Date(temp * 1000);       
                 document.getElementById('beginDate').innerHTML="Datum: " + date;
@@ -26,6 +27,7 @@
         
             function endDateAndUnix() {
                 document.getElementById('endDateUnixCalc').style.display = 'block';
+                document.getElementById('endDateUnixButton').style.display = 'none';
                 var temp = document.event.endDate.value;
                 var date = new Date(temp * 1000);       
                 document.getElementById('endDate').innerHTML="Datum: " + date;
@@ -64,8 +66,10 @@
 
                     <label>Begindatum/-tijd</label>
                     <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>
-                    <input id="buttonSmall" value="Timestamp Calc" onclick="beginDateAndUnix();" />
- 
+                    <div id="beginDateUnixButton">
+                        <input id="buttonSmall" value="Timestamp Calc" onclick="beginDateAndUnix();" />
+                    </div>
+                    
                     <div id="beginDateUnixCalc">
                         <p id="beginDate"></p>
                         <p>Nieuwe datum invoeren:</p>
@@ -76,7 +80,9 @@
 
                     <label>Einddatum/-tijd</label>
                     <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
-                    <input id="buttonSmall" value="Timestamp Calc" onclick="endDateAndUnix();" />
+                    <div id="endDateUnixButton">
+                        <input id="buttonSmall" value="Timestamp Calc" onclick="endDateAndUnix();" />
+                    </div>
 
                     <div id="endDateUnixCalc">
                         <p id="endDate"></p>
