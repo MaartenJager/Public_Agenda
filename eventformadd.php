@@ -81,8 +81,8 @@ if (isDatumValid())
 	//Image upload
 	$targetPath = "img/";
 	$imgFileName = mt_rand(0, 99999999);
-	
-	$fileExtension = end(explode('.', $_FILES["file"]["name"]));
+	$orgFileName = $_FILES["file"]["name"];
+	$fileExtension = end(explode('.', $orgFileName));
 	$targetPath = $targetPath . $imgFileName . ".". $fileExtension;   
 	
 	if ((($_FILES["file"]["type"] == "image/gif")
@@ -105,7 +105,7 @@ if (isDatumValid())
 			if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
 			{
 				echo "The file with original name ".  basename( $_FILES['file']['name']). 
-				" has been uploaded in and as: ". $targetPath . "<br />";
+				" has been uploaded in and with new file name: ". $targetPath . "<br />";
 			}
 			else
 			{
