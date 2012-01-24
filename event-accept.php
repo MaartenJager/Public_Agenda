@@ -5,12 +5,16 @@
 
     $sth = $dbh->query("SELECT  events.*,
                                 users.name,
-                                users.firstName
-                        FROM events
-                        INNER JOIN users ON (
-                            events.createdBy = users.id
-                        )
-                        WHERE approvedBy is NULL");
+                                users.firstName,
+                                locations.name AS locationName
+                            FROM events
+                            INNER JOIN users ON (
+                                events.createdBy = users.id
+                                )
+                            INNER JOIN locations ON (
+                                events.location = locations.id
+                                )
+                            WHERE approvedBy is NULL");
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
 ?>
@@ -49,7 +53,7 @@
                                     echo "<tr>\n";
                                     echo "  <td id=\"checkboxTable\"><input name=\"deleteSelection" . $i . "\" type=\"checkbox\" S/></td>\n";
                                     echo "  <td>" . $row->title . "</td>\n";
-                                    echo "  <td>" . $row->location . "</td>\n";
+                                    echo "  <td>" . $row->locationName . "</td>\n";
                                     echo "  <td>" . $row->firstName . " " . $row->name . "</td>\n";
                                     echo "  <td>" . date('d-m-Y G:i', $row->creationDate) . "</td>\n";
                                     echo "  <td> \n";
