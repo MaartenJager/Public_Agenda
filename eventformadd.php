@@ -76,7 +76,8 @@ if( isset($_POST['genre_other']) )
 
 function file_extension($filename)
 {
-    return end(explode(".", $filename));
+	$temp = $filename;
+    return end(explode(".", $temp));
 }
 
 
