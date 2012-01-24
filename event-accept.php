@@ -50,7 +50,7 @@
                                 echo "  <td id=\"checkboxTable\"><input name=\"deleteSelection" . $i . "\" type=\"checkbox\" S/></td>\n";
                                 echo "  <td>" . $row->title . "</td>\n";
                                 echo "  <td>" . $row->location . "</td>\n";
-                                echo "  <td>" . $row->createdBy . "</td>\n";
+                                echo "  <td>" . $row->firstName . " " . $row->name . "</td>\n";
                                 echo "  <td>" . date('d-m-Y G:i', $row->creationDate) . "</td>\n";
                                 echo "  <td> \n";
                                 echo "      <a class=\"button\" href=\"sqldeletes.php?event_id=".$row->id."\"name=\"deleteEvent\"> \n";
