@@ -30,7 +30,7 @@
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Gebruikersbeheer</h1></header>
 
-                <form action="sqldeletes.php" method="post">
+                <form action="sqlaction.php" method="post">
                     <table>
                         <thead>
                             <tr>
