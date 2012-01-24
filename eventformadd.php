@@ -80,12 +80,15 @@ if (isDatumValid())
 {
 	//Image upload
 	$targetPath = "img/";
-	$targetPath = $targetPath . basename( $_FILES['file']['name']);
 	
-	/*moet nog extension bij
+	//random filename between 0 and 1 billion - 1 for final storage
 	$imgFileName = mt_rand(0, 99999999);
-	$targetPath = $targetPath . $imgFileName . ".gif";  
-	*/
+	
+	$orgFileName = $_FILES['file']['name'];
+	//get fileextension.. somehow causes a warning but works perfectly
+	$fileExtension = end(explode(".", $orgFileName));
+	//define final path for storage of img
+	$targetPath = $targetPath . $imgFileName . ".". $fileExtension;   
 	
 	if ((($_FILES["file"]["type"] == "image/gif")
 	|| ($_FILES["file"]["type"] == "image/jpeg")
@@ -101,27 +104,27 @@ if (isDatumValid())
 			echo "Upload: " . $_FILES["file"]["name"] . "<br />";
 			echo "Type: " . $_FILES["file"]["type"] . "<br />";
 			echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-			echo "Will be temp stored in: " . $_FILES["file"]["tmp_name"];
+			echo "Will be temp stored in: " . $_FILES["file"]["tmp_name"] . "<br />";
 			
 			
 			if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
 			{
-				echo "The file ".  basename( $_FILES['file']['name']). 
-				" has been uploaded";
+				echo "The file with original name ".  basename( $_FILES['file']['name']). 
+				" has been uploaded in and with new file name: ". $targetPath . "<br />";
 			}
 			else
 			{
-				echo "There was an error uploading the file, please try again!";
+				echo "There was an error uploading the file, please try again!<br />";
 			}			
 		}
 	}
 	else
 	{
-		echo "Invalid file";
+		echo "Invalid file<br />";
 	}
 	
-	//later moet nog goede extension
-	
+
+	//correct
 	$urlImage = "http://websec.science.uva.nl/webdb1241/" . $targetPath;
 
 	//dates
@@ -144,7 +147,7 @@ if (isDatumValid())
 	{
 		if ($arrayCheckboxes[$i])
 		{
-			echo "EEN GENRE OPGESLAGEN <br/>";
+			echo "EEN GENRE OPGESLAGEN <br />";
 			$sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
 			$sth->execute();
 			$row = $sth->fetch();
@@ -153,10 +156,8 @@ if (isDatumValid())
 			$sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
 			VALUES ($event_id, $genreId)");
 			$sth->execute();
-	
 		}
 	}
-
 }
 else
 {
