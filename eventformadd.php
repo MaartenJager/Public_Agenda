@@ -74,10 +74,6 @@ if( isset($_POST['genre_other']) )
 	$arrayCheckboxes[7] = TRUE;
 }
 
-function file_extension($filename)
-{
-    return end(explode(".", $filename));
-}
 
 
 if (isDatumValid())
@@ -86,8 +82,8 @@ if (isDatumValid())
 	$targetPath = "img/";
 	$imgFileName = mt_rand(0, 99999999);
 	
-	$orgFileName = $_FILES["file"]["name"];
-	$targetPath = $targetPath . $imgFileName . ".". (file_extension($orgFileName));   
+	$fileExtension = end(explode('.', $_FILES["file"]["name"]));
+	$targetPath = $targetPath . $imgFileName . ".". $fileExtension;   
 	
 	if ((($_FILES["file"]["type"] == "image/gif")
 	|| ($_FILES["file"]["type"] == "image/jpeg")
@@ -108,8 +104,8 @@ if (isDatumValid())
 			
 			if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
 			{
-				echo "The file ".  basename( $_FILES['file']['name']). 
-				" has been uploaded in ". $targetPath;
+				echo "The file with original name ".  basename( $_FILES['file']['name']). 
+				" has been uploaded in and as: ". $targetPath . "<br />";
 			}
 			else
 			{
