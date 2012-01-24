@@ -80,9 +80,13 @@ if (isDatumValid())
 {
 	//Image upload
 	$targetPath = "img/";
-	$imgFileName = mt_rand();
-	  
-
+	$targetPath = $targetPath . basename( $_FILES['file']['name']);
+	
+	/*moet nog extension bij
+	$imgFileName = mt_rand(0, 99999999);
+	$targetPath = $targetPath . $imgFileName . ".gif";  
+	*/
+	
 	if ((($_FILES["file"]["type"] == "image/gif")
 	|| ($_FILES["file"]["type"] == "image/jpeg")
 	|| ($_FILES["file"]["type"] == "image/pjpeg")) // oude IE browsers zijn raar
@@ -99,16 +103,11 @@ if (isDatumValid())
 			echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
 			echo "Will be temp stored in: " . $_FILES["file"]["tmp_name"];
 			
-			$extension= end(explode(".", $_FILES['name'])); 
-			echo "<br/><br/>test EXTENSION". $extension . "<br/>";
-			$targetPath = $targetPath . $imgFileName . $extension;
-			$urlImage = "http://websec.science.uva.nl/webdb1241/img/". $imgFileName . $extension;
 			
 			if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
 			{
-				echo "The file".  basename( $_FILES['file']['name']). 
-				" has been uploaded and moved to /img with name: ". $imgFileName 
-				. $extension . " and full path: ". $targetPath . "and URL" . $urlImage;
+				echo "The file ".  basename( $_FILES['file']['name']). 
+				" has been uploaded";
 			}
 			else
 			{
@@ -120,6 +119,10 @@ if (isDatumValid())
 	{
 		echo "Invalid file";
 	}
+	
+	//later moet nog goede extension
+	
+	$urlImage = "http://websec.science.uva.nl/webdb1241/img/" .$imgFileName;
 
 	//dates
 
@@ -150,15 +153,13 @@ if (isDatumValid())
 			$sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
 			VALUES ($event_id, $genreId)");
 			$sth->execute();
-			
-			/*
-			//image URL
-			$sth=$dbh->prepare("INSERT INTO events ('image')
-			VALUES ($urlImage)");
-			$sth->execute();
-			*/
+	
 		}
 	}
+	//image link url upload
+	$sth=$dbh->prepare("INSERT INTO events (image)
+	VALUES ($urlImage)");
+	$sth->execute();	
 }
 else
 {
