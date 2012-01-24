@@ -122,7 +122,7 @@ if (isDatumValid())
 				echo "file should be on server bitch!!";
 			}
 			*/
-			if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path))
+			if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
 			{
 				echo "The file ".  basename( $_FILES['file']['name']). 
 				" has been uploaded";
