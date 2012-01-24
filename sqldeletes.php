@@ -24,7 +24,7 @@
 
     /* Delete *ONE* event */
     if(isset($_GET['action'])){
-        if( ($_GET['action']) == delete ){
+        if( ($_GET['action']) == "delete" ){
             echo("action is DELETE");
         }
     }
