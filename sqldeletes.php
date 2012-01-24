@@ -3,9 +3,6 @@
  * http://www.kitebird.com/articles/php-pdo.html
  */
 
-
-
-
     function deleteEvent($id){
         try{
             /* Connect to DB */
@@ -22,6 +19,8 @@
         catch(PDOException $e) {
             echo $e->getMessage();
         }
+
+        $dhb = null;
     }
 
 
@@ -59,31 +58,23 @@
     }
 
     /* Delete *MULTIPLE* events (used with checkboxes) */
-    if(isset($_POST['deleteEvents'])){
-        try{
-            //Prepare variables
-            $i = 0;
-            $continue = true;
-            while($continue) {
-                $i++;
-                if(isset($_POST["event_id$i"])) {
-                    if(isset($_POST["deleteSelection$i"])) {
-                        deleteEvent($_POST["event_id$i"]);
-                    }
-                }
-                else
-                {
-                    $continue = false;
+    elseif(isset($_POST['deleteEvents'])){
+        //Prepare variables
+        $i = 0;
+        $continue = true;
+        while($continue) {
+            $i++;
+            if(isset($_POST["event_id$i"])) {
+                if(isset($_POST["deleteSelection$i"])) {
+                    deleteEvent($_POST["event_id$i"]);
                 }
             }
-        }
-
-        catch(PDOException $e) {
-            echo $e->getMessage();
+            else
+            {
+                $continue = false;
+            }
         }
     }
-
-    $dbh = null;
 ?>
 
 
