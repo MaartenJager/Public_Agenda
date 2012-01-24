@@ -44,14 +44,14 @@
 
                     <label>Begindatum/-tijd</label>
                     <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>
-                    <input id="button" type="submit" value="Timestamp Calculator" onclick="toggle('beginDateCalc')" />
+                    <input id="button" value="Timestamp Calculator" onclick="toggle('beginDateCalc')" />
                     <div id="beginDateCalc">
                         Blablabla
                     </div>
 
                     <label>Einddatum/-tijd</label>
                     <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
-                    <input id="button" type="submit" value="Timestamp Calculator" onclick="toggle('endDateCalc')" />
+                    <input id="button" value="Timestamp Calculator" onclick="toggle('endDateCalc')" />
                     <div id="endDateCalc">
                         Blablabla
                     </div>
