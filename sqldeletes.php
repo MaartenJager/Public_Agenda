@@ -6,6 +6,22 @@
     /* Connect to DB */
     require("inc-dbcon.php");
 
+
+    function deleteEvent($id){
+        try{
+            //Prepare statement
+            $sth = $dbh->prepare("DELETE FROM events WHERE `id` = :id");
+
+            //Prepare data
+            $sth->bindParam(':id', $id);
+            $sth->execute();
+        }
+
+        catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
     /* Delete *ONE* event */
     if(isset($_POST['deleteEvent'])){
         try{
