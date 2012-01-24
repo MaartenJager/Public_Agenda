@@ -18,7 +18,7 @@
         
         <script language="JavaScript">
             function toggle(id) {
-                var id = document.getElementById(id)
+                var id = document.getElementById(id);
                 if (id.style.display == 'none')
                     id.style.display = 'block');
                 else
