@@ -81,7 +81,7 @@ if (isDatumValid())
 	//Image upload
 	$targetPath = "img/";
 	$imgFileName = mt_rand(0, 99999999);
-	$orgFileName = $_FILES["file"]["name"];
+	$orgFileName = (string)$_FILES["file"]["name"];
 	$fileExtension = end(explode('.', $orgFileName));
 	$targetPath = $targetPath . $imgFileName . ".". $fileExtension;   
 	
