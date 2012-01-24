@@ -158,13 +158,13 @@
 
                 </div>
             </section>
-            
+
             <aside id="sidebar_agenda">
                 <label>Zoeken op woord</label>
                 <div id="sidebar_agenda_searchbar">
-                    <input name="eventName" placeholder="Naam of zoekterm">
+                    <input class="formTextbox" name="eventName" placeholder="Naam of zoekterm">
                 </div>
-                
+
                 <label>Zoeken op catagorie</label>
                 <div id="checkbox_list">
                     <ul>
@@ -182,13 +182,13 @@
                         <li><input name="genre_other" id="formCheckbox" type="checkbox" /> Overig</li>
                     </ul>
                 </div>
-                
+
                 <div id="checkbox_below">
                     <label>Zoeken op datum</label>
                     <p>Hier komt een klik-kalender.</p>
                 </div>
             </aside>
-            
+
             <?php require_once("inc/footer.inc"); ?>
         </div>
     </body>

@@ -62,10 +62,10 @@
                     <input type="hidden" name="event_id" value="<?php $row->id; ?>">
 
                     <label>Naam evenement</label>
-                    <input name="eventName" value="<?php echo $row->title; ?>" required>
+                    <input class="formTextbox" name="eventName" value="<?php echo $row->title; ?>" required>
 
                     <label>Begindatum/-tijd</label>
-                    <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>
+                    <input class="formTextbox" name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>
                     <div id="beginDateUnixButton">
                         <input id="buttonSmall" value="Timestamp Calc" onclick="beginDateAndUnix();" />
                     </div>
@@ -79,7 +79,7 @@
 
 
                     <label>Einddatum/-tijd</label>
-                    <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
+                    <input class="formTextbox" name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
                     <div id="endDateUnixButton">
                         <input id="buttonSmall" value="Timestamp Calc" onclick="endDateAndUnix();" />
                     </div>
@@ -87,8 +87,8 @@
                     <div id="endDateUnixCalc">
                         <p id="endDate"></p>
                         <p>Nieuwe datum invoeren:</p>
-                        <input name="endDateReal" value="vb: 12/31/2013 23:59:59">
-                        <input id="buttonSmall" value="Vul timestamp in" onclick="endDateAutoFill();" />
+                        <input class="formTextbox" name="endDateReal" value="vb: 12/31/2013 23:59:59">
+                        <input class="formTextbox" id="buttonSmall" value="Vul timestamp in" onclick="endDateAutoFill();" />
                     </div>
 
                     <label>Beschrijving van het event</label>

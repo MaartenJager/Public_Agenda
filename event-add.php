@@ -16,10 +16,10 @@
                 <p>Wilt u het volgende formulier invullen? Alle velden, op de afbeelding na, zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
                 <form enctype="multipart/form-data" name="event-add" action="eventformadd.php"  method="post">
                     <label>Naam evenement</label>
-                    <input name="eventName" placeholder="Voer naam in" autofocus required>
+                    <input class="formTextbox" name="eventName" placeholder="Voer naam in" autofocus required>
 
                     <label>Begindatum (DD-MM-YYYY) en tijd</label>
-                    <input name="eventBeginDate" placeholder="bv. 01-01-2012" required>
+                    <input class="formTextbox" name="eventBeginDate" placeholder="bv. 01-01-2012" required>
 
                     <select name="eventBeginTimeHours">
                         <option value="00">00</option>
@@ -64,7 +64,7 @@
                     </select>
 
                     <label>Einddatum (DD-MM-YYYY) en tijd</label>
-                    <input name="eventEndDate" placeholder="bv. 01-01-2012" required>
+                    <input class="formTextbox" name="eventEndDate" placeholder="bv. 01-01-2012" required>
 
                     <select name="eventEndTimeHours">
                         <option value="00">00</option>
@@ -109,7 +109,7 @@
                     </select>
 
                     <label>Beschrijving van het evenement</label>
-                    <textarea name="eventDescription" placeholder="Voer beschrijving in" required></textarea>			        		
+                    <textarea name="eventDescription" placeholder="Voer beschrijving in" required></textarea>
 
                     <label>Kies de categorie&#235;n die bij het evenement horen</label>
                     <div id="checkbox_list">
@@ -132,7 +132,7 @@
                     <div id="checkbox_below">
                          <label>Voeg een afbeelding toe</label>
                          <input type="file" name="file" id ="file" />
-		
+
                          <input id="button" name="addUser" type="submit" value="Submit" />
                     </div>
                 </form>
@@ -140,6 +140,6 @@
 
             <?php require_once("inc/sidebar.inc"); ?>
             <?php require_once("inc/footer.inc"); ?>
-	</div>
+    </div>
     </body>
 </html>
