@@ -116,9 +116,8 @@ if (isDatumValid())
 				echo $_FILES["file"]["name"] . " already exists. ";
 			}
 			else
-			{
-				
-				move_uploaded_file($imgFileName, "img/$imgFileName");
+			{	
+				move_uploaded_file($imgFileName, "img/");
 				echo "file should be on server bitch!!";
 			}
 		}
