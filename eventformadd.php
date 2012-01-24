@@ -81,8 +81,8 @@ if (isDatumValid())
 	//Image upload
 	$targetPath = "img/";
 	$imgFileName = mt_rand(0, 99999999);
-	$orgFileName = (string)($_FILES["file"]["name"]);
-	$fileExtension = end(explode('.', $orgFileName));
+	$orgFileName = $_FILES['file']['name'];
+	$extension = end(explode(".", $orgFileName));
 	$targetPath = $targetPath . $imgFileName . ".". $fileExtension;   
 	
 	if ((($_FILES["file"]["type"] == "image/gif")
