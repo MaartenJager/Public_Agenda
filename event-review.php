@@ -19,10 +19,12 @@
         <script language="JavaScript">
             function toggle(id) {
                 var id = document.getElementById(id);
-                if (id.style.display == 'none')
-                    id.style.display = 'block');
-                else
+                if (id.style.display != 'none') {
                     id.style.display = 'none');
+                }
+                else {
+                    id.style.display = '');
+                }
             }
         </script>
     </head>
@@ -44,10 +46,7 @@
 
                     <label>Begindatum/-tijd</label>
                     <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>
-                    <input id="button" value="Timestamp Calculator" onclick="toggle('beginDateCalc');" />
-                    <div id="beginDateCalc">
-                        Blablabla
-                    </div>
+
 
                     <label>Einddatum/-tijd</label>
                     <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
@@ -78,6 +77,11 @@
                 <form action="sqldeletes.php?event_id=<?php echo $row->id; ?>" method="post">
                     <input id="button" name="deleteEvent" type="submit" value="Delete" />
                 </form>
+                
+                                    <input id="button" value="Timestamp Calculator" onclick="toggle('beginDateCalc');" />
+                    <div id="beginDateCalc">
+                        Blablabla
+                    </div>
             </section>
 
             <?php require_once("inc/sidebar.inc"); ?>
