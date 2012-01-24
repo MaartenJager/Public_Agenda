@@ -163,7 +163,7 @@ textarea {
 #buttonSmall {
     width: 144px;
     height: 24px;
-    float: left;
+    display: inline;
 }
 
 #button:hover, #buttonSmall:hover {
