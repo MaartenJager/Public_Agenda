@@ -1,6 +1,6 @@
 <?php
-    require_once("inc-conf.php");
-    
+    require("inc-conf.php");
+
     try{
         $dbh = new PDO("mysql:host=$DB_host;dbname=$DB_name", $DB_user, $DB_pass);
 
