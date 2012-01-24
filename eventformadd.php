@@ -74,18 +74,19 @@ if( isset($_POST['genre_other']) )
 	$arrayCheckboxes[7] = TRUE;
 }
 
+function file_extension($filename)
+{
+    return end(explode(".", $filename));
+}
 
 
 if (isDatumValid())
 {
 	//Image upload
 	$targetPath = "img/";
-	$targetPath = $targetPath . basename( $_FILES['file']['name']);
-	
-	/*moet nog extension bij
 	$imgFileName = mt_rand(0, 99999999);
-	$targetPath = $targetPath . $imgFileName . ".gif";  
-	*/
+	$targetPath = $targetPath . $imgFileName . (file_extension($filename));  
+	echo ("<br/>TEST FILE PATH" . $targetPath); 
 	
 	if ((($_FILES["file"]["type"] == "image/gif")
 	|| ($_FILES["file"]["type"] == "image/jpeg")
@@ -107,7 +108,7 @@ if (isDatumValid())
 			if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
 			{
 				echo "The file ".  basename( $_FILES['file']['name']). 
-				" has been uploaded";
+				" has been uploaded in ". $targetPath;
 			}
 			else
 			{
