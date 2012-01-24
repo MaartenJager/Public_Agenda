@@ -131,7 +131,7 @@
 
                     <div id="checkbox_below">
                          <label>Voeg een afbeelding toe</label>
-                         <input type="file" name="imgfile" />
+                         <input type="file" name="file" id ="file" />
 						 <input type="hidden" name="size" value="350000">
                          <input id="button" name="addUser" type="submit" value="Submit" />
                     </div>

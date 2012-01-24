@@ -78,30 +78,64 @@ if( isset($_POST['genre_other']) )
 
 if (isDatumValid())
 {
-	/*
 	//Image upload
 
-	$targetDir = 'img/';
 
 	$imgFileName = uniqid(rand(),true);
-	$targetDir = $targetDir . basename( $_FILES['imgfile']['$imgFileName']);
 
-	if(move_uploaded_file($_FILES['imgfile']['$imgFileName'], $target)) 
-	{ 
-		echo "The file ". basename( $_FILES['imgfile']['$imgFileName']). " has been uploaded";
-		//the file has been succesfully uploaded!!!!!!
+	if ($_FILES["file"]["error"] > 0)
+	{
+		echo "Error: " . $_FILES["file"]["error"] . "<br />";
 	}
 	else
 	{
-		//error if not correctly
-		echo "Sorry, there was a problem uploading your file.";
-	}	
+		echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+		echo "Type: " . $_FILES["file"]["type"] . "<br />";
+		echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
+		echo "Stored in: " . $_FILES["file"]["tmp_name"];
+	}
 
+	if ((($_FILES["file"]["type"] == "image/gif")
+	|| ($_FILES["file"]["type"] == "image/jpeg")
+	|| ($_FILES["file"]["type"] == "image/pjpeg"))
+	&& ($_FILES["file"]["size"] < 20000))
+	{
+		if ($_FILES["file"]["error"] > 0)
+		{
+			echo "Error: " . $_FILES["file"]["error"] . "<br />";
+		}
+		else
+		{
+			echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+			echo "Type: " . $_FILES["file"]["type"] . "<br />";
+			echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
+			echo "Stored in: " . $_FILES["file"]["tmp_name"];
+			
+			
+			
+			if (file_exists("img/" . $_FILES["file"]["name"]))
+			{
+				echo $_FILES["file"]["name"] . " already exists. ";
+			}
+			else
+			{
+				move_uploaded_file($_FILES["file"]["tmp_name"],
+				"img/" . $_FILES["file"]["name"]);
+				echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
+			}
+		}
+	}
+	else
+	{
+		echo "Invalid file";
+	}
+	
+	
+	
 	$urlImage = "http://websec.science.uva.nl/webdb1241/img/$imgFilename";
 
 	//dates
 
-	*/
 
 	
 	$date = $_POST['eventBeginDate'];
