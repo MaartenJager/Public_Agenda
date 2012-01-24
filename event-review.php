@@ -14,7 +14,7 @@
 <html lang="nl">
     <head>
         <title>Admin - Evenement bewerken</title>
-        <?php require_once(""); ?>
+        <?php require_once("inc/header.inc"); ?>
         
         <script language="JavaScript">
             function toggle(id) {
