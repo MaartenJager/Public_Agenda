@@ -78,7 +78,7 @@
                     <input id="button" name="deleteEvent" type="submit" value="Delete" />
                 </form>
                 
-                                    <input id="button" value="Timestamp Calculator" onclick="toggle('beginDateCalc');" />
+                    <input type="button" value="Click me" onclick="toggle('beginDateCalc');" /> 
                     <div id="beginDateCalc">
                         Blablabla
                     </div>
