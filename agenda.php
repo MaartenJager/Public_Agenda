@@ -50,7 +50,7 @@
                                         echo("  <div class=\"day\">12</div>\n");
                                         echo("<div class=\"month\">JANUARI</div>\n");
                                     echo("</div>\n");
-                                    echo "<div id=\"0\" class=\"comment\">\n" ;
+                                    //echo "<div id=\"0\" class=\"comment\">\n" ;
                                     ​echo "<a></a> \n" ;
                                     //<a href=\"#\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">Event 1</span></a>
 
