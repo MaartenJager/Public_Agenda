@@ -58,7 +58,7 @@
                                     echo "  <td>" . $row->firstName . " " . $row->name . "</td>\n";
                                     echo "  <td>" . date('d-m-Y G:i', $row->creationDate) . "</td>\n";
                                     echo "  <td> \n";
-                                    echo "      <a class=\"button\" href=\"sqldeletes.php?event_id=".$row->id."\"name=\"deleteEvent\"> \n";
+                                    echo "      <a class=\"button\" href=\"sqlaction.php?event_id=".$row->id."&type=event&action=delete\"name=\"deleteEvent\"> \n";
                                     echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
                                     echo "      </a> \n";
                                     echo "      <a class=\"button\" href=\"event-review.php?id=".$row->id."\"> \n";
