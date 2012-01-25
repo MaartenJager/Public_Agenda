@@ -51,7 +51,7 @@
                             echo("            <div class=\"month\">JANUARI</div>\n");
                             echo("        </div>\n");
                             echo "        <div id=\"0\" class=\"comment\">\n" ;
-                            echo "            <a href=\"#\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a>" ;
+                            echo "            <a href=\"#\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a>\n" ;
                             echo("            <div class=\"description\" itemprop=\"description\">". $row->description ."</div>\n");
                             echo("            <div class=\"meta\">\n");
                             echo("                <span itemprop=\"startDate\" datetime=\"2022-07-04T18:00\">July 4th, 2022 at 6:00pm</span> tot\n");
