@@ -1,3 +1,24 @@
+<?php
+/* Fetch all events from table EVENTS */
+    require_once("inc-conf.php");
+    require("inc-dbcon.php");
+
+    $sth = $dbh->query("SELECT  events.*,
+                                users.name,
+                                users.firstName,
+                                locations.name AS locationName
+                            FROM events
+                            INNER JOIN users ON (
+                                events.createdBy = users.id
+                                )
+                            INNER JOIN locations ON (
+                                events.location = locations.id
+                                )
+                            WHERE approvedBy IS NOT NULL");
+    $sth->setFetchMode(PDO::FETCH_OBJ);
+    $sth->execute();
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
     <head>
@@ -16,6 +37,44 @@
                 Gebruik dan de zoekopties rechts van de agenda.</p>
 
                 <div id="agenda">
+
+
+
+                <?php
+                    // showing the results
+                    while($row = $sth->fetch() ){
+                        print <<<EOT
+
+                        EOT;
+
+
+                ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     <!-- Begin item -->
                     <div class="event even" itemscope itemtype="http://data-vocabulary.org/Event">
