@@ -115,9 +115,13 @@
                     <input type="hidden" name="action" value="delete" />
                     <input type="hidden" name="type" value="event" />
                     <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
-                    <input id="button" type="submit" value="Delete" />
+                    <input id="button" type="submit" value="Verwijder" />
                 </form>
                 <form action="sqlaction.php" method="get">
+                    <input type="hidden" name="action" value="approve" />
+                    <input type="hidden" name="type" value="event" />
+                    <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
+                    <input id="button" type="submit" value="Keur goed" />
                 </form>
 
             </section>

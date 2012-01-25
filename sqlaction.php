@@ -22,6 +22,25 @@
 
         $dhb = null;
     }
+    function approveEvent($id){
+        try{
+            /* Connect to DB */
+            require("inc-dbcon.php");
+
+            //Prepare statement
+            $sth = $dbh->prepare("UPDATE `webdb1241`.`events` SET `approvedBy` = '0' WHERE `events`.`id` = :id");
+
+            //Prepare data
+            $sth->bindParam(':id', $id);
+            $sth->execute();
+        }
+
+        catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+
+        $dhb = null;
+    }
 
 
     /* Controleer op DELETE actie */
@@ -51,6 +70,22 @@
                     if(isset($_GET['id'])){
                         $id = ($_GET['id']);
                         echo $id;
+                    }
+                }
+            }
+        }
+
+        /*controleer voor approves*/
+        elseif( ($_GET['action']) == "approve" ){
+            /* Controleer of er een EVENT geaccepteert dient te worden */
+            if(isset($_GET['type'])){
+                if( ($_GET['type']) == "event" ){
+                    echo("type is EVENT");
+
+                    /* Controleer of er een ID is meegestuurd */
+                    if(isset($_GET['id'])){
+                        $id = ($_GET['id']);
+                        approveEvent($id);
                     }
                 }
             }
