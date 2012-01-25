@@ -92,7 +92,7 @@
                         <option value="22">22</option>
                         <option value="23">23</option>
                     </select>
-                    :
+                    
                     <select name="eventEndTimeMinutes">
                         <option value="00">00</option>
                         <option value="05">05</option>
@@ -106,6 +106,12 @@
                         <option value="45">45</option>
                         <option value="50">50</option>
                         <option value="55">55</option>
+                    </select>
+                    
+                    <select name="locationPicker">
+                        <option value="deathMetal">Death Metal zaal</option>
+                        <option value="bijbelSchool">Zaal voor bijbelstudie</option>
+                        <option value="gedichtenZaal">Gedichtenzaal</option>
                     </select>
 
                     <label>Beschrijving van het evenement</label>
