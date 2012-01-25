@@ -67,6 +67,10 @@
                                                     echo("<span itemprop=\"country-name\">Nederland</span>\n");
                                                 echo("</span>\n");
                                             echo("\n");
+                                            echo("<span itemprop=\"geo\" itemscope itemtype=\"http://data-vocabulary.org/​Geo\">\n");
+                                                    echo("<meta itemprop=\"latitude\" content=\"52.354496\" />\n");
+                                                    echo("<meta itemprop=\"longitude\ content=\"4.954206\" />\n");
+                                                echo("</span>\n");
                                             echo("</span>\n");
                                         echo("</div>\n");
                                     echo("</div>\n");
