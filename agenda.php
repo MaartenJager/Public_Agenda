@@ -51,7 +51,8 @@
                                         echo("<div class=\"month\">JANUARI</div>\n");
                                     echo("</div>\n");
                                     echo "<div id=\"0\" class=\"comment\">\n" ;
-                                    echo "<a></a> \n" ;
+                                    echo "<a href=\"#\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">Event 1</span></a>" ;
+
 
                         }
                     ?>
