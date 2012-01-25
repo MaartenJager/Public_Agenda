@@ -75,7 +75,7 @@
                                             echo("</span>\n");
                                         echo("</div>\n");
                                     echo("</div>\n");
-                                        echo("<img itemprop=\"photo\" src=\"img/img.jpg\"/>\n");
+                                        echo("<img itemprop=\"photo\" src=\"". $row-image . "\"/>\n");
                                 echo("</div>\n");
                             echo("<!-- Eind item -->\n");
 
