@@ -65,6 +65,8 @@
                                                 echo("<span itemprop=\"street-address\">Science Park 904</span>,\n");
                                                     echo("<span itemprop=\"locality\">Amsterdam</span>,\n");
                                                     echo("<span itemprop=\"country-name\">Nederland</span>\n");
+                                                echo("</span>\n");
+                                            echo("\n");
                                             echo("</span>\n");
                                         echo("</div>\n");
                                     echo("</div>\n");
