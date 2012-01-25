@@ -52,7 +52,7 @@
 
 
 
-                        echo '<div class="event even" itemscope itemtype="http://data-vocabulary.org/Event">';
+
 
 
                     ?>
