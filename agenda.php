@@ -39,11 +39,13 @@
                 <div id="agenda">
 
 
-
+            
                     <?php
                         // showing the results
                         while($row = $sth->fetch() ){
-
+                            $datetime = date("Y-m-d H:i:s", $row->CreationDate);
+                            print_r($datetime);
+                            
                             echo("<!-- Begin item #" . $row->id . "-->\n");
                             echo("  <div class=\"event even\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
                             echo("    <div class=\"date\">\n");
