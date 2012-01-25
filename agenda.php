@@ -43,7 +43,7 @@
                     <?php
                         // showing the results
                         while($row = $sth->fetch() ){
-                            $datetime = date("Y-m-d H:i:s", $row->CreationDate);
+                            $datetime = date("Y-m-d H:i:s", $row->creationDate);
                             print_r($datetime);
                             
                             echo("<!-- Begin item #" . $row->id . "-->\n");
