@@ -47,7 +47,7 @@
                             $beginDate = date("d-m-Y H:i:s", $row->beginDate);
                             $endDate = date("d-m-Y H:i:s", $row->endDate);
                             print_r($creationDate);
-                            echo date(d, $creationDate);
+                            echo date("d", $creationDate);
                             echo "\n";
                             print_r($beginDate);
                             print_r($endDate);
