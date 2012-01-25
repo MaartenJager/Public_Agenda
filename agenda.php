@@ -44,7 +44,7 @@
                         // showing the results
                         while($row = $sth->fetch() ){
                             print_r(date("d-m-Y H:i:s", $row->creationDate) );
-                            echo(date("d", $row->creationDate) );
+                            
                             echo "\n";
                             
                             $beginDate = date("d-m-Y H:i:s", $row->beginDate);
@@ -54,7 +54,7 @@
                             echo("<!-- Begin item #" . $row->id . "-->\n");
                             echo("  <div class=\"event even\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
                             echo("    <div class=\"date\">\n");
-                            echo("              <div class=\"day\">12</div>\n");
+                            echo("              <div class=\"day\">" . echo(date("d", $row->beginDate) ) . "</div>\n");
                             echo("            <div class=\"month\">JANUARI</div>\n");
                             echo("        </div>\n");
                             echo "        <div id=\"0\" class=\"comment\">\n" ;
