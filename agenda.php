@@ -44,14 +44,9 @@
                         // showing the results
                         while($row = $sth->fetch() ){
 
-                        echo("<!-- Begin item -->");
+                            echo("<!-- Begin item -->");
 
-
-    s
-
-
-
-                    }
+                        }
 
 
 
