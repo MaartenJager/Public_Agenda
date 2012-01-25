@@ -109,7 +109,7 @@
                         <option value="55">55</option>
                     </select>
                     
-                    <label> Kies de locatie voor het event</label>
+                    <label>Kies de locatie voor het event</label>
                     <select name="locationPicker">
 						<option value="1">Death Metal zaal: locatie 1</option>
 						<option value="2">Zaal voor bijbelstudie: locatie 2</option>
