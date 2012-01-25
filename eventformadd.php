@@ -127,10 +127,7 @@ if (isDatumValid())
 	//correct
 	$urlImage = "http://websec.science.uva.nl/webdb1241/" . $targetPath;
 
-	
-	//location
-	$location = $_POST['locationPicker'];
-	echo "<br />". $location . "<br />";
+
 	
 	//dates
 	
@@ -146,9 +143,13 @@ if (isDatumValid())
 	require("inc-dbcon.php");
 	$sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, location, description, image, creationDate, approvedBy)
 	VALUES
-	('$_POST[eventName]', '$beginDateTimeStamp', '$endDateTimeStamp', '$location', '$_POST[eventDescription]', '$urlImage', " . time() . ", NULL)");
+	('$_POST[eventName]', '$beginDateTimeStamp', '$endDateTimeStamp', '$_POST[locationPicker]', '$_POST[eventDescription]', '$urlImage', " . time() . ", NULL)");
         $sth->execute();
+        
+    
 
+    
+    
 	for($i=0; $i<8; $i++)
 	{
 		if ($arrayCheckboxes[$i])
