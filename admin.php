@@ -30,39 +30,46 @@
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Gebruikersbeheer</h1></header>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Voornaam</th>
-                            <th>Achternaam</th>
-                            <th>E-mail</th>
-                            <th>Toegansniveau</th>
-                            <th></th>
-                        </tr>
-                    </thead>
+                <form action="sqlaction.php" method="post">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Voornaam</th>
+                                <th>Achternaam</th>
+                                <th>E-mail</th>
+                                <th>Toegansniveau</th>
+                                <th></th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <?php
-                            // showing the results
-                            while($row = $sth->fetch() ){
-                                echo "<tr>\n";
-                                echo "  <td>" . $row->firstName . "</td>\n";
-                                echo "  <td>" . $row->name . "</td>\n";
-                                echo "  <td>" . $row->email . "</td>\n";
-                                echo "  <td>" . $row->accessLevel . "</td>\n";
-                                echo "  <td> \n";
-                                echo "      <a class=\"button\" href=\"formhandler.pdo?action=delete&id=".$row->id."\"> \n";
-                                echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
-                                echo "      </a> \n";
-                                echo "      <a class=\"button\" href=\"formhandler.pdo?action=edit&id=".$row->id."\"> \n";
-                                echo "          <img src=\"img/btn-edit.png\" title=\"Edit\" alt=\"Edit\" width=\"16\" height=\"16\">\n";
-                                echo "      </a> \n";
-                                echo "  </td>\n";
-                                echo "</tr>\n";
-                            }
-                        ?>
-                    </tbody>
-                </table>
+                        <tbody>
+                            <?php
+                                // showing the results
+                                $i = 0;
+                                while($row = $sth->fetch() ){
+                                    $i++;
+                                    echo "<tr>\n";
+                                    echo "  <td id=\"checkboxTable\"><input name=\"deleteSelection" . $i . "\" type=\"checkbox\" S/></td>\n";
+                                    echo "  <td>" . $row->firstName . "</td>\n";
+                                    echo "  <td>" . $row->name . "</td>\n";
+                                    echo "  <td>" . $row->email . "</td>\n";
+                                    echo "  <td>" . $row->accessLevel . "</td>\n";
+                                    echo "  <td> \n";
+                                    echo "      <a class=\"button\" href=\"formhandler.pdo?action=delete&id=".$row->id."\"> \n";
+                                    echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
+                                    echo "      </a> \n";
+                                    echo "      <a class=\"button\" href=\"formhandler.pdo?action=edit&id=".$row->id."\"> \n";
+                                    echo "          <img src=\"img/btn-edit.png\" title=\"Edit\" alt=\"Edit\" width=\"16\" height=\"16\">\n";
+                                    echo "      </a> \n";
+                                    echo "  </td>\n";
+                                    echo "</tr>\n";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                <input id="button" name="deleteEvents" type="submit" value="Delete Selection" />
+                </form>
 
                 <div id="addUserButton">
                     <input id="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="makeVisible();" />
@@ -72,16 +79,16 @@
                     <header class="pageTitle"><h1>Nieuwe gebruiker toevoegen</h1></header>
                     <form action="formhandler.php" method="post">
                         <label>Voornaam</label>
-                        <input name="firstName" placeholder="Voornaam" autofocus required>
+                        <input type="text" name="firstName" placeholder="Voornaam" autofocus required>
 
                         <label>Achternaam (inclusief eventuele tussenvoegsels)</label>
-                        <input name="name" placeholder="Achternaam" required>
+                        <input type="text" name="name" placeholder="Achternaam" required>
 
                         <label>Email (tevens de login naam)</label>
-                        <input name="email" type="email" placeholder="Email" required></textarea>
+                        <input type="email" name="email" placeholder="Email" required>
 
                         <label>Wachtwoord</label>
-                        <input name="password" placeholder="Wachtwoord" required></textarea>
+                        <input type="password" name="password" placeholder="Wachtwoord" required>
 
                         <label>Toegangsniveau</label>
                         <select name="accessLevel">

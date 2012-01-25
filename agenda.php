@@ -1,3 +1,24 @@
+<?php
+/* Fetch all events from table EVENTS */
+    require_once("inc-conf.php");
+    require("inc-dbcon.php");
+
+    $sth = $dbh->query("SELECT  events.*,
+                                users.name,
+                                users.firstName,
+                                locations.name AS locationName
+                            FROM events
+                            INNER JOIN users ON (
+                                events.createdBy = users.id
+                                )
+                            INNER JOIN locations ON (
+                                events.location = locations.id
+                                )
+                            WHERE approvedBy IS NOT NULL");
+    $sth->setFetchMode(PDO::FETCH_OBJ);
+    $sth->execute();
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
     <head>
@@ -17,154 +38,59 @@
 
                 <div id="agenda">
 
-                    <!-- Begin item -->
-                    <div class="event even" itemscope itemtype="http://data-vocabulary.org/Event">
-                        <div class="date">
-                            <div class="day">12</div>
-                            <div class="month">JANUARI</div>
-                        </div>
-                        <div id="0" class="comment">
-                            ​<a href="#0" itemprop="url" ><span class="summary" itemprop="summary">Event 1</span></a> <!-- Link to HTML anchor  -->
-                            <div class="description" itemprop="description">Lorem ipsum dolor sit amet, tacimates pericula per an, malis mediocrem molestiae quo no. Quo cu mazim omittam, an nulla simul recteque duo. Quod periculis prodesset ut eum. Clita posidonium ea vel, id eos senserit repudiare aliquando, hinc decore forensibus cu sea. Cum cu vero impetus dolorum, iriure diceret scriptorem eam at.</div>
-                            <div class="meta">
-                                <span itemprop="startDate" datetime="2022-07-04T18:00">July 4th, 2022 at 6:00pm</span> tot
-                                <span itemprop="endDate" datetime="2022-07-04T22:00">July 4th, 2022 at 10:00pm</span>
-                            </div>
-                            <div class="meta">@
-                                ​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
-                                    ​<span itemprop="name">the Roadhouse</span>
-                                    ​
-                                    <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-                                        <span itemprop="street-address">Science Park 904</span>,
-                                        <span itemprop="locality">Amsterdam</span>,
-                                        <span itemprop="country-name">Nederland</span>
-                                    </span>
-
-                                    <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/​Geo">
-                                        <meta itemprop="latitude" content="52.354496" />
-                                        <meta itemprop="longitude" content="4.954206" />
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                            <img itemprop="photo" src="img/img.jpg"/>
-                    </div>
-                    <!-- Eind item -->
 
 
-                    <!-- Begin item -->
-                    <div class="event odd" itemscope itemtype="http://data-vocabulary.org/Event">
-                        <div class="date">
-                            <div class="day">12</div>
-                            <div class="month">JANUARI</div>
-                        </div>
-                        <div id="0" class="comment">
-                            ​<a href="#0" itemprop="url" ><span class="summary" itemprop="summary">Event 2</span></a> <!-- Link to HTML anchor  -->
-                            <div class="description" itemprop="description">Lorem ipsum dolor sit amet, tacimates pericula per an, malis mediocrem molestiae quo no. Quo cu mazim omittam, an nulla simul recteque duo. Quod periculis prodesset ut eum. Clita posidonium ea vel, id eos senserit repudiare aliquando, hinc decore forensibus cu sea. Cum cu vero impetus dolorum, iriure diceret scriptorem eam at.</div>
-                            <div class="meta">
-                                <span itemprop="startDate" datetime="2022-07-04T18:00">July 4th, 2022 at 6:00pm</span> tot
-                                <span itemprop="endDate" datetime="2022-07-04T22:00">July 4th, 2022 at 10:00pm</span>
-                            </div>
-                            <div class="meta">@
-                                ​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
-                                    ​<span itemprop="name">the Roadhouse</span>
-                                    ​
-                                    <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-                                        <span itemprop="street-address">Science Park 904</span>,
-                                        <span itemprop="locality">Amsterdam</span>,
-                                        <span itemprop="country-name">Nederland</span>
-                                    </span>
+                    <?php
+                        // showing the results
+                        while($row = $sth->fetch() ){
 
-                                    <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/​Geo">
-                                        <meta itemprop="latitude" content="52.354496" />
-                                        <meta itemprop="longitude" content="4.954206" />
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                            <img itemprop="photo" src="img/img.jpg"/>
-                    </div>
-                    <!-- Eind item -->
+                            echo("<!-- Begin item #" . $row->id . "-->\n");
+                                echo("<div class=\"event even\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
+                                    echo("<div class=\"date\">\n");
+                                        echo("  <div class=\"day\">12</div>\n");
+                                        echo("<div class=\"month\">JANUARI</div>\n");
+                                    echo("</div>\n");
+                                    echo "<div id=\"0\" class=\"comment\">\n" ;
+                                        echo "<a href=\"#\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a>" ;
+                                        echo("<div class=\"description\" itemprop=\"description\">". $row->description ."</div>\n");
+                                        echo("<div class=\"meta\">\n");
+                                            echo("<span itemprop=\"startDate\" datetime=\"2022-07-04T18:00\">July 4th, 2022 at 6:00pm</span> tot\n");
+                                            echo("<span itemprop=\"endDate\" datetime=\"2022-07-04T22:00\">July 4th, 2022 at 10:00pm</span>\n");
+                                        echo("</div>\n");
+                                        echo("<div class=\"meta\">@\n");
+                                            echo("​<span itemprop=\"location\" itemscope itemtype=\"http://data-vocabulary.org/​Organization\">\n");
+                                                echo($row->locationName ."(\n");
+                                                echo("​<span itemprop=\"name\">the Roadhouse</span>\n");
+                                                echo("\n");
+                                                echo("<span itemprop=\"address\" itemscope itemtype=\"http://data-vocabulary.org/Address\">\n");
+                                                echo("<span itemprop=\"street-address\">Science Park 904</span>,\n");
+                                                    echo("<span itemprop=\"locality\">Amsterdam</span>,\n");
+                                                    echo("<span itemprop=\"country-name\">Nederland</span>\n");
+                                                echo("</span>)\n");
+                                            echo("\n");
+                                            echo("<span itemprop=\"geo\" itemscope itemtype=\"http://data-vocabulary.org/​Geo\">\n");
+                                                    echo("<meta itemprop=\"latitude\" content=\"52.354496\" />\n");
+                                                    echo("<meta itemprop=\"longitude\ content=\"4.954206\" />\n");
+                                                echo("</span>\n");
+                                            echo("</span>\n");
+                                        echo("</div>\n");
+                                    echo("</div>\n");
+                                        echo("<img itemprop=\"photo\" src=\"". $row->image . "\"/>\n");
+                                echo("</div>\n");
+                            echo("<!-- Eind item -->\n");
 
-
-                    <!-- Begin item -->
-                    <div class="event even" itemscope itemtype="http://data-vocabulary.org/Event">
-                        <div class="date">
-                            <div class="day">12</div>
-                            <div class="month">JANUARI</div>
-                        </div>
-                        <div id="0" class="comment">
-                            ​<a href="#0" itemprop="url" ><span class="summary" itemprop="summary">Event 3</span></a> <!-- Link to HTML anchor  -->
-                            <div class="description" itemprop="description">Lorem ipsum dolor sit amet, tacimates pericula per an, malis mediocrem molestiae quo no. Quo cu mazim omittam, an nulla simul recteque duo. Quod periculis prodesset ut eum. Clita posidonium ea vel, id eos senserit repudiare aliquando, hinc decore forensibus cu sea. Cum cu vero impetus dolorum, iriure diceret scriptorem eam at.</div>
-                            <div class="meta">
-                                <span itemprop="startDate" datetime="2022-07-04T18:00">July 4th, 2022 at 6:00pm</span> tot
-                                <span itemprop="endDate" datetime="2022-07-04T22:00">July 4th, 2022 at 10:00pm</span>
-                            </div>
-                            <div class="meta">@
-                                ​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
-                                    ​<span itemprop="name">the Roadhouse</span>
-                                    ​
-                                    <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-                                        <span itemprop="street-address">Science Park 904</span>,
-                                        <span itemprop="locality">Amsterdam</span>,
-                                        <span itemprop="country-name">Nederland</span>
-                                    </span>
-
-                                    <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/​Geo">
-                                        <meta itemprop="latitude" content="52.354496" />
-                                        <meta itemprop="longitude" content="4.954206" />
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                            <img itemprop="photo" src="img/img.jpg"/>
-                    </div>
-                    <!-- Eind item -->
-
-
-                    <!-- Begin item -->
-                    <div class="event odd" itemscope itemtype="http://data-vocabulary.org/Event">
-                        <div class="date">
-                            <div class="day">12</div>
-                            <div class="month">JANUARI</div>
-                        </div>
-                        <div id="0" class="comment">
-                            ​<a href="#0" itemprop="url" ><span class="summary" itemprop="summary">Event 4</span></a> <!-- Link to HTML anchor  -->
-                            <div class="description" itemprop="description">Lorem ipsum dolor sit amet, tacimates pericula per an, malis mediocrem molestiae quo no. Quo cu mazim omittam, an nulla simul recteque duo. Quod periculis prodesset ut eum. Clita posidonium ea vel, id eos senserit repudiare aliquando, hinc decore forensibus cu sea. Cum cu vero impetus dolorum, iriure diceret scriptorem eam at.</div>
-                            <div class="meta">
-                                <span itemprop="startDate" datetime="2022-07-04T18:00">July 4th, 2022 at 6:00pm</span> tot
-                                <span itemprop="endDate" datetime="2022-07-04T22:00">July 4th, 2022 at 10:00pm</span>
-                            </div>
-                            <div class="meta">@
-                                ​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
-                                    ​<span itemprop="name">the Roadhouse</span>
-                                    ​
-                                    <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-                                        <span itemprop="street-address">Science Park 904</span>,
-                                        <span itemprop="locality">Amsterdam</span>,
-                                        <span itemprop="country-name">Nederland</span>
-                                    </span>
-
-                                    <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/​Geo">
-                                        <meta itemprop="latitude" content="52.354496" />
-                                        <meta itemprop="longitude" content="4.954206" />
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                            <img itemprop="photo" src="img/img.jpg"/>
-                    </div>
-                    <!-- Eind item -->
+                        }
+                    ?>
 
                 </div>
             </section>
-            
+
             <aside id="sidebar_agenda">
                 <label>Zoeken op woord</label>
                 <div id="sidebar_agenda_searchbar">
-                    <input name="eventName" placeholder="Naam of zoekterm">
+                    <input type="email" name="eventName" placeholder="Naam of zoekterm">
                 </div>
-                
+
                 <label>Zoeken op catagorie</label>
                 <div id="checkbox_list">
                     <ul>
@@ -182,13 +108,13 @@
                         <li><input name="genre_other" id="formCheckbox" type="checkbox" /> Overig</li>
                     </ul>
                 </div>
-                
+
                 <div id="checkbox_below">
                     <label>Zoeken op datum</label>
                     <p>Hier komt een klik-kalender.</p>
                 </div>
             </aside>
-            
+
             <?php require_once("inc/footer.inc"); ?>
         </div>
     </body>

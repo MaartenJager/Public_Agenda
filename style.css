@@ -135,41 +135,21 @@ label {
     letter-spacing: 2px;
 }
 
-input, textarea {
-    width: 300px;
-    background: #EFEFEF;
-    border: 1px solid #DEDEDE;
-    padding: 6px;
-    margin-top: 3px;
-    font-size: 0.9em;
-    color: #3A3A3A;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+input[type="text"] {
+    background-image:url(img/form_bg.jpg);
+    background-repeat:repeat-x;
+    border:1px solid #d1c7ac;
+    width: 230px;
+    color:#333333;
+    padding:3px;
+    margin-right:4px;
+    margin-bottom:8px;
 }
 
 textarea {
     height: 200px;
-    background: url(img/form-bg.png) bottom right no-repeat #EFEFEF;
-}
-
-#button {
-    display: block;
-    height: 38px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-#buttonSmall {
-    width: 144px;
-    display: block;
-    heigth: 32px;
-    margin-top: 14px;
-    cursor: pointer;
-}
-
-#button:hover, #buttonSmall:hover {
-    opacity: 0.6;
+    width: 300px;
+    background: url(img/form-bg.png) bottom right no-repeat #FFF;
 }
 
 a.button{
@@ -323,10 +303,21 @@ included the code you did, and what exactly uses it. */
     width: 160px; /* overwrite default input size of 300px */
 }
 
-#beginDateCalc {
+/* Used by event review to calc unix timestamps */
+#endDateUnixCalc {
     display: none;
 }
 
-#endDateCalc {
+/* Used by event review to calc unix timestamps */
+#beginDateUnixCalc {
     display: none;
 }
+
+#beginDateUnixButton {
+    display: block;
+}
+
+#endDateUnixButton {
+    display: block;
+}
+

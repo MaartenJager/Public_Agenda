@@ -15,20 +15,40 @@
     <head>
         <title>Admin - Evenement bewerken</title>
         <?php require_once("inc/header.inc"); ?>
-        
+
         <script language="JavaScript">
-            function showUpperCalc() {
-                document.getElementById('beginDateCalc').style.display = 'block';
-                document.getElementById('endDateCalc').style.display = 'none';
+            function beginDateAndUnix() {
+                document.getElementById('beginDateUnixCalc').style.display = 'block';
+                document.getElementById('beginDateUnixButton').style.display = 'none';
+                var temp = document.event.beginDate.value;
+                var date = new Date(temp * 1000);
+                document.getElementById('beginDate').innerHTML="Datum: " + date;
             }
-            
-            function showLowerCalc() {
-                document.getElementById('endDateCalc').style.display = 'block';
-                document.getElementById('beginDateCalc').style.display = 'none';
+
+            function endDateAndUnix() {
+                document.getElementById('endDateUnixCalc').style.display = 'block';
+                document.getElementById('endDateUnixButton').style.display = 'none';
+                var temp = document.event.endDate.value;
+                var date = new Date(temp * 1000);
+                document.getElementById('endDate').innerHTML="Datum: " + date;
+            }
+
+            function beginDateAutoFill() {
+                var temp = document.event.beginDateReal.value;
+                var date = new Date(temp);
+                var string = date.valueOf() / 1000;
+                document.event.beginDate.value = string;
+            }
+
+            function endDateAutoFill() {
+                var temp = document.event.endDateReal.value;
+                var date = new Date(temp);
+                var string = date.valueOf() / 1000;
+                document.event.endDate.value = string;
             }
         </script>
     </head>
-    
+
     <body>
         <div id="container">
             <div id="header" role="banner"></div>
@@ -37,30 +57,42 @@
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Evenement bewerken</h1></header>
 
-                <form action="sqlaction.php" method="post">
+                <form name="event" action="sqlaction.php" method="post">
 
                     <input type="hidden" name="event_id" value="<?php $row->id; ?>">
 
                     <label>Naam evenement</label>
-                    <input name="eventName" value="<?php echo $row->title; ?>" required>		
+                    <input type="text" name="eventName" value="<?php echo $row->title; ?>" required>
 
                     <label>Begindatum/-tijd</label>
-                    <input name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>\
-                    <input id="buttonSmall" type="button" value="Timestamp Calculator" onclick="showUpperCalc();" /> 
-                    <div id="beginDateCalc">
-                        Blablabla
+                    <input type="text" name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>
+                    <div id="beginDateUnixButton">
+                        <input id="buttonSmall" value="Bereken Timestamp" onclick="beginDateAndUnix();" />
+                    </div>
+
+                    <div id="beginDateUnixCalc">
+                        <p id="beginDate"></p>
+                        <p>Nieuwe datum invoeren:</p>
+                        <input type="text" name="beginDateReal" value="vb: 12/31/2013 23:59:59">
+                        <input type="text" id="buttonSmall" value="Vul timestamp in" onclick="beginDateAutoFill();" />
                     </div>
 
 
                     <label>Einddatum/-tijd</label>
-                    <input name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
-                    <input id="buttonSmall" type="button" value="Timestamp Calculator" onclick="showLowerCalc();" /> 
-                    <div id="endDateCalc">
-                        Blablabla
+                    <input type="text" name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
+                    <div id="endDateUnixButton">
+                        <input id="buttonSmall" value="Bereken Timestamp" onclick="endDateAndUnix();" />
+                    </div>
+
+                    <div id="endDateUnixCalc">
+                        <p id="endDate"></p>
+                        <p>Nieuwe datum invoeren:</p>
+                        <input type="text" name="endDateReal" value="vb: 12/31/2013 23:59:59">
+                        <input type="text" id="buttonSmall" value="Vul timestamp in" onclick="endDateAutoFill();" />
                     </div>
 
                     <label>Beschrijving van het event</label>
-                    <textarea name="description" placeholder="Voer beschrijving in" required><?php echo $row->description; ?></textarea>			        		
+                    <textarea name="description" placeholder="Voer beschrijving in" required><?php echo $row->description; ?></textarea>
 
                     <label>Kies de categorie&#235;n die bij het event horen</label>
                     <div>
@@ -78,10 +110,14 @@
                     <input type="file" name="datafile" value="<?php echo $row->image; ?>" />
                     <input id="button" name="editEvent" type="submit" value="Submit" />
                 </form>
-                <form action="sqldeletes.php?event_id=<?php echo $row->id; ?>" method="post">
-                    <input id="button" name="deleteEvent" type="submit" value="Delete" />
+
+                <form action="sqldeletes.php" method="get">
+                    <input type="hidden" name="action" value="delete" />
+                    <input type="hidden" name="type" value="event" />
+                    <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
+                    <input id="button" type="submit" value="Delete" />
                 </form>
-                
+
             </section>
 
             <?php require_once("inc/sidebar.inc"); ?>
