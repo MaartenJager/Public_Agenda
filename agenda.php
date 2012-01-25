@@ -44,7 +44,7 @@
                         // showing the results
                         while($row = $sth->fetch() ){
 
-                            echo("<!-- Begin item -->\n");
+                            echo("<!-- Begin item #" . $row->id . "-->\n");
                                 echo("<div class=\"event even\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
                                     echo("<div class=\"date\">\n");
                                         echo("  <div class=\"day\">12</div>\n");
