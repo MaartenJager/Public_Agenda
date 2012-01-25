@@ -61,6 +61,7 @@
                                             echo("​<span itemprop=\"location\" itemscope itemtype=\"http://data-vocabulary.org/​Organization\">\n");
                                                 echo("​<span itemprop=\"name\">the Roadhouse</span>\n");
                                                 echo("\n");
+                                                echo("<span itemprop=\"address\" itemscope itemtype=\"http://data-vocabulary.org/Address\">\n");
                                             echo("</span>\n");
                                         echo("</div>\n");
                                     echo("</div>\n");
