@@ -43,14 +43,7 @@
             
                     <?php
                         // showing the results
-                        while($row = $sth->fetch() ){
-                            print_r(date("d-m-Y H:i:s", $row->creationDate) );
-                            
-                            echo "\n";
-                            
-                            $beginDate = date("d-m-Y H:i:s", $row->beginDate);
-                            $endDate = date("d-m-Y H:i:s", $row->endDate);
-                            
+                        while($row = $sth->fetch() ){                          
                             
                             echo("<!-- Begin item #" . $row->id . "-->\n");
                             echo("  <div class=\"event even\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
