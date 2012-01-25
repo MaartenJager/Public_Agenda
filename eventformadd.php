@@ -19,22 +19,22 @@ function isDatumValid()
 				}
 				else
 				{
-					echo "End date is numeric but not a valid date<br/>";
+					echo "End date is numeric but not a valid date<br />";
 				}
 			}
 			else
 			{
-				echo "Begin date is not numeric or in format dd-mm-yyyy<br/>";
+				echo "Begin date is not numeric or in format dd-mm-yyyy<br />";
 			}
 		}
 		else
 		{
-			echo "Begin date is numeric but not a valid date<br/>";
+			echo "Begin date is numeric but not a valid date<br />";
 		}
 	}
 	else
 	{
-		echo "Begin date is not numeric or in format dd-mm-yyyy<br/>";
+		echo "Begin date is not numeric or in format dd-mm-yyyy<br />";
 	}
 	return FALSE;
 }
