@@ -62,6 +62,9 @@
                                                 echo("​<span itemprop=\"name\">the Roadhouse</span>\n");
                                                 echo("\n");
                                                 echo("<span itemprop=\"address\" itemscope itemtype=\"http://data-vocabulary.org/Address\">\n");
+                                                echo("<span itemprop=\"street-address\">Science Park 904</span>,\n");
+                                                    echo("<span itemprop=\"locality\">Amsterdam</span>,\n");
+                                                    echo("<span itemprop=\"country-name\">Nederland</span>\n");
                                             echo("</span>\n");
                                         echo("</div>\n");
                                     echo("</div>\n");
