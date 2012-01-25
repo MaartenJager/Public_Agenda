@@ -65,7 +65,8 @@
 
                     <label>Einddatum (DD-MM-YYYY) en tijd</label>
                     <input type="text" name="eventEndDate" placeholder="bv. 01-01-2012" required>
-
+                    
+                    <label> Kies de locatie voor het event</label>
                     <select name="eventEndTimeHours">
                         <option value="00">00</option>
                         <option value="01">01</option>
