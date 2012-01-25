@@ -111,9 +111,9 @@
                     
                     <label> Kies de locatie voor het event</label>
                     <select name="locationPicker">
-						<option value="deathMetal">Death Metal zaal: locatie 1</option>
-						<option value="bijbelSchool">Zaal voor bijbelstudie: locatie 2</option>
-						<option value="gedichtenZaal">Gedichtenzaal: locatie 3</option>
+						<option value="1">Death Metal zaal: locatie 1</option>
+						<option value="2">Zaal voor bijbelstudie: locatie 2</option>
+						<option value="3">Gedichtenzaal: locatie 3</option>
                     </select>
 
                     <label>Beschrijving van het evenement</label>
