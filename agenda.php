@@ -14,7 +14,8 @@
                             INNER JOIN locations ON (
                                 events.location = locations.id
                                 )
-                            WHERE approvedBy IS NOT NULL");
+                            WHERE approvedBy IS NOT NULL
+                            ORDER BY events.beginDate ASC");
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
 ?>
