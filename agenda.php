@@ -50,6 +50,7 @@
                                         echo("  <div class=\"day\">12</div>\n");
                                         echo("<div class=\"month\">JANUARI</div>\n");
                                     echo("</div>\n");
+                                    echo "<div id=\"0\" class=\"comment\">\n" ;
 
                         }
                     ?>
