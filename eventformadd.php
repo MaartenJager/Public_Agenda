@@ -79,7 +79,7 @@ if( isset($_POST['genre_other']) )
 if (isDatumValid())
 {
 	//Image upload
-	$targetPath = "img/";
+	$targetPath = "uploads/";
 	
 	//random filename between 0 and 1 billion - 1 for final storage
 	$imgFileName = mt_rand(0, 99999999);
