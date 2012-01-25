@@ -66,7 +66,7 @@
                     <label>Einddatum (DD-MM-YYYY) en tijd</label>
                     <input type="text" name="eventEndDate" placeholder="bv. 01-01-2012" required>
                     
-                    <label> Kies de locatie voor het event</label>
+                   
                     <select name="eventEndTimeHours">
                         <option value="00">00</option>
                         <option value="01">01</option>
@@ -109,6 +109,7 @@
                         <option value="55">55</option>
                     </select>
                     
+                    <label> Kies de locatie voor het event</label>
                     <select name="locationPicker">
 						<option value="deathMetal">Death Metal zaal: locatie 1</option>
 						<option value="bijbelSchool">Zaal voor bijbelstudie: locatie 2</option>
