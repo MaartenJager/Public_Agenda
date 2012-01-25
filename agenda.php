@@ -55,14 +55,14 @@
                             echo("  <div class=\"event even\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
                             echo("    <div class=\"date\">\n");
                             echo("              <div class=\"day\">" . date("d", $row->beginDate) . "</div>\n");
-                            echo("            <div class=\"month\">JANUARI</div>\n");
+                            echo("            <div class=\"month\">" . date("F", $row->beginDate) . "</div>\n");
                             echo("        </div>\n");
                             echo "        <div id=\"0\" class=\"comment\">\n" ;
                             echo "            <a href=\"#\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a>\n" ;
                             echo("            <div class=\"description\" itemprop=\"description\">". $row->description ."</div>\n");
                             echo("            <div class=\"meta\">\n");
-                            echo("                <span itemprop=\"startDate\" datetime=\"2022-07-04T18:00\">July 4th, 2022 at 6:00pm</span> tot\n");
-                            echo("                <span itemprop=\"endDate\" datetime=\"2022-07-04T22:00\">July 4th, 2022 at 10:00pm</span>\n");
+                            echo("                <span itemprop=\"startDate\" datetime=\"2022-07-04T18:00\">" . date("d-m-Y H:i:s", $row->beginDate) . "</span> tot\n");
+                            echo("                <span itemprop=\"endDate\" datetime=\"2022-07-04T22:00\">" . date("d-m-Y H:i:s", $row->endDate) . "</span>\n");
                             echo("            </div>\n");
                             echo("            <div class=\"meta\">@\n");
                             echo("                ​<span itemprop=\"location\" itemscope itemtype=\"http://data-vocabulary.org/​Organization\">\n");
