@@ -51,7 +51,8 @@
                                         echo("<div class=\"month\">JANUARI</div>\n");
                                     echo("</div>\n");
                                     echo "<div id=\"0\" class=\"comment\">\n" ;
-                                    echo "<a href=\"#\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">Event 1</span></a>" ;
+                                        echo "<a href=\"#\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">Event 1</span></a>" ;
+                                        echo("<div class=\"description\" itemprop=\"description\">Lorem ipsum dolor sit amet, tacimates pericula per an, malis mediocrem molestiae quo no. Quo cu mazim omittam, an nulla simul recteque duo. Quod periculis prodesset ut eum. Clita posidonium ea vel, id eos senserit repudiare aliquando, hinc decore forensibus cu sea. Cum cu vero impetus dolorum, iriure diceret scriptorem eam at.</div>\n");
 
 
                         }
