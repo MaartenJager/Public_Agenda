@@ -45,9 +45,9 @@
                         while($row = $sth->fetch() ){
 
                             echo("<!-- Begin item -->\n");
-                                echo("<div class=\"event even\" itemscope itemtype=\"http://data-vocabulary.org/Event\">';
-                                    echo("<div class=\"date"\>\n");
-                                        echo("<div class=\"day\">12</div>\n");
+                                echo("<div class=\"event even\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
+                                    echo("<div class=\"date\">\n");
+                                        echo("  <div class=\"day\">12</div>\n");
                                         echo("<div class=\"month\">JANUARI</div>\n");
                                     echo("</div>\n");
                                     echo("<div id=\"0\" class=\"comment\">\n");
