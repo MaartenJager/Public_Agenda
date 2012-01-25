@@ -117,7 +117,8 @@
                     <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
                     <input id="button" type="submit" value="Delete" />
                 </form>
-                <form action="sqlaction.php
+                <form action="sqlaction.php" method="get">
+                </form>
 
             </section>
 
