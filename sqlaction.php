@@ -35,8 +35,8 @@
                     echo("type is EVENT");
 
                     /* Controleer of er een ID is meegestuurd */
-                    if(isset($_GET['event_id'])){
-                        $id = ($_GET['event_id']);
+                    if(isset($_GET['id'])){
+                        $id = ($_GET['id']);
                         deleteEvent($id);
                     }
                 }
