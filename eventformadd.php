@@ -130,7 +130,7 @@ if (isDatumValid())
 	
 	//location
 	$location = $_POST['locationPicker'];
-	
+	echo "<br />". $location . "<br />";
 	
 	//dates
 	
