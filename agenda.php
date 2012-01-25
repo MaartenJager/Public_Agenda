@@ -44,12 +44,41 @@
                         // showing the results
                         while($row = $sth->fetch() ){
 
-                            echo("<!-- Begin item -->");
+                            echo('<!-- Begin item -->\n');
+                                echo '<div class="event even" itemscope itemtype="http://data-vocabulary.org/Event">';
+                                    echo('<div class="date">\n');
+                                        echo('<div class="day">12</div>\n');
+                                        echo('<div class="month">JANUARI</div>\n');
+                                    echo('</div>\n');
+                                    echo('<div id="0" class="comment">\n');
+                                        ​echo('<a href="#0" itemprop="url" ><span class="summary" itemprop="summary">Event 1</span></a> <!-- Link to HTML anchor  -->\n');
+                                        echo('<div class="description" itemprop="description">Lorem ipsum dolor sit amet, tacimates pericula per an, malis mediocrem molestiae quo no. Quo cu mazim omittam, an nulla simul recteque duo. Quod periculis prodesset ut eum. Clita posidonium ea vel, id eos senserit repudiare aliquando, hinc decore forensibus cu sea. Cum cu vero impetus dolorum, iriure diceret scriptorem eam at.</div>\n');
+                                        echo('<div class="meta">\n');
+                                            echo('<span itemprop="startDate" datetime="2022-07-04T18:00">July 4th, 2022 at 6:00pm</span> tot\n');
+                                            echo('<span itemprop="endDate" datetime="2022-07-04T22:00">July 4th, 2022 at 10:00pm</span>\n');
+                                        echo('</div>\n');
+                                        echo('<div class="meta">@\n');
+                                            echo('​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">\n');
+                                                echo('​<span itemprop="name">the Roadhouse</span>\n');
+                                                ​echo('\n');
+                                                echo('<span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">\n');
+                                                    echo('<span itemprop="street-address">Science Park 904</span>,\n');
+                                                    echo('<span itemprop="locality">Amsterdam</span>,\n');
+                                                    echo('<span itemprop="country-name">Nederland</span>\n');
+                                                echo('</span>\n');
+                                                echo('\n');
+                                                echo('<span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/​Geo">\n');
+                                                    echo('<meta itemprop="latitude" content="52.354496" />\n');
+                                                    echo('<meta itemprop="longitude" content="4.954206" />\n');
+                                                echo('</span>\n');
+                                            echo('</span>\n');
+                                        echo('</div>\n');
+                                    echo('</div>\n');
+                                        echo('<img itemprop="photo" src="img/img.jpg"/>\n');
+                                echo('</div>\n');
+                            echo('<!-- Eind item -->\n');
 
                         }
-
-
-
                     ?>
 
                 </div>
