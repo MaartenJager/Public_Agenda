@@ -51,6 +51,7 @@
                                         echo("<div class=\"month\">JANUARI</div>\n");
                                     echo("</div>\n");
                                     echo "<div id=\"0\" class=\"comment\">\n" ;
+                                    echo "<a></a> \n" ;
 
                         }
                     ?>
