@@ -57,7 +57,7 @@
             <section id="main" role="main">
                 <header class="pageTitle"><h1>Evenement bewerken</h1></header>
 
-                <form name="event" action="sqlaction.php" method="get">
+                <form name="event" action="formhandler.php" method="post">
 
                     <label>Naam evenement</label>
                     <input type="text" name="eventName" value="<?php echo $row->title; ?>" required>
@@ -106,6 +106,7 @@
 
                     <label>Voeg een afbeelding toe</label>
                     <input type="file" name="datafile" value="<?php echo $row->image; ?>" />
+                    <br />
                     <input type="hidden" name="action" value="approve" />
                     <input type="hidden" name="type" value="event" />
                     <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
