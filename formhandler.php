@@ -37,6 +37,8 @@
 
             echo "in editEvent";
 
+            /* TODO !!!!!!! */
+
             /*
             try{
                 //Prepare statement
@@ -195,7 +197,6 @@
         }
     }
 
-
     /* Functions */
     function isDatumValid()
     {
@@ -235,6 +236,7 @@
         }
         return FALSE;
     }
+
 ?>
 
 
