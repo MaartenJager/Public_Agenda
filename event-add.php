@@ -12,7 +12,7 @@
 
         <div id="container">
             <section id="main">
-                <h1>Evenement toevoegen</h1>
+                <header class="pageTitle"><h1>Evenement toevoegen</h1></header>
                 <p>Wilt u het volgende formulier invullen? Alle velden, op de afbeelding na, zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
                 <form enctype="multipart/form-data" name="event-add" action="eventformadd.php"  method="post">
                     <label>Naam evenement</label>
@@ -50,23 +50,15 @@
 
                     <select name="eventBeginTimeMinutes">
                         <option value="00">00</option>
-                        <option value="05">05</option>
-                        <option value="10">10</option>
                         <option value="15">15</option>
-                        <option value="20">20</option>
-                        <option value="25">25</option>
                         <option value="30">30</option>
-                        <option value="35">35</option>
-                        <option value="40">40</option>
                         <option value="45">45</option>
-                        <option value="50">50</option>
-                        <option value="55">55</option>
                     </select>
 
                     <label>Einddatum (DD-MM-YYYY) en tijd</label>
                     <input type="text" name="eventEndDate" placeholder="bv. 01-01-2012" required>
-                    
-                   
+
+
                     <select name="eventEndTimeHours">
                         <option value="00">00</option>
                         <option value="01">01</option>
@@ -93,7 +85,7 @@
                         <option value="22">22</option>
                         <option value="23">23</option>
                     </select>
-                    
+
                     <select name="eventEndTimeMinutes">
                         <option value="00">00</option>
                         <option value="05">05</option>
@@ -108,12 +100,12 @@
                         <option value="50">50</option>
                         <option value="55">55</option>
                     </select>
-                    
+
                     <label>Kies de locatie voor het event</label>
                     <select name="locationPicker">
-						<option value="1">Death Metal zaal: locatie 1</option>
-						<option value="2">Zaal voor bijbelstudie: locatie 2</option>
-						<option value="3">Gedichtenzaal: locatie 3</option>
+                        <option value="1">Death Metal zaal: locatie 1</option>
+                        <option value="2">Zaal voor bijbelstudie: locatie 2</option>
+                        <option value="3">Gedichtenzaal: locatie 3</option>
                     </select>
 
                     <label>Beschrijving van het evenement</label>
