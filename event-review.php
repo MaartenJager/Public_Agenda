@@ -71,7 +71,7 @@
                     <label>Einddatum (DD-MM-YYYY) en tijd</label>
                     <input type="text" name="eventEndDate" placeholder="bv. 01-01-2012" required>
 
-                    (tmp)timestamp:<?php echo $row->endDate; ?>"
+                    (tmp)timestamp:<?php echo $row->endDate; ?>
                     <select name="eventEndTimeHours">
                         <option value="00">00</option>
                         <option value="01">01</option>
@@ -137,7 +137,7 @@
                     <div id="checkbox_below">
                          <label>Voeg een afbeelding toe</label>
                          <input type="file" name="file" id ="file" value="<?php echo $row->image; ?>"/>
-
+                         <br />
                          <input id="button" name="addUser" type="submit" value="Submit" />
                     </div>
                 </form>
