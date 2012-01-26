@@ -138,7 +138,7 @@
                          <label>Voeg een afbeelding toe</label>
                          <input type="file" name="file" id ="file" value="<?php echo $row->image; ?>"/>
                          <br />
-                         <input id="button" name="addUser" type="submit" value="Submit" />
+                         <input id="button" name="editEvent" type="submit" value="Submit" />
                     </div>
                 </form>
 
