@@ -33,7 +33,7 @@
                     <label>Begindatum (DD-MM-YYYY) en tijd</label>
                     <input type="text" name="eventBeginDate" placeholder="bv. 01-01-2012" required>
 
-                    <?php echo $row->beginDate; ?>
+                    (tmp)timestamp:<?php echo $row->beginDate; ?>
                     <select name="eventBeginTimeHours">
                         <option value="00">00</option>
                         <option value="01">01</option>
@@ -71,7 +71,7 @@
                     <label>Einddatum (DD-MM-YYYY) en tijd</label>
                     <input type="text" name="eventEndDate" placeholder="bv. 01-01-2012" required>
 
-                    value="<?php echo $row->endDate; ?>"
+                    (tmp)timestamp:<?php echo $row->endDate; ?>"
                     <select name="eventEndTimeHours">
                         <option value="00">00</option>
                         <option value="01">01</option>
