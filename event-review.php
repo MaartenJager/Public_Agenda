@@ -110,7 +110,7 @@
                     <input type="hidden" name="action" value="approve" />
                     <input type="hidden" name="type" value="event" />
                     <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
-                    <input id="button" name="editEvent" type="submit" value="Submit" />
+                    <input id="button" name="editEvent" type="submit" value="Goekeuren" />
                 </form>
 
                 <form action="sqlaction.php" method="get">
