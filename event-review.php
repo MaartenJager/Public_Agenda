@@ -15,38 +15,6 @@
     <head>
         <title>Admin - Evenement bewerken</title>
         <?php require_once("inc/header.inc"); ?>
-
-        <script language="JavaScript">
-            function beginDateAndUnix() {
-                document.getElementById('beginDateUnixCalc').style.display = 'block';
-                document.getElementById('beginDateUnixButton').style.display = 'none';
-                var temp = document.event.beginDate.value;
-                var date = new Date(temp * 1000);
-                document.getElementById('beginDate').innerHTML="Datum: " + date;
-            }
-
-            function endDateAndUnix() {
-                document.getElementById('endDateUnixCalc').style.display = 'block';
-                document.getElementById('endDateUnixButton').style.display = 'none';
-                var temp = document.event.endDate.value;
-                var date = new Date(temp * 1000);
-                document.getElementById('endDate').innerHTML="Datum: " + date;
-            }
-
-            function beginDateAutoFill() {
-                var temp = document.event.beginDateReal.value;
-                var date = new Date(temp);
-                var string = date.valueOf() / 1000;
-                document.event.beginDate.value = string;
-            }
-
-            function endDateAutoFill() {
-                var temp = document.event.endDateReal.value;
-                var date = new Date(temp);
-                var string = date.valueOf() / 1000;
-                document.event.endDate.value = string;
-            }
-        </script>
     </head>
 
     <body>
