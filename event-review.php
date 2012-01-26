@@ -118,9 +118,6 @@
                     <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
                     <input id="button" type="submit" value="Verwijder" />
                 </form>
-                <form action="sqlaction.php" method="get">
-                    <input id="button" type="submit" value="Keur goed" />
-                </form>
 
             </section>
 
