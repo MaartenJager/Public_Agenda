@@ -17,68 +17,129 @@
         <?php require_once("inc/header.inc"); ?>
     </head>
 
-    <body>
+<body>
+        <div id="header"></div>
+
+        <?php require_once("inc/nav.inc"); ?>
+
         <div id="container">
-            <div id="header" role="banner"></div>
-            <?php require_once("inc/nav.inc"); ?>
-
-            <section id="main" role="main">
-                <header class="pageTitle"><h1>Evenement bewerken</h1></header>
-
-                <form name="event" action="formhandler.php" method="post">
-
+            <section id="main">
+                <header class="pageTitle"><h1>Evenement toevoegen</h1></header>
+                <p>Wilt u het volgende formulier invullen? Alle velden, op de afbeelding na, zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
+                <form enctype="multipart/form-data" name="event-add" action="eventformadd.php"  method="post">
                     <label>Naam evenement</label>
-                    <input type="text" name="eventName" value="<?php echo $row->title; ?>" required>
+                    <input type="text" name="eventName" value="<?php echo $row->title; ?>" autofocus required>
 
-                    <label>Begindatum/-tijd</label>
-                    <input type="text" name="beginDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->beginDate; ?>"required>
-                    <div id="beginDateUnixButton">
-                        <input id="buttonSmall" value="Bereken Timestamp" onclick="beginDateAndUnix();" />
+                    <label>Begindatum (DD-MM-YYYY) en tijd</label>
+                    <input type="text" name="eventBeginDate" placeholder="bv. 01-01-2012" required>
+
+                    <?php echo $row->beginDate; ?>
+                    <select name="eventBeginTimeHours">
+                        <option value="00">00</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                    </select>
+
+                    <select name="eventBeginTimeMinutes">
+                        <option value="00">00</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                    </select>
+
+                    <label>Einddatum (DD-MM-YYYY) en tijd</label>
+                    <input type="text" name="eventEndDate" placeholder="bv. 01-01-2012" required>
+
+                    value="<?php echo $row->endDate; ?>"
+                    <select name="eventEndTimeHours">
+                        <option value="00">00</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                    </select>
+
+                    <select name="eventEndTimeMinutes">
+                        <option value="00">00</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                    </select>
+
+                    <label>Kies de locatie voor het event</label>
+                    <select name="locationPicker">
+                        <option value="1">Death Metal zaal: locatie 1</option>
+                        <option value="2">Zaal voor bijbelstudie: locatie 2</option>
+                        <option value="3">Gedichtenzaal: locatie 3</option>
+                    </select>
+
+                    <label>Beschrijving van het evenement</label>
+                    <textarea name="eventDescription" placeholder="Voer beschrijving in" required><?php echo $row->description; ?></textarea>
+
+                    <label>Kies de categorie&#235;n die bij het evenement horen</label>
+                    <div id="checkbox_list">
+                        <ul>
+                            <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
+                            <li><input name="genre_rock" id="formCheckbox" type="checkbox" /> Rock</li>
+                            <li><input name="genre_metal" id="formCheckbox" type="checkbox" /> Metal</li>
+                            <li><input name="genre_hiphop" id="formCheckbox" type="checkbox" /> Hiphop</li>
+                        </ul>
+                    </div>
+                    <div id="checkbox_list">
+                        <ul>
+                            <li><input name="genre_blues" id="formCheckbox" type="checkbox" /> Blues</li>
+                            <li><input name="genre_classic" id="formCheckbox" type="checkbox" /> Klassiek</li>
+                            <li><input name="genre_church" id="formCheckbox" type="checkbox" /> Kerk</li>
+                            <li><input name="genre_other" id="formCheckbox" type="checkbox" /> Overig</li>
+                        </ul>
                     </div>
 
-                    <div id="beginDateUnixCalc">
-                        <p id="beginDate"></p>
-                        <p>Nieuwe datum invoeren:</p>
-                        <input type="text" name="beginDateReal" value="vb: 12/31/2013 23:59:59">
-                        <input type="text" id="buttonSmall" value="Vul timestamp in" onclick="beginDateAutoFill();" />
+                    <div id="checkbox_below">
+                         <label>Voeg een afbeelding toe</label>
+                         <input type="file" name="file" id ="file" value="<?php echo $row->image; ?>"/>
+
+                         <input id="button" name="addUser" type="submit" value="Submit" />
                     </div>
-
-
-                    <label>Einddatum/-tijd</label>
-                    <input type="text" name="endDate" placeholder="Unixtimestamp (tmp)" value="<?php echo $row->endDate; ?>"required>
-                    <div id="endDateUnixButton">
-                        <input id="buttonSmall" value="Bereken Timestamp" onclick="endDateAndUnix();" />
-                    </div>
-
-                    <div id="endDateUnixCalc">
-                        <p id="endDate"></p>
-                        <p>Nieuwe datum invoeren:</p>
-                        <input type="text" name="endDateReal" value="vb: 12/31/2013 23:59:59">
-                        <input type="text" id="buttonSmall" value="Vul timestamp in" onclick="endDateAutoFill();" />
-                    </div>
-
-                    <label>Beschrijving van het event</label>
-                    <textarea name="description" placeholder="Voer beschrijving in" required><?php echo $row->description; ?></textarea>
-
-                    <label>Kies de categorie&#235;n die bij het event horen</label>
-                    <div>
-                        <checkboxlabel><input id="formCheckbox" type="checkbox" /> Pop</checkboxlabel>
-                        <checkboxlabel><input id="formCheckbox" type="checkbox" /> Rock</checkboxlabel>
-                        <checkboxlabel><input id="formCheckbox" type="checkbox" /> Metal</checkboxlabel>
-                        <checkboxlabel><input id="formCheckbox" type="checkbox" /> Hiphop</checkboxlabel>
-                        <checkboxlabel><input id="formCheckbox" type="checkbox" /> Blues</checkboxlabel>
-                        <checkboxlabel><input id="formCheckbox" type="checkbox" /> Klassiek</checkboxlabel>
-                        <checkboxlabel><input id="formCheckbox" type="checkbox" /> Kerk</checkboxlabel>
-                        <checkboxlabel><input id="formCheckbox" type="checkbox" /> Overig</checkboxlabel>
-                    </div>
-
-                    <label>Voeg een afbeelding toe</label>
-                    <input type="file" name="datafile" value="<?php echo $row->image; ?>" />
-                    <br />
-                    <input type="hidden" name="action" value="approve" />
-                    <input type="hidden" name="type" value="event" />
-                    <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
-                    <input id="button" name="editEvent" type="submit" value="Goekeuren" />
                 </form>
 
                 <form action="sqlaction.php" method="get">
@@ -92,7 +153,7 @@
 
             <?php require_once("inc/sidebar.inc"); ?>
             <?php require_once("inc/footer.inc"); ?>
-        </div>
+    </div>
     </body>
 </html>
 
