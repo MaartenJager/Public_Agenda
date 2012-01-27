@@ -34,14 +34,9 @@
 
         /* editEvent post action */
         if(isset($_POST['editEvent'])){
-
             echo "in editEvent";
-
-            /* TODO !!!!!!! */
-
             
-       
-
+           /* FIXME FIXME  !!!!!!! */
         }
 
 
@@ -52,10 +47,10 @@
 
             if (isDatumValid())
             {
-                //TODO: alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
+                //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
                 $urlImage = checkForUploadedImage();
 
-                //dates
+                //Check dates
                 $date = $_POST['eventBeginDate'];
 
                 list($dd, $mm, $yyyy) = explode('-', $date);
@@ -64,7 +59,7 @@
                 list($dd, $mm, $yyyy) = explode('-', $date);
                 $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
 
-                
+                //Add to DB
                 require("inc-dbcon.php");
                 $sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, location, description, image, creationDate, approvedBy)
                     VALUES
@@ -95,9 +90,6 @@
             }
         }
     }
-
-
-
 
 
     /* Functions */
@@ -231,6 +223,7 @@
             echo "Invalid file<br />";
         }        
     }
+
 ?>
 
 
