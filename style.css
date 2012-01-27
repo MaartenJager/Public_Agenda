@@ -228,15 +228,17 @@ included the code you did, and what exactly uses it. */
     border-right-style:none;
 }
 
-#agenda .event.even{
-    background: #ADD8E6;
+/* Even entries in de agenda use this to determine their BG color */
+#agenda .even {
+    background: #ADD8E6; /* fallback bg color */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#ADD8E6)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFFFFF, #ADD8E6); /* Firefox */
 
 }
 
-#agenda .event.odd{
-    background: #9370D8;
+/* Odd entries in de agenda use this to determine their BG color */
+#agenda .odd {
+    background: #9370D8; /* fallback bg color */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#A52A2A)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFFFFF, #9370D8); /* Firefox */
 }
