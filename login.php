@@ -16,9 +16,12 @@
         return sha1(mysql_real_escape_string($password));
     }
     */
-    
+    /*
 	function CheckLogin()
 	{
+	
+	}
+	*/	session_start();
 		require("inc-dbcon.php");
 				
 		$sth = $dbh->prepare("SELECT email, password FROM users
@@ -31,20 +34,20 @@
 		//er is een correcte login en password combinatie
 		if($sth->rowCount() > 0 )
 		{    
+			echo = "er is een combo?<br />";
 			$_SESSION['userName'] = $email;
 		}
 		else
 		{
 			return false;
 		}
-	}
-    
+    /*
 	function Logout()
 	{
 		session_start();
 		unset($_SESSION['userName']);
 	}
-    
+    */
 
 /*
 SetEmail($_POST['userName']);
@@ -52,13 +55,12 @@ SetPassword($_POST['userPass']);
 */
 
 
-CheckLogin(); 
-session_start();
+//CheckLogin(); 
+
 require("inc-dbcon.php");
 //als combo goed is ga naar login 
 if(isset($_SESSION['username']))
 {
-	
 	echo "user {$_SESSION['username']} loged in  ";
 }
 else
