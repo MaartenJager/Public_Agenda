@@ -36,7 +36,65 @@
         if(isset($_POST['editEvent'])){
             echo "in editEvent";
             
-           /* FIXME FIXME  !!!!!!! */
+            /* FIXME: Vrijwel zelfde code als addEvent, kan nog wel opgeschoond worden */
+            $arrayCheckboxes = checkGenres();            
+
+            if (isDatumValid())
+            {
+                //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
+                $urlImage = checkForUploadedImage();
+
+                //Convert beginDate to timestamp
+                $date = $_POST['eventBeginDate'];
+                list($dd, $mm, $yyyy) = explode('-', $date);
+                $beginDateTimeStamp = mktime($_POST['eventBeginTimeHours'], $_POST['eventBeginTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
+
+                //Convert endDate to timestamp
+                $date = $_POST['eventEndDate'];
+                list($dd, $mm, $yyyy) = explode('-', $date);
+                $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
+
+                //FIXME: controleren of resultaat twee timestamps van elkaar afgetrokken niet negatief is
+
+                //Add to DB
+                require("inc-dbcon.php");
+                $sth=$dbh->prepare("UPDATE events SET title=:eventName, beginDate=:beginDateTimeStamp, endDate=:endDateTimeStamp,
+                    location=:location, description=:description, image=:image, creationDate=:creationDate, approvedBy=:approvedBy
+                    WHERE id=:id");
+
+               //Prepare data
+                $sth->bindParam(':eventName'       , $_POST['eventName']);
+                $sth->bindParam(':beginDateTimeStamp'  , $beginDateTimeStamp);
+                $sth->bindParam(':endDateTimeStamp'      , $endDateTimeStamp);
+                $sth->bindParam(':location'   , $_POST['locationPicker']);
+                $sth->bindParam(':description', $_POST['eventDescription']);
+                $sth->bindParam(':image', $urlImage);
+                $sth->bindParam(':creationDate', time() );
+                $sth->bindParam(':approvedBy', $_POST['accessLevel']);
+                $sth->bindParam(':id', "NULL");
+
+                $sth->execute();
+
+                //FIXME: arraysize gebruiken
+                for($i=0; $i<8; $i++)
+                {
+                    if ($arrayCheckboxes[$i])
+                    {
+                        //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
+                        $sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
+                        $sth->execute();
+                        $row = $sth->fetch();
+                        $lastEventId = $row['id'];
+                        $genreId = $i + 1;
+                        
+                        $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
+                            VALUES ($lastEventId, $genreId)");
+                        $sth->execute();
+
+                        echo "EEN GENRE OPGESLAGEN <br />";
+                    }
+                }
+            }
         }
 
 
@@ -136,8 +194,7 @@
     }
 
     
-    function isDatumValid()
-    {
+    function isDatumValid(){
         /* FIXME: code nalopen*/
         $date = $_POST['eventBeginDate'];
         list($dd, $mm, $yyyy) = explode('-', $date);
