@@ -70,7 +70,7 @@
                 $sth->bindParam(':description', $_POST['eventDescription']);
                 $sth->bindParam(':image', $urlImage);
                 $sth->bindParam(':creationDate', time() );
-                $sth->bindParam(':approvedBy', NULL);
+                $sth->bindParam(':approvedBy', "userdIDtobefilledIn");
                 $sth->bindParam(':id', $_POST['id']);
 
                 $sth->execute();
