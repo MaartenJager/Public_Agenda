@@ -153,6 +153,7 @@
                          <input type="file" name="file" id ="file" value="<?php echo $row->image; ?>"/>
                          <br />
                          <input id="button" name="editEvent" type="submit" value="Submit" />
+                         <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
                     </div>
                 </form>
 
