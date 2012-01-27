@@ -29,12 +29,12 @@
         <script language="JavaScript">
             function expandEntry(id) {
                 if (document.getElementById(id).style.height == '340px') {
-                    var temp = 85;
-                    document.getElementById(id).style.height = temp + 'px';
+                    document.getElementById(id).style.height = '85px';
+                    document.getElementById("description" + id).style.height = '60%';
                 }
                 else {
-                    var temp = 340;
-                    document.getElementById(id).style.height = temp + 'px';
+                    document.getElementById(id).style.height = '340px';
+                    document.getElementById("description" + id).style.height = '';
                 }
             }
         </script>
@@ -66,7 +66,7 @@
                             echo("        </div>\n");
                             echo "        <div class=\"comment\">\n" ;
                             echo "            <a href=\"#\" onclick=\"expandEntry('" . $row->id . "');\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a>\n" ;
-                            echo("            <div class=\"description\" itemprop=\"description\">". $row->description ."</div>\n");
+                            echo("            <div id=\"description" . $row->id . "\"class=\"description\" itemprop=\"description\">". $row->description ."</div>\n");
                             echo("            <div class=\"meta\">\n");
                             echo("                <span itemprop=\"startDate\" datetime=\"2022-07-04T18:00\">" . date("d-m-Y H:i:s", $row->beginDate) . "</span> tot\n");
                             echo("                <span itemprop=\"endDate\" datetime=\"2022-07-04T22:00\">" . date("d-m-Y H:i:s", $row->endDate) . "</span>\n");
