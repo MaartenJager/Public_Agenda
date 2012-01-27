@@ -22,7 +22,7 @@
             }
 
             /* Controleer of er een USER verwijderd dient te worden */
-            elseif(isset($_GET['type'])){
+            if(isset($_GET['type'])){
                 if( ($_GET['type']) == "user" ){
                     echo("type is USER");
 
