@@ -45,6 +45,7 @@
                     /* Controleer of er een ID is meegestuurd */
                     if(isset($_GET['id'])){
                         $id = ($_GET['id']);
+                        echo "\nID:" . $id;
                         approveEvent($id);
                     }
                 }
