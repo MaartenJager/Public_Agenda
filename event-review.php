@@ -16,9 +16,9 @@
     $sth->bindParam(':id'       , $_GET['id']);
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
-    $i=1;
     $booleanArray = array_fill(0, 8, FALSE);
     while( $row2 = $sth->fetch() ) {
+        $i=1;
         while( $i != $row2->genreId ) {
             $i++;
         }
