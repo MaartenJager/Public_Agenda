@@ -52,56 +52,8 @@
 
             if (isDatumValid())
             {
-                //Image upload
-                $targetPath = "uploads/";
-
-                //random filename between 0 and 1 billion - 1 for final storage
-                $imgFileName = mt_rand(0, 99999999);
-
-                $orgFileName = $_FILES['file']['name'];
-                //get fileextension.. somehow causes a warning but works perfectly
-                $fileExtension = end(explode(".", $orgFileName));
-                //define final path for storage of img
-                $targetPath = $targetPath . $imgFileName . ".". $fileExtension;
-
-                if ((($_FILES["file"]["type"] == "image/gif")
-                || ($_FILES["file"]["type"] == "image/jpeg")
-                || ($_FILES["file"]["type"] == "image/pjpeg")) // oude IE browsers zijn raar
-                && ($_FILES["file"]["size"] < 20000))
-                {
-                    if ($_FILES["file"]["error"] > 0)
-                    {
-                        echo "Error: " . $_FILES["file"]["error"] . "<br />";
-                    }
-                    else
-                    {
-                        echo "Upload: " . $_FILES["file"]["name"] . "<br />";
-                        echo "Type: " . $_FILES["file"]["type"] . "<br />";
-                        echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-                        echo "Will be temp stored in: " . $_FILES["file"]["tmp_name"] . "<br />";
-
-
-                        if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
-                        {
-                            echo "The file with original name ".  basename( $_FILES['file']['name']).
-                            " has been uploaded in and with new file name: ". $targetPath . "<br />";
-                        }
-                        else
-                        {
-                            echo "There was an error uploading the file, please try again!<br />";
-                        }
-                    }
-                }
-                else
-                {
-                    echo "Invalid file<br />";
-                }
-
-
-                //correct
-                $urlImage = "http://websec.science.uva.nl/webdb1241/" . $targetPath;
-
-
+                //TODO: alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
+                $urlImage = checkForUploadedImage();
 
                 //dates
                 $date = $_POST['eventBeginDate'];
@@ -115,9 +67,11 @@
                 
                 require("inc-dbcon.php");
                 $sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, location, description, image, creationDate, approvedBy)
-                VALUES
-                ('$_POST[eventName]', '$beginDateTimeStamp', '$endDateTimeStamp', '$_POST[locationPicker]', '$_POST[eventDescription]', '$urlImage', " . time() . ", NULL)");
-                    $sth->execute();
+                    VALUES
+                    ('$_POST[eventName]', '$beginDateTimeStamp', '$endDateTimeStamp', '$_POST[locationPicker]', '$_POST[eventDescription]',
+                    '$urlImage', " . time() . ", NULL)");
+
+                $sth->execute();
 
                 for($i=0; $i<8; $i++)
                 {
@@ -226,6 +180,57 @@
         return FALSE;
     }
 
+    function checkForUploadedImage(){
+        //Image upload
+        $targetPath = "uploads/";
+
+        //random filename between 0 and 1 billion - 1 for final storage
+        $imgFileName = mt_rand(0, 99999999);
+
+        $orgFileName = $_FILES['file']['name'];
+        //get fileextension.. somehow causes a warning but works perfectly
+        $fileExtension = end(explode(".", $orgFileName));
+        //define final path for storage of img
+        $targetPath = $targetPath . $imgFileName . ".". $fileExtension;
+
+        //check extensions & filesize < 20000k
+        if ((($_FILES["file"]["type"] == "image/gif")
+        || ($_FILES["file"]["type"] == "image/jpeg")
+        || ($_FILES["file"]["type"] == "image/pjpeg")) // oude IE browsers zijn raar
+        && ($_FILES["file"]["size"] < 20000))
+        {
+            if ($_FILES["file"]["error"] > 0)
+            {
+                echo "Error: " . $_FILES["file"]["error"] . "<br />";
+            }
+            else
+            {
+                echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+                echo "Type: " . $_FILES["file"]["type"] . "<br />";
+                echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
+                echo "Will be temp stored in: " . $_FILES["file"]["tmp_name"] . "<br />";
+
+                //save file to disk & check for upload image
+                if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
+                {
+                    echo "The file with original name ".  basename( $_FILES['file']['name']).
+                    " has been uploaded in and with new file name: ". $targetPath . "<br />";
+
+                    //correct
+                    $urlImage = "http://websec.science.uva.nl/webdb1241/" . $targetPath;
+                }
+                else
+                {
+                    echo "There was an error uploading the file, please try again!<br />";
+                    $urlImage = "";
+                }
+            }
+        }
+        else
+        {
+            echo "Invalid file<br />";
+        }        
+    }
 ?>
 
 
