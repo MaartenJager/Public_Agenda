@@ -1,4 +1,4 @@
-/* er wordt geklooit met onze website
+<!-- er wordt geklooit met de website
 <?php
     /* Fetch event with ID.. */
     require_once("inc-conf.php");
@@ -89,7 +89,7 @@
                     <input type="text" name="eventEndDate" placeholder="bv. 01-01-2012" value="<?php echo date("d-m-Y", $row->endDate); ?>" required>
 
                     <select name="eventEndTimeHours">
-                        <option value="00" <?php if($hoursEnd==00){ echo "selected=\"selected\""; } ?>>00</option>
+                        <option * er wordt geklooit met onze websitevalue="00" <?php if($hoursEnd==00){ echo "selected=\"selected\""; } ?>>00</option>
                         <option value="01" <?php if($hoursEnd==01){ echo "selected=\"selected\""; } ?>>01</option>
                         <option value="02" <?php if($hoursEnd==02){ echo "selected=\"selected\""; } ?>>02</option>
                         <option value="03" <?php if($hoursEnd==03){ echo "selected=\"selected\""; } ?>>03</option>
@@ -173,4 +173,4 @@
     </div>
     </body>
 </html>
-*/
+-->
