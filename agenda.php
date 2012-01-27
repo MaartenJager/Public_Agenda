@@ -27,8 +27,8 @@
         <?php require_once("inc/header.inc"); ?>
         
         <script language="JavaScript">
-            function expandEntry(id) {
-                document.getElementById(id).style.height = '5000px';
+            function expandEntry(id)
+                document.getElementById(id).style.height = '100%';
             }
         </script>
     </head>
