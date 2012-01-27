@@ -70,7 +70,8 @@
                 $sth->bindParam(':description', $_POST['eventDescription']);
                 $sth->bindParam(':image', $urlImage);
                 $sth->bindParam(':creationDate', time() );
-                $sth->bindParam(':approvedBy', "userdIDtobefilledIn");
+                //$sth->bindParam(':approvedBy', );
+                $sth->bindValue(':approvedBy', null, PDO::PARAM_INT);
                 $sth->bindParam(':id', $_POST['id']);
 
                 $sth->execute();
