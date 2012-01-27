@@ -10,7 +10,6 @@
     $row = $sth->fetch();
     $hoursBegin = date("H", $row->beginDate);
     $hoursEnd = date("H", $row->endDate);
-    
 ?>
 
 <!DOCTYPE html>
@@ -37,9 +36,9 @@
                     <input type="text" name="eventBeginDate" placeholder="bv. 01-01-2012" value="<?php echo date("d-m-Y", $row->beginDate); ?>" required>
 
                     <select name="eventBeginTimeHours">
-                        <option <?php if(hoursBegin==00){ echo "selected=\"yes\""; } ?> value="00">00</option>
-                        <option <?php if(hoursBegin==01){ echo "selected=\"yes\""; } ?>  value="01">01</option>
-                        <option selected="yes" value="02">02</option>
+                        <option <?php if($hoursBegin==00){ echo "selected=\"yes\""; } ?> value="00">00</option>
+                        <option <?php if($hoursBegin==01){ echo "selected=\"yes\""; } ?>  value="01">01</option>
+                        <option value="02">02</option>
                         <option value="03">03</option>
                         <option value="04">04</option>
                         <option value="05">05</option>
