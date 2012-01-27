@@ -35,7 +35,7 @@
                 else {
                     var temp = "description".concat(id);
                     document.getElementById(id).style.height = '170px';
-                    document.getElementById(temp).style.height = '';
+                    document.getElementById("description" + id).style.height = '';
                 }
             }
         </script>
