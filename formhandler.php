@@ -71,7 +71,7 @@
                 $sth->bindParam(':image', $urlImage);
                 $sth->bindParam(':creationDate', time() );
                 $sth->bindParam(':approvedBy', $_POST['accessLevel']);
-                $sth->bindParam(':id', "NULL");
+                $sth->bindParam(':id', NULL);
 
                 $sth->execute();
 
