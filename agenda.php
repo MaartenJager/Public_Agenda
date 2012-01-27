@@ -51,7 +51,7 @@
                             echo("              <div class=\"day\">" . date("d", $row->beginDate) . "</div>\n");
                             echo("            <div class=\"month\">" . date("F", $row->beginDate) . "</div>\n");
                             echo("        </div>\n");
-                            echo "        <div id=\"agendatempclass\" class=\"comment\">\n" ;
+                            echo "        <div id=\"" . $row->id . "\" class=\"comment\">\n" ;
                             echo "            <a href=\"#\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a>\n" ;
                             echo("            <div class=\"description\" itemprop=\"description\">". $row->description ."</div>\n");
                             echo("            <div class=\"meta\">\n");
