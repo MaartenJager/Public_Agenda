@@ -140,18 +140,31 @@ input[type="text"] {
     border-radius: 7px 7px 7px 7px;
     width: 300px;
     padding: 3px;
+    background: #EFEFEF;
 }
 
 textarea {
     border: 1px solid #D1C7AC;
     border-radius: 7px 7px 7px 7px;
     width: 300px;
+    height: 200px;
     padding: 3px;
     background: url(img/form-bg.png) bottom right no-repeat #EFEFEF;
 }
 
 a.button{
     text-decoration: none; /* removes lines between two images containing a link*/
+}
+
+#button {
+    display: block;
+    heigth: 30px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+#button:hover {
+    opacity: 0.6;
 }
 
 #formCheckbox {
