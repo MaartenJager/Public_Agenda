@@ -7,19 +7,14 @@
 	
 	function SetEmail($email)
     {
-        return $this->Email = mysql_real_escape_string($email);
+        return mysql_real_escape_string($email);
     }
 	
 	function SetPassword($password)
     {
-        return $this->Password = sha1(mysql_real_escape_string($password));
+        return sha1(mysql_real_escape_string($password));
     }
     
-    function GetEmail()
-    {
-        return $this->Email;
-    }
-
         function CheckLogin()
         {
             
@@ -51,10 +46,10 @@
 	}
     
 
-$login = new login;
-$login->SetEmail($_POST['userName']);
-$login->SetPassword($_POST['userPass']);
-$error = $login->CheckLogin(); 
+
+SetEmail($_POST['userName']);
+SetPassword($_POST['userPass']);
+CheckLogin(); 
 
 echo $error;
 
