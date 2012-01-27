@@ -65,7 +65,7 @@
                             echo("            <div class=\"month\">" . date("F", $row->beginDate) . "</div>\n");
                             echo("        </div>\n");
                             echo "        <div class=\"comment\">\n" ;
-                            echo "            <a href=\"#\" onclick=\"expandEntry('" . $row->id . "');\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a>\n" ;
+                            echo "            <a href=\"#" . $row->id . "\" onclick=\"expandEntry('" . $row->id . "');\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a>\n" ;
                             echo("            <div id=\"description" . $row->id . "\"class=\"description\" itemprop=\"description\">". $row->description ."</div>\n");
                             echo("            <div class=\"meta\">\n");
                             echo("                <span itemprop=\"startDate\" datetime=\"2022-07-04T18:00\">" . date("d-m-Y H:i:s", $row->beginDate) . "</span> tot\n");
