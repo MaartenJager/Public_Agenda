@@ -12,6 +12,18 @@
     $minsBegin = date("i", $row->beginDate);
     $hoursEnd = date("H", $row->endDate);
     $minsEnd = date("i", $row->endDate);
+    $sth = $dbh->prepare("SELECT * FROM genre_event_koppeling WHERE eventId=:id");
+    $sth->bindParam(':id'       , $_GET['id']);
+    $sth->setFetchMode(PDO::FETCH_OBJ);
+    $sth->execute();
+    $i=1;
+    $booleanArray = array_fill(0, 8, FALSE);
+    while( $row2 = $sth->fetch() ) {
+        while( $i != $row2->genreId ) {
+            $i++;
+        }
+        booleanArray[$i-1] = TRUE;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -29,15 +41,14 @@
         <div id="container">
             <section id="main">
                 <header class="pageTitle"><h1>Evenement bewerken</h1></header>
-                <p>U kunt hieronder waar gewenst informatie over het event aanpassen</p>
+                <p>U kunt hieronder waar gewenst informatie over het event aanpassen en deze goedkeuren.</p>
                 <form enctype="multipart/form-data" name="event-add" action="formhandler.php"  method="post">
                     <label>Naam evenement</label>
                     <input type="text" name="eventName" value="<?php echo $row->title; ?>" autofocus required>
 
                     <label>Begindatum (DD-MM-YYYY) en tijd</label>
-                    (tmp)timestamp:<?php echo $row->endDate; ?>
                     <input type="text" name="eventBeginDate" placeholder="bv. 01-01-2012" value="<?php echo date("d-m-Y", $row->beginDate); ?>" required>
-                    
+
                     <select name="eventBeginTimeHours">
                         <option value="00" <?php if($hoursBegin==00){ echo "selected=\"selected\""; } ?>>00</option>
                         <option value="01" <?php if($hoursBegin==01){ echo "selected=\"selected\""; } ?>>01</option>
@@ -73,8 +84,7 @@
                     </select>
 
                     <label>Einddatum (DD-MM-YYYY) en tijd</label>
-                    (tmp)timestamp:<?php echo $row->endDate; ?>
-                    <input type="text" name="eventEndDate" placeholder="bv. 01-01-2012" required>
+                    <input type="text" name="eventEndDate" placeholder="bv. 01-01-2012" value="<?php echo date("d-m-Y", $row->endDate); ?>" required>
 
                     <select name="eventEndTimeHours">
                         <option value="00" <?php if($hoursEnd==00){ echo "selected=\"selected\""; } ?>>00</option>
@@ -123,18 +133,18 @@
                     <label>Kies de categorie&#235;n die bij het evenement horen</label>
                     <div id="checkbox_list">
                         <ul>
-                            <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
-                            <li><input name="genre_rock" id="formCheckbox" type="checkbox" /> Rock</li>
-                            <li><input name="genre_metal" id="formCheckbox" type="checkbox" /> Metal</li>
-                            <li><input name="genre_hiphop" id="formCheckbox" type="checkbox" /> Hiphop</li>
+                            <li><input name="genre_pop" id="formCheckbox" type="checkbox" <?php if($booleanArray[0]){ echo "checked=\"checked\""; } ?> /> Pop</li>
+                            <li><input name="genre_rock" id="formCheckbox" type="checkbox" <?php if($booleanArray[1]){ echo "checked=\"checked\""; } ?> /> Rock</li>
+                            <li><input name="genre_metal" id="formCheckbox" type="checkbox" <?php if($booleanArray[2]){ echo "checked=\"checked\""; } ?> /> Metal</li>
+                            <li><input name="genre_hiphop" id="formCheckbox" type="checkbox" <?php if($booleanArray[3]){ echo "checked=\"checked\""; } ?> /> Hiphop</li>
                         </ul>
                     </div>
                     <div id="checkbox_list">
                         <ul>
-                            <li><input name="genre_blues" id="formCheckbox" type="checkbox" /> Blues</li>
-                            <li><input name="genre_classic" id="formCheckbox" type="checkbox" /> Klassiek</li>
-                            <li><input name="genre_church" id="formCheckbox" type="checkbox" /> Kerk</li>
-                            <li><input name="genre_other" id="formCheckbox" type="checkbox" /> Overig</li>
+                            <li><input name="genre_blues" id="formCheckbox" type="checkbox" <?php if($booleanArray[4]){ echo "checked=\"checked\""; } ?> /> Blues</li>
+                            <li><input name="genre_classic" id="formCheckbox" type="checkbox" <?php if($booleanArray[5]){ echo "checked=\"checked\""; } ?> /> Klassiek</li>
+                            <li><input name="genre_church" id="formCheckbox" type="checkbox" <?php if($booleanArray[6]){ echo "checked=\"checked\""; } ?> /> Kerk</li>
+                            <li><input name="genre_other" id="formCheckbox" type="checkbox" <?php if($booleanArray[7]){ echo "checked=\"checked\""; } ?> /> Overig</li>
                         </ul>
                     </div>
 

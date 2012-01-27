@@ -1,9 +1,9 @@
 <?php
 	
 	
-	$email = $_POST['userName'];
-	$password = $_POST['userPass'];
-	
+	$email = $_POST['email'];
+	$password = $_POST['password'];
+	require("inc-dbcon.php");
 	
 	/*
 	function SetEmail($email)
@@ -22,7 +22,7 @@
 	
 	}
 	*/	session_start();
-		require("inc-dbcon.php");
+		
 				
 		$sth = $dbh->prepare("SELECT email, password FROM users
 		WHERE email = :email AND password = :password
@@ -35,7 +35,7 @@
 		if($sth->rowCount() > 0 )
 		{    
 			echo = "er is een combo?<br />";
-			$_SESSION['userName'] = $email;
+			$_SESSION['email'] = $email;
 		}
 		else
 		{
@@ -57,11 +57,10 @@ SetPassword($_POST['userPass']);
 
 //CheckLogin(); 
 
-require("inc-dbcon.php");
 //als combo goed is ga naar login 
-if(isset($_SESSION['username']))
+if(isset($_SESSION['email']))
 {
-	echo "user {$_SESSION['username']} loged in  ";
+	echo "user {$_SESSION['email']} loged in  ";
 }
 else
 {
