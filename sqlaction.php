@@ -6,16 +6,15 @@
     /* Controleer op DELETE actie */
     if(isset($_GET['action'])){
         if( ($_GET['action']) == "delete" ){
-            echo("action is DELETE");
 
             /* Controleer of er een EVENT verwijderd dient te worden */
             if(isset($_GET['type'])){
                 if( ($_GET['type']) == "event" ){
-                    echo("type is EVENT");
 
                     /* Controleer of er een ID is meegestuurd */
                     if(isset($_GET['id'])){
                         $id = ($_GET['id']);
+                        echo "Event:" . $id . " verwijder!";
                         deleteEvent($id);
                     }
                 }
@@ -24,11 +23,11 @@
             /* Controleer of er een USER verwijderd dient te worden */
             if(isset($_GET['type'])){
                 if( ($_GET['type']) == "user" ){
-                    echo("type is USER");
 
                     /* Controleer of er een ID is meegestuurd */
                     if(isset($_GET['id'])){
                         $id = ($_GET['id']);
+                        echo "User:" . $id . " verwijder!";
                         deleteUser($id);
                     }
                 }
