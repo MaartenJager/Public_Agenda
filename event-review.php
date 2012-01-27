@@ -8,6 +8,9 @@
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
     $row = $sth->fetch()
+    $hoursBegin = date("H", $row->beginDate);
+    $hoursEnd = date("H", $row->endDate);
+    
 ?>
 
 <!DOCTYPE html>
@@ -33,10 +36,9 @@
                     <label>Begindatum (DD-MM-YYYY) en tijd</label>
                     <input type="text" name="eventBeginDate" placeholder="bv. 01-01-2012" value="<?php echo date("d-m-Y", $row->beginDate); ?>" required>
 
-                    (tmp)timestamp:<?php echo $row->beginDate; ?>
                     <select name="eventBeginTimeHours">
-                        <option value="00">00</option>
-                        <option value="01">01</option>
+                        <option <?php if(hoursBegin="00"){ echo "selected=\"yes\""; } ?> value="00">00</option>
+                        <option <?php if(hoursBegin="01"){ echo "selected=\"yes\""; } ?>  value="01">01</option>
                         <option value="02">02</option>
                         <option value="03">03</option>
                         <option value="04">04</option>
