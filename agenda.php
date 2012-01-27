@@ -28,13 +28,14 @@
         
         <script language="JavaScript">
             function expandEntry(id) {
-                if (document.getElementById(id).style.height == '340px') {
+                if (document.getElementById(id).style.height == '170px') {
                     document.getElementById(id).style.height = '85px';
                     document.getElementById("description" + id).style.height = '60%';
                 }
                 else {
-                    document.getElementById(id).style.height = '340px';
-                    document.getElementById("description" + id).style.height = '';
+                    var tempstring = "description" + id;
+                    document.getElementById(id).style.height = '170px';
+                    document.getElementById(tempstring).style.height = '';
                 }
             }
         </script>
