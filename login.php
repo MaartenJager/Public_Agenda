@@ -44,8 +44,6 @@
             
         }
     
-$logout = new ChangeSetting;
-$logout->Logout();
 	function Logout()
 	{
 		session_start();
