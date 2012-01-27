@@ -37,7 +37,7 @@
 
                     <select name="eventBeginTimeHours">
                         <option value="00" <?php if($hoursBegin==00){ echo "selected=\"selected\""; } ?>>00</option>
-                        <option <?php if($hoursBegin==01){ echo "selected=\"selected\""; } ?>>01</option>
+                        <option value="01" <?php if($hoursBegin==01){ echo "selected=\"selected\""; } ?>>01</option>
                         <option value="02">02</option>
                         <option value="03">03</option>
                         <option value="04">04</option>
