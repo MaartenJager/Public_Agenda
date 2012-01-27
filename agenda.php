@@ -101,7 +101,7 @@
 
             <aside id="sidebar_agenda">
                 <label>Zoeken op woord</label>
-                <input type="email" name="eventName" placeholder="Naam of zoekterm">
+                <input type="text" name="eventName" placeholder="Naam of zoekterm">
 
                 <label>Zoeken op catagorie</label>
                 <div id="checkbox_list">
