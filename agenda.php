@@ -28,7 +28,7 @@
         
         <script language="JavaScript">
             function expandEntry(id) {
-                document.getElementById(id).style.heigth = '100%';
+                document.getElementById(id).style.heigth = '5000px';
             }
         </script>
     </head>
