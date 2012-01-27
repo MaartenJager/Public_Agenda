@@ -33,9 +33,9 @@
                     document.getElementById("description" + id).style.height = '60%';
                 }
                 else {
-                    var tempstring = "description" + id;
+                    var temp = "description".concat(id);
                     document.getElementById(id).style.height = '170px';
-                    document.getElementById(tempstring).style.height = '';
+                    document.getElementById(temp).style.height = '';
                 }
             }
         </script>
