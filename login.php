@@ -34,7 +34,7 @@
 		//er is een correcte login en password combinatie
 		if($sth->rowCount() > 0 )
 		{    
-			echo = "er is een combo?<br />";
+			echo "er is een combo?<br />";
 			$_SESSION['email'] = $email;
 		}
 		else

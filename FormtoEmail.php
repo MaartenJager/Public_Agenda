@@ -3,7 +3,7 @@
 // Code was taken from:
 // http://dreamweaverspot.com/adobe-dreamweaver-tutorial-contact-forms/
 
-$my_email = "Ragey@live.nl";
+$my_email = "randomemailadres";
 $continue = "/";
 $errors = array();
 
@@ -108,15 +108,6 @@ mail($my_email,$subject,$message,$headers);
 </head>
 
 <body bgcolor="#ffffff" text="#000000">
-
-<div>
-<center>
-<b>Thank you <?php print stripslashes($_REQUEST['name']); ?></b>
-<br>Your message has been sent
-<p><a href="<?php print $continue; ?>">Click here to continue</a></p>
-<p><b>Dreamweaver Spot</b> by <a href="http://dreamweaverspot.com">dreamweaverspot.com</a></p>
-</center>
-</div>
 
 </body>
 </html>
