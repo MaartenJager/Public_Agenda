@@ -43,15 +43,15 @@
             
                     <?php
                         // showing the results
-                        while($row = $sth->fetch() ){                          
+                        while($row = $sth->fetch()) {                          
                             
-                            echo("<!-- Begin item #" . $row->id . "-->\n");
-                            echo("  <div class=\"event even\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
+                            echo("<!-- Begin of item #" . $row->id . "-->\n");
+                            echo("  <div id=\"" . $row->id . "\" class=\"event\" class=\"odd\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
                             echo("    <div class=\"date\">\n");
                             echo("              <div class=\"day\">" . date("d", $row->beginDate) . "</div>\n");
                             echo("            <div class=\"month\">" . date("F", $row->beginDate) . "</div>\n");
                             echo("        </div>\n");
-                            echo "        <div id=\"0\" class=\"comment\">\n" ;
+                            echo "        <div class=\"comment\">\n" ;
                             echo "            <a href=\"#\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a>\n" ;
                             echo("            <div class=\"description\" itemprop=\"description\">". $row->description ."</div>\n");
                             echo("            <div class=\"meta\">\n");
@@ -78,7 +78,7 @@
                             echo("        </div>\n");
                             echo("            <img itemprop=\"photo\" src=\"". $row->image . "\"/>\n");
                             echo("    </div>\n");
-                            echo("<!-- Eind item -->\n");
+                            echo("<!-- Eind of item -->\n");
 
                         }
                     ?>

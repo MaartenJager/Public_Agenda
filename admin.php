@@ -56,7 +56,7 @@
                                     echo "  <td>" . $row->email . "</td>\n";
                                     echo "  <td>" . $row->accessLevel . "</td>\n";
                                     echo "  <td> \n";
-                                    echo "      <a class=\"button\" href=\"formhandler.pdo?action=delete&id=".$row->id."\"> \n";
+                                    echo "      <a class=\"button\" href=\"sqlaction.php?type=user&action=delete&id=".$row->id."\"> \n";
                                     echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
                                     echo "      </a> \n";
                                     echo "      <a class=\"button\" href=\"formhandler.pdo?action=edit&id=".$row->id."\"> \n";
