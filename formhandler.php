@@ -70,8 +70,8 @@
                 $sth->bindParam(':description', $_POST['eventDescription']);
                 $sth->bindParam(':image', $urlImage);
                 $sth->bindParam(':creationDate', time() );
-                $sth->bindParam(':approvedBy', $_POST['accessLevel']);
-                $sth->bindParam(':id', NULL);
+                $sth->bindParam(':approvedBy', NULL);
+                $sth->bindParam(':id', );
 
                 $sth->execute();
 
