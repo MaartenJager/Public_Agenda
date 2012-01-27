@@ -101,13 +101,12 @@
 
             <aside id="sidebar_agenda">
                 <label>Zoeken op woord</label>
-                <div id="sidebar_agenda_searchbar">
-                    <input type="email" name="eventName" placeholder="Naam of zoekterm">
-                </div>
+                <input type="email" name="eventName" placeholder="Naam of zoekterm">
 
                 <label>Zoeken op catagorie</label>
                 <div id="checkbox_list">
                     <ul>
+                        <li><input name="genre_all" id="formCheckbox" type="checkbox" checked="checked" /> Alle</li>
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                         <li><input name="genre_rock" id="formCheckbox" type="checkbox" /> Rock</li>
                         <li><input name="genre_metal" id="formCheckbox" type="checkbox" /> Metal</li>
