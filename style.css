@@ -136,20 +136,18 @@ label {
 }
 
 input[type="text"] {
-    background-image:url(img/form_bg.jpg);
-    background-repeat:repeat-x;
-    border:1px solid #d1c7ac;
-    width: 230px;
-    color:#333333;
-    padding:3px;
-    margin-right:4px;
-    margin-bottom:8px;
+    border: 1px solid #D1C7AC;
+    border-radius: 7px 7px 7px 7px;
+    width: 300px;
+    padding: 3px;
 }
 
 textarea {
-    height: 200px;
+    border: 1px solid #D1C7AC;
+    border-radius: 7px 7px 7px 7px;
     width: 300px;
-    background: url(img/form-bg.png) bottom right no-repeat #FFF;
+    padding: 3px;
+    background: url(img/form-bg.png) bottom right no-repeat #EFEFEF;
 }
 
 a.button{
