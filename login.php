@@ -20,6 +20,7 @@
 	function CheckLogin()
 	{
 		require("inc-dbcon.php");
+				
 		$sth = $dbh->prepare("SELECT email, password FROM users
 		WHERE email = :email AND password = :password
 		");
@@ -30,7 +31,7 @@
 		//er is een correcte login en password combinatie
 		if($sth->rowCount() > 0 )
 		{    
-			$_SESSION['username'] = $email;
+			$_SESSION['userName'] = $email;
 		}
 		else
 		{
@@ -41,7 +42,7 @@
 	function Logout()
 	{
 		session_start();
-		unset($_SESSION['username']);
+		unset($_SESSION['userName']);
 	}
     
 
