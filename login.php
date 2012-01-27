@@ -2,8 +2,8 @@
 	require("inc-dbcon.php");
 	
 	
-	protected $Password;
-	protected $Email;
+	$Password;
+	$Email;
 	
 	function SetEmail($email)
     {
