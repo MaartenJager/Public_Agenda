@@ -20,7 +20,7 @@
         function CheckLogin()
         {
             
-            $stmt = $this->dbh->prepare("SELECT email, password FROM users
+            $stmt = $dbh->prepare("SELECT email, password FROM users
             WHERE email = :email AND password = :password
             ");
             $stmt->bindParam(':email', $email);
