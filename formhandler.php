@@ -34,7 +34,7 @@
 
         /* editEvent post action */
         if(isset($_POST['editEvent'])){
-            echo "in editEvent";
+            echo "in editEvent <br>";
             
             /* FIXME: Vrijwel zelfde code als addEvent, kan nog wel opgeschoond worden */
             $arrayCheckboxes = checkGenres();            
