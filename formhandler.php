@@ -71,7 +71,7 @@
                 $sth->bindParam(':image', $urlImage);
                 $sth->bindParam(':creationDate', time() );
                 //$sth->bindParam(':approvedBy', );
-                $sth->bindValue(':approvedBy', null, PDO::PARAM_INT);
+                $sth->bindValue(':approvedBy', 1);
                 $sth->bindParam(':id', $_POST['id']);
 
                 $sth->execute();
