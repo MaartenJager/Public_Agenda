@@ -37,10 +37,6 @@
 			echo "er is een combo?<br />";
 			$_SESSION['email'] = $email;
 		}
-		else
-		{
-			return false;
-		}
     /*
 	function Logout()
 	{
