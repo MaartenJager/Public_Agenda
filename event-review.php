@@ -7,7 +7,7 @@
     $sth->bindParam(':id'       , $_GET['id']);
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
-    $row = $sth->fetch()
+    $row = $sth->fetch();
     $hoursBegin = date("H", $row->beginDate);
     $hoursEnd = date("H", $row->endDate);
     
