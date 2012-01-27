@@ -157,14 +157,15 @@ a.button{
 }
 
 #button {
-    background: #DAA520;
+    background: #F4A460;
     border-radius: 7px 7px 7px 7px;
-    width: 100px;
+    width: 144px;
     background: #EFEFEF;
     display: block;
     heigth: 30px;
     margin-top: 12px;
     cursor: pointer;
+    font: 16px Calibri, Arial; /* for some reason, font isnt inherited */
 }
 
 #button:hover {
