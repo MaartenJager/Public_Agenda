@@ -14,8 +14,8 @@
 
         <div id="loginBox">
             <form name="login" action="login.php" method="post">
-                <input name="userName" placeholder="Gebruikersnaam/email" required>
-                <input name="userPass" type="password" placeholder="Wachtwoord" required>
+                <input name="email" placeholder="Gebruikersnaam/email" required>
+                <input name="password" type="password" placeholder="Wachtwoord" required>
                 <input id="button" name="login" type="submit" value="Login" />
             </form>
         </div>
