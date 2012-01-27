@@ -27,8 +27,15 @@
         <?php require_once("inc/header.inc"); ?>
         
         <script language="JavaScript">
-            function expandEntry(id)
-                document.getElementById(id).style.height = '340px';                
+            function expandEntry(id) {
+                if (document.getElementById(id).style.height == '340px') {
+                    var temp = 85;
+                    document.getElementById(id).style.height = temp + 'px';
+                }
+                else {
+                    var temp = 340;
+                    document.getElementById(id).style.height = temp + 'px';
+                }
             }
         </script>
     </head>
