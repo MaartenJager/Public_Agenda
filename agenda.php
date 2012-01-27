@@ -29,10 +29,12 @@
         <script language="JavaScript">
             function expandEntry(id) {
                 if (document.getElementById(id).style.height == '340px') {
-                    document.getElementById(id).style.height = '85px';
+                    var temp = 85;
+                    document.getElementById(id).style.height = temp + 'px';
                 }
                 else {
-                    document.getElementById(id).style.height = '340px';
+                    var temp = 340;
+                    document.getElementById(id).style.height = temp + 'px';
                 }
             }
         </script>
