@@ -22,7 +22,8 @@
         while( $i != $row2->genreId ) {
             $i++;
         }
-        booleanArray[$i-1] = TRUE;
+        $tempInt=$i-1;
+        booleanArray[$tempInt] = TRUE;
     }
 ?>
 
