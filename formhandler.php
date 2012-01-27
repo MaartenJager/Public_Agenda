@@ -71,7 +71,7 @@
                 $sth->bindParam(':image', $urlImage);
                 $sth->bindParam(':creationDate', time() );
                 $sth->bindParam(':approvedBy', NULL);
-                $sth->bindParam(':id', );
+                $sth->bindParam(':id', $_POST['id']);
 
                 $sth->execute();
 
