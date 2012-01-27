@@ -157,6 +157,10 @@ a.button{
 }
 
 #button {
+    border: 1px solid #D1C7AC;
+    border-radius: 7px 7px 7px 7px;
+    width: 300px;
+    background: #EFEFEF;
     display: block;
     heigth: 30px;
     margin-top: 12px;
