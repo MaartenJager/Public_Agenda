@@ -9,7 +9,9 @@
     $sth->execute();
     $row = $sth->fetch();
     $hoursBegin = date("H", $row->beginDate);
+    $minsBegin = date("i", $row->beginDate);
     $hoursEnd = date("H", $row->endDate);
+    $minsEnd = date("i", $row->endDate);
 ?>
 
 <!DOCTYPE html>
@@ -38,35 +40,35 @@
                     <select name="eventBeginTimeHours">
                         <option value="00" <?php if($hoursBegin==00){ echo "selected=\"selected\""; } ?>>00</option>
                         <option value="01" <?php if($hoursBegin==01){ echo "selected=\"selected\""; } ?>>01</option>
-                        <option value="02">02</option>
-                        <option value="03">03</option>
-                        <option value="04">04</option>
-                        <option value="05">05</option>
-                        <option value="06">06</option>
-                        <option value="07">07</option>
-                        <option value="08">08</option>
-                        <option value="09">09</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>
-                        <option value="17">17</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                        <option value="21">21</option>
-                        <option value="22">22</option>
-                        <option value="23">23</option>
+                        <option value="02" <?php if($hoursBegin==02){ echo "selected=\"selected\""; } ?>>02</option>
+                        <option value="03" <?php if($hoursBegin==03){ echo "selected=\"selected\""; } ?>>03</option>
+                        <option value="04" <?php if($hoursBegin==04){ echo "selected=\"selected\""; } ?>>04</option>
+                        <option value="05" <?php if($hoursBegin==05){ echo "selected=\"selected\""; } ?>>05</option>
+                        <option value="06" <?php if($hoursBegin==06){ echo "selected=\"selected\""; } ?>>06</option>
+                        <option value="07" <?php if($hoursBegin==07){ echo "selected=\"selected\""; } ?>>07</option>
+                        <option value="08" <?php if($hoursBegin==08){ echo "selected=\"selected\""; } ?>>08</option>
+                        <option value="09" <?php if($hoursBegin==09){ echo "selected=\"selected\""; } ?>>09</option>
+                        <option value="10" <?php if($hoursBegin==10){ echo "selected=\"selected\""; } ?>>10</option>
+                        <option value="11" <?php if($hoursBegin==11){ echo "selected=\"selected\""; } ?>>11</option>
+                        <option value="12" <?php if($hoursBegin==12){ echo "selected=\"selected\""; } ?>>12</option>
+                        <option value="13" <?php if($hoursBegin==13){ echo "selected=\"selected\""; } ?>>13</option>
+                        <option value="14" <?php if($hoursBegin==14){ echo "selected=\"selected\""; } ?>>14</option>
+                        <option value="15" <?php if($hoursBegin==15){ echo "selected=\"selected\""; } ?>>15</option>
+                        <option value="16" <?php if($hoursBegin==16){ echo "selected=\"selected\""; } ?>>16</option>
+                        <option value="17" <?php if($hoursBegin==17){ echo "selected=\"selected\""; } ?>>17</option>
+                        <option value="18" <?php if($hoursBegin==18){ echo "selected=\"selected\""; } ?>>18</option>
+                        <option value="19" <?php if($hoursBegin==19){ echo "selected=\"selected\""; } ?>>19</option>
+                        <option value="20" <?php if($hoursBegin==20){ echo "selected=\"selected\""; } ?>>20</option>
+                        <option value="21" <?php if($hoursBegin==21){ echo "selected=\"selected\""; } ?>>21</option>
+                        <option value="22" <?php if($hoursBegin==22){ echo "selected=\"selected\""; } ?>>22</option>
+                        <option value="23" <?php if($hoursBegin==23){ echo "selected=\"selected\""; } ?>>23</option>
                     </select>
 
                     <select name="eventBeginTimeMinutes">
-                        <option value="00">00</option>
-                        <option value="15">15</option>
-                        <option value="30">30</option>
-                        <option value="45">45</option>
+                        <option value="00" <?php if($minsBegin==00){ echo "selected=\"selected\""; } ?>>00</option>
+                        <option value="15" <?php if($minsBegin==15){ echo "selected=\"selected\""; } ?>>15</option>
+                        <option value="30" <?php if($minsBegin==30){ echo "selected=\"selected\""; } ?>>30</option>
+                        <option value="45" <?php if($minsBegin==45){ echo "selected=\"selected\""; } ?>>45</option>
                     </select>
 
                     <label>Einddatum (DD-MM-YYYY) en tijd</label>
@@ -74,37 +76,37 @@
 
                     (tmp)timestamp:<?php echo $row->endDate; ?>
                     <select name="eventEndTimeHours">
-                        <option value="00">00</option>
-                        <option value="01">01</option>
-                        <option value="02">02</option>
-                        <option value="03">03</option>
-                        <option value="04">04</option>
-                        <option value="05">05</option>
-                        <option value="06">06</option>
-                        <option value="07">07</option>
-                        <option value="08">08</option>
-                        <option value="09">09</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>
-                        <option value="17">17</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                        <option value="21">21</option>
-                        <option value="22">22</option>
-                        <option value="23">23</option>
+                        <option value="00" <?php if($hoursEnd==00){ echo "selected=\"selected\""; } ?>>00</option>
+                        <option value="01" <?php if($hoursEnd==01){ echo "selected=\"selected\""; } ?>>01</option>
+                        <option value="02" <?php if($hoursEnd==02){ echo "selected=\"selected\""; } ?>>02</option>
+                        <option value="03" <?php if($hoursEnd==03){ echo "selected=\"selected\""; } ?>>03</option>
+                        <option value="04" <?php if($hoursEnd==04){ echo "selected=\"selected\""; } ?>>04</option>
+                        <option value="05" <?php if($hoursEnd==05){ echo "selected=\"selected\""; } ?>>05</option>
+                        <option value="06" <?php if($hoursEnd==06){ echo "selected=\"selected\""; } ?>>06</option>
+                        <option value="07" <?php if($hoursEnd==07){ echo "selected=\"selected\""; } ?>>07</option>
+                        <option value="08" <?php if($hoursEnd==08){ echo "selected=\"selected\""; } ?>>08</option>
+                        <option value="09" <?php if($hoursEnd==09){ echo "selected=\"selected\""; } ?>>09</option>
+                        <option value="10" <?php if($hoursEnd==10){ echo "selected=\"selected\""; } ?>>10</option>
+                        <option value="11" <?php if($hoursEnd==11){ echo "selected=\"selected\""; } ?>>11</option>
+                        <option value="12" <?php if($hoursEnd==12){ echo "selected=\"selected\""; } ?>>12</option>
+                        <option value="13" <?php if($hoursEnd==13){ echo "selected=\"selected\""; } ?>>13</option>
+                        <option value="14" <?php if($hoursEnd==14){ echo "selected=\"selected\""; } ?>>14</option>
+                        <option value="15" <?php if($hoursEnd==15){ echo "selected=\"selected\""; } ?>>15</option>
+                        <option value="16" <?php if($hoursEnd==16){ echo "selected=\"selected\""; } ?>>16</option>
+                        <option value="17" <?php if($hoursEnd==17){ echo "selected=\"selected\""; } ?>>17</option>
+                        <option value="18" <?php if($hoursEnd==18){ echo "selected=\"selected\""; } ?>>18</option>
+                        <option value="19" <?php if($hoursEnd==19){ echo "selected=\"selected\""; } ?>>19</option>
+                        <option value="20" <?php if($hoursEnd==20){ echo "selected=\"selected\""; } ?>>20</option>
+                        <option value="21" <?php if($hoursEnd==21){ echo "selected=\"selected\""; } ?>>21</option>
+                        <option value="22" <?php if($hoursEnd==22){ echo "selected=\"selected\""; } ?>>22</option>
+                        <option value="23" <?php if($hoursEnd==23){ echo "selected=\"selected\""; } ?>>23</option>
                     </select>
 
                     <select name="eventEndTimeMinutes">
-                        <option value="00">00</option>
-                        <option value="15">15</option>
-                        <option value="30">30</option>
-                        <option value="45">45</option>
+                        <option value="00" <?php if($minsEnd==00){ echo "selected=\"selected\""; } ?>>00</option>
+                        <option value="15" <?php if($minsEnd==15){ echo "selected=\"selected\""; } ?>>15</option>
+                        <option value="30" <?php if($minsEnd==30){ echo "selected=\"selected\""; } ?>>30</option>
+                        <option value="45" <?php if($minsEnd==45){ echo "selected=\"selected\""; } ?>>45</option>
                     </select>
 
                     <label>Kies de locatie voor het event</label>
