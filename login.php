@@ -1,5 +1,5 @@
 <?php
-	require("inc-dbcon.php");
+	
 	
 	
 	$password = $_POST['userPass'];
@@ -17,30 +17,27 @@
     }
     */
     
-        function CheckLogin()
-        {
-            
-            $sth = $dbh->prepare("SELECT email, password FROM users
-            WHERE email = :email AND password = :password
-            ");
-            $sth->bindParam(':email', $email);
-            $sth->bindParam(':password', $password);
-            $sth->execute();
-            
-            //er is een correct login en password combinatie
-            if($sth->rowCount() > 0 )
-            {    
-                
-            
-            	$_SESSION['email'] = $email;
-                
-            }
-            else
-            {
-                return false;
-            }
-            
-        }
+	function CheckLogin()
+	{
+		require("inc-dbcon.php");
+		$sth = $dbh->prepare("SELECT email, password FROM users
+		WHERE email = :email AND password = :password
+		");
+		$sth->bindParam(':email', $email);
+		$sth->bindParam(':password', $password);
+		$sth->execute();
+		
+		//er is een correcte login en password combinatie
+		if($sth->rowCount() > 0 )
+		{    
+			$_SESSION['email'] = $email;
+			
+		}
+		else
+		{
+			return false;
+		}
+	}
     
 	function Logout()
 	{
@@ -56,10 +53,6 @@ SetPassword($_POST['userPass']);
 
 
 CheckLogin(); 
-
-
-
-
 session_start();
 
 //als combo goed is ga naar login 
@@ -71,4 +64,5 @@ else
 {
 	echo "niet ingelogd LUL";
 }
+$dbh = null;
 ?>
