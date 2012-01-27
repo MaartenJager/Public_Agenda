@@ -1,9 +1,9 @@
 <?php
 	
 	
-	
-	$password = $_POST['userPass'];
 	$email = $_POST['userName'];
+	$password = $_POST['userPass'];
+	
 	
 	/*
 	function SetEmail($email)
@@ -30,8 +30,7 @@
 		//er is een correcte login en password combinatie
 		if($sth->rowCount() > 0 )
 		{    
-			$_SESSION['email'] = $email;
-			
+			$_SESSION['username'] = $email;
 		}
 		else
 		{
@@ -42,7 +41,7 @@
 	function Logout()
 	{
 		session_start();
-		unset($_SESSION['email']);
+		unset($_SESSION['username']);
 	}
     
 
@@ -54,11 +53,12 @@ SetPassword($_POST['userPass']);
 
 CheckLogin(); 
 session_start();
-
+require("inc-dbcon.php");
 //als combo goed is ga naar login 
-if(isset($_SESSION['email']))
+if(isset($_SESSION['username']))
 {
-	echo "user {$_SESSION['email']} loged in  ";
+	
+	echo "user {$_SESSION['username']} loged in  ";
 }
 else
 {
