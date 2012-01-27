@@ -1,47 +1,7 @@
 <?php
-/* http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/
- * http://www.kitebird.com/articles/php-pdo.html
- */
-
-    function deleteEvent($id){
-        try{
-            /* Connect to DB */
-            require("inc-dbcon.php");
-
-            //Prepare statement
-            $sth = $dbh->prepare("DELETE FROM events WHERE `id` = :id");
-
-            //Prepare data
-            $sth->bindParam(':id', $id);
-            $sth->execute();
-        }
-
-        catch(PDOException $e) {
-            echo $e->getMessage();
-        }
-
-        $dhb = null;
-    }
-    function approveEvent($id){
-        try{
-            /* Connect to DB */
-            require("inc-dbcon.php");
-
-            //Prepare statement
-            $sth = $dbh->prepare("UPDATE `webdb1241`.`events` SET `approvedBy` = '0' WHERE `events`.`id` = :id");
-
-            //Prepare data
-            $sth->bindParam(':id', $id);
-            $sth->execute();
-        }
-
-        catch(PDOException $e) {
-            echo $e->getMessage();
-        }
-
-        $dhb = null;
-    }
-
+    /* http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/
+     * http://www.kitebird.com/articles/php-pdo.html
+     */
 
     /* Controleer op DELETE actie */
     if(isset($_GET['action'])){
@@ -69,7 +29,7 @@
                     /* Controleer of er een ID is meegestuurd */
                     if(isset($_GET['id'])){
                         $id = ($_GET['id']);
-                        echo $id;
+                        deleteUser($id);
                     }
                 }
             }
@@ -92,6 +52,9 @@
         }
     }
 
+
+    /* Functions */
+    
     /* Delete *MULTIPLE* events (used with checkboxes) */
     elseif(isset($_POST['deleteEvents'])){
         //Prepare variables
@@ -109,6 +72,69 @@
                 $continue = false;
             }
         }
+    }
+
+    /* Functies voor events */
+    function deleteEvent($id){
+        try{
+            /* Connect to DB */
+            require("inc-dbcon.php");
+
+            //Prepare statement
+            $sth = $dbh->prepare("DELETE FROM events WHERE `id` = :id");
+
+            //Prepare data
+            $sth->bindParam(':id', $id);
+            $sth->execute();
+        }
+
+        catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+
+        $dhb = null;
+    }
+    
+    function approveEvent($id){
+        try{
+            /* Connect to DB */
+            require("inc-dbcon.php");
+
+            //Prepare statement
+            $sth = $dbh->prepare("UPDATE `webdb1241`.`events` SET `approvedBy` = '0' WHERE `events`.`id` = :id");
+
+            //Prepare data
+            $sth->bindParam(':id', $id);
+            $sth->execute();
+        }
+
+        catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+
+        $dhb = null;
+    }
+
+
+    /* Functies voor users */
+    function deleteUser($id){
+        try{
+            /* Connect to DB */
+            require("inc-dbcon.php");
+
+            //Prepare statement
+            $sth = $dbh->prepare("DELETE FROM users WHERE `id` = :id");
+
+            //Prepare data
+            $sth->bindParam(':id', $id);
+            $sth->execute();
+        }
+
+        catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+
+        $dhb = null;
     }
 ?>
 
