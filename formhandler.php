@@ -50,14 +50,17 @@
                 //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
                 $urlImage = checkForUploadedImage();
 
-                //Check dates
+                //Convert beginDate to timestamp
                 $date = $_POST['eventBeginDate'];
-
                 list($dd, $mm, $yyyy) = explode('-', $date);
                 $beginDateTimeStamp = mktime($_POST['eventBeginTimeHours'], $_POST['eventBeginTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
+
+                //Convert endDate to timestamp
                 $date = $_POST['eventEndDate'];
                 list($dd, $mm, $yyyy) = explode('-', $date);
                 $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
+
+                //FIXME: controleren of resultaat twee timestamps van elkaar afgetrokken niet negatief is
 
                 //Add to DB
                 require("inc-dbcon.php");
@@ -68,25 +71,25 @@
 
                 $sth->execute();
 
+                //FIXME: arraysize gebruiken
                 for($i=0; $i<8; $i++)
                 {
                     if ($arrayCheckboxes[$i])
                     {
-                        echo "EEN GENRE OPGESLAGEN <br />";
+                        //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
                         $sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
                         $sth->execute();
                         $row = $sth->fetch();
-                        $event_id = $row['id'];
+                        $lastEventId = $row['id'];
                         $genreId = $i + 1;
+                        
                         $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
-                        VALUES ($event_id, $genreId)");
+                            VALUES ($lastEventId, $genreId)");
                         $sth->execute();
+
+                        echo "EEN GENRE OPGESLAGEN <br />";
                     }
                 }
-            }
-            else
-            {
-                echo "incorrecte datum<br/>";
             }
         }
     }
@@ -135,6 +138,7 @@
     
     function isDatumValid()
     {
+        /* FIXME: code nalopen*/
         $date = $_POST['eventBeginDate'];
         list($dd, $mm, $yyyy) = explode('-', $date);
         if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy))
