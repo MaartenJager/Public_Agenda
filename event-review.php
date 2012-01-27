@@ -23,7 +23,7 @@
             $i++;
         }
         $tempInt=$i-1;
-        booleanArray[$tempInt] = TRUE;
+        $booleanArray[$tempInt] = TRUE;
     }
 ?>
 
