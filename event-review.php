@@ -1,3 +1,4 @@
+/* er wordt geklooit met onze website
 <?php
     /* Fetch event with ID.. */
     require_once("inc-conf.php");
@@ -172,8 +173,4 @@
     </div>
     </body>
 </html>
-
-
-
-
-
+*/
