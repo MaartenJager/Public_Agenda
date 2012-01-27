@@ -35,8 +35,9 @@
                     <input type="text" name="eventName" value="<?php echo $row->title; ?>" autofocus required>
 
                     <label>Begindatum (DD-MM-YYYY) en tijd</label>
+                    (tmp)timestamp:<?php echo $row->endDate; ?>
                     <input type="text" name="eventBeginDate" placeholder="bv. 01-01-2012" value="<?php echo date("d-m-Y", $row->beginDate); ?>" required>
-
+                    
                     <select name="eventBeginTimeHours">
                         <option value="00" <?php if($hoursBegin==00){ echo "selected=\"selected\""; } ?>>00</option>
                         <option value="01" <?php if($hoursBegin==01){ echo "selected=\"selected\""; } ?>>01</option>
@@ -72,9 +73,9 @@
                     </select>
 
                     <label>Einddatum (DD-MM-YYYY) en tijd</label>
+                    (tmp)timestamp:<?php echo $row->endDate; ?>
                     <input type="text" name="eventEndDate" placeholder="bv. 01-01-2012" required>
 
-                    (tmp)timestamp:<?php echo $row->endDate; ?>
                     <select name="eventEndTimeHours">
                         <option value="00" <?php if($hoursEnd==00){ echo "selected=\"selected\""; } ?>>00</option>
                         <option value="01" <?php if($hoursEnd==01){ echo "selected=\"selected\""; } ?>>01</option>
