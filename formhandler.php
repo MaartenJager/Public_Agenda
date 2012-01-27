@@ -32,80 +32,23 @@
             $dbh = null;
         }
 
-        /* addEvent post action */
+        /* editEvent post action */
         if(isset($_POST['editEvent'])){
 
             echo "in editEvent";
 
             /* TODO !!!!!!! */
 
-            /*
-            try{
-                //Prepare statement
-                $sth = $dbh->prepare("INSERT INTO event (title, beginDate, endDate, location, description, createdBy, image, creationDate, approvedBy)
-                    values
-                    (:title, :beginDate, :endDate, :location, :description, :createdBy, :image, :creationDate, :approvedBy) ");
-
-                //Prepare data
-                $sth->bindParam(':title'       , $_POST['title']);
-                $sth->bindParam(':beginDate'   , $_POST['beginDate']);
-                $sth->bindParam(':endDate'     , $_POST['endDate']);
-                $sth->bindParam(':location'    , $_POST['location']);
-                $sth->bindParam(':description' , $_POST['description']);
-                $sth->bindParam(':createdBy'   , $_POST['createdBy']);
-                $sth->bindParam(':image'       , $_POST['image']);
-                $sth->bindParam(':creationDate', $_POST['creationDate']);
-                $sth->bindParam(':approvedBy'  , $_POST['approvedBy']);
-
-                $sth->execute();
-            }
-
-            catch(PDOException $e) {
-                echo $e->getMessage();
-            }
-
-            $dbh = null;
-            */
+            
+       
 
         }
 
 
         /* addEvent post action */
         if(isset($_POST['addEvent'])){
-            $arrayCheckboxes = array_fill(0, 8, FALSE);
-
-            if( isset($_POST['genre_pop']) )
-            {
-                $arrayCheckboxes[0] = TRUE;
-            }
-            if( isset($_POST['genre_rock']) )
-            {
-                $arrayCheckboxes[1] = TRUE;
-            }
-            if( isset($_POST['genre_metal']) )
-            {
-                $arrayCheckboxes[2] = TRUE;
-            }
-            if( isset($_POST['genre_hiphop']) )
-            {
-                $arrayCheckboxes[3] = TRUE;
-            }
-            if( isset($_POST['genre_blues']) )
-            {
-                $arrayCheckboxes[4] = TRUE;
-            }
-            if( isset($_POST['genre_classic']) )
-            {
-                $arrayCheckboxes[5] = TRUE;
-            }
-            if( isset($_POST['genre_church']) )
-            {
-                $arrayCheckboxes[6] = TRUE;
-            }
-            if( isset($_POST['genre_other']) )
-            {
-                $arrayCheckboxes[7] = TRUE;
-            }
+            
+            $arrayCheckboxes = checkGenres();            
 
             if (isDatumValid())
             {
@@ -168,6 +111,8 @@
                 $date = $_POST['eventEndDate'];
                 list($dd, $mm, $yyyy) = explode('-', $date);
                 $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
+
+                
                 require("inc-dbcon.php");
                 $sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, location, description, image, creationDate, approvedBy)
                 VALUES
@@ -197,7 +142,51 @@
         }
     }
 
+
+
+
+
     /* Functions */
+    function checkGenres(){
+        $arrayCheckboxes = array_fill(0, 8, FALSE);
+        
+        if( isset($_POST['genre_pop']) )
+        {
+            $arrayCheckboxes[0] = TRUE;
+        }
+        if( isset($_POST['genre_rock']) )
+        {
+            $arrayCheckboxes[1] = TRUE;
+        }
+        if( isset($_POST['genre_metal']) )
+        {
+            $arrayCheckboxes[2] = TRUE;
+        }
+        if( isset($_POST['genre_hiphop']) )
+        {
+            $arrayCheckboxes[3] = TRUE;
+        }
+        if( isset($_POST['genre_blues']) )
+        {
+            $arrayCheckboxes[4] = TRUE;
+        }
+        if( isset($_POST['genre_classic']) )
+        {
+            $arrayCheckboxes[5] = TRUE;
+        }
+        if( isset($_POST['genre_church']) )
+        {
+            $arrayCheckboxes[6] = TRUE;
+        }
+        if( isset($_POST['genre_other']) )
+        {
+            $arrayCheckboxes[7] = TRUE;
+        }
+
+        return $arrayCheckboxes;
+    }
+
+    
     function isDatumValid()
     {
         $date = $_POST['eventBeginDate'];

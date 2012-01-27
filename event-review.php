@@ -17,7 +17,7 @@
         <?php require_once("inc/header.inc"); ?>
     </head>
 
-<body>
+    <body>
         <div id="header"></div>
 
         <?php require_once("inc/nav.inc"); ?>
