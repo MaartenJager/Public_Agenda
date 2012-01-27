@@ -28,12 +28,7 @@
         
         <script language="JavaScript">
             function expandEntry(id) {
-                if (document.getElementById(id).style.height == '85px') {
-                    document.getElementById(id).style.heigth = '100%';
-                }
-                else {
-                    document.getElementById(id).style.heigth = '85px';
-                }
+                document.getElementById(id).style.heigth = '100%';
             }
         </script>
     </head>
