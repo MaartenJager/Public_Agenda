@@ -2,9 +2,10 @@
 	require("inc-dbcon.php");
 	
 	
-	$Password;
-	$Email;
+	$password = $_POST['userPass'];
+	$email = $_POST['userName'];
 	
+	/*
 	function SetEmail($email)
     {
         return mysql_real_escape_string($email);
@@ -14,6 +15,7 @@
     {
         return sha1(mysql_real_escape_string($password));
     }
+    */
     
         function CheckLogin()
         {
@@ -21,15 +23,16 @@
             $stmt = $this->dbh->prepare("SELECT email, password FROM users
             WHERE email = :email AND password = :password
             ");
-            $stmt->bindParam('email', $this->Email);
-            $stmt->bindParam(':password', $this->Password);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':password', $password);
             $stmt->execute();
             
+            //er is een correct login en password combinatie
             if($stmt->rowCount() > 0 )
             {    
                 
             
-            	$_SESSION['email'] = $this->Email;
+            	$_SESSION['email'] = $email;
                 
             }
             else
@@ -42,22 +45,27 @@
 	function Logout()
 	{
 		session_start();
-		unset($_SESSION['userName']);
+		unset($_SESSION['email']);
 	}
     
 
-
+/*
 SetEmail($_POST['userName']);
 SetPassword($_POST['userPass']);
+*/
+
+
 CheckLogin(); 
 
-echo $error;
+
 
 
 session_start();
-if(isset($_SESSION['userName']))
+
+//als combo goed is ga naar login pagina
+if(isset($_SESSION['email']))
 {
-	echo "user {$_SESSION['userName']} loged in  ";
+	echo "user {$_SESSION['email']} loged in  ";
 }
 else
 {
