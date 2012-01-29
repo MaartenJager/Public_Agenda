@@ -127,8 +127,17 @@
                 require("inc-dbcon.php");
                 $sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, location, description, image, creationDate, approvedBy)
                     VALUES
-                    ('$_POST[eventName]', '$beginDateTimeStamp', '$endDateTimeStamp', '$_POST[locationPicker]', '$_POST[eventDescription]',
-                    '$urlImage', " . time() . ", NULL)");
+                    (':eventName', ':beginDateTimeStamp', ':endDateTimeStamp', ':location', ':description',
+                    ':image', ':creationDate', NULL)");
+                
+                //Prepare data
+                $sth->bindParam(':eventName'       , $_POST['eventName']);
+                $sth->bindParam(':beginDateTimeStamp'  , $beginDateTimeStamp);
+                $sth->bindParam(':endDateTimeStamp'      , $endDateTimeStamp);
+                $sth->bindParam(':location'   , $_POST['locationPicker']);
+                $sth->bindParam(':description', $_POST['eventDescription']);
+                $sth->bindParam(':image', $urlImage);
+                $sth->bindParam(':creationDate', time() );
 
                 $sth->execute();
 

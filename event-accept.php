@@ -1,4 +1,3 @@
-<!-- er wordt geklooit met de website
 <?php
 /* Fetch all events from table EVENTS */
     require_once("inc-conf.php");
@@ -81,5 +80,3 @@
         </div>
     </body>
 </html>
-
--->
