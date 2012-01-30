@@ -261,7 +261,8 @@
 
         $orgFileName = $_FILES['file']['name'];
         //get fileextension.. somehow causes a warning but works perfectly
-        $fileExtension = end(explode(".", $orgFileName));
+        $temp = explode(".", $orgFileName);
+        $fileExtension = end($temp);
         //define final path for storage of img
         $targetPath = $targetPath . $imgFileName . ".". $fileExtension;
 
