@@ -114,6 +114,8 @@
 
             $beginDate = fixDate($beginDate);
             $endDate = fixDate($endDate);
+            echo $beginDate;
+            echo $endDate;
 
             if (isDatumValid())
             {
