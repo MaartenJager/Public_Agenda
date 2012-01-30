@@ -109,6 +109,7 @@
             if (isDatumValid())
             {
                 //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
+                $urlImage = "";
                 $urlImage = checkForUploadedImage();
 
                 //Convert beginDate to timestamp
