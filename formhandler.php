@@ -109,8 +109,8 @@
             if (isDatumValid())
             {
                 //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
-                $urlImage = "";
                 $urlImage = checkForUploadedImage();
+                $urlImage = "";
 
                 //Convert beginDate to timestamp
                 $date = $_POST['eventBeginDate'];
