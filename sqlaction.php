@@ -86,6 +86,13 @@
             //Prepare data
             $sth->bindParam(':id', $id);
             $sth->execute();
+
+            //Prepare statement
+            $sth = $dbh->prepare("DELETE FROM `webdb1241`.`genre_event_koppeling` WHERE `genre_event_koppeling`.`eventId` =:id");
+
+            //Prepare data
+            $sth->bindParam(':id', $id);
+            $sth->execute();
         }
 
         catch(PDOException $e) {
