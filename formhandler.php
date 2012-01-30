@@ -117,7 +117,7 @@
             echo $beginDate;
             echo $endDate;
 
-            if (isDatumValid())
+            if (isDatumValid($beginDate, $endDate))
             {
                 //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
                 $urlImage = checkForUploadedImage();
@@ -237,15 +237,15 @@
         return str_replace("/", "-", $date);
     }
 
-    function isDatumValid(){
+    function isDatumValid($beginDate, $endDate){
         /* FIXME: code nalopen*/
-        $date = $_POST['eventBeginDate'];
+        $date = $beginDate;
         list($dd, $mm, $yyyy) = explode('-', $date);
         if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy))
         {
             if (checkdate($mm,$dd,$yyyy))
             {
-                $date = $_POST['eventEndDate'];
+                $date = $ndDate;
                 list($dd, $mm, $yyyy) = explode('-', $date);
                 if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy))
                 {
