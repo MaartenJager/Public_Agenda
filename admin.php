@@ -57,10 +57,10 @@
                                     echo "  <td>" . $row->accessLevel . "</td>\n";
                                     echo "  <td> \n";
                                     echo "      <a class=\"button\" href=\"sqlaction.php?type=user&action=delete&id=".$row->id."\"> \n";
-                                    echo "          <img src=\"img/btn-delete.png\" title=\"Delete\" alt=\"Delete\" width=\"16\" height=\"16\">\n";
+                                    echo "          <img src=\"img/btn-delete.png\" title=\"Verwijder\" alt=\"Verwijder\" width=\"16\" height=\"16\">\n";
                                     echo "      </a> \n";
                                     echo "      <a class=\"button\" href=\"formhandler.pdo?action=edit&id=".$row->id."\"> \n";
-                                    echo "          <img src=\"img/btn-edit.png\" title=\"Edit\" alt=\"Edit\" width=\"16\" height=\"16\">\n";
+                                    echo "          <img src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\">\n";
                                     echo "      </a> \n";
                                     echo "  </td>\n";
                                     echo "</tr>\n";
@@ -68,7 +68,7 @@
                             ?>
                         </tbody>
                     </table>
-                <input id="button" name="deleteEvents" type="submit" value="Delete Selection" />
+                <input id="button" name="deleteEvents" type="submit" value="Verwijder geselecteerden" />
                 </form>
 
                 <div id="addUserButton">
