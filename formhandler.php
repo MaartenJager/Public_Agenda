@@ -131,12 +131,12 @@
                     (:eventName, :beginDateTimeStamp, :endDateTimeStamp, :location, :description, :image, :creationDate, NULL)");
 
                 //Prepare data
-                $sth->bindParam(':eventName'       , $_POST['eventName']);
-                $sth->bindParam(':beginDateTimeStamp'  , $beginDateTimeStamp);
-                $sth->bindParam(':endDateTimeStamp'      , $endDateTimeStamp);
-                $sth->bindParam(':location'   , $_POST['locationPicker']);
-                $sth->bindParam(':description', $_POST['eventDescription']);
-                $sth->bindParam(':image', $urlImage);
+                $sth->bindParam(':eventName'       , strip_tags($_POST['eventName']));
+                $sth->bindParam(':beginDateTimeStamp'  , strip_tags($beginDateTimeStamp));
+                $sth->bindParam(':endDateTimeStamp'      , strip_tags($endDateTimeStamp));
+                $sth->bindParam(':location'   , strip_tags($_POST['locationPicker']));
+                $sth->bindParam(':description', strip_tags($_POST['eventDescription']));
+                $sth->bindParam(':image', strip_tags($urlImage));
                 $sth->bindParam(':creationDate', time() );
 
                 $sth->execute();
