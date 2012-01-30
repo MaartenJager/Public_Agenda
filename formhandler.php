@@ -109,19 +109,25 @@
         /* addEvent post action */
         if(isset($_POST['addEvent'])){
 
-            if (isDatumValid())
+            $beginDate = $_POST['eventBeginDate'];
+            $endDate = $_POST['eventEndDate'];
+
+            $beginDate = fixDate($beginDate);
+            $endDate = fixDate($endDate);
+            echo $beginDate;
+            echo $endDate;
+
+            if (isDatumValid($beginDate, $endDate))
             {
                 //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
                 $urlImage = checkForUploadedImage();
 
                 //Convert beginDate to timestamp
-                $date = $_POST['eventBeginDate'];
-                list($dd, $mm, $yyyy) = explode('-', $date);
+                list($dd, $mm, $yyyy) = explode('-', $beginDate);
                 $beginDateTimeStamp = mktime($_POST['eventBeginTimeHours'], $_POST['eventBeginTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
 
                 //Convert endDate to timestamp
-                $date = $_POST['eventEndDate'];
-                list($dd, $mm, $yyyy) = explode('-', $date);
+                list($dd, $mm, $yyyy) = explode('-', $endDate);
                 $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
 
                 //Check if begin date is before end date
@@ -190,7 +196,7 @@
     /* Functions */
     function checkGenres(){
         $arrayCheckboxes = array_fill(0, 8, FALSE);
-        
+
         if( isset($_POST['genre_pop']) )
         {
             $arrayCheckboxes[0] = TRUE;
@@ -227,16 +233,19 @@
         return $arrayCheckboxes;
     }
 
-    
-    function isDatumValid(){
+    function fixDate($date){
+        return str_replace("/", "-", $date);
+    }
+
+    function isDatumValid($beginDate, $endDate){
         /* FIXME: code nalopen*/
-        $date = $_POST['eventBeginDate'];
+        $date = $beginDate;
         list($dd, $mm, $yyyy) = explode('-', $date);
         if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy))
         {
             if (checkdate($mm,$dd,$yyyy))
             {
-                $date = $_POST['eventEndDate'];
+                $date = $endDate;
                 list($dd, $mm, $yyyy) = explode('-', $date);
                 if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy))
                 {
