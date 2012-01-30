@@ -246,12 +246,15 @@
     }
 
     function checkForUploadedImage(){
+        //Default
+        $urlImage = "";
+
         //Image upload
         $targetPath = "uploads/";
 
         //random filename between 0 and 1 billion - 1 for final storage
         $imgFileName = mt_rand(0, 99999999);
-        
+
         $orgFileName = $_FILES['file']['name'];
         //get fileextension.. somehow causes a warning but works perfectly
         $fileExtension = end(explode(".", $orgFileName));
