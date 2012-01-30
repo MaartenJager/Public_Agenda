@@ -48,11 +48,11 @@
                 $urlImage = checkForUploadedImage();
 
                 //Convert beginDate to timestamp
-                list($dd, $mm, $yyyy) = explode('-', $date);
+                list($dd, $mm, $yyyy) = explode('-', $beginDate);
                 $beginDateTimeStamp = mktime($_POST['eventBeginTimeHours'], $_POST['eventBeginTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
 
                 //Convert endDate to timestamp
-                list($dd, $mm, $yyyy) = explode('-', $date);
+                list($dd, $mm, $yyyy) = explode('-', $endDate);
                 $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
 
                 //FIXME: controleren of resultaat twee timestamps van elkaar afgetrokken niet negatief is
