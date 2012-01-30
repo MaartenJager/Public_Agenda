@@ -326,5 +326,5 @@ included the code you did, and what exactly uses it. */
 
 /* Used by the loginbox */
 #loginBoxContent {
-    margin-left: 12px;
+    margin-left: 8px;
 }
