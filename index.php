@@ -18,9 +18,18 @@
                         $page = "pageContent/home.php";
                     include $page;
                 ?>
-            </section>         
-            <?php require_once("inc/sidebar.inc"); ?>
+            </section>
+            
+            <?php
+                if (isset($_GET['page'])) {
+                    $sidebar = $_GET['page'];
+                    if ($sidebar == "agenda")
+                        $sidebar = "inc/sidebar_agenda.inc";
+                    else
+                        $sidebar = "inc/sidebar.inc";
+                    include $sidebar;
+                }                
             <?php require_once("inc/footer.inc"); ?>
-	</div>
+        </div>
     </body>
 </html>

@@ -20,6 +20,19 @@
     $sth->execute();
 ?>
 
+<script language="JavaScript">
+    function expandEntry(id) {
+        if (document.getElementById(id).style.height == '170px') {
+            document.getElementById(id).style.height = '85px';
+            document.getElementById("description" + id).style.height = '60%';
+        }
+        else {
+            document.getElementById(id).style.height = '170px';
+            document.getElementById("description" + id).style.height = '115px';
+        }
+    }
+</script>
+
                 <h1>Agenda</h1>
                 <p>Alle aankomende elementen zijn opgenomen in onze agenda. Zoekt u een bepaald evenement?
                 Gebruik dan de zoekopties rechts van de agenda.</p>
