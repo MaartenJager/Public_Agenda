@@ -1,6 +1,6 @@
 <h1>Contact</h1>
                 <p>Neem contact met ons op door het onderstaande formulier in te vullen. Alle velden zijn verplicht.</p>
-                <form action="index.php?page=contact-send.php" method="post">
+                <form action="index.php?page=contact-send" method="post">
                     <label>Uw naam</label>
                     <input type="text" name="name" placeholder="Type uw naam" autofocus required>
 
