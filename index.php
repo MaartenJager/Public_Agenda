@@ -21,12 +21,16 @@
             </section>
             
             <?php
-                $sidebar = $_GET['page'];
-                if ($sidebar == "agenda")
-                    $sidebar = "inc/sidebar_agenda.inc";
+                if (isset($_GET['page'])) {
+                    $sidebar = $_GET['page'];
+                    if ($sidebar == "agenda")
+                        $sidebar = "inc/sidebar_agenda.inc";
+                    else
+                        $sidebar = "inc/sidebar.inc";
+                }
                 else
                     $sidebar = "inc/sidebar.inc";
-                include $sidebar;
+                    include $sidebar;
             ?>
             <?php require_once("inc/footer.inc"); ?>
         </div>
