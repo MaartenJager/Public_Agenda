@@ -42,7 +42,7 @@
         <div id="container">
             <section id="main">
                 <header class="pageTitle"><h1>Evenement bewerken</h1></header>
-                <p>U kunt hieronder waar gewenst informatie over het event aanpassen en deze goedkeuren.</p>
+                <p>Hier kunt u het evenement aanpassen alvorens het goed te keuren. U kunt het evenement ook verwijderen.</p>
                 <form enctype="multipart/form-data" name="event-add" action="formhandler.php"  method="post">
                     <label>Naam evenement</label>
                     <input type="text" name="eventName" value="<?php echo $row->title; ?>" autofocus required>
@@ -153,17 +153,19 @@
                          <label>Voeg een afbeelding toe</label>
                          <input type="file" name="file" id ="file" value="<?php echo $row->image; ?>"/>
                          <br />
-                         <input id="button" name="editEvent" type="submit" value="Submit" />
+                         <input id="button" name="editEvent" type="submit" value="Accepteer" />
                          <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
                     </div>
                 </form>
 
-                <form action="sqlaction.php" method="get">
-                    <input type="hidden" name="action" value="delete" />
-                    <input type="hidden" name="type" value="event" />
-                    <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
-                    <input id="button" type="submit" value="Verwijder" />
-                </form>
+                <div id="checkbox_below">
+                    <form action="sqlaction.php" method="get">
+                        <input type="hidden" name="action" value="delete" />
+                        <input type="hidden" name="type" value="event" />
+                        <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
+                        <input id="button" type="submit" value="Verwijder" />
+                    </form>
+                </div>
 
             </section>
 

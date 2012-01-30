@@ -143,6 +143,10 @@ input[type="text"] {
     background: #EFEFEF;
 }
 
+textInputSmall {
+    width: 144px;
+}
+
 textarea {
     border: 1px solid #D1C7AC;
     border-radius: 7px 7px 7px 7px;
