@@ -27,7 +27,6 @@
                 else
                     $sidebar = "inc/sidebar.inc";
                 include $sidebar;
-                }
             ?>
             <?php require_once("inc/footer.inc"); ?>
         </div>
