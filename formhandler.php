@@ -245,9 +245,6 @@
     }
 
     function checkForUploadedImage(){
-        //Default
-        $urlImage = "";
-
         //Image upload
         $targetPath = "uploads/";
 
@@ -297,6 +294,7 @@
         {
             echo "Invalid file<br />";
         }        
+        return $urlImage;
     }
 
 ?>
