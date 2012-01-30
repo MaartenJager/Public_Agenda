@@ -63,16 +63,24 @@
                     WHERE id=:id");
 
                //Prepare data
-                $sth->bindParam(':eventName'       , $_POST['eventName']);
+                $eventName = strip_tags($_POST['eventName']);
+                $beginDateTimeStamp = strip_tags($beginDateTimeStamp);
+                $endDateTimeStamp = strip_tags($endDateTimeStamp);
+                $locationPicker = strip_tags($_POST['locationPicker']);
+                $eventDescription = strip_tags($_POST['eventDescription']);
+                $urlImage = strip_tags($urlImage);
+                $time = time();
+                $id = strip_tags($_POST['id']);
+                $sth->bindParam(':eventName'       , $eventName);
                 $sth->bindParam(':beginDateTimeStamp'  , $beginDateTimeStamp);
                 $sth->bindParam(':endDateTimeStamp'      , $endDateTimeStamp);
-                $sth->bindParam(':location'   , $_POST['locationPicker']);
-                $sth->bindParam(':description', $_POST['eventDescription']);
+                $sth->bindParam(':location'   , $locationPicker);
+                $sth->bindParam(':description', $eventDescription);
                 $sth->bindParam(':image', $urlImage);
-                $sth->bindParam(':creationDate', time() );
+                $sth->bindParam(':creationDate', $time);
                 //$sth->bindParam(':approvedBy', );
                 $sth->bindValue(':approvedBy', 1);
-                $sth->bindParam(':id', $_POST['id']);
+                $sth->bindParam(':id', $id);
 
                 $sth->execute();
 
