@@ -20,17 +20,7 @@
     $sth->execute();
 ?>
 
-<!DOCTYPE html>
-<html lang="nl">
-    <?php require_once("inc/header.inc"); ?>
-
-    <body>
-        <div id="container">
-            <div id="header" role="banner"></div>
-            <?php require_once("inc/nav.inc"); ?>
-
-            <section id="main" role="main">
-                <header class="pageTitle"><h1>Evenementen Accepteren</h1></header>
+<h1>Evenementen Accepteren</h1>
 
                 <form action="sqlaction.php" method="post">
                     <table>
@@ -73,10 +63,3 @@
                     </table>
                     <?php if($i!=0){ echo "<input id=\"button\" name=\"deleteEvents\" type=\"submit\" value=\"Verwijder geselecteerden\" />"; } ?>
                 </form>
-            </section>
-
-            <?php require_once("inc/sidebar.inc"); ?>
-            <?php require_once("inc/footer.inc"); ?>
-        </div>
-    </body>
-</html>

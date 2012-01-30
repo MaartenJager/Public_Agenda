@@ -74,7 +74,7 @@
                             echo("        </div>\n");
                             echo("            <img itemprop=\"photo\" src=\"". $row->image . "\"/>\n");
                             echo("    </div>\n");
-                            echo("<!-- Eind of item -->\n");
+                            echo("<!-- End of item -->\n");
                         }
                     ?>
                 </div>
