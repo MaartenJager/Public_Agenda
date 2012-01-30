@@ -133,10 +133,10 @@
                 $eventName = strip_tags($_POST['eventName']);
                 $beginDateTimeStamp = strip_tags($beginDateTimeStamp);
                 $endDateTimeStamp = strip_tags($endDateTimeStamp);
-                $locationPicker = strip_tags($_POST['locationPicker'])
-                $eventDescription = strip_tags($_POST['eventDescription'])
-                $urlImage = strip_tags($urlImage)
-                $time = time()
+                $locationPicker = strip_tags($_POST['locationPicker']);
+                $eventDescription = strip_tags($_POST['eventDescription']);
+                $urlImage = strip_tags($urlImage);
+                $time = time();
                 $sth->bindParam(':eventName'       , $eventName);
                 $sth->bindParam(':beginDateTimeStamp'  , $beginDateTimeStamp);
                 $sth->bindParam(':endDateTimeStamp'      , $endDateTimeStamp);
