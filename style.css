@@ -104,20 +104,21 @@ body {
 #loginBox{
     border:1px solid black; /* tmp, make borders visible while devving*/
     border-top: none;
-    background: #CC0000;
-    background: -webkit-gradient(linear, left top, left bottom, from(#A52A2A), to(#FFFF00)); /* Safari, Chrome */
-    background: -moz-linear-gradient(top, #A52A2A, #FFFF00); /* Firefox */
+    background: #ADD8E6;
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#ADD8E6)); /* Safari, Chrome */
+    background: -moz-linear-gradient(top, #FFFFFF, #ADD8E6); /* Firefox */
     position: absolute;
-    margin-left: 780px;
+    margin-left: 779px;
     width: 180px;
     height: 144px;
     display: none;
 }
 
 #loginBox input{
+    margin-top: 8px;
     border: 1px solid #D1C7AC;
     border-radius: 7px 7px 7px 7px;
-    width: 84px;
+    width: 156px;
     padding: 3px;
     background: #EFEFEF;
 }
@@ -125,7 +126,7 @@ body {
 #loginBox #button{
     background: #F4A460;
     border-radius: 7px 7px 7px 7px;
-    width: 204px;
+    width: 156px;
     background: #EFEFEF;
     display: block;
     heigth: 30px;
@@ -321,4 +322,9 @@ included the code you did, and what exactly uses it. */
 /* Used on admin.php */
 #addUserButton {
     display: block; /* Show button for addUser interface until it is pressed */
+}
+
+/* Used by the loginbox */
+#loginBoxContent {
+    margin-left: 8px;
 }
