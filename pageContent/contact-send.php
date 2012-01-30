@@ -98,16 +98,5 @@ mail($my_email,$subject,$message,$headers);
 
 ?>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
-<html>
-
-<head>
-<title>Dreamweaver Tutorial - Contact Form</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-</head>
-
-<body bgcolor="#ffffff" text="#000000">
-
-</body>
-</html>
+<h1>Contact</h1>
+                <p>Bedankt voor uw bericht! We nemen zo spoedig mogelijk contact met u op.</p>
