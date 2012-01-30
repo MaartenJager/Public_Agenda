@@ -84,8 +84,7 @@
 
                 $sth->execute();
 
-                //FIXME: arraysize gebruiken
-                /*
+
                 for($i=0; $i<8; $i++)
                 {
                     if ($arrayCheckboxes[$i])
@@ -104,7 +103,6 @@
                         echo "EEN GENRE OPGESLAGEN <br />";
                     }
                 }
-                */
             }
         }
 
@@ -310,7 +308,7 @@
         else
         {
             echo "Invalid file<br />";
-        }        
+        }
         return $urlImage;
     }
 
