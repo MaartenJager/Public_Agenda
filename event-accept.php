@@ -71,7 +71,7 @@
                             ?>
                         </tbody>
                     </table>
-                    <input id="button" name="deleteEvents" type="submit" value="Verwijder geselecteerden" />
+                    <?php if($i!=0){ echo "<input id=\"button\" name=\"deleteEvents\" type=\"submit\" value=\"Verwijder geselecteerden\" />" } ?>
                 </form>
             </section>
 
