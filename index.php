@@ -12,6 +12,7 @@
                 <?php
                     if (isset($_GET['page']))
                         $page = $_GET['page'];
+                        $page = "pageContent/" . $page . ".php";
                     else
                         $page = "pageContent/home.php";
                     include $page;
