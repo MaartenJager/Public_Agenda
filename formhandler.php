@@ -124,54 +124,64 @@
                 list($dd, $mm, $yyyy) = explode('-', $date);
                 $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
 
-                //FIXME: controleren of resultaat twee timestamps van elkaar afgetrokken niet negatief is
+                //Check if begin date is before end date
+                if ($beginDateTimeStamp<$endDateTimeStamp){
 
-                //Add to DB
-                require("inc-dbcon.php");
-                $sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, location, description, image, creationDate, approvedBy)
-                    VALUES
-                    (:eventName, :beginDateTimeStamp, :endDateTimeStamp, :location, :description, :image, :creationDate, NULL)");
+                    //Add to DB
+                    require("inc-dbcon.php");
+                    $sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, location, description, image, creationDate, approvedBy)
+                        VALUES
+                        (:eventName, :beginDateTimeStamp, :endDateTimeStamp, :location, :description, :image, :creationDate, NULL)");
 
-                //Prepare data
-                $eventName = strip_tags($_POST['eventName']);
-                $beginDateTimeStamp = strip_tags($beginDateTimeStamp);
-                $endDateTimeStamp = strip_tags($endDateTimeStamp);
-                $locationPicker = strip_tags($_POST['locationPicker']);
-                $eventDescription = strip_tags($_POST['eventDescription']);
-                $urlImage = strip_tags($urlImage);
-                $time = time();
-                $sth->bindParam(':eventName'       , $eventName);
-                $sth->bindParam(':beginDateTimeStamp'  , $beginDateTimeStamp);
-                $sth->bindParam(':endDateTimeStamp'      , $endDateTimeStamp);
-                $sth->bindParam(':location'   , $locationPicker);
-                $sth->bindParam(':description', $eventDescription);
-                $sth->bindParam(':image', $urlImage);
-                $sth->bindParam(':creationDate', $time);
+                    //Prepare data
+                    $eventName = strip_tags($_POST['eventName']);
+                    $beginDateTimeStamp = strip_tags($beginDateTimeStamp);
+                    $endDateTimeStamp = strip_tags($endDateTimeStamp);
+                    $locationPicker = strip_tags($_POST['locationPicker']);
+                    $eventDescription = strip_tags($_POST['eventDescription']);
+                    $urlImage = strip_tags($urlImage);
+                    $time = time();
+                    $sth->bindParam(':eventName'       , $eventName);
+                    $sth->bindParam(':beginDateTimeStamp'  , $beginDateTimeStamp);
+                    $sth->bindParam(':endDateTimeStamp'      , $endDateTimeStamp);
+                    $sth->bindParam(':location'   , $locationPicker);
+                    $sth->bindParam(':description', $eventDescription);
+                    $sth->bindParam(':image', $urlImage);
+                    $sth->bindParam(':creationDate', $time);
 
-                $sth->execute();
+                    $sth->execute();
 
-                $sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
-                $sth->execute();
-                $row = $sth->fetch();
-                $lastEventId = $row['id'];
+                    $sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
+                    $sth->execute();
+                    $row = $sth->fetch();
+                    $lastEventId = $row['id'];
 
-                $arrayCheckboxes = checkGenres();
+                    $arrayCheckboxes = checkGenres();
 
-                //FIXME: arraysize gebruiken
-                for($i=0; $i<8; $i++)
-                {
-                    if ($arrayCheckboxes[$i])
+                    //FIXME: arraysize?
+                    for($i=0; $i<8; $i++)
                     {
-                        //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
-                        $genreId = $i + 1;
+                        if ($arrayCheckboxes[$i])
+                        {
+                            //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
+                            $genreId = $i + 1;
 
-                        $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
-                            VALUES ($lastEventId, $genreId)");
-                        $sth->execute();
+                            $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
+                                VALUES ($lastEventId, $genreId)");
+                            $sth->execute();
 
-                        echo "EEN GENRE OPGESLAGEN <br />";
+                            echo "EEN GENRE OPGESLAGEN <br />";
+                        }
                     }
                 }
+                else
+                {
+                    echo "Data combinatie niet geldig";
+                }
+            }
+            else
+            {
+                echo "ongeldige datum";
             }
         }
     }
