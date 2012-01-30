@@ -104,27 +104,34 @@ body {
 #loginBox{
     border:1px solid black; /* tmp, make borders visible while devving*/
     border-top: none;
-    border-right: none;
-    background-color: gray;
+    background: #CC0000;
+    background: -webkit-gradient(linear, left top, left bottom, from(#A52A2A), to(#FFFF00)); /* Safari, Chrome */
+    background: -moz-linear-gradient(top, #A52A2A, #FFFF00); /* Firefox */
     position: absolute;
-    margin-left: 812px;
-    width: 148px;
-    height: 90px;
+    margin-left: 780px;
+    width: 180px;
+    height: 144px;
     display: none;
 }
 
 #loginBox input{
-    height: 5px;
-    width: 120px;
-    margin-top: 2px;
+    border: 1px solid #D1C7AC;
+    border-radius: 7px 7px 7px 7px;
+    width: 84px;
+    padding: 3px;
+    background: #EFEFEF;
 }
 
 #loginBox #button{
-    width: 50px;
-    height: 30px;
-    color: #000;
-    font-size: 12px;
-    border: 1px solid #000;
+    background: #F4A460;
+    border-radius: 7px 7px 7px 7px;
+    width: 204px;
+    background: #EFEFEF;
+    display: block;
+    heigth: 30px;
+    margin-top: 12px;
+    cursor: pointer;
+    font: 16px Calibri, Arial; /* for some reason, font isnt inherited */
 }
 
 /* LIBRARY ****************************************************************** */
@@ -135,7 +142,7 @@ label {
     letter-spacing: 2px;
 }
 
-input[type="text"], input[type="email"], input[type="password] {
+input[type="text"], input[type="email"], input[type="password"] {
     border: 1px solid #D1C7AC;
     border-radius: 7px 7px 7px 7px;
     width: 300px;
