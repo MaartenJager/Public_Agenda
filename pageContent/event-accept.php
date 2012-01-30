@@ -51,7 +51,7 @@
                                     echo "      <a class=\"button\" href=\"sqlaction.php?id=".$row->id."&type=event&action=delete\"name=\"deleteEvent\"> \n";
                                     echo "          <img src=\"img/btn-delete.png\" title=\"Verwijder\" alt=\"Verwijder\" width=\"16\" height=\"16\">\n";
                                     echo "      </a> \n";
-                                    echo "      <a class=\"button\" href=\"event-review.php?id=".$row->id."\"> \n";
+                                    echo "      <a class=\"button\" href=\"index.php?page=event-review&id=".$row->id."\"> \n";
                                     echo "          <img src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\">\n";
                                     echo "      </a> \n";
                                     echo "  </td>\n";
