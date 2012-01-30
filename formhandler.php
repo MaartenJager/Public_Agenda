@@ -110,7 +110,6 @@
             {
                 //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
                 $urlImage = checkForUploadedImage();
-                $urlImage = "";
 
                 //Convert beginDate to timestamp
                 $date = $_POST['eventBeginDate'];
@@ -131,13 +130,20 @@
                     (:eventName, :beginDateTimeStamp, :endDateTimeStamp, :location, :description, :image, :creationDate, NULL)");
 
                 //Prepare data
-                $sth->bindParam(':eventName'       , strip_tags($_POST['eventName']));
-                $sth->bindParam(':beginDateTimeStamp'  , strip_tags($beginDateTimeStamp));
-                $sth->bindParam(':endDateTimeStamp'      , strip_tags($endDateTimeStamp));
-                $sth->bindParam(':location'   , strip_tags($_POST['locationPicker']));
-                $sth->bindParam(':description', strip_tags($_POST['eventDescription']));
-                $sth->bindParam(':image', strip_tags($urlImage));
-                $sth->bindParam(':creationDate', time() );
+                $eventName = strip_tags($_POST['eventName']);
+                $beginDateTimeStamp = strip_tags($beginDateTimeStamp);
+                $endDateTimeStamp = strip_tags($endDateTimeStamp);
+                $locationPicker = strip_tags($_POST['locationPicker'])
+                $eventDescription = strip_tags($_POST['eventDescription'])
+                $urlImage = strip_tags($urlImage)
+                $time = time()
+                $sth->bindParam(':eventName'       , $eventName);
+                $sth->bindParam(':beginDateTimeStamp'  , $beginDateTimeStamp);
+                $sth->bindParam(':endDateTimeStamp'      , $endDateTimeStamp);
+                $sth->bindParam(':location'   , $locationPicker);
+                $sth->bindParam(':description', $eventDescription);
+                $sth->bindParam(':image', $urlImage);
+                $sth->bindParam(':creationDate', $time);
 
                 $sth->execute();
 
