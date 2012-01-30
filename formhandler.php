@@ -84,20 +84,19 @@
 
                 $sth->execute();
 
+                $sth = $dbh->prepare("DELETE FROM `webdb1241`.`genre_event_koppeling` WHERE `genre_event_koppeling`.`eventId` =:id");
+                $sth->bindParam(':id', $id);
+                $sth->execute();
 
                 for($i=0; $i<8; $i++)
                 {
                     if ($arrayCheckboxes[$i])
                     {
                         //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
-                        $sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
-                        $sth->execute();
-                        $row = $sth->fetch();
-                        $lastEventId = $row['id'];
                         $genreId = $i + 1;
-                        
+
                         $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
-                            VALUES ($lastEventId, $genreId)");
+                            VALUES ($id, $genreId)");
                         $sth->execute();
 
                         echo "EEN GENRE OPGESLAGEN <br />";
@@ -153,18 +152,19 @@
 
                 $sth->execute();
 
+                $sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
+                $sth->execute();
+                $row = $sth->fetch();
+                $lastEventId = $row['id'];
+
                 //FIXME: arraysize gebruiken
                 for($i=0; $i<8; $i++)
                 {
                     if ($arrayCheckboxes[$i])
                     {
                         //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
-                        $sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
-                        $sth->execute();
-                        $row = $sth->fetch();
-                        $lastEventId = $row['id'];
                         $genreId = $i + 1;
-                        
+
                         $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
                             VALUES ($lastEventId, $genreId)");
                         $sth->execute();
@@ -311,7 +311,7 @@
         }
         return $urlImage;
     }
-
+$dbh = null;
 ?>
 
 
