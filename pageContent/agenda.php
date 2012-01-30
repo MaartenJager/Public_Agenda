@@ -35,7 +35,7 @@
 
                 <h1>Agenda</h1>
                 <p>Alle aankomende elementen zijn opgenomen in onze agenda. Zoekt u een bepaald evenement?
-                Gebruik dan de zoekopties rechts van de agenda.</p>
+                Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
                         // showing the results
