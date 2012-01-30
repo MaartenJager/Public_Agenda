@@ -246,6 +246,7 @@
     }
 
     function checkForUploadedImage(){
+        $urlImage = "";
         //Image upload
         $targetPath = "uploads/";
 
