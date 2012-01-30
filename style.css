@@ -135,7 +135,7 @@ label {
     letter-spacing: 2px;
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"], input[type="password] {
     border: 1px solid #D1C7AC;
     border-radius: 7px 7px 7px 7px;
     width: 300px;
