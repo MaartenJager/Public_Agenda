@@ -39,11 +39,10 @@
             $beginDate = $_POST['eventBeginDate'];
             $endDate = $_POST['eventEndDate'];
 
-            $beginDate = fixDate($beginDate);
-            $endDate = fixDate($endDate);
+            $beginDate = replaceSlashes($beginDate);
+            $endDate = replaceSlashes($endDate);
 
-            if (isDatumValid($beginDate, $endDate))
-            {
+            if (datesValid($beginDate, $endDate)){
                 //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
                 $urlImage = checkForUploadedImage();
 
@@ -55,59 +54,62 @@
                 list($dd, $mm, $yyyy) = explode('-', $endDate);
                 $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
 
-                //FIXME: controleren of resultaat twee timestamps van elkaar afgetrokken niet negatief is
+                //Check if begin date is before end date
+                if ($beginDateTimeStamp<$endDateTimeStamp){
 
-                //Add to DB
-                require("inc-dbcon.php");
-                $sth=$dbh->prepare("UPDATE events SET title=:eventName, beginDate=:beginDateTimeStamp, endDate=:endDateTimeStamp,
-                    location=:location, description=:description, image=:image, creationDate=:creationDate, approvedBy=:approvedBy
-                    WHERE id=:id");
+                    //Add to DB
+                    require("inc-dbcon.php");
+                    $sth=$dbh->prepare("UPDATE events SET title=:eventName, beginDate=:beginDateTimeStamp, endDate=:endDateTimeStamp,
+                        location=:location, description=:description, image=:image, creationDate=:creationDate, approvedBy=:approvedBy
+                        WHERE id=:id");
 
-               //Prepare data
-                $eventName = strip_tags($_POST['eventName']);
-                $beginDateTimeStamp = strip_tags($beginDateTimeStamp);
-                $endDateTimeStamp = strip_tags($endDateTimeStamp);
-                $locationPicker = strip_tags($_POST['locationPicker']);
-                $eventDescription = strip_tags($_POST['eventDescription']);
-                $urlImage = strip_tags($urlImage);
-                $time = time();
-                $id = strip_tags($_POST['id']);
-                $sth->bindParam(':eventName'       , $eventName);
-                $sth->bindParam(':beginDateTimeStamp'  , $beginDateTimeStamp);
-                $sth->bindParam(':endDateTimeStamp'      , $endDateTimeStamp);
-                $sth->bindParam(':location'   , $locationPicker);
-                $sth->bindParam(':description', $eventDescription);
-                $sth->bindParam(':image', $urlImage);
-                $sth->bindParam(':creationDate', $time);
-                //$sth->bindParam(':approvedBy', );
-                $sth->bindValue(':approvedBy', 1);
-                $sth->bindParam(':id', $id);
+                    //Prepare data
+                    $eventName = strip_tags($_POST['eventName']);
+                    $beginDateTimeStamp = strip_tags($beginDateTimeStamp);
+                    $endDateTimeStamp = strip_tags($endDateTimeStamp);
+                    $locationPicker = strip_tags($_POST['locationPicker']);
+                    $eventDescription = strip_tags($_POST['eventDescription']);
+                    $urlImage = strip_tags($urlImage);
+                    $time = time();
+                    $id = strip_tags($_POST['id']);
+                    $sth->bindParam(':eventName'       , $eventName);
+                    $sth->bindParam(':beginDateTimeStamp'  , $beginDateTimeStamp);
+                    $sth->bindParam(':endDateTimeStamp'      , $endDateTimeStamp);
+                    $sth->bindParam(':location'   , $locationPicker);
+                    $sth->bindParam(':description', $eventDescription);
+                    $sth->bindParam(':image', $urlImage);
+                    $sth->bindParam(':creationDate', $time);
+                    //$sth->bindParam(':approvedBy', );
+                    $sth->bindValue(':approvedBy', 1);
+                    $sth->bindParam(':id', $id);
 
-                $sth->execute();
+                    $sth->execute();
 
-                $sth = $dbh->prepare("DELETE FROM `webdb1241`.`genre_event_koppeling` WHERE `genre_event_koppeling`.`eventId` =:id");
-                $sth->bindParam(':id', $id);
-                $sth->execute();
+                    $sth = $dbh->prepare("DELETE FROM `webdb1241`.`genre_event_koppeling` WHERE `genre_event_koppeling`.`eventId` =:id");
+                    $sth->bindParam(':id', $id);
+                    $sth->execute();
 
-                $arrayCheckboxes = checkGenres();
+                    $arrayCheckboxes = checkGenres();
 
-                for($i=0; $i<8; $i++)
-                {
-                    if ($arrayCheckboxes[$i])
-                    {
-                        //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
-                        $genreId = $i + 1;
+                    for($i=0; $i<8; $i++){
 
-                        $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
-                            VALUES ($id, $genreId)");
-                        $sth->execute();
+                        if ($arrayCheckboxes[$i]){
+                            //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
+                            $genreId = $i + 1;
 
-                        echo "EEN GENRE OPGESLAGEN <br />";
+                            $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
+                                VALUES ($id, $genreId)");
+                            $sth->execute();
+
+                            echo "EEN GENRE OPGESLAGEN <br />";
+                        }
                     }
+                }
+                else{
+                    echo "Data-combinatie niet geldig (event mag niet eerder eindigen dan beginnen)";
                 }
             }
         }
-
 
         /* addEvent post action */
         if(isset($_POST['addEvent'])){
@@ -115,11 +117,10 @@
             $beginDate = $_POST['eventBeginDate'];
             $endDate = $_POST['eventEndDate'];
 
-            $beginDate = fixDate($beginDate);
-            $endDate = fixDate($endDate);
+            $beginDate = replaceSlashes($beginDate);
+            $endDate = replaceSlashes($endDate);
 
-            if (isDatumValid($beginDate, $endDate))
-            {
+            if (datesValid($beginDate, $endDate)){
                 //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
                 $urlImage = checkForUploadedImage();
 
@@ -166,10 +167,9 @@
                     $arrayCheckboxes = checkGenres();
 
                     //FIXME: arraysize?
-                    for($i=0; $i<8; $i++)
-                    {
-                        if ($arrayCheckboxes[$i])
-                        {
+                    for($i=0; $i<8; $i++){
+
+                        if ($arrayCheckboxes[$i]){
                             //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
                             $genreId = $i + 1;
 
@@ -181,13 +181,11 @@
                         }
                     }
                 }
-                else
-                {
-                    echo "Data combinatie niet geldig";
+                else{
+                    echo "Data-combinatie niet geldig (event mag niet eerder eindigen dan beginnen)";
                 }
             }
-            else
-            {
+            else{
                 echo "ongeldige datum";
             }
         }
@@ -198,80 +196,74 @@
     function checkGenres(){
         $arrayCheckboxes = array_fill(0, 8, FALSE);
 
-        if( isset($_POST['genre_pop']) )
-        {
+        if( isset($_POST['genre_pop']) ){
             $arrayCheckboxes[0] = TRUE;
         }
-        if( isset($_POST['genre_rock']) )
-        {
+
+        if( isset($_POST['genre_rock']) ){
             $arrayCheckboxes[1] = TRUE;
         }
-        if( isset($_POST['genre_metal']) )
-        {
+
+        if( isset($_POST['genre_metal']) ){
             $arrayCheckboxes[2] = TRUE;
         }
-        if( isset($_POST['genre_hiphop']) )
-        {
+
+        if( isset($_POST['genre_hiphop']) ){
             $arrayCheckboxes[3] = TRUE;
         }
-        if( isset($_POST['genre_blues']) )
-        {
+
+        if( isset($_POST['genre_blues']) ){
             $arrayCheckboxes[4] = TRUE;
         }
-        if( isset($_POST['genre_classic']) )
-        {
+
+        if( isset($_POST['genre_classic']) ){
             $arrayCheckboxes[5] = TRUE;
         }
-        if( isset($_POST['genre_church']) )
-        {
+
+        if( isset($_POST['genre_church']) ){
             $arrayCheckboxes[6] = TRUE;
         }
-        if( isset($_POST['genre_other']) )
-        {
+
+        if( isset($_POST['genre_other']) ){
             $arrayCheckboxes[7] = TRUE;
         }
 
         return $arrayCheckboxes;
     }
 
-    function fixDate($date){
+    function replaceSlashes($date){
         return str_replace("/", "-", $date);
     }
 
-    function isDatumValid($beginDate, $endDate){
+    function datesValid($beginDate, $endDate){
         /* FIXME: code nalopen*/
         $date = $beginDate;
         list($dd, $mm, $yyyy) = explode('-', $date);
-        if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy))
-        {
-            if (checkdate($mm,$dd,$yyyy))
-            {
+
+        if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy)){
+
+            if (checkdate($mm,$dd,$yyyy)){
                 $date = $endDate;
                 list($dd, $mm, $yyyy) = explode('-', $date);
-                if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy))
-                {
-                    if (checkdate($mm,$dd,$yyyy))
-                    {
+
+                if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy)){
+                    if (checkdate($mm,$dd,$yyyy)){
                         echo "Entry dates are correct<br/>";
                         return TRUE;
                     }
-                    else
-                    {
+                    else{
                         echo "End date is numeric but not a valid date<br />";
                     }
                 }
-                else
-                {
+                else{
                     echo "Begin date is not numeric or in format dd-mm-yyyy<br />";
                 }
             }
-            else
-            {
+            else{
                 echo "Begin date is numeric but not a valid date<br />";
             }
         }
-        else
-        {
+        else{
             echo "Begin date is not numeric or in format dd-mm-yyyy<br />";
         }
         return FALSE;
@@ -294,43 +286,39 @@
 
         //check extensions & filesize < 20000k
         if ((($_FILES["file"]["type"] == "image/gif")
-        || ($_FILES["file"]["type"] == "image/jpeg")
-        || ($_FILES["file"]["type"] == "image/pjpeg")) // oude IE browsers zijn raar
-        && ($_FILES["file"]["size"] < 20000))
-        {
-            if ($_FILES["file"]["error"] > 0)
-            {
+          || ($_FILES["file"]["type"] == "image/jpeg")
+          || ($_FILES["file"]["type"] == "image/pjpeg")) // oude IE browsers zijn raar
+          && ($_FILES["file"]["size"] < 20000)){
+            if ($_FILES["file"]["error"] > 0){
                 echo "Error: " . $_FILES["file"]["error"] . "<br />";
             }
-            else
-            {
+            else{
                 echo "Upload: " . $_FILES["file"]["name"] . "<br />";
                 echo "Type: " . $_FILES["file"]["type"] . "<br />";
                 echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
                 echo "Will be temp stored in: " . $_FILES["file"]["tmp_name"] . "<br />";
 
                 //save file to disk & check for upload image
-                if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath))
-                {
+                if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath)){
                     echo "The file with original name ".  basename( $_FILES['file']['name']).
                     " has been uploaded in and with new file name: ". $targetPath . "<br />";
 
                     //correct
                     $urlImage = "http://websec.science.uva.nl/webdb1241/" . $targetPath;
                 }
-                else
-                {
+                else{
                     echo "There was an error uploading the file, please try again!<br />";
                     $urlImage = "";
                 }
             }
         }
-        else
-        {
+        else{
             echo "Invalid file<br />";
         }
+
         return $urlImage;
     }
+
 $dbh = null;
 ?>
 
