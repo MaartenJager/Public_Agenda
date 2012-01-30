@@ -35,22 +35,23 @@
         /* editEvent post action */
         if(isset($_POST['editEvent'])){
             echo "in editEvent <br>";
-            
-            /* FIXME: Vrijwel zelfde code als addEvent, kan nog wel opgeschoond worden */
-            $arrayCheckboxes = checkGenres();            
 
-            if (isDatumValid())
+            $beginDate = $_POST['eventBeginDate'];
+            $endDate = $_POST['eventEndDate'];
+
+            $beginDate = fixDate($beginDate);
+            $endDate = fixDate($endDate);
+
+            if (isDatumValid($beginDate, $endDate))
             {
                 //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
                 $urlImage = checkForUploadedImage();
 
                 //Convert beginDate to timestamp
-                $date = $_POST['eventBeginDate'];
                 list($dd, $mm, $yyyy) = explode('-', $date);
                 $beginDateTimeStamp = mktime($_POST['eventBeginTimeHours'], $_POST['eventBeginTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
 
                 //Convert endDate to timestamp
-                $date = $_POST['eventEndDate'];
                 list($dd, $mm, $yyyy) = explode('-', $date);
                 $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
 
@@ -88,6 +89,8 @@
                 $sth->bindParam(':id', $id);
                 $sth->execute();
 
+                $arrayCheckboxes = checkGenres();
+
                 for($i=0; $i<8; $i++)
                 {
                     if ($arrayCheckboxes[$i])
@@ -114,8 +117,6 @@
 
             $beginDate = fixDate($beginDate);
             $endDate = fixDate($endDate);
-            echo $beginDate;
-            echo $endDate;
 
             if (isDatumValid($beginDate, $endDate))
             {
