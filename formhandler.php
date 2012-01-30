@@ -108,8 +108,6 @@
 
         /* addEvent post action */
         if(isset($_POST['addEvent'])){
-            
-            $arrayCheckboxes = checkGenres();            
 
             if (isDatumValid())
             {
@@ -156,6 +154,8 @@
                 $sth->execute();
                 $row = $sth->fetch();
                 $lastEventId = $row['id'];
+
+                $arrayCheckboxes = checkGenres();
 
                 //FIXME: arraysize gebruiken
                 for($i=0; $i<8; $i++)

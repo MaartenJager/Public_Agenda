@@ -84,6 +84,7 @@
             $sth = $dbh->prepare("DELETE FROM events WHERE `id` = :id");
 
             //Prepare data
+            $id = strip_tags($id);
             $sth->bindParam(':id', $id);
             $sth->execute();
 
