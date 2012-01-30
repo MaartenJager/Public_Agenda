@@ -1,3 +1,25 @@
+<?php
+/* Fetch all events from table EVENTS */
+    require_once("inc-conf.php");
+    require("inc-dbcon.php");
+
+    $sth = $dbh->query("SELECT  events.*,
+                                users.name,
+                                users.firstName,
+                                locations.name AS locationName
+                            FROM events
+                            INNER JOIN users ON (
+                                events.createdBy = users.id
+                                )
+                            INNER JOIN locations ON (
+                                events.location = locations.id
+                                )
+                            WHERE approvedBy IS NOT NULL
+                            ORDER BY events.beginDate ASC");
+    $sth->setFetchMode(PDO::FETCH_OBJ);
+    $sth->execute();
+?>
+
                 <h1>Agenda</h1>
                 <p>Alle aankomende elementen zijn opgenomen in onze agenda. Zoekt u een bepaald evenement?
                 Gebruik dan de zoekopties rechts van de agenda.</p>
