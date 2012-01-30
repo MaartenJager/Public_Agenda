@@ -101,7 +101,7 @@
 
             <aside id="sidebar_agenda">
                 <label>Zoeken op woord</label>
-                <input type="text" id="textInputShort" name="eventName" placeholder="Naam of zoekterm">
+                <input type="text" name="eventName" placeholder="Naam of zoekterm">
 
                 <label>Zoeken op catagorie</label>
                 <div id="checkbox_list">
@@ -124,7 +124,9 @@
 
                 <div id="checkbox_below">
                     <label>Zoeken op (begin)datum</label>
+                    <p>Gebruik * als joker.</p>
                     <select name="searchDay">
+                        <option value="00">*</option>
                         <option value="01">1</option>
                         <option value="02">2</option>
                         <option value="03">3</option>
@@ -159,6 +161,7 @@
                     </select>
                     
                     <select name="searchMonth">
+                        <option value="00">*</option>
                         <option value="01">januari</option>
                         <option value="02">februari</option>
                         <option value="03">maart</option>
@@ -174,6 +177,7 @@
                     </select>
                     
                     <select name="searchYear">
+                        <option value="*">*</option>
                         <option value="2012">2012</option>
                         <option value="2013">2013</option>
                         <option value="2014">2014</option>

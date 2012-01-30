@@ -143,7 +143,7 @@ input[type="text"] {
     background: #EFEFEF;
 }
 
-textInputSmall {
+#textInputSmall {
     width: 144px;
 }
 
