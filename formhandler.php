@@ -245,7 +245,7 @@
         {
             if (checkdate($mm,$dd,$yyyy))
             {
-                $date = $ndDate;
+                $date = $endDate;
                 list($dd, $mm, $yyyy) = explode('-', $date);
                 if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy))
                 {
