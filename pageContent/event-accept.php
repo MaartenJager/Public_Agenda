@@ -23,9 +23,9 @@
         $eventsExistant = true;
     }
 ?>
-                <h1>Evenementen Accepteren</h1>
-                    <?php
-            if ($eventsExistant) {
+<h1>Evenementen Accepteren</h1>
+<?php
+    if ($eventsExistant) {
 echo <<<EOT
 <form action="sqlaction.php" method="post">
     <table>
@@ -77,10 +77,10 @@ EOT;
             echo "    </tbody>";
             echo "</table>";
             echo "<input id=\"button\" name=\"deleteEvents\" type=\"submit\" value=\"Verwijder geselecteerden\" />";
-            echo "</form>";
+            echo "</form>/n";
         }
         else
         {
-            echo "Geen nieuwe events";
+            echo "Geen nieuwe events/n";
         }
     ?>
