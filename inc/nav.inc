@@ -5,9 +5,28 @@
                 <li><a href="index.php?page=info">Info</a></li>
                 <li><a href="index.php?page=agenda">Agenda</a></li>
                 <li><a href="index.php?page=contact">Contact</a></li>
-                <li><a href="index.php?page=event-add">Evenement toevoegen</a></li>
-                <li><a href="index.php?page=event-accept">Evenementen controleren</a></li>
-                <li><a href="index.php?page=admin">Gebruikersbeheer</a></li>
+                
+                
+<?php
+if (isset( $_SESSION['accessLevel'] ))
+{
+	
+	if ($_SESSION['accessLevel'] == 1)
+	{
+		echo '         
+		<li><a href="index.php?page=event-add">Evenement toevoegen</a></li>
+';
+	}	
+	if ($_SESSION['accessLevel'] == 2)
+	{		
+		echo '
+		<li><a href="index.php?page=event-add">Evenement toevoegen</a></li>
+		<li><a href="index.php?page=event-accept">Evenementen controleren</a></li>
+		<li><a href="index.php?page=admin">Gebruikersbeheer</a></li>
+';
+	}
+}
+?>
                 <li><a href="#" onclick="toggleVisibility('loginBox');">Login</a></li>
             </ul>
         </nav>
