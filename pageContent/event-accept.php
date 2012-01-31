@@ -71,8 +71,6 @@ echo <<<EOT
             <input name="event_id$i" value="$id" type="hidden">
 EOT;
             }
-        ?>
-    <?php 
         if($eventsExistant){ 
             echo "    </tbody>";
             echo "</table>";
@@ -81,6 +79,6 @@ EOT;
         }
         else
         {
-            echo "Geen nieuwe events/n";
+            echo "            Geen nieuwe events/n";
         }
     ?>
