@@ -25,7 +25,7 @@
             echo "in try lus\n";
             
             /*** prepare the select statement ***/
-            $sth = $dbh->prepare("SELECT email, password, FROM phpro_users 
+            $sth = $dbh->prepare("SELECT email, password, FROM users 
                         WHERE email = :email AND password = :password");
                         
             echo "query voorbereid\n";
