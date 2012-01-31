@@ -17,7 +17,7 @@
     	$email = $_POST['email'];
     	$password = $_POST['password'];
     	echo $password;
-    	$password = sha1($password);
+    	//$password = sha1($password);
     	echo $password;
     	    	
     	try
