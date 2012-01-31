@@ -7,10 +7,10 @@
         /* Connect to DB */
         require("inc-dbcon.php");
         
-        $password;
-        function encryptPassword()
+        $Password = $_POST['password'];
+        function encryptPassword($password)
         {
-        	return $password = sha1(mysql_real_escape_string($_POST['password']));
+        	return $Password = sha1(mysql_real_escape_string($password));
         }
         encryptPassword();
         
