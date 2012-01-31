@@ -1,5 +1,6 @@
 
             <aside id="sidebar_agenda">
+                <form action="index.php?page=agenda&search=enabled" method="post">
                 <label>Zoeken op woord</label>
                 <input type="text" id="textInputSmall" name="eventName" placeholder="Naam of zoekterm">
 
