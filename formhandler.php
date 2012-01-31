@@ -70,7 +70,7 @@ values
 
                         $sth->execute();
 
-                        $row = $sth.fetch();
+                        $row = $sth->fetch();
                         $urlImage = $row->image;
                     }
 
