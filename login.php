@@ -8,11 +8,11 @@
 	
 	if(isset( $_SESSION['user_id'] ))
     {
-        $message = 'Users is already logged in';
+        $message = 'Users is already logged in\n';
     }
     
     else{
-        echo "user is nog niet ingelogd";
+        echo "user is nog niet ingelogd\n";
 	
     	$email = $_POST['email'];
     	$password = $_POST['password'];
@@ -56,7 +56,7 @@
         catch(Exception $e)
         {
             /*** if we are here, something has gone wrong with the database ***/
-            $message = 'We are unable to process your request. Please try again later"';
+            $message = 'We are unable to process your request. Please try again later';
         }
 	}
 	
