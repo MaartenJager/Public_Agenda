@@ -26,7 +26,7 @@
                     <table>
                         <?php
                             if ($sth->fetchColumn() > 0) {
-                                echo <<<EOT
+echo <<<EOT
                         <thead>
                             <tr>
                                 <th></th>
@@ -39,7 +39,7 @@
                         </thead>
 
                         <tbody>
-                                EOT;
+EOT;
                             }
                                 // showing the results
                                 $i=0;
