@@ -19,6 +19,7 @@
                         $page = "pageContent/home.php";
                     include $page;
                 ?>
+
             </section>
 
 <?php
