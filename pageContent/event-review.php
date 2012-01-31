@@ -135,7 +135,7 @@ if (isset( $_SESSION['accessLevel'] ))
                             <li><input name=\"genre_hiphop\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[3]){ echo "checked=\"checked\""; } echo "/> Hiphop</li>
                         </ul>
                     </div>
-                    <div id="checkbox_list">
+                    <div id=\"checkbox_list\">
                         <ul>
                             <li><input name=\"genre_blues\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[0]){ echo "checked=\"checked\""; } echo "/> Blues</li>
                             <li><input name=\"genre_classic\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[0]){ echo "checked=\"checked\""; } echo "/> Klassiek</li>
@@ -146,10 +146,10 @@ if (isset( $_SESSION['accessLevel'] ))
 
                     <div id=\"checkbox_below\">
                          <label>Voeg een afbeelding toe</label>
-                         <input type=\"file\" name=\"file\" id =\"file\" value=\""; echo $row->image; echo "\"/>
+                         <input type=\"file\" name=\"file\" id =\"file\" value=\"" . $row->image . "\"/>
                          <br />
                          <input id=\"button\" name=\"editEvent\" type=\"submit\" value=\"Accepteer\" />
-                         <input type=\"hidden\" name=\"id\" value=\""; echo $row->id; echo "\" />
+                         <input type=\"hidden\" name=\"id\" value=\"" . $row->id . "\" />
                     </div>
                 </form>
 
@@ -157,7 +157,7 @@ if (isset( $_SESSION['accessLevel'] ))
                     <form action=\"sqlaction.php\" method=\"get\">
                         <input type=\"hidden\" name=\"action\" value=\"delete\" />
                         <input type=\"hidden\" name=\"type\" value=\"event\" />
-                        <input type=\"hidden\" name=\"id\" value=\""; echo $row->id; "\" />
+                        <input type=\"hidden\" name=\"id\" value=\"" . $row->id . "\" />
                         <input id=\"button\" type=\"submit\" value=\"Verwijder\" />
                     </form>
                 </div>
