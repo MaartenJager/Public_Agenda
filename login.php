@@ -39,13 +39,15 @@
             echo "query uitgevoerd<br><br>";
 
             /*** check for a result ***/
+            print_r($sth->fetchColumn());
+            
             $accessLevel = $sth->fetchColumn();
             echo "accessLevel is:"; 
             echo $accessLevel;            
             echo "<br><br>";
 
             /*** if we have no result then fail boat ***/
-            if($user_id == false)
+            if($accessLevel == false)
             {
                     echo "Login failed<br><br>";
                     $message = 'Login Failed';
