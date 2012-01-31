@@ -1,3 +1,7 @@
+<?php
+if ($_SESSION['user_id'] == 2 || $_SESSION['user_id'] == 1)
+{
+	echo '
 <header class="pageTitle"><h1>Evenement toevoegen</h1></header>
                 <p>Wilt u het volgende formulier invullen? Alle velden, op de afbeelding na, zijn verplicht. Kies tenminste &#233;&#233;n categorie.</p>
                 <form enctype="multipart/form-data" name="event-add" action="formhandler.php"  method="post">
@@ -112,4 +116,10 @@
                          <input type="file" name="file" id ="file" />
                          <input id="button" name="addEvent" type="submit" value="Submit" />
                     </div>
-                </form>
+                </form>   
+                '
+}
+else
+{
+	echo = "no priveleges bitch";
+}
