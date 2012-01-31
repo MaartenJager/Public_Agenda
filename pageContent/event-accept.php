@@ -79,6 +79,6 @@ EOT;
         }
         else
         {
-            echo "            Geen nieuwe events/n";
+            echo "            Geen nieuwe events\n";
         }
     ?>
