@@ -18,11 +18,14 @@
                             ORDER BY events.creationDate ASC");
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
+    if ($sth->rowCount() > 0) {
+        $eventsExistant = true;
+    }
 ?>
 
 <h1>Evenementen Accepteren</h1>
     <?php
-            if ($sth->rowCount() > 0) {
+            if ($eventsExistant) {
 echo <<<EOT
 <form action="sqlaction.php" method="post">
     <table>
@@ -69,10 +72,10 @@ echo <<<EOT
 EOT;
             }
         ?>
-        </tbody>
-    </table>
     <?php 
-        if($i!=0){ 
+        if($eventsExistant){ 
+            echo "    </tbody>";
+            echo "</table>";
             echo "<input id=\"button\" name=\"deleteEvents\" type=\"submit\" value=\"Verwijder geselecteerden\" />"; 
         }
         else
