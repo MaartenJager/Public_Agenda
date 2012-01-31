@@ -40,7 +40,7 @@ if (isset( $_SESSION['accessLevel'] ))
                 <p>Hier kunt u het evenement aanpassen alvorens het goed te keuren. U kunt het evenement ook verwijderen.</p>
                 <form enctype=\"multipart/form-data\" name=\"event-add\" action=\"formhandler.php\"  method=\"post\">
                     <label>Naam evenement</label>
-                    <input type=\"text\" name=\"eventName\" value=" . $row->title . " autofocus required>
+                    <input type=\"text\" name=\"eventName\" value=\""; echo $row->title; echo "\" autofocus required>
 
                     <label>Begindatum (DD-MM-YYYY) en tijd</label>
                     <input type=\"text\" name=\"eventBeginDate\" placeholder=\"bv. 01-01-2012\" value=" . date("d-m-Y", $row->beginDate) . " required>
