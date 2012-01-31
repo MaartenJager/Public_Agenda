@@ -60,6 +60,21 @@ values
 
                     //Add to DB
                     require("inc-dbcon.php");
+
+                    if ($urlImage == "") {
+                        $sth = $dbh->prepare("SELECT * FROM events WHERE id=:id");
+
+                        //Prepare data
+                        $id = strip_tags($_POST['id']);
+                        $sth->bindParam(':id', $id);
+
+                        $sth->execute();
+
+                        $row = $sth.fetch();
+                        $urlImage = $row->image;
+                    }
+
+
                     $sth=$dbh->prepare("UPDATE events SET title=:eventName, beginDate=:beginDateTimeStamp, endDate=:endDateTimeStamp,
 location=:location, description=:description, image=:image, creationDate=:creationDate, approvedBy=:approvedBy
 WHERE id=:id");
@@ -138,7 +153,7 @@ VALUES ($id, $genreId)");
 
                     //Add to DB
                     require("inc-dbcon.php");
-                    $sth=$dbh->prepare("INSERT INTO events (title, beginDate, endDate, location, description, image, creationDate, approvedBy)
+                    $sth = $dbh->prepare("INSERT INTO events (title, beginDate, endDate, location, description, image, creationDate, approvedBy)
 VALUES
 (:eventName, :beginDateTimeStamp, :endDateTimeStamp, :location, :description, :image, :creationDate, NULL)");
 
