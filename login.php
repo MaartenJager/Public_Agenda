@@ -37,6 +37,7 @@
             /*** if we have no result then fail boat ***/
             if($user_id == false)
             {
+                    echo "Login failed\n"
                     $message = 'Login Failed';
             }
             /*** if we do have a result, all is well ***/
@@ -46,6 +47,7 @@
                     $_SESSION['user_id'] = $user_id;
 
                     /*** tell the user we are logged in ***/
+                    echo "You are now logged in\n"; 
                     $message = 'You are now logged in';
             }
 
