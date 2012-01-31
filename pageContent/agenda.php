@@ -34,15 +34,19 @@
 </script>
 
                 <h1>Agenda</h1>
-                <p>Alle aankomende elementen zijn opgenomen in onze agenda. Zoekt u een bepaald evenement?
+                <p>Alle aankomende evenementen zijn opgenomen in onze agenda. Zoekt u een bepaald evenement?
                 Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
                         // showing the results
+                        $counter = 0;
                         while($row = $sth->fetch()) {                          
-                            
+                            $counter = $counter + 1;
                             echo("<!-- Begin of item #" . $row->id . "-->\n");
-                            echo("  <div id=\"" . $row->id . "\" class=\"event\" class=\"odd\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
+                            if ($counter % 2)
+                                echo("  <div id=\"" . $row->id . "\" class=\"event-odd\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
+                            else
+                                echo("  <div id=\"" . $row->id . "\" class=\"event-even\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
                             echo("    <div class=\"date\">\n");
                             echo("              <div class=\"day\">" . date("d", $row->beginDate) . "</div>\n");
                             echo("            <div class=\"month\">" . date("F", $row->beginDate) . "</div>\n");
