@@ -25,7 +25,7 @@
                 <form action="sqlaction.php" method="post">
                     <table>
                         <?php
-                            if ($sth->fetchColumn() > 0) {
+                            if ($sth->rowCount() > 0) {
 echo <<<EOT
                         <thead>
                             <tr>
