@@ -25,6 +25,7 @@
 ?>
 <h1>Evenementen Accepteren</h1>
 <?php
+ob_start();
     if ($eventsExistant) {
 echo <<<EOT
 <form action="sqlaction.php" method="post">
@@ -61,6 +62,8 @@ echo <<<EOT
                 <td>$firstName $name</td>
                 <td>$creationDate</td>
                 <td>
+  ob_start();
+
                     <a class="button" href="sqlaction.php?id=$id&type=event&action=delete"name="deleteEvent">
                         <img src="img/btn-delete.png" title="Verwijder" alt="Verwijder" width="16" height="16">
                     </a>
@@ -85,4 +88,7 @@ EOT;
         {
             echo "                Geen nieuwe events";
         }
-    ?>
+$result = ob_get_contents();
+ob_end_clean();
+print str_replace("\n", "\t\n", "\t" . $result);
+?>
