@@ -25,7 +25,6 @@
 ?>
 <h1>Evenementen Accepteren</h1>
 <?php
-ob_start();
     if ($eventsExistant) {
 echo <<<EOT
 <form action="sqlaction.php" method="post">
@@ -88,7 +87,4 @@ EOT;
         {
             echo "                Geen nieuwe events";
         }
-$result = ob_get_contents();
-ob_end_clean();
-print str_replace("\n", "\t\n", "\t" . $result);
 ?>
