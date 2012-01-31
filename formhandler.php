@@ -9,6 +9,7 @@
 
         /* addUser post action */
         if(isset($_POST['addUser'])){
+        	$password = sha1($_POST['password']);
             try{
                 //Prepare statement
                 $sth = $dbh->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
@@ -19,7 +20,7 @@ values
                 $sth->bindParam(':name' , $_POST['name']);
                 $sth->bindParam(':firstName' , $_POST['firstName']);
                 $sth->bindParam(':email' , $_POST['email']);
-                $sth->bindParam(':password' , $_POST['password']);
+                $sth->bindParam(':password'   , $password);
                 $sth->bindParam(':accessLevel', $_POST['accessLevel']);
 
                 $sth->execute();
