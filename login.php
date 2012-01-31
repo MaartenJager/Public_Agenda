@@ -6,29 +6,20 @@
 	session_start();
 	echo "sessie gestart <br><br>";
 	
-	if(isset( $_SESSION['user_id'] ))
+	if(isset( $_SESSION['accessLevel'] ))
     {
-        echo 'Users is already logged in<br><br>';
+        echo 'Users is already logged in';
     }
     
-    else{
-        echo "user is nog niet ingelogd<br><br>";
-	
-    	$email = $_POST['email'];
-    	$password = $_POST['password'];
-    	
-    	//$password = sha1($password);
-    	echo $password;
+    else{	
+    	$email = $_POST['email'];    	
+    	$password = sha1($_POST['password']);
     	    	
     	try
-        {
-            echo "in try lus<br><br>";
-            
+        {            
             /*** prepare the select statement ***/
             $sth = $dbh->prepare("SELECT accessLevel, email, password FROM users 
                         WHERE email = :email AND password = :password");
-                        
-            echo "query voorbereid<br><br>";
 
             /*** bind the parameters ***/
             $sth->bindParam(':email', $email, PDO::PARAM_STR);
@@ -36,14 +27,10 @@
 
             /*** execute the prepared statement ***/
             $sth->execute();
-            echo "query uitgevoerd<br><br>";
-            
-            print_r($sth);
 
             /*** check for a result ***/            
             $accessLevel = $sth->fetchColumn();
             echo "accessLevel is:"; 
-            print_r($accessLevel);
             echo $accessLevel;            
             echo "<br><br>";
 
@@ -57,70 +44,20 @@
             else
             {
                     /*** set the session user_id variable ***/
-                    $_SESSION['user_id'] = $user_id;
+                    $_SESSION['accessLevel'] = $accessLevel;
 
                     /*** tell the user we are logged in ***/
                     echo "You are now logged in<br><br>"; 
                     $message = 'You are now logged in';
                     echo '<a href="http://websec.science.uva.nl/webdb1241">terug naar page</a>';
             }
-
-
         }
         catch(Exception $e)
         {
             /*** if we are here, something has gone wrong with the database ***/
-            $message = 'We are unable to process your request. Please try again later';
             echo $e;
         }
 	}
 	
-	
-	
-	
-	
-	/*
-			
-	$sth = $dbh->prepare("SELECT email, password FROM users
-	WHERE email = :email AND password = :password
-	");
-	$sth->bindParam(':email', $email);
-	$sth->bindParam(':password', $password);
-	$sth->execute();
-	
-	//er is een correcte login en password combinatie
-	if($sth->rowCount() > 0 )
-	{    
-		echo "er is een combo?<br />";
-		$_SESSION['email'] = $email;
-	}
-    /*
-	    function Logout()
-	    {
-		    session_start();
-		    unset($_SESSION['userName']);
-	    }
-        */
-
-    /*
-    SetEmail($_POST['userName']);
-    SetPassword($_POST['userPass']);
-    */
-
-
-    //CheckLogin(); 
-
-    //als combo goed is ga naar login 
-    /*
-    if(isset($_SESSION['email']))
-    {
-	    echo "user {$_SESSION['email']} loged in  ";
-    }
-    
-    else
-    {
-	    echo "niet ingelogd LUL";
-    }
-    */
     $dbh = null;
 ?>
