@@ -1,8 +1,8 @@
 <?php
-if (isset( $_SESSION['user_id'] ))
+if (isset( $_SESSION['accessLevel'] ))
 {
 	
-if (($_SESSION['user_id'] == 2) || ($_SESSION['user_id'] == 1))
+if (($_SESSION['accessLevel'] == 2) || ($_SESSION['accessLevel'] == 1))
 {
 	echo '
 <header class="pageTitle"><h1>Evenement toevoegen</h1></header>
