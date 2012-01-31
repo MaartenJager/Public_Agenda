@@ -129,18 +129,18 @@ if (isset( $_SESSION['accessLevel'] ))
                     <label>Kies de categorie&#235;n die bij het evenement horen</label>
                     <div id=\"checkbox_list\">
                         <ul>
-                            <li><input name=\"genre_pop\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[0]){ echo "checked=\"checked\""; } echo "/> Pop</li>
-                            <li><input name=\"genre_rock\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[1]){ echo "checked=\"checked\""; } echo "/> Rock</li>
-                            <li><input name=\"genre_metal\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[2]){ echo "checked=\"checked\""; } echo "/> Metal</li>
-                            <li><input name=\"genre_hiphop\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[3]){ echo "checked=\"checked\""; } echo "/> Hiphop</li>
+                            <li><input name=\"genre_pop\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[0]){ echo "checked=\"checked\""; } echo " /> Pop</li>
+                            <li><input name=\"genre_rock\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[1]){ echo "checked=\"checked\""; } echo " /> Rock</li>
+                            <li><input name=\"genre_metal\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[2]){ echo "checked=\"checked\""; } echo " /> Metal</li>
+                            <li><input name=\"genre_hiphop\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[3]){ echo "checked=\"checked\""; } echo " /> Hiphop</li>
                         </ul>
                     </div>
                     <div id=\"checkbox_list\">
                         <ul>
-                            <li><input name=\"genre_blues\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[0]){ echo "checked=\"checked\""; } echo "/> Blues</li>
-                            <li><input name=\"genre_classic\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[0]){ echo "checked=\"checked\""; } echo "/> Klassiek</li>
-                            <li><input name=\"genre_church\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[0]){ echo "checked=\"checked\""; } echo "/> Kerk</li>
-                            <li><input name=\"genre_other\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[0]){ echo "checked=\"checked\""; } echo "/> Overig</li>
+                            <li><input name=\"genre_blues\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[4]){ echo "checked=\"checked\""; } echo " /> Blues</li>
+                            <li><input name=\"genre_classic\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[5]){ echo "checked=\"checked\""; } echo " /> Klassiek</li>
+                            <li><input name=\"genre_church\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[6]){ echo "checked=\"checked\""; } echo " /> Kerk</li>
+                            <li><input name=\"genre_other\" id=\"formCheckbox\" type=\"checkbox\""; if($booleanArray[7]){ echo "checked=\"checked\""; } echo " /> Overig</li>
                         </ul>
                     </div>
 
