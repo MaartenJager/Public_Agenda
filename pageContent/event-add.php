@@ -1,4 +1,7 @@
 <?php
+if (isset( $_SESSION['user_id'] ))
+{
+	
 if ($_SESSION['user_id'] == 2 || $_SESSION['user_id'] == 1)
 {
 	echo '
@@ -118,6 +121,7 @@ if ($_SESSION['user_id'] == 2 || $_SESSION['user_id'] == 1)
                     </div>
                 </form>   
                 ';
+}
 }
 else
 {
