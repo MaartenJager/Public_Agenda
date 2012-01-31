@@ -166,5 +166,5 @@ echo '
 }
 else
 {
-	echo "no priveleges bitch"
+	echo "no priveleges bitch";
 }

@@ -23,8 +23,8 @@ echo '
 
 <script language="JavaScript">
     function makeVisible() {
-        document.getElementById('addUser').style.display = 'block';
-        document.getElementById('addUserButton').style.display = 'none';
+        document.getElementById("addUser").style.display = "block";
+        document.getElementById("addUserButton").style.display = "none";
     }
 </script>
 
