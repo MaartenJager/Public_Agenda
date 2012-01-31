@@ -32,7 +32,7 @@
                 {
                     $sidebar = "inc/sidebar.inc";
                 }
-                $footer = "inc/footer.inc");
+                $footer = "inc/footer.inc";
                 include $sidebar;
                 include $footer
 ?>
