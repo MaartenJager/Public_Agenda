@@ -26,7 +26,7 @@
                     <table>
                         <?php
                             if ($sth->fetchColumn() > 0) {
-                                echo <<< EOT
+                                echo <<<EOT
                         <thead>
                             <tr>
                                 <th></th>
