@@ -59,8 +59,9 @@ values
                 if ($beginDateTimeStamp<$endDateTimeStamp){
 
                     //Add to DB
-                    require("inc-dbcon.php");
+                    //require("inc-dbcon.php");
 
+                    //Bij editen geéń nieuw plaatje geupload
                     if ($urlImage == "") {
                         $sth = $dbh->prepare("SELECT * FROM events WHERE id=:id");
 
@@ -68,9 +69,15 @@ values
                         $id = strip_tags($_POST['id']);
                         $sth->bindParam(':id', $id);
 
+                        echo "DBG: id:" . $id . "<br>";
+
                         $sth->execute();
 
                         $row = $sth->fetch();
+
+                        //DEBUG
+                        print_r($row);
+                        
                         $urlImage = $row->image;
                     }
 
