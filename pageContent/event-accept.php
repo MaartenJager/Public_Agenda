@@ -22,29 +22,54 @@
 
 <h1>Evenementen Accepteren</h1>
 
-                <form action="sqlaction.php" method="post">
-                    <table>
-                        <?php
-                            if ($sth->rowCount() > 0) {
+<form action="sqlaction.php" method="post">
+    <table>
+        <?php
+            if ($sth->rowCount() > 0) {
 echo <<<EOT
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Titel</th>
-                                <th>Locatie</th>
-                                <th>Door</th>
-                                <th>Aanmaakdatum</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Titel</th>
+                <th>Locatie</th>
+                <th>Door</th>
+                <th>Aanmaakdatum</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
 EOT;
-                            }
-                                // showing the results
-                                $i=0;
-                                while($row = $sth->fetch() ){
-                                    $i++;
+            }
+            // showing the results
+            $i=0;
+            while($row = $sth->fetch() ){
+                $i++;
+                $title = $row->title;
+                $locationName = $row->locationName;
+                $firstName = $row->firstName;
+                $name = $row->name;
+                $creationDate = date('d-m-Y G:i', $row->creationDate);
+                $id = $row->id;
+echo <<<EOT
+<tr>\n
+  <td id="checkboxTable"><input name="deleteSelection$i" type="checkbox" S/></td>\n
+  <td>$title</td>\n
+  <td>$locationName</td>\n
+  <td>$firstName $name</td>\n
+  <td>$creationDate</td>\n
+  <td> \n
+      <a class="button" href="sqlaction.php?id=$id&type=event&action=delete"name="deleteEvent"> \n
+          <img src="img/btn-delete.png" title="Verwijder" alt="Verwijder" width="16" height="16">\n
+      </a> \n
+      <a class="button" href="index.php?page=event-review&id=$id"> \n
+          <img src="img/btn-edit.png" title="Aanpassen" alt="Aanpassen" width="16" height="16">\n
+      </a> \n
+  </td>\n
+</tr>\n
+<input name="event_id$i" value="$id" type="hidden">
+EOT;
+
+/*
                                     echo "<tr>\n";
                                     echo "  <td id=\"checkboxTable\"><input name=\"deleteSelection" . $i . "\" type=\"checkbox\" S/></td>\n";
                                     echo "  <td>" . $row->title . "</td>\n";
@@ -61,6 +86,7 @@ EOT;
                                     echo "  </td>\n";
                                     echo "</tr>\n";
                                     echo "<input name=\"event_id" . $i . "\" value=\"" . $row->id . "\" type=\"hidden\">";
+*/
                                 }
                             ?>
                         </tbody>
