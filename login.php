@@ -37,7 +37,7 @@
             /*** if we have no result then fail boat ***/
             if($user_id == false)
             {
-                    echo "Login failed\n"
+                    echo "Login failed\n";
                     $message = 'Login Failed';
             }
             /*** if we do have a result, all is well ***/
