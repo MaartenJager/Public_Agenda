@@ -8,7 +8,7 @@
 	
 	if(isset( $_SESSION['user_id'] ))
     {
-        $message = 'Users is already logged in<br><br>';
+        echo 'Users is already logged in<br><br>';
     }
     
     else{
@@ -25,14 +25,14 @@
             echo "in try lus<br><br>";
             
             /*** prepare the select statement ***/
-            $sth = $dbh->prepare("SELECT email, password, FROM users 
+            $sth = $dbh->prepare("SELECT email, password FROM users 
                         WHERE email = :email AND password = :password");
                         
             echo "query voorbereid<br><br>";
 
             /*** bind the parameters ***/
             $sth->bindParam(':email', $email, PDO::PARAM_STR);
-            $sth->bindParam(':password', $password, PDO::PARAM_STR, 40);
+            $sth->bindParam(':password', $password, PDO::PARAM_STR);
 
             /*** execute the prepared statement ***/
             $sth->execute();
