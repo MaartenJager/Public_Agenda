@@ -38,11 +38,16 @@
                 Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
+                        $counter = 0;
                         // showing the results
                         while($row = $sth->fetch()) {
-                            
+                            $counter = $counter + 1;
                             echo("<!-- Begin of item #" . $row->id . "-->\n");
-                            echo(" <div id=\"" . $row->id . "\" class=\"event\" class=\"odd\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
+                            echo(" <div id=\"" . $row->id . "\" class=\"event\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
+                            if ($counter % 2)
+                                echo(" <div class=\"odd\">\n");
+                            else
+                                echo(" <div class=\"even\">\n");
                             echo(" <div class=\"date\">\n");
                             echo(" <div class=\"day\">" . date("d", $row->beginDate) . "</div>\n");
                             echo(" <div class=\"month\">" . date("F", $row->beginDate) . "</div>\n");
@@ -73,6 +78,7 @@
                             echo(" </div>\n");
                             echo(" </div>\n");
                             echo(" <img itemprop=\"photo\" src=\"". $row->image . "\"/>\n");
+                            echo(" </div>\n");
                             echo(" </div>\n");
                             echo("<!-- End of item -->\n");
                         }
