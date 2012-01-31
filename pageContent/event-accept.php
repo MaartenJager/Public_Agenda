@@ -18,6 +18,7 @@
                             ORDER BY events.creationDate ASC");
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
+    $eventsExistant = false;
     if ($sth->rowCount() > 0) {
         $eventsExistant = true;
     }
