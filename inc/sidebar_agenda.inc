@@ -86,4 +86,5 @@
 
                     <input id="button" name="search" type="search" value="Zoek" />
                 </div>
+                </form>
             </aside>
