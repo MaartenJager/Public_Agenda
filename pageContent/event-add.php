@@ -2,7 +2,7 @@
 if (isset( $_SESSION['user_id'] ))
 {
 	
-if ($_SESSION['user_id'] == 2 || $_SESSION['user_id'] == 1)
+if (($_SESSION['user_id'] == 2) || ($_SESSION['user_id'] == 1))
 {
 	echo '
 <header class="pageTitle"><h1>Evenement toevoegen</h1></header>
