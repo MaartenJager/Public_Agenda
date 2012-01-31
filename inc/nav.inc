@@ -8,24 +8,21 @@
                 
                 
 <?php
+session_start();
 if (isset( $_SESSION['accessLevel'] ))
 {
 	
 	if ($_SESSION['accessLevel'] == 1)
 	{
-		echo "accesLvl 1";
-		//echo '<li><a href="index.php?page=event-add">Evenement toevoegen</a></li>';
+		echo '<li><a href="index.php?page=event-add">Evenement toevoegen</a></li>';
 	}	
 	if ($_SESSION['accessLevel'] == 2)
 	{		
-		echo "accesLvl 2";
-		/*
 		echo '
 		<li><a href="index.php?page=event-add">Evenement toevoegen</a></li>
 		<li><a href="index.php?page=event-accept">Evenementen controleren</a></li>
 		<li><a href="index.php?page=admin">Gebruikersbeheer</a></li>
 ';
-		*/
 	}
 }
 ?>
