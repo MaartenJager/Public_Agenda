@@ -117,7 +117,7 @@ if ($_SESSION['user_id'] == 2 || $_SESSION['user_id'] == 1)
                          <input id="button" name="addEvent" type="submit" value="Submit" />
                     </div>
                 </form>   
-                '
+                ';
 }
 else
 {
