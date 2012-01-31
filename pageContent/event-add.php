@@ -121,5 +121,5 @@ if ($_SESSION['user_id'] == 2 || $_SESSION['user_id'] == 1)
 }
 else
 {
-	echo = "no priveleges bitch";
+	echo "no priveleges bitch";
 }
