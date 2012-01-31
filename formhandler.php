@@ -26,7 +26,7 @@
                 $sth->bindParam(':name'       , $_POST['name']);
                 $sth->bindParam(':firstName'  , $_POST['firstName']);
                 $sth->bindParam(':email'      , $_POST['email']);
-                $sth->bindParam(':password'   , $password;
+                $sth->bindParam(':password'   , $password);
                 $sth->bindParam(':accessLevel', $_POST['accessLevel']);
 
                 $sth->execute();
