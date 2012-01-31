@@ -57,7 +57,7 @@ echo <<<EOT
             <tr>
                 <td id="checkboxTable"><input name="deleteSelection$i" type="checkbox" S/></td>
                 <td>$title</td>
-            <td>$locationName</td>
+                <td>$locationName</td>
                 <td>$firstName $name</td>
                 <td>$creationDate</td>
                 <td>
@@ -73,10 +73,12 @@ echo <<<EOT
 EOT;
             }
         if($eventsExistant){ 
-            echo "    </tbody>";
-            echo "</table>";
-            echo "<input id=\"button\" name=\"deleteEvents\" type=\"submit\" value=\"Verwijder geselecteerden\" />";
-            echo "</form>\n";
+echo <<<EOT
+    </tbody>
+</table>
+<input id="button" name="deleteEvents" type="submit" value="Verwijder geselecteerden" />
+</form>
+EOT;
         }
         else
         {
