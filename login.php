@@ -62,6 +62,7 @@
         {
             /*** if we are here, something has gone wrong with the database ***/
             $message = 'We are unable to process your request. Please try again later';
+            echo $e;
         }
 	}
 	
