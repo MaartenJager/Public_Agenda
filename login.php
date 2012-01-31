@@ -4,15 +4,15 @@
 	require("inc-dbcon.php");
 
 	session_start();
-	echo "sessie gestart \n";
+	echo "sessie gestart <br><br>";
 	
 	if(isset( $_SESSION['user_id'] ))
     {
-        $message = 'Users is already logged in\n';
+        $message = 'Users is already logged in<br><br>';
     }
     
     else{
-        echo "user is nog niet ingelogd\n";
+        echo "user is nog niet ingelogd<br><br>";
 	
     	$email = $_POST['email'];
     	$password = $_POST['password'];
@@ -22,13 +22,13 @@
     	    	
     	try
         {
-            echo "in try lus\n";
+            echo "in try lus<br><br>";
             
             /*** prepare the select statement ***/
             $sth = $dbh->prepare("SELECT email, password, FROM users 
                         WHERE email = :email AND password = :password");
                         
-            echo "query voorbereid\n";
+            echo "query voorbereid<br><br>";
 
             /*** bind the parameters ***/
             $sth->bindParam(':email', $email, PDO::PARAM_STR);
@@ -36,7 +36,7 @@
 
             /*** execute the prepared statement ***/
             $sth->execute();
-            echo "query uitgevoerd\n";
+            echo "query uitgevoerd<br><br>";
 
             /*** check for a result ***/
             $user_id = $sth->fetchColumn();
@@ -44,7 +44,7 @@
             /*** if we have no result then fail boat ***/
             if($user_id == false)
             {
-                    echo "Login failed\n";
+                    echo "Login failed<br><br>";
                     $message = 'Login Failed';
             }
             /*** if we do have a result, all is well ***/
@@ -54,7 +54,7 @@
                     $_SESSION['user_id'] = $user_id;
 
                     /*** tell the user we are logged in ***/
-                    echo "You are now logged in\n"; 
+                    echo "You are now logged in<br><br>"; 
                     $message = 'You are now logged in';
             }
 
