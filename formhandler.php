@@ -37,8 +37,8 @@ values
         if(isset($_POST['editEvent'])){
             echo "in editEvent <br>";
 
-            $beginDate = $_POST['eventBeginDate'];
-            $endDate = $_POST['eventEndDate'];
+            $beginDate = strip_tags($_POST['eventBeginDate']);
+            $endDate = strip_tags($_POST['eventEndDate']);
 
             $beginDate = replaceSlashes($beginDate);
             $endDate = replaceSlashes($endDate);

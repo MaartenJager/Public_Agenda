@@ -4,7 +4,7 @@
     require("inc-dbcon.php");
 
     $sth = $dbh->prepare("SELECT * FROM events WHERE id=:id");
-    $id = strip_html($_GET['id']);
+    $id = strip_tags($_GET['id']);
     $sth->bindParam(':id', $id);
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
