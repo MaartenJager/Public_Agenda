@@ -16,30 +16,33 @@
 	
     	$email = $_POST['email'];
     	$password = $_POST['password'];
-    	echo $password;
-    	//$password = sha1($password);
-    	echo $password;
+    	
+    	$password = sha1($password);
+    	echo $paassword;
     	    	
     	try
         {
             echo "in try lus<br><br>";
             
             /*** prepare the select statement ***/
-            $sth = $dbh->prepare("SELECT email, password FROM users 
+            $sth = $dbh->prepare("SELECT accessLevel, email, password FROM users 
                         WHERE email = :email AND password = :password");
                         
             echo "query voorbereid<br><br>";
 
             /*** bind the parameters ***/
             $sth->bindParam(':email', $email, PDO::PARAM_STR);
-            $sth->bindParam(':password', $password, PDO::PARAM_STR);
+            $sth->bindParam(':password', $password, PDO::PARAM_STR, 40);
 
             /*** execute the prepared statement ***/
             $sth->execute();
             echo "query uitgevoerd<br><br>";
 
             /*** check for a result ***/
-            $user_id = $sth->fetchColumn();
+            $accessLevel = $sth->fetchColumn();
+            echo "accessLevel is:" 
+            echo $accessLevel;            
+            echo "<br><br>";
 
             /*** if we have no result then fail boat ***/
             if($user_id == false)
