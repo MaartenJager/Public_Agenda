@@ -32,7 +32,7 @@
 
             /*** bind the parameters ***/
             $sth->bindParam(':email', $email, PDO::PARAM_STR);
-            $sth->bindParam(':password', $password, PDO::PARAM_STR, 40);
+            $sth->bindParam(':password', $password, PDO::PARAM_STR);
 
             /*** execute the prepared statement ***/
             $sth->execute();
