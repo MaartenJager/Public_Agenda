@@ -8,7 +8,7 @@
 	
 	if(isset( $_SESSION['user_id'] ))
     {
-        $message = 'Users is already logged in<br><br>';
+        echo 'Users is already logged in<br><br>';
     }
     
     else{
