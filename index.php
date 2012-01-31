@@ -19,7 +19,6 @@
                     include $page;
                 ?>
             </section>
-            
             <?php
                 if (isset($_GET['page'])) {
                     $sidebar = $_GET['page'];
