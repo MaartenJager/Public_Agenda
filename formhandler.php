@@ -5,12 +5,12 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         /* Connect to DB */
-        require("inc-dbcon.php");
-        
+        require("inc-dbcon.php"); 
         
         /* addUser post action */
         if(isset($_POST['addUser'])){
             try{
+            	$password = sha1($_POST['password']);
                 //Prepare statement
                 $sth = $dbh->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
                     values
@@ -20,7 +20,7 @@
                 $sth->bindParam(':name'       , $_POST['name']);
                 $sth->bindParam(':firstName'  , $_POST['firstName']);
                 $sth->bindParam(':email'      , $_POST['email']);
-                $sth->bindParam(':password'   , sha1($_POST['password']));
+                $sth->bindParam(':password'   , $password);
                 $sth->bindParam(':accessLevel', $_POST['accessLevel']);
 
                 $sth->execute();
