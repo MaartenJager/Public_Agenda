@@ -44,9 +44,9 @@
                             $counter = $counter + 1;
                             echo("<!-- Begin of item #" . $row->id . "-->\n");
                             if ($counter % 2)
-                                echo("  <div id=\"" . $row->id . "\" class=\"event-odd\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
+                                echo("  <div id=\"" . $row->id . "\" class=\"event\" class=\"odd\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
                             else
-                                echo("  <div id=\"" . $row->id . "\" class=\"event-even\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
+                                echo("  <div id=\"" . $row->id . "\" class=\"event\" class=\"even\" itemscope itemtype=\"http://data-vocabulary.org/Event\">\n");
                             echo("    <div class=\"date\">\n");
                             echo("              <div class=\"day\">" . date("d", $row->beginDate) . "</div>\n");
                             echo("            <div class=\"month\">" . date("F", $row->beginDate) . "</div>\n");
