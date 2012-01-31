@@ -74,10 +74,11 @@ EOT;
             }
         if($eventsExistant){ 
 echo <<<EOT
-    </tbody>
-</table>
-<input id="button" name="deleteEvents" type="submit" value="Verwijder geselecteerden" />
-</form>
+
+            </tbody>
+        </table>
+        <input id="button" name="deleteEvents" type="submit" value="Verwijder geselecteerden" />
+    </form>
 EOT;
         }
         else
