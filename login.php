@@ -9,7 +9,9 @@
 	if(isset( $_SESSION['accessLevel'] ))
     {
         echo 'Users is already logged in';
-    }
+        echo $_SESSION['accessLevel'];
+        
+    } 
     
     else{	
     	$email = $_POST['email'];    	
@@ -49,7 +51,6 @@
                     /*** tell the user we are logged in ***/
                     echo "You are now logged in<br><br>"; 
                     $message = 'You are now logged in';
-                    echo '<a href="http://websec.science.uva.nl/webdb1241">terug naar page</a>';
             }
         }
         catch(Exception $e)
