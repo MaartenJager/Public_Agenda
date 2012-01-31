@@ -77,7 +77,7 @@ EOT;
             echo "    </tbody>";
             echo "</table>";
             echo "<input id=\"button\" name=\"deleteEvents\" type=\"submit\" value=\"Verwijder geselecteerden\" />";
-            echo "</form>/n";
+            echo "</form>\n";
         }
         else
         {
