@@ -90,5 +90,5 @@ EOT;
         }
 $result = ob_get_contents();
 ob_end_clean();
-print str_replace("\n", "                \n", "\n" . $result);
+print str_replace("\n", "\t\n", "\t" . $result);
 ?>
