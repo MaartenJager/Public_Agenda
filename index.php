@@ -3,10 +3,11 @@
     <head>
         <?php require_once("inc/header.inc"); ?>
     </head>
-    
+
     <body>
         <div id="header"></div>
         <?php require_once("inc/nav.inc"); ?>
+
         <div id="container">
             <section id="main">
                 <?php
