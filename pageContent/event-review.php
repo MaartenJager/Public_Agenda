@@ -26,6 +26,15 @@
         $booleanArray[$tempInt] = TRUE;
     }
 ?>
+<?php
+session_start();
+if (isset( $_SESSION['accessLevel'] ))
+{
+	
+if ($_SESSION['accessLevel'] == 2)
+{
+
+echo '
 
 <h1>Evenement bewerken</h1>
                 <p>Hier kunt u het evenement aanpassen alvorens het goed te keuren. U kunt het evenement ook verwijderen.</p>
@@ -152,3 +161,10 @@
                         <input id="button" type="submit" value="Verwijder" />
                     </form>
                 </div>
+';
+}
+}
+else
+{
+	echo "no priveleges bitch"
+}

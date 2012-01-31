@@ -7,6 +7,19 @@
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
 ?>
+<?php
+session_start();
+if (isset( $_SESSION['accessLevel'] ))
+{
+	
+if ($_SESSION['accessLevel'] == 2)
+{
+
+echo '
+
+
+
+
 
 <script language="JavaScript">
     function makeVisible() {
@@ -86,3 +99,11 @@
                         <input id="button" name="addUser" type="submit" value="Voeg gebruiker toe">
                     </form>
                 </div>
+                
+';
+}
+}
+else
+{
+	echo "no priveleges bitch";
+}
