@@ -20,9 +20,13 @@
     	    	
     	try
         {
+            echo "in try lus\n";
+            
             /*** prepare the select statement ***/
             $sth = $dbh->prepare("SELECT email, password, FROM phpro_users 
                         WHERE email = :email AND password = :password");
+                        
+            echo "query voorbereid\n";
 
             /*** bind the parameters ***/
             $sth->bindParam(':email', $email, PDO::PARAM_STR);
@@ -30,6 +34,7 @@
 
             /*** execute the prepared statement ***/
             $sth->execute();
+            echo "query uitgevoerd\n";
 
             /*** check for a result ***/
             $user_id = $sth->fetchColumn();
