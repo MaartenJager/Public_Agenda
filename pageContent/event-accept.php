@@ -24,6 +24,9 @@
 
                 <form action="sqlaction.php" method="post">
                     <table>
+                        <?php
+                            if ($sth->fetchColumn() > 0) {
+                                echo <<< EOT
                         <thead>
                             <tr>
                                 <th></th>
@@ -36,7 +39,8 @@
                         </thead>
 
                         <tbody>
-                            <?php
+                                EOT;
+                            }
                                 // showing the results
                                 $i=0;
                                 while($row = $sth->fetch() ){
