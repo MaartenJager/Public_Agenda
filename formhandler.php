@@ -78,7 +78,7 @@ values
                         //DEBUG
                         print_r($row);
                         
-                        $urlImage = $row->image;
+                        $urlImage = $row['image'];
                     }
 
 
