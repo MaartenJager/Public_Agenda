@@ -1,4 +1,6 @@
 <?php
+    echo $_SESSION['accessLevel'];
+
     if (isset( $_SESSION['accessLevel'] )){
     	echo "accessLevel is set";
     	
