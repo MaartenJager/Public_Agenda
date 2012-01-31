@@ -6,7 +6,6 @@
                 <label>Zoeken op catagorie</label>
                 <div id="checkbox_list">
                     <ul>
-                        <li><input name="genre_all" id="formCheckbox" type="checkbox" checked="checked" /> Alle</li>
                         <li><input name="genre_pop" id="formCheckbox" type="checkbox" /> Pop</li>
                         <li><input name="genre_rock" id="formCheckbox" type="checkbox" /> Rock</li>
                         <li><input name="genre_metal" id="formCheckbox" type="checkbox" /> Metal</li>
@@ -59,7 +58,7 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
-                    
+
                     <select name="searchMonth">
                         <option value="00">*</option>
                         <option value="01">januari</option>
@@ -75,7 +74,7 @@
                         <option value="11">november</option>
                         <option value="12">december</option>
                     </select>
-                    
+
                     <select name="searchYear">
                         <option value="*">*</option>
                         <option value="2012">2012</option>
@@ -83,5 +82,8 @@
                         <option value="2014">2014</option>
                         <option value="2015">2015</option>
                     </select>
+                </div>
+                <div>
+                    <input id="button" name="search" type="search" value="Zoek" />
                 </div>
             </aside>
