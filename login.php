@@ -17,7 +17,7 @@
     	$email = $_POST['email'];
     	$password = $_POST['password'];
     	
-    	$password = sha1($password);
+    	//$password = sha1($password);
     	echo $password;
     	    	
     	try
@@ -38,7 +38,7 @@
             $sth->execute();
             echo "query uitgevoerd<br><br>";
             
-            print_r(sth);
+            print_r($sth);
 
             /*** check for a result ***/            
             $accessLevel = $sth->fetchColumn();
