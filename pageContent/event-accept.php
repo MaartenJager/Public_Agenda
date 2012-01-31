@@ -69,14 +69,15 @@ echo <<<EOT
                     </a>
                 </td>
             </tr>
-            <input name="event_id$i" value="$id" type="hidden">
+        <input name="event_id$i" value="$id" type="hidden">
 EOT;
             }
         if($eventsExistant){ 
 echo <<<EOT
-    </tbody>
-</table>
-<input id="button" name="deleteEvents" type="submit" value="Verwijder geselecteerden" />
+
+        </tbody>
+    </table>
+    <input id="button" name="deleteEvents" type="submit" value="Verwijder geselecteerden" />
 </form>
 EOT;
         }
