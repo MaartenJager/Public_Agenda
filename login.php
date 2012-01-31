@@ -18,7 +18,7 @@
     	$password = $_POST['password'];
     	
     	$password = sha1($password);
-    	echo $paassword;
+    	echo $password;
     	    	
     	try
         {
