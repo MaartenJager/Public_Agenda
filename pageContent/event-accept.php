@@ -51,53 +51,34 @@ EOT;
                 $creationDate = date('d-m-Y G:i', $row->creationDate);
                 $id = $row->id;
 echo <<<EOT
-<tr>\n
-  <td id="checkboxTable"><input name="deleteSelection$i" type="checkbox" S/></td>\n
-  <td>$title</td>\n
-  <td>$locationName</td>\n
-  <td>$firstName $name</td>\n
-  <td>$creationDate</td>\n
-  <td> \n
-      <a class="button" href="sqlaction.php?id=$id&type=event&action=delete"name="deleteEvent"> \n
-          <img src="img/btn-delete.png" title="Verwijder" alt="Verwijder" width="16" height="16">\n
-      </a> \n
-      <a class="button" href="index.php?page=event-review&id=$id"> \n
-          <img src="img/btn-edit.png" title="Aanpassen" alt="Aanpassen" width="16" height="16">\n
-      </a> \n
-  </td>\n
-</tr>\n
-<input name="event_id$i" value="$id" type="hidden">
+            <tr>\n
+                <td id="checkboxTable"><input name="deleteSelection$i" type="checkbox" S/></td>\n
+                <td>$title</td>\n
+              <td>$locationName</td>\n
+                <td>$firstName $name</td>\n
+                <td>$creationDate</td>\n
+                <td> \n
+                    <a class="button" href="sqlaction.php?id=$id&type=event&action=delete"name="deleteEvent"> \n
+                        <img src="img/btn-delete.png" title="Verwijder" alt="Verwijder" width="16" height="16">\n
+                    </a> \n
+                    <a class="button" href="index.php?page=event-review&id=$id"> \n
+                        <img src="img/btn-edit.png" title="Aanpassen" alt="Aanpassen" width="16" height="16">\n
+                    </a> \n
+                </td>\n
+            </tr>\n
+            <input name="event_id$i" value="$id" type="hidden">
 EOT;
-
-/*
-                                    echo "<tr>\n";
-                                    echo "  <td id=\"checkboxTable\"><input name=\"deleteSelection" . $i . "\" type=\"checkbox\" S/></td>\n";
-                                    echo "  <td>" . $row->title . "</td>\n";
-                                    echo "  <td>" . $row->locationName . "</td>\n";
-                                    echo "  <td>" . $row->firstName . " " . $row->name . "</td>\n";
-                                    echo "  <td>" . date('d-m-Y G:i', $row->creationDate) . "</td>\n";
-                                    echo "  <td> \n";
-                                    echo "      <a class=\"button\" href=\"sqlaction.php?id=".$row->id."&type=event&action=delete\"name=\"deleteEvent\"> \n";
-                                    echo "          <img src=\"img/btn-delete.png\" title=\"Verwijder\" alt=\"Verwijder\" width=\"16\" height=\"16\">\n";
-                                    echo "      </a> \n";
-                                    echo "      <a class=\"button\" href=\"index.php?page=event-review&id=".$row->id."\"> \n";
-                                    echo "          <img src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\">\n";
-                                    echo "      </a> \n";
-                                    echo "  </td>\n";
-                                    echo "</tr>\n";
-                                    echo "<input name=\"event_id" . $i . "\" value=\"" . $row->id . "\" type=\"hidden\">";
-*/
-                                }
-                            ?>
-                        </tbody>
-                    </table>
-                    <?php 
-if($i!=0){ 
-    echo "<input id=\"button\" name=\"deleteEvents\" type=\"submit\" value=\"Verwijder geselecteerden\" />"; 
-}
-else
-{
-    echo "Geen nieuwe events";
-}
-?>
-                </form>
+            }
+        ?>
+        </tbody>
+    </table>
+    <?php 
+        if($i!=0){ 
+            echo "<input id=\"button\" name=\"deleteEvents\" type=\"submit\" value=\"Verwijder geselecteerden\" />"; 
+        }
+        else
+        {
+            echo "Geen nieuwe events";
+        }
+    ?>
+</form>
