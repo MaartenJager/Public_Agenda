@@ -84,7 +84,7 @@
                         <option value="2015">2015</option>
                     </select>
 
-                    <input id="button" name="search" type="search" value="Zoek" />
+                    <input id="button" name="search" type="submit" value="Zoek" />
                 </div>
                 </form>
             </aside>
