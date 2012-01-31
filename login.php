@@ -40,7 +40,7 @@
 
             /*** check for a result ***/
             $accessLevel = $sth->fetchColumn();
-            echo "accessLevel is:" 
+            echo "accessLevel is:"; 
             echo $accessLevel;            
             echo "<br><br>";
 
