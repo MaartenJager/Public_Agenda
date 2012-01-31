@@ -29,10 +29,13 @@
                         $sidebar = "inc/sidebar.inc";
                 }
                 else
+                {
                     $sidebar = "inc/sidebar.inc";
-                    include $sidebar;
-            ?>
-            <?php require_once("inc/footer.inc"); ?>
+                }
+                $footer = "inc/footer.inc");
+                include $sidebar;
+                include $footer
+?>
         </div>
     </body>
 </html>
