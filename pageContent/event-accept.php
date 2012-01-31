@@ -61,8 +61,6 @@ echo <<<EOT
                 <td>$firstName $name</td>
                 <td>$creationDate</td>
                 <td>
-  ob_start();
-
                     <a class="button" href="sqlaction.php?id=$id&type=event&action=delete"name="deleteEvent">
                         <img src="img/btn-delete.png" title="Verwijder" alt="Verwijder" width="16" height="16">
                     </a>
