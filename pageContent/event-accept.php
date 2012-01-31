@@ -21,12 +21,11 @@
 ?>
 
 <h1>Evenementen Accepteren</h1>
-
-<form action="sqlaction.php" method="post">
-    <table>
-        <?php
+    <?php
             if ($sth->rowCount() > 0) {
 echo <<<EOT
+<form action="sqlaction.php" method="post">
+    <table>
         <thead>
             <tr>
                 <th></th>
