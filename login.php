@@ -37,12 +37,13 @@
             /*** execute the prepared statement ***/
             $sth->execute();
             echo "query uitgevoerd<br><br>";
-
-            /*** check for a result ***/
-            print_r($sth->fetchColumn());
             
+            print_r(sth);
+
+            /*** check for a result ***/            
             $accessLevel = $sth->fetchColumn();
             echo "accessLevel is:"; 
+            print_r($accessLevel);
             echo $accessLevel;            
             echo "<br><br>";
 
