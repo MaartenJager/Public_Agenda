@@ -7,11 +7,12 @@
         /* Connect to DB */
         require("inc-dbcon.php");
         
-        
+        $password;
         function encryptPassword()
         {
-        	return sha1(mysql_real_escape_string($_POST['password']));
+        	return $password = sha1(mysql_real_escape_string($_POST['password']));
         }
+        encryptPassword();
         
         /* addUser post action */
         if(isset($_POST['addUser'])){
@@ -25,7 +26,7 @@
                 $sth->bindParam(':name'       , $_POST['name']);
                 $sth->bindParam(':firstName'  , $_POST['firstName']);
                 $sth->bindParam(':email'      , $_POST['email']);
-                $sth->bindParam(':password'   , encryptPassword());
+                $sth->bindParam(':password'   , $password;
                 $sth->bindParam(':accessLevel', $_POST['accessLevel']);
 
                 $sth->execute();
