@@ -69,8 +69,7 @@ values
                         $id = strip_tags($_POST['id']);
                         $sth->bindParam(':id', $id);
 
-                        echo "DBG: id:" . $id . "<br>";
-
+                        $sth->setFetchMode(PDO::FETCH_OBJ);
                         $sth->execute();
 
                         $row = $sth->fetch();
@@ -78,7 +77,7 @@ values
                         //DEBUG
                         print_r($row);
                         
-                        $urlImage = $row['image'];
+                        $urlImage = $row->image;
                     }
 
 
