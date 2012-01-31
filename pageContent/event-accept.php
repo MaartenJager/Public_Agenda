@@ -53,21 +53,22 @@ EOT;
                 $creationDate = date('d-m-Y G:i', $row->creationDate);
                 $id = $row->id;
 echo <<<EOT
-            <tr>\n
-                <td id="checkboxTable"><input name="deleteSelection$i" type="checkbox" S/></td>\n
-                <td>$title</td>\n
-              <td>$locationName</td>\n
-                <td>$firstName $name</td>\n
-                <td>$creationDate</td>\n
-                <td> \n
-                    <a class="button" href="sqlaction.php?id=$id&type=event&action=delete"name="deleteEvent"> \n
-                        <img src="img/btn-delete.png" title="Verwijder" alt="Verwijder" width="16" height="16">\n
-                    </a> \n
-                    <a class="button" href="index.php?page=event-review&id=$id"> \n
-                        <img src="img/btn-edit.png" title="Aanpassen" alt="Aanpassen" width="16" height="16">\n
-                    </a> \n
-                </td>\n
-            </tr>\n
+
+            <tr>
+                <td id="checkboxTable"><input name="deleteSelection$i" type="checkbox" S/></td>
+                <td>$title</td>
+            <td>$locationName</td>
+                <td>$firstName $name</td>
+                <td>$creationDate</td>
+                <td>
+                    <a class="button" href="sqlaction.php?id=$id&type=event&action=delete"name="deleteEvent">
+                        <img src="img/btn-delete.png" title="Verwijder" alt="Verwijder" width="16" height="16">
+                    </a>
+                    <a class="button" href="index.php?page=event-review&id=$id">
+                        <img src="img/btn-edit.png" title="Aanpassen" alt="Aanpassen" width="16" height="16">
+                    </a>
+                </td>
+            </tr>
             <input name="event_id$i" value="$id" type="hidden">
 EOT;
             }
