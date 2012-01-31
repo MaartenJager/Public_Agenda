@@ -62,7 +62,7 @@ values
                     require("inc-dbcon.php");
 
                     if ($urlImage == "") {
-                        $sth = $dbh->prepare("SELECT * FROM events WHERE id=:id");
+                        $sth = $dbh->prepare("SELECT FROM events WHERE id=:id");
 
                         //Prepare data
                         $id = strip_tags($_POST['id']);
