@@ -82,8 +82,7 @@
                         <option value="2014">2014</option>
                         <option value="2015">2015</option>
                     </select>
-                </div>
-                <div>
+
                     <input id="button" name="search" type="search" value="Zoek" />
                 </div>
             </aside>
