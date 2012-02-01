@@ -39,7 +39,7 @@
                     }
                     else{
                         echo "<h1>Oeps...</h1>";
-                        echo "<p><404 - Opgevraagde pagina bestaat niet</p>";
+                        echo "<p>404 - Opgevraagde pagina bestaat niet</p>";
                     }
                         
                 ?>
