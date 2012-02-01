@@ -15,7 +15,7 @@
             $wordSearch = true;
         }
         if(isset($_POST['searchYear']) && $_POST['searchYear']!='*'){
-            $query = $query . " AND ((beginDate > :firstDate AND beginDate < :lastDate) OR (endDate > firstDate AND endDate < :lastDate))";
+            $query = $query . " AND ((beginDate>:firstDate AND beginDate<:lastDate) OR (endDate>:lastDate AND endDate<:lastDate))";
             $yearSearch = true;
         }
     }
