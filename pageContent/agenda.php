@@ -8,11 +8,15 @@
                             INNER JOIN locations ON (events.location = locations.id)
                             WHERE approvedBy IS NOT NULL";
     $wordSearch = false;
+    $yearSearch = false;
     if(isset($_POST['search'])){
         if(isset($_POST['eventName']) && $_POST['eventName']!=""){
             $query = $query . " AND (title LIKE :eventName OR description LIKE :eventName)";
-//          $query = $query . " AND (title LIKE '%" . $_POST['eventName'] . "%' OR description LIKE '%" . $_POST['eventName'] . "%')";
             $wordSearch = true;
+        }
+        if(isset($_POST['searchYear']) && $_POST['searchYear']!='*'){
+            $query = $query . " AND ((beginDate > :firstDate AND beginDate < :lastDate) OR (endDate > firstDate AND endDate < :lastDate))";
+            $yearSearch = true;
         }
     }
     $query = $query . " ORDER BY events.beginDate ASC";
@@ -23,6 +27,13 @@
         $eventName = "%" . strip_tags($_POST['eventName']) . "%";
         $sth->bindParam(':eventName', $eventName);
     }
+    if($yearSearch){
+        $firstDate = mktime(0, 0, 0, 1, 1, strip_tags($_POST['searchYear']));
+        $lastDate = mktime(23, 59, 59, 12, 31, strip_tags($_POST['searchYear']));
+        $sth->bindParam(':firstDate', $firstDate);
+        $sth->bindParam(':lastDate', $lastDate);
+    }
+
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
 ?>
