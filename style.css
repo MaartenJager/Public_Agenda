@@ -322,7 +322,12 @@ included the code you did, and what exactly uses it. */
     /*white-space: nowrap*/
 }
 
-#agenda .event-odd .comment .meta, #agenda .event-even .comment .meta {
+#agenda .event-odd .comment .meta {
+    color: white;
+    font-size: 9pt;
+}
+
+#agenda .event-even .comment .meta {
     color: gray;
     font-size: 9pt;
 }
