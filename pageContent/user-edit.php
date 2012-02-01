@@ -2,22 +2,23 @@
 
 <?php if (isset( $_SESSION['accessLevel'] )): ?>
     <?php if ($_SESSION['accessLevel'] == 1): ?>
-        <p>Hieronder worden uw gegevens weergegeven zoals deze bij ons bekend zijn:</p>
         <?php
+            echo "<p>Hieronder is uw profiel in te zien/te bewerken:</p>"
             //Rechten om alleen eigen profiel aan te passen
             $id = $_SESSION['userId'];
         ?>
        
         
     <?php elseif ($_SESSION['accessLevel'] == 2): ?>
-        <p>Hieronder is het opgevraagde profiel in te zien/te bewerken:</p>
         <?php
             //Rechten om iemand anders zijn profiel aan te passen, haal id uit URL
-            if (isset( $GET['id']) ){
+            if (isset( $GET['id']) ){                
+            echo "<p>Hieronder is het opgevraagde profiel in te zien/te bewerken:</p>"
                 $id = strip_tags($_GET['id']);
             }
             //Indien geen id meegegeven in URL geef dan huidige ingelogd gebruiker in
-            else{
+            else{                   
+                echo "<p>Hieronder is uw profiel in te zien/te bewerken:</p>"
                 $id = $_SESSION['userId'];
             }
         ?>
