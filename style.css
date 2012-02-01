@@ -113,9 +113,9 @@ body {
     border: 1px solid black;
     border-top: none;
 
+    background: #ADD8E6; /* Fallback for other browsers */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#ADD8E6));
     background: -moz-linear-gradient(top, #FFFFFF, #ADD8E6);
-    background: #ADD8E6; /* Fallback for other browsers */
  
     position: absolute;
     margin-left: 779px;
@@ -140,9 +140,9 @@ body {
     float: right;
     height: 32px;
 
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#D3D3D3)); /* Safari, Chrome */
-    background: -moz-linear-gradient(top, #FFFFFF, #D3D3D3); /* Firefox */
     background: #D3D3D3; /* Fallback for other browsers */
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#D3D3D3));
+    background: -moz-linear-gradient(top, #FFFFFF, #D3D3D3);
 }
 
 #loginStatusContent {
