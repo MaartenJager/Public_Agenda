@@ -90,6 +90,8 @@
                 </div>
     
     <?php else: ?>
-        <p>U bent niet ingelogd, u heeft geen rechten om deze admin-pagina te bekijken!</p>
+        <p>U bent wel ingelogd maar hebt niet de juiste permissies om deze admin-pagina te bekijken!</p>
     <?php endif; ?>
+<?php else: ?>
+    <p>U bent wel ingelogd maar hebt niet de juiste permissies om deze admin-pagina te bekijken!</p>
 <?php endif; ?>
