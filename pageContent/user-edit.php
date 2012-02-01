@@ -1,3 +1,5 @@
+<h1>Profiel</h1>
+
 <?php if (isset( $_SESSION['accessLevel'] )): ?>
 
     <?php if ($_SESSION['accessLevel'] == 1): ?>
@@ -9,5 +11,5 @@
     <?php endif; ?>
 
 <?php else: ?>
-    Niet ingelogd
+    <p>U bent niet ingelogd, geen profiel om weer te geven!</p>
 <?php endif; ?>
