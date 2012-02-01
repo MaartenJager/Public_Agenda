@@ -3,16 +3,20 @@
     <head>
         <?php require_once("inc/header.inc"); ?>
     </head>
-
+   
     <body>
+    <?php require_once("inc/nav.inc"); ?>
+    <?php
+    echo '
         <div id="header">
             <div id="loginStatus">
                 <div id="loginStatusContent">
-                    <p>Ingelogd op account EMAIL. <a href="#">Wachtwoord wijzigen</a></p>
+                    <p>Ingelogd als' . $_SESSION['email'] . '<a href="#">Wachtwoord wijzigen</a></p>
                 </div>
             </div>
-        </div>
-        <?php require_once("inc/nav.inc"); ?>
+        </div>';
+    ?>
+        
 
         <div id="container">
             <section id="main">
