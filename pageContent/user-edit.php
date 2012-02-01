@@ -3,7 +3,7 @@
 <?php if (isset( $_SESSION['accessLevel'] )): ?>
     <?php if ($_SESSION['accessLevel'] == 1): ?>
         <?php
-            echo "<p>Hieronder is uw profiel in te zien/te bewerken:</p>"
+            echo "<p>Hieronder is uw profiel in te zien/te bewerken:</p>";
             $id = $_SESSION['userId'];
         ?>
        
