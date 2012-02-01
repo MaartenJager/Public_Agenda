@@ -5,11 +5,11 @@
 <?php
     if (isset($_SESSION['accessLevel'])) {
         if ($_SESSION['accessLevel'] == 2) {
-            <title>Admin - Home</title>
+            echo "<title>Admin - Home</title>";
         }
     }
     else {
-        <title>The Roadhouse - Home</title>
+        echo "<title>The Roadhouse - Home</title>";
     }
 ?>
         <link rel="stylesheet" href="style.css" />
