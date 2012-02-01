@@ -58,6 +58,9 @@
         <label>Wachtwoord</label>
         <input type="password" name="password" value="" required>
 
+        <label>Wachtwoord bevestigen</label>
+        <input type="password" name="password2" value="" required>
+
         <input id="button" name="editUser" type="submit" value="Update">
     </form>
 
