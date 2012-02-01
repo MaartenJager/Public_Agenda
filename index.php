@@ -35,7 +35,7 @@
 
             </section>
 
-<?php
+            <?php
                 if (isset($_GET['page'])) {
                     $sidebar = $_GET['page'];
                     if ($sidebar == "agenda")
@@ -50,7 +50,7 @@
                 $footer = "inc/footer.inc";
                 include $sidebar;
                 include $footer
-?>
+            ?>
         </div>
     </body>
 </html>
