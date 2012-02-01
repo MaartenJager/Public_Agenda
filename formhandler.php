@@ -2,6 +2,14 @@
     /* http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/
 * http://www.kitebird.com/articles/php-pdo.html
 * */
+	$emailPattren = '/^([a-z0-9])(([-a-z0-9._])*([a-z0-9]))*\@([a-z0-9])' .
+            '(([a-z0-9-])*([a-z0-9]))+' . '(\.([a-z0-9])([-a-z0-9_-])?([a-z0-9])+)+$/i';
+    $isEmailValid = preg_match($EmailPattren, $_POST['email']);
+    
+    if($IsEmailValid <= 0)
+    {
+    	echo 'NOT A VALID MAIL YOU NOOB';
+    }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         /* Connect to DB */
