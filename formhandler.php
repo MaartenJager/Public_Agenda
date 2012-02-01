@@ -31,8 +31,7 @@
 
                     //Gebruiker met lvl 1 probeert eigen gegevens aan te passen. Groen licht!
                     else{
-                        echo "accessLevel in form is gelijk aan daadwerkelijke <br>";
-                        
+                        echo "accessLevel in form is gelijk aan daadwerkelijke <br>";                        
                     }
                 }
 
