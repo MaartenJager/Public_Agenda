@@ -5,9 +5,9 @@
 
     <?php if ($_SESSION['accessLevel'] == 1): ?>
     Ingelogd met level 1
-    <? elseif ($_SESSION['accessLevel'] == 2): ?>
+    <?php elseif ($_SESSION['accessLevel'] == 2): ?>
     Ingelogd met level 2
-    <? else: ?>
+    <?php else: ?>
     Niet ingelogd
     <?php endif; ?>
 
