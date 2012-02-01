@@ -11,23 +11,30 @@
         /* editUser post action */
         if(isset($_POST['editUser'])){
             echo "in editUser";
-            
+
+            //Controler of gebruik ingelogd is
             if (isset( $_SESSION['accessLevel'] )){
                 echo "accessLevel is set<br>";
-                
+
+                //Ingelogd met level 1? Alleen eigen passwd mag aangepast worden!
                 if ($_SESSION['accessLevel'] == 1){
                     echo "accessLevel is 1<br>";
                     echo "id uit form:   " . $_POST['id'] . "<br>";
                     echo "id uit sessie: " . $_SESSION['userId'] . "<br>";
-                    
+
+                    //Probeert men toch een andere id aan te passen? Doe niets en geef error weer!
                     if( ($_POST['id']) != ($_SESSION['userId']) ){
                         echo "accessLevel in form is niet gelijk aan daadwerkelijke <br>";
                         header("Location: index.php?page=error-permissions");
                     }
+
+                    //Gebruiker met lvl 1 probeert eigen gegevens aan te passen. Groen licht!
                     else{
                         echo "accessLevel in form is gelijk aan daadwerkelijke <br>";
                     }
                 }
+
+                //Gebruiker met lvl 2 mag elke gebruiker aanpassen. Geen verdere controles.
                 elseif($_SESSION['accessLevel'] == 2){
                     echo "accessLevel is 2<br>";
 
@@ -35,8 +42,12 @@
             }
             
         	$password = sha1($_POST['password']);
+            echo "Password na hashing: " . $password;
 
+            echo "Verbinding met DB wordt gelegd";
             $sth=$dbh->prepare("UPDATE users SET password=:password WHERE id=:id");
+            $sth->bindParam(':accessLevel', $_POST['accessLevel']);
+            $sth->execute();
         }
 
         /* addUser post action */
