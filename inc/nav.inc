@@ -24,13 +24,14 @@ if (isset( $_SESSION['accessLevel'] ))
 		<li><a href="index.php?page=event-add">Evenement toevoegen</a></li>
 		<li><a href="index.php?page=event-accept">Evenementen controleren</a></li>
 		<li><a href="index.php?page=admin">Gebruikersbeheer</a></li>
-		<li><a href="index.php?page=logout">Logout</a></li>';
+		<li><a href="logout.php">Logout</a></li>';
+		
 	}
 }
 else
-{
-	echo "<li><a href=\"#\" onclick=\"toggleVisibility(\'loginBox\');\">Login</a></li>";
-}
+{?>
+	<li><a href="#" onclick="toggleVisibility('loginBox');">Login</a></li>;
+<?php}
 ?>
                 
             </ul>
