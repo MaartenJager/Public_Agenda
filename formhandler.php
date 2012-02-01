@@ -17,8 +17,10 @@
                 
                 if ($_SESSION['accessLevel'] == 1){
                     echo "accessLevel is 1<br>";
+                    echo "id uit form:   " . $_POST['id'] . "<br>";
+                    echo "id uit sessie: " . $_SESSION['userId'] . "<br>";
                     
-                    if(!($_POST['editUser']) == $_SESSION['userId']){
+                    if(!($_POST['id']) == $_SESSION['userId']){
                         echo "accessLevel in form is niet gelijk aan daadwerkelijke <br>";
                         header("Location: index.php?page=error-permissions");
                     }
