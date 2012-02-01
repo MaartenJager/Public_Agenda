@@ -11,7 +11,8 @@
         /* editUser post action */
         if(isset($_POST['editUser'])){
             echo "in editUser";
-
+            
+            
             //Controler of gebruik ingelogd is
             if (isset( $_SESSION['accessLevel'] )){
                 echo "accessLevel is set<br>";
@@ -31,6 +32,7 @@
                     //Gebruiker met lvl 1 probeert eigen gegevens aan te passen. Groen licht!
                     else{
                         echo "accessLevel in form is gelijk aan daadwerkelijke <br>";
+                        
                     }
                 }
 
@@ -47,6 +49,7 @@
             echo "Verbinding met DB wordt gelegd";
             $sth=$dbh->prepare("UPDATE users SET password=:password WHERE id=:id");
             $sth->bindParam(':password', $password);
+            $sth->bindParam(':id', $_POST['id']);
             $sth->execute();
         }
 
