@@ -12,9 +12,13 @@
     <?php elseif ($_SESSION['accessLevel'] == 2): ?>
         <p>Hieronder is het opgevraagde profiel in te zien/te bewerken:</p>
         <?php
-            //Rechten om iemand anders zijn profiel aan te passen, haal id uit G
+            //Rechten om iemand anders zijn profiel aan te passen, haal id uit URL
             if (isset( $GET['id']) ){
                 $id = strip_tags($_GET['id']);
+            }
+            //Indien geen id meegegeven in URL geef dan huidige ingelogd gebruiker in
+            else{
+                $id = $_SESSION['userId'];
             }
         ?>
     <?php else: ?>
