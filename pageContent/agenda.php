@@ -30,7 +30,7 @@
                 }
                 else
                 {
-                    if($firstMonthSearch == 4 || $firstMonthSearch == 6 || $firstMonthSearch == 9 || $firstMonthSearch == 11 ||){
+                    if($firstMonthSearch == 4 || $firstMonthSearch == 6 || $firstMonthSearch == 9 || $firstMonthSearch == 11){
                         $lastDaySearch = 30;
                     }
                     if($firstMonthSearch == 2){
@@ -46,8 +46,8 @@
             }
         }
     }
-    $query = $query . " ORDER BY events.beginDate ASC";
 
+    $query = $query . " ORDER BY events.beginDate ASC";
 
     $sth = $dbh->prepare($query);
     if($wordSearch){
