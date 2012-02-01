@@ -86,12 +86,12 @@
                         // showing the results
                         while($row = $sth->fetch()) {
                             $counter = $counter + 1;
-                            echo("                    <!-- Begin of item #" . $row->id . "-->\n");
+                            echo "                    <!-- Begin of item #" . $row->id . "-->\n");
                             if ($counter % 2)
-                                echo("                    <div class=\"event-odd\">\n");
+                                echo "                    <div class=\"event-odd\">\n" ;
                             else
-                                echo("                    <div class=\"event-even\">");
-                            echo "                        <div class=\"date\">\n");
+                                echo "                    <div class=\"event-even\">" ;
+                            echo "                        <div class=\"date\">\n" ;
                             echo "                            <div id=\"dateDay\">" . date("d", $row->beginDate) . "</div>\n";
                             echo "                            <div id=\"dateMonth\">" . date("F", $row->beginDate) . "</div>\n";
                             echo "                            <div id=\"dateYear\">" . date("Y", $row->beginDate) . "</div>\n";
