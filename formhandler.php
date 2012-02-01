@@ -44,7 +44,7 @@
             }
 
             if( ($_POST['password']) != ($_POST['password2']) ){
-                header("Location: index.php?page=error-password")
+                header("Location: index.php?page=error-password");
             }
             else{           
                 $password = sha1($_POST['password']);
