@@ -8,7 +8,9 @@
                             INNER JOIN locations ON (events.location = locations.id)
                             WHERE approvedBy IS NOT NULL";
     if(isset($_POST['search'])){
-        $query = $query . " AND title='a'";
+        if(isset($_POST['eventName'])){
+            $query = $query . " AND title='%" . $_POST['eventName'] . "%'";
+        }
     }
     $query = $query . " ORDER BY events.beginDate ASC";
     $sth = $dbh->query($query);
@@ -34,6 +36,7 @@
                 Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
+                        echo $query;
                         $counter = 0;
                         // showing the results
                         while($row = $sth->fetch()) {
