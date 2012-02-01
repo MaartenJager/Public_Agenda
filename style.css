@@ -167,7 +167,8 @@ input[type="text"], input[type="email"], input[type="password"] {
     background: #EFEFEF;
 }
 
-#sidebar_agenda input {
+#textInputSmall {
+    /* Resize the input field in the agenda searchbar */
     width: 144px;
 }
 
