@@ -141,10 +141,11 @@ body {
     border-top: none;
     border-bottom: none;
     border-right: none;
-    position: absolute;
-    margin-left: 779px;
-    width: 180px;
-    height: 128px;
+    float: right;
+    height: 32px;
+    background: #D3D3D3;
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#D3D3D3)); /* Safari, Chrome */
+    background: -moz-linear-gradient(top, #FFFFFF, #D3D3D3); /* Firefox */
 }
 
 /* LIBRARY ****************************************************************** */
