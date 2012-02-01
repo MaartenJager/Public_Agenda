@@ -13,7 +13,7 @@
         $sth->execute();
     ?>
 
-    <?php if ($_SESSION['accessLevel'] == 1) || ($_SESSION['accessLevel'] == 2): ?>
+    <?php if ( ($_SESSION['accessLevel'] == 1) || ($_SESSION['accessLevel'] == 2)): ?>
         <p>Hieronder worden uw gegevens weergegeven zoals deze bij ons bekend zijn:</p>
         <p>
             id: <?php echo $id; ?>
@@ -23,8 +23,8 @@
             ?>
         </p>
         
-    <?php elseif ($_SESSION['accessLevel'] == 2): ?>
-        <!--- ingelogd met level 2 -->
+    <?php elseif ($_SESSION['accessLevel'] == 3): ?>
+        <!--- ingelogd met level 3 -->
     <?php else: ?>
         Wel ingelogd, geen rechten!?
     <?php endif; ?>
