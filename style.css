@@ -284,7 +284,7 @@ included the code you did, and what exactly uses it. */
     border-right-style:none;
     background: #9370D8; /* fallback bg color */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#A52A2A)); /* Safari, Chrome */
-    background: -moz-linear-gradient(top, #FFFFFF, #9370D8); /* Firefox */
+    background: -moz-linear-gradient(top, #FFFFFF, #1E90FF); /* Firefox */
 }
 
 #agenda .event-odd .date, #agenda .event-even .date {
@@ -322,12 +322,7 @@ included the code you did, and what exactly uses it. */
     /*white-space: nowrap*/
 }
 
-#agenda .event-odd .comment .meta {
-    color: white;
-    font-size: 9pt;
-}
-
-#agenda .event-even .comment .meta {
+#agenda .event-odd .comment .meta, #agenda .event-even .comment .meta {
     color: gray;
     font-size: 9pt;
 }
