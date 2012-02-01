@@ -61,7 +61,7 @@
                 </form>
 
                 <div id="addUserButton">
-                    <input id="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="makeVisible();" />
+                    <input id="button" type="submit" value="Gebruiker toevoegen" onclick="makeVisible();" />
                 </div>
 
                 <div id="addUser">
