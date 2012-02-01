@@ -70,15 +70,6 @@
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
     $booleanArray = array_fill(0, 8, FALSE);
-
-    // Todo:
-    // - Get total amount of genres available, preset strings to their genre names (currently hardcoded)
-    $i=1;
-    while( $i < 9 ) {
-        $i++;
-        $tempInt=$i-1;
-        $booleanArray[$tempInt] = TRUE;
-    }
 ?>
 
 <script language="JavaScript">
@@ -115,14 +106,7 @@
                             echo "                        <div class=\"image\"><img src=\"" . $row->image . "\" alt=\"Afbeelding\" itemprop=\"photo\"></div>";
                             echo "                        <div class=\"title\">" . $row->title . " <a href=\"#" . $row->id . "\" onclick=\"expandEntry('" . $row->id . "');\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">(meer informatie)</span></a></div> <a href=\"index.php?page=event-review&id=" . $row->id . "\"> <img src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\"></a>\n";
                             echo "                        <div class=\"genres\">";
-                            if($booleanArray[0]) { echo "Pop "; }
-                            if($booleanArray[1]) { echo "Rock "; }
-                            if($booleanArray[2]) { echo "Metal "; }
-                            if($booleanArray[3]) { echo "Hiphop "; }
-                            if($booleanArray[4]) { echo "Blues "; }
-                            if($booleanArray[5]) { echo "Klassiek "; }
-                            if($booleanArray[6]) { echo "Kerk "; }
-                            if($booleanArray[7]) { echo "Overig "; }
+                            // todo insert genres here
                             echo "                        \n";
                             echo "                        </div>";
                             echo "                        <div id=\"" . $row->id . "\" class=\"description\" itemprop=\"description\">". $row->description ."</div>\n";
