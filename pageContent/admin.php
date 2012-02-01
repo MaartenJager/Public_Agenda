@@ -16,7 +16,9 @@
 </script>
 
 <h1>Gebruikersbeheer</h1>
-
+<?php if (isset( $_SESSION['accessLevel'] )): ?>
+    <?php if ($_SESSION['accessLevel'] == 2): ?>
+                
                 <form action="sqlaction.php" method="post">
                     <table>
                         <thead>
@@ -86,3 +88,8 @@
                         <input id="button" name="addUser" type="submit" value="Voeg gebruiker toe">
                     </form>
                 </div>
+    
+    <?php else: ?>
+        <p>U bent niet ingelogd, u heeft geen rechten om deze admin-pagina te bekijken!</p>
+    <?php endif; ?>
+<?php endif; ?>
