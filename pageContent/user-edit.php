@@ -13,10 +13,15 @@
         $sth->execute();
     ?>
 
-    <?php if ($_SESSION['accessLevel'] == 1): ?>
+    <?php if ($_SESSION['accessLevel'] == 1) || ($_SESSION['accessLevel'] == 2): ?>
         <p>Hieronder worden uw gegevens weergegeven zoals deze bij ons bekend zijn:</p>
-        
-        
+        <p>
+            id: <?php echo $id; ?>
+            <?php
+                $row = $sth->fetch();
+                print_r($row);
+            ?>
+        </p>
         
     <?php elseif ($_SESSION['accessLevel'] == 2): ?>
         <!--- ingelogd met level 2 -->
