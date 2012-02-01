@@ -24,13 +24,23 @@
         <div id="container">
             <section id="main">
                 <?php
+                    //Controleer of er een specifieke pagina opgevraagd wordt
                     if (isset($_GET['page'])) {
                         $page = $_GET['page'];
                         $page = "pageContent/" . $page . ".php";
                     }
-                    else
-                        $page = "pageContent/home.php";
-                    include $page;
+                    else{
+                        $page = "pageContent/home.php"; //Geen specifieke pagina? Laat dan homepage zien!
+                    }
+
+                    //Controleer of opgevraagde pagina daadwerkelijk bestaat
+                    if (!file_exists($page){
+                        require($page);
+                    }
+                    else{
+                        echo "404 - Opgevraagde pagina bestaat niet";
+                    }
+                        
                 ?>
 
             </section>
