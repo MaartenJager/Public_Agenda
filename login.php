@@ -36,6 +36,7 @@
             /*** check for a result ***/            
             $userRow = $sth->fetch();
             $accessLevel = $userRow->accessLevel;
+            print_r($accessLevel);
             echo "accessLevel is:"; 
             echo $accessLevel;            
             echo "<br><br>";
