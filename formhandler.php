@@ -6,14 +6,21 @@
         /* Connect to DB */
         require("inc-dbcon.php");
 
+        /* editUser post action */
+        if(isset($_POST['editUser'])){
+        	$password = sha1($_POST['password']);
+
+            echo "in editUser";
+        }
+
         /* addUser post action */
         if(isset($_POST['addUser'])){
         	$password = sha1($_POST['password']);
             try{
                 //Prepare statement
                 $sth = $dbh->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
-values
-(:name, :firstName, :email, :password, :accessLevel) ");
+                    values
+                    (:name, :firstName, :email, :password, :accessLevel) ");
 
                 //Prepare data
                 $sth->bindParam(':name' , $_POST['name']);
