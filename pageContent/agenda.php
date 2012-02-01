@@ -3,19 +3,12 @@
     require_once("inc-conf.php");
     require("inc-dbcon.php");
 
-    $sth = $dbh->query("SELECT  events.*,
-                                users.name,
-                                users.firstName,
-                                locations.name AS locationName
-                            FROM events
-                            INNER JOIN users ON (
-                                events.createdBy = users.id
-                                )
-                            INNER JOIN locations ON (
-                                events.location = locations.id
-                                )
-                            WHERE approvedBy IS NOT NULL
-                            ORDER BY events.beginDate ASC");
+    $query = "SELECT  events.*, users.name, users.firstName, locations.name AS locationName FROM events
+                            INNER JOIN users ON (events.createdBy = users.id)
+                            INNER JOIN locations ON (events.location = locations.id)
+                            WHERE approvedBy IS NOT NULL";
+    $query = $query . " ORDER BY events.beginDate ASC";
+    $sth = $dbh->query($query);
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
 ?>
