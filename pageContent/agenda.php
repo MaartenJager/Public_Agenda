@@ -115,7 +115,7 @@
                             echo(" <div class=\"meta\">@\n");
                             echo(" ?<span itemprop=\"location\" itemscope itemtype=\"http://data-vocabulary.org/?Organization\">\n");
                             echo(" " . $row->locationName ."(\n");
-                            echo("? <span itemprop=\"name\">the Roadhouse</span>\n");
+                            echo("<span itemprop=\"name\">the Roadhouse</span>\n");
                             echo(" \n");
                             echo(" <span itemprop=\"address\" itemscope itemtype=\"http://data-vocabulary.org/Address\">\n");
                             echo(" <span itemprop=\"street-address\">Science Park 904</span>,\n");
