@@ -304,6 +304,7 @@ thead th, tfoot th{
 #agenda .description {
     margin-right: 128px;
     height: 70px;
+    min-height: 70px; /* Prevent really short descriptions from glitching out */
     overflow-x: hidden;
 }
 
