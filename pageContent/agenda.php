@@ -86,7 +86,7 @@
                         // showing the results
                         while($row = $sth->fetch()) {
                             $counter = $counter + 1;
-                            echo "                    <!-- Begin of item #" . $row->id . "-->\n");
+                            echo "                    <!-- Begin of item #" . $row->id . "-->\n";
                             if ($counter % 2)
                                 echo "                    <div class=\"event-odd\">\n" ;
                             else
