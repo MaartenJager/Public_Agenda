@@ -9,12 +9,21 @@
         /* editUser post action */
         if(isset($_POST['editUser'])){
             if (isset( $_SESSION['accessLevel'] )){
+                echo "accessLevel is set<br>";
+                
                 if ($_SESSION['accessLevel'] == 1){
+                    echo "accessLevel is 1<br>";
+                    
                     if(!($_POST['editUser']) == $_SESSION['userId']){
+                        echo "accessLevel in form is niet gelijk aan daadwerkelijke <br>";
                         header("Location: index.php?page=error-permissions");
+                    }
+                    else{
+                        echo "accessLevel in form is gelijk aan daadwerkelijke <br>";
                     }
                 }
                 elseif($_SESSION['accessLevel'] == 2){
+                    echo "accessLevel is 2<br>";
 
                 }
             }
