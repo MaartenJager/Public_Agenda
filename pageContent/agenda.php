@@ -85,10 +85,10 @@
                     <?php
                         echo $firstDate;
                         echo $lastDate;
-   echo $firstMonthSearch;
-  echo  $lastMonthSearch;
-  echo  $firstDaySearch;
-  echo  $lastDaySearch;
+   echo "fm" . $firstMonthSearch;
+  echo  "lm" . $lastMonthSearch;
+  echo  "fd" . $firstDaySearch;
+  echo  "ld" . $lastDaySearch;
 
                         echo $query;
                         $counter = 0;
