@@ -60,7 +60,7 @@
                     echo "You are now logged in<br><br>"; 
                     $message = 'You are now logged in';
                     echo '<a href="http://websec.science.uva.nl/webdb1241">Click here to return to the page '
-                    . $email . '</a>'; 
+                    .  $_SESSION['email'] . '</a>'; 
             }
         }
         catch(Exception $e)

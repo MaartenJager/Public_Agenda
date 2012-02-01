@@ -19,11 +19,8 @@
 		}
 		?>
 				</div>
-	<?php
-		require_once("inc/nav.inc");
-    ?>
-        
-
+	<?php require_once("inc/nav.inc");?>
+		
         <div id="container">
             <section id="main">
                 <?php
