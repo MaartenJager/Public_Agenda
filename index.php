@@ -34,7 +34,7 @@
                     }
 
                     //Controleer of opgevraagde pagina daadwerkelijk bestaat
-                    if (!file_exists($page){
+                    if (file_exists($page)){
                         require($page);
                     }
                     else{
