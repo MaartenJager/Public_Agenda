@@ -12,14 +12,14 @@
     <?php elseif ($_SESSION['accessLevel'] == 2): ?>
         <?php
             //Rechten om iemand anders zijn profiel aan te passen, haal id uit URL
-            if (isset($GET['id']) ){
+            if (isset($_GET['id']) ){
                 echo "<p>DBG: lvl2, id in URL:</p>";                
                 echo "<p>Hieronder is het opgevraagde profiel in te zien/te bewerken:</p>";
                 $id = strip_tags($_GET['id']);
             }
             //Indien geen id meegegeven in URL geef dan huidige ingelogd gebruiker in
             else{
-                print_r($GET);
+                print_r($_GET);
                 echo "<p>DBG: lvl2, GEEN id in URL:</p>";   
                 echo "<p>Hieronder is uw profiel in te zien/te bewerken:</p>";
                 $id = $_SESSION['userId'];
