@@ -1,8 +1,10 @@
 <h1>Profiel</h1>
 
+<?php //Controleer of bezoeker ingelogd is ?>
 <?php if (isset( $_SESSION['accessLevel'] )): ?>
     <?php if ($_SESSION['accessLevel'] == 1): ?>
         <?php
+            //Gebruiker met niveau 1; kan alleen zijn eigen profiel inzien en bewerken
             echo "<p>Hieronder is uw profiel in te zien/te bewerken:</p>";
             $id = $_SESSION['userId'];
         ?>
@@ -10,12 +12,14 @@
         
     <?php elseif ($_SESSION['accessLevel'] == 2): ?>
         <?php
-            //Rechten om iemand anders zijn profiel aan te passen, haal id uit URL
+            //Gebruiker met niveau 2; kan zowel zijn eigen als iemand anders zijn profiel inzien en bewerken
+            //Haal id uit URL
             if (isset($_GET['id']) ){       
                 echo "<p>Hieronder is het opgevraagde profiel in te zien/te bewerken:</p>";
                 $id = strip_tags($_GET['id']);
             }
             //Indien geen id meegegeven in URL geef dan huidige ingelogd gebruiker in
+            //(gebruiker past eigen profiel aan)
             else{ 
                 echo "<p>Hieronder is uw profiel in te zien/te bewerken:</p>";
                 $id = $_SESSION['userId'];
