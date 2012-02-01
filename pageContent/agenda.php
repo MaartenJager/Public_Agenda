@@ -20,7 +20,7 @@
 
     $sth = $dbh->prepare($query);
     if($wordSearch){
-        $eventName = "'%" . strip_tags($_POST['eventName'] . "%'";
+        $eventName = "'%" . strip_tags($_POST['eventName']) . "%'";
         $sth->bindParam(':eventName', $eventName);
     }
     $sth->setFetchMode(PDO::FETCH_OBJ);
