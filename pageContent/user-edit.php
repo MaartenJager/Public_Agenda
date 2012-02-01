@@ -30,14 +30,19 @@
     <?php endif; ?>
 
     <?php
-    /* Fetch event with ID.. */
-        require_once("inc-conf.php");
-        require("inc-dbcon.php");
+        if (isset( $_SESSION['accessLevel'] )){
+            if ( ($_SESSION['accessLevel'] == 1) || ($_SESSION['accessLevel'] == 2) ){
+                /* Fetch event with ID.. */
+                require_once("inc-conf.php");
+                require("inc-dbcon.php");
 
-        $sth = $dbh->prepare("SELECT * FROM users WHERE id=:id");
-        $sth->bindParam(':id', $id);
-        $sth->setFetchMode(PDO::FETCH_OBJ);
-        $sth->execute();
+                $sth = $dbh->prepare("SELECT * FROM users WHERE id=:id");
+                $sth->bindParam(':id', $id);
+                $sth->setFetchMode(PDO::FETCH_OBJ);
+                $sth->execute();
+                $row = $sth->fetch();
+            }
+        }
     ?>
 
     <form action="formhandler.php" method="post">
