@@ -7,7 +7,7 @@
     <body>
 				<div id="header">
 		<?php
-		if(isset( $_SESSION['email'] ))
+		if(isset( $_SESSION['accessLevel'] ))
 		{
 			echo '
 					<div id="loginStatus">
@@ -19,11 +19,8 @@
 		}
 		?>
 				</div>
-	<?php
-		require_once("inc/nav.inc");
-    ?>
-        
-
+	<?php require_once("inc/nav.inc");?>
+		
         <div id="container">
             <section id="main">
                 <?php
