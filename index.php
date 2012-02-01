@@ -7,7 +7,7 @@
     <body>
 				<div id="header">
 		<?php
-		if(isset( $_SESSION['accessLevel'] ))
+		if(isset( $_SESSION['email'] ))
 		{
 			echo '
 					<div id="loginStatus">

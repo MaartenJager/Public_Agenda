@@ -58,9 +58,7 @@
 
                     /*** tell the user we are logged in ***/
                     echo "You are now logged in<br><br>"; 
-                    $message = 'You are now logged in';
-                    echo '<a href="http://websec.science.uva.nl/webdb1241">Click here to return to the page '
-                    .  $_SESSION['email'] . '</a>'; 
+                    //header("Location: /webdb1241/index.php");
             }
         }
         catch(Exception $e)
