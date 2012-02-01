@@ -9,6 +9,7 @@
                             WHERE approvedBy IS NOT NULL";
     if(isset($_POST(['search'])) {
         $query = $query . " AND title='a'"
+    }
     $query = $query . " ORDER BY events.beginDate ASC";
     $sth = $dbh->query($query);
     $sth->setFetchMode(PDO::FETCH_OBJ);
