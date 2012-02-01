@@ -58,7 +58,7 @@
 
                     /*** tell the user we are logged in ***/
                     echo "You are now logged in<br><br>"; 
-                    header("Location: /webdb1241/index.php");
+                    //header("Location: /webdb1241/index.php");
             }
         }
         catch(Exception $e)
