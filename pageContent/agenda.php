@@ -7,6 +7,7 @@
                             INNER JOIN users ON (events.createdBy = users.id)
                             INNER JOIN locations ON (events.location = locations.id)
                             WHERE approvedBy IS NOT NULL";
+    $wordSearch = false;
     if(isset($_POST['search'])){
         if(isset($_POST['eventName']) && $_POST['eventName']!=""){
             $query = $query . " AND (title LIKE '%" . $_POST['eventName'] . "%' OR description LIKE '%" . $_POST['eventName'] . "%')";
@@ -36,7 +37,6 @@
                 Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
-                        echo $query;
                         $counter = 0;
                         // showing the results
                         while($row = $sth->fetch()) {
