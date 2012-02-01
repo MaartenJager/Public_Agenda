@@ -8,9 +8,20 @@
 
         /* editUser post action */
         if(isset($_POST['editUser'])){
+            if (isset( $_SESSION['accessLevel'] )){
+                if ($_SESSION['accessLevel'] == 1){
+                    if(!($_POST['editUser']) == $_SESSION['userId']){
+                        header("Location: index.php?page=error-permissions");
+                    }
+                }
+                elseif($_SESSION['accessLevel'] == 2){
+
+                }
+            }
+            
         	$password = sha1($_POST['password']);
 
-            echo "in editUser";
+            $sth=$dbh->prepare("UPDATE users SET password=:password WHERE id=:id");
         }
 
         /* addUser post action */
@@ -202,7 +213,7 @@ VALUES
                             $genreId = $i + 1;
 
                             $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
-VALUES ($lastEventId, $genreId)");
+                                VALUES ($lastEventId, $genreId)");
                             $sth->execute();
 
                             echo "EEN GENRE OPGESLAGEN <br />";
