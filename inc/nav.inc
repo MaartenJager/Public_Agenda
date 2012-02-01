@@ -8,29 +8,28 @@
                 
                 
 <?php
-session_start();
-if (isset( $_SESSION['accessLevel'] ))
-{
-	
-	if ($_SESSION['accessLevel'] == 1)
-	{
-		echo '
-		<li><a href="index.php?page=event-add">Evenement toevoegen</a></li>
-		<li><a href="logout.php">Logout</a></li>';
-	}	
-	if ($_SESSION['accessLevel'] == 2)
-	{		
-		echo '
-		<li><a href="index.php?page=event-add">Evenement toevoegen</a></li>
-		<li><a href="index.php?page=event-accept">Evenementen controleren</a></li>
-		<li><a href="index.php?page=admin">Gebruikersbeheer</a></li>
-		<li><a href="logout.php">Logout</a></li>';
-	}
-}
-else
-{
-		echo '<li><a href="#" onclick="toggleVisibility(\'loginBox\');">Login</a></li>';
-}
+    if (isset( $_SESSION['accessLevel'] ))
+    {
+        
+        if ($_SESSION['accessLevel'] == 1)
+        {
+            echo '
+            <li><a href="index.php?page=event-add">Evenement toevoegen</a></li>
+            <li><a href="logout.php">Logout</a></li>';
+        }	
+        if ($_SESSION['accessLevel'] == 2)
+        {		
+            echo '
+            <li><a href="index.php?page=event-add">Evenement toevoegen</a></li>
+            <li><a href="index.php?page=event-accept">Evenementen controleren</a></li>
+            <li><a href="index.php?page=admin">Gebruikersbeheer</a></li>
+            <li><a href="logout.php">Logout</a></li>';
+        }
+    }
+    else
+    {
+            echo '<li><a href="#" onclick="toggleVisibility(\'loginBox\');">Login</a></li>';
+    }
 ?>
                 
             </ul>
