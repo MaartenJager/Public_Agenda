@@ -42,7 +42,7 @@
             }
             
         	$password = sha1($_POST['password']);
-            echo "Password na hashing: " . $password; . "<br>"
+            echo "Password na hashing: " . $password . "<br>";
 
             echo "Verbinding met DB wordt gelegd";
             $sth=$dbh->prepare("UPDATE users SET password=:password WHERE id=:id");
