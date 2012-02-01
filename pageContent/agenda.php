@@ -96,7 +96,7 @@
                             echo "                            <div id=\"dateMonth\">" . date("F", $row->beginDate) . "</div>\n";
                             echo "                            <div id=\"dateYear\">" . date("Y", $row->beginDate) . "</div>\n";
                             echo "                        </div>\n";
-                            echo "                        <div class=\"image\"><img src=\"" . $row->image . "\" alt=\"Afbeelding\" itemprop=\"photo\"></div>";
+                            echo "                        <div id=\"agendaPicture\"><img src=\"" . $row->image . "\" alt=\"Afbeelding\" itemprop=\"photo\"></div>";
                             echo "                        <div class=\"title\"><a href=\"#" . $row->id . "\" onclick=\"expandEntry('" . $row->id . "');\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a></div> <a href=\"index.php?page=event-review&id=" . $row->id . "\">";
                             echo "                            <img id=\"btn-icon\" src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\"></a>\n" ;
                             echo "                        <div id=\"" . $row->id . "\" class=\"description\" itemprop=\"description\">". $row->description ."</div>\n";
