@@ -7,7 +7,9 @@
     <body>
         <div id="header">
             <div id="loginStatus">
-                <p>Ingelogd op account EMAIL. <a href="#">Wachtwoord wijzigen</a></p>
+                <div id="loginStatusContent">
+                    <p>Ingelogd op account EMAIL. <a href="#">Wachtwoord wijzigen</a></p>
+                </div>
             </div>
         </div>
         <?php require_once("inc/nav.inc"); ?>
