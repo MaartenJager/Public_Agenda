@@ -6,15 +6,17 @@
    
     <body>
     <?php
-		
-		echo '
-			<div id="header">
-				<div id="loginStatus">
-					<div id="loginStatusContent">
-						<p>Ingelogd als ' . $_SESSION['email'] . ' <---> <a href="#">Wachtwoord wijzigen</a></p>
+		if(isset( $_SESSION['email'] ))
+		{
+			echo '
+				<div id="header">
+					<div id="loginStatus">
+						<div id="loginStatusContent">
+							<p>Ingelogd als ' . $_SESSION['email'] . ' <---> <a href="#">Wachtwoord wijzigen</a></p>
+						</div>
 					</div>
-				</div>
-			</div>';
+				</div>';
+		}
 		require_once("inc/nav.inc");
     ?>
         
