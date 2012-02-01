@@ -115,7 +115,8 @@
                             echo "                                <meta itemprop=\"longitude\" content=\"4.954206\" />\n";
                             echo "                            </span>\n";
                             echo "                        </div>\n";
-                            echo("                    <!-- End of item -->\n");
+                            echo "                    </div>\n";
+                            echo "                    <!-- End of item -->\n";
                         }
                     ?>
                 </div>
