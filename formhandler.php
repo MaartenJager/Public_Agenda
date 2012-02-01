@@ -8,6 +8,8 @@
 
         /* editUser post action */
         if(isset($_POST['editUser'])){
+            echo "in editUser";
+            
             if (isset( $_SESSION['accessLevel'] )){
                 echo "accessLevel is set<br>";
                 
