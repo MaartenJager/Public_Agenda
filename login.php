@@ -20,10 +20,13 @@
     	try
         {            
             /*** prepare the select statement ***/
-            $sth = $dbh->prepare("SELECT accessLevel, email, password FROM users 
+            $sth = $dbh->prepare("SELECT id, accessLevel, email, password FROM users 
                         WHERE email = :email AND password = :password");
 
             /*** bind the parameters ***/
+            $sth->setFetchMode(PDO::FETCH_OBJ);
+            
+            
             $sth->bindParam(':email', $email, PDO::PARAM_STR);
             $sth->bindParam(':password', $password, PDO::PARAM_STR, 40);
 
@@ -31,10 +34,13 @@
             $sth->execute();
 
             /*** check for a result ***/            
-            $accessLevel = $sth->fetchColumn();
+            $userRow = $sth->fetch();
+            $accessLevel = $userRow->accessLevel;
             echo "accessLevel is:"; 
-            echo $accessLevel;            
+            echo $userRow->accessLevel;            
             echo "<br><br>";
+            
+            $_SESSION['userId'] = $userRow->id;
 
             /*** if we have no result then fail boat ***/
             if($accessLevel == false)
@@ -51,6 +57,8 @@
                     /*** tell the user we are logged in ***/
                     echo "You are now logged in<br><br>"; 
                     $message = 'You are now logged in';
+                    echo '<a href="http://websec.science.uva.nl/webdb1241">Click here to return to the page '
+                    . $email . '</a>'; 
             }
         }
         catch(Exception $e)
