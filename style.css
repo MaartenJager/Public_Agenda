@@ -139,15 +139,19 @@ body {
     display: block; /* Change to 'none' to hide */
     border: 1px solid black;
     border-top: none;
-    border-bottom: none;
     border-right: none;
     float: right;
     height: 32px;
     background: #D3D3D3;
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#D3D3D3)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFFFFF, #D3D3D3); /* Firefox */
-    margin-bottom: 4px;
-    margin-left: 4px;
+
+}
+
+#loginStatusContent {
+    margin-bottom: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 /* LIBRARY ****************************************************************** */
