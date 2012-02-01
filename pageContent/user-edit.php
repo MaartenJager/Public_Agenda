@@ -4,7 +4,7 @@
     {
 ?>
 
-    <?php if ($_SESSION['accessLevel'] == 1: ?>
+    <?php if ($_SESSION['accessLevel'] == 1): ?>
     Ingelogd met level 1
     <? elseif ($_SESSION['accessLevel'] == 2): ?>
     Ingelogd met level 2
