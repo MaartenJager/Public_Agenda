@@ -63,6 +63,24 @@
 
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
+    
+    
+    $sth = $dbh->prepare("SELECT * FROM genre_event_koppeling WHERE eventId=:id");
+    $sth->bindParam(':id', $id);
+    $sth->setFetchMode(PDO::FETCH_OBJ);
+    $sth->execute();
+    $booleanArray = array_fill(0, 8, FALSE);
+    
+    while( $row2 = $sth->fetch() ) {
+        $i=1;
+        while( $i != $row2->genreId ) {
+            $i++;
+        }
+        $tempInt=$i-1;
+        $booleanArray[$tempInt] = TRUE;
+    }
+?>
+
 ?>
 
 <script language="JavaScript">
@@ -75,6 +93,15 @@
         }
     }
 </script>
+
+    while( $row2 = $sth->fetch() ) {
+        $i=1;
+        while( $i != $row2->genreId ) {
+            $i++;
+        }
+        $tempInt=$i-1;
+        $booleanArray[$tempInt] = TRUE;
+    }
 
                 <h1>Agenda</h1>
                 <p>Alle aankomende evenementen zijn opgenomen in onze agenda. Zoekt u een bepaald evenement?
@@ -97,7 +124,17 @@
                             echo "                            <div id=\"dateYear\">" . date("Y", $row->beginDate) . "</div>\n";
                             echo "                        </div>\n";
                             echo "                        <div class=\"image\"><img src=\"" . $row->image . "\" alt=\"Afbeelding\" itemprop=\"photo\"></div>";
-                            echo "                        <div class=\"title\"><a href=\"#" . $row->id . "\" onclick=\"expandEntry('" . $row->id . "');\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a></div> <a href=\"index.php?page=event-review&id=" . $row->id . "\"> <img src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\"></a>\n";
+                            echo "                        <div class=\"title\">" . $row->title . " <a href=\"#" . $row->id . "\" onclick=\"expandEntry('" . $row->id . "');\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">(meer informatie)</span></a></div> <a href=\"index.php?page=event-review&id=" . $row->id . "\"> <img src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\"></a>\n";
+                            echo "                        <div class=\"genres\">" .
+                                                              if($booleanArray[0] { echo "Pop "; } .
+                                                              if($booleanArray[1] { echo "Rock "; } .
+                                                              if($booleanArray[2] { echo "Rock "; } .
+                                                              if($booleanArray[3] { echo "Rock "; } .
+                                                              if($booleanArray[4] { echo "Rock "; } .
+                                                              if($booleanArray[5] { echo "Rock "; } .
+                                                              if($booleanArray[6] { echo "Rock "; } .
+                                                              if($booleanArray[7] { echo "Rock "; } . "\n";
+                            echo "                        </div>";
                             echo "                        <div id=\"" . $row->id . "\" class=\"description\" itemprop=\"description\">". $row->description ."</div>\n";
                             echo "                        <div class=\"meta\">\n";
                             echo "                            <span itemprop=\"startDate\" datetime=\"2022-07-04T18:00\">" . date("d-m-Y H:i:s", $row->beginDate) . "</span> tot\n";
