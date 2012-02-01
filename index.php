@@ -6,14 +6,12 @@
     </head>
    
     <body>
-				<div id="header">
-
-            
+				<div id="header">            
                     <?php //Controleer of de gebruiker ingelogd is; zoja, geef dit weer in container ?>
                     <?php if(isset( $_SESSION['email'] )): ?>
                         <div id="loginStatus">
                             <div id="loginStatusContent">
-                                <p>Ingelogd als <?php $_SESSION['email'] ?> <a href="index.php?page=user-edit">Wachtwoord wijzigen</a></p>
+                                <p>Ingelogd als <?php echo "test" ?><?php $_SESSION['email']; ?> <a href="index.php?page=user-edit">Wachtwoord wijzigen</a></p>
                             </div>
                         </div>
                     <?php endif; ?>
