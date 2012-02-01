@@ -39,18 +39,23 @@
                 //Gebruiker met lvl 2 mag elke gebruiker aanpassen. Geen verdere controles.
                 elseif($_SESSION['accessLevel'] == 2){
                     echo "accessLevel is 2<br>";
-
+                    header("Location: index.php?page=error-permissions");
                 }
             }
-            
-        	$password = sha1($_POST['password']);
-            echo "Password na hashing: " . $password . "<br>";
 
-            echo "Verbinding met DB wordt gelegd";
-            $sth=$dbh->prepare("UPDATE users SET password=:password WHERE id=:id");
-            $sth->bindParam(':password', $password);
-            $sth->bindParam(':id', $_POST['id']);
-            $sth->execute();
+            if( ($_POST['password']) != $_POST['password2']{
+                header("Location: index.php?page=error-password");
+            }
+            else{           
+                $password = sha1($_POST['password']);
+                echo "Beide ingegeven passwords zijn gelijk en na hashing: " . $password . "<br>";
+
+                echo "Verbinding met DB wordt gelegd";
+                $sth=$dbh->prepare("UPDATE users SET password=:password WHERE id=:id");
+                $sth->bindParam(':password', $password);
+                $sth->bindParam(':id', $_POST['id']);
+                $sth->execute();
+            }
         }
 
         /* addUser post action */
