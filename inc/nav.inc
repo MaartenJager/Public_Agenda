@@ -29,7 +29,7 @@ if (isset( $_SESSION['accessLevel'] ))
 }
 else
 {?>
-	<li><a href="#" onclick="toggleVisibility('loginBox');">Login</a></li>
+		<li><a href="#" onclick="toggleVisibility('loginBox');">Login</a></li>
 <?php}
 ?>
                 
