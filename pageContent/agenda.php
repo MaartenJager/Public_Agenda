@@ -19,7 +19,7 @@
             $wordSearch = true;
         }
         if(isset($_POST['searchYear']) && $_POST['searchYear']!=00){
-            $query = $query . " AND ((beginDate>:firstDate AND beginDate<:lastDate) OR (endDate>:lastDate AND endDate<:lastDate))";
+            $query = $query . " AND ((beginDate>:firstDate AND beginDate<:lastDate) OR (endDate>:lastDate AND endDate<:lastDate) OR (beginDate<:firstDate AND endDate>:lastDate))";
             $dateSearch = true;
             if(isset($_POST['searchMonth']) && $_POST['searchMonth']!=00){
                 $firstMonthSearch = strip_tags($_POST['searchMonth']);
