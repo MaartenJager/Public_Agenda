@@ -18,12 +18,15 @@
                             ORDER BY events.creationDate ASC");
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
+    
+    //Controleer of er nog te accepteren events zijn
     $eventsExistant = false;
     if ($sth->rowCount() > 0) {
         $eventsExistant = true;
     }
 ?>
 <h1>Evenementen Accepteren</h1>
+
 <?php
     if ($eventsExistant) {
 echo <<<EOT
