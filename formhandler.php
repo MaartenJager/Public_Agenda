@@ -2,6 +2,14 @@
     /* http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/
 * http://www.kitebird.com/articles/php-pdo.html
 * */
+	$emailPattren = '/^([a-z0-9])(([-a-z0-9._])*([a-z0-9]))*\@([a-z0-9])' .
+            '(([a-z0-9-])*([a-z0-9]))+' . '(\.([a-z0-9])([-a-z0-9_-])?([a-z0-9])+)+$/i';
+    $isEmailValid = preg_match($EmailPattren, $_POST['email']);
+    
+    if($IsEmailValid <= 0)
+    {
+    	echo 'NOT A VALID MAIL YOU NOOB';
+    }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         /* Connect to DB */
@@ -59,8 +67,9 @@ values
                 if ($beginDateTimeStamp<$endDateTimeStamp){
 
                     //Add to DB
-                    require("inc-dbcon.php");
+                    //require("inc-dbcon.php");
 
+                    //Bij editen geéń nieuw plaatje geupload
                     if ($urlImage == "") {
                         $sth = $dbh->prepare("SELECT * FROM events WHERE id=:id");
 
@@ -68,9 +77,14 @@ values
                         $id = strip_tags($_POST['id']);
                         $sth->bindParam(':id', $id);
 
+                        $sth->setFetchMode(PDO::FETCH_OBJ);
                         $sth->execute();
 
                         $row = $sth->fetch();
+
+                        //DEBUG
+                        print_r($row);
+                        
                         $urlImage = $row->image;
                     }
 

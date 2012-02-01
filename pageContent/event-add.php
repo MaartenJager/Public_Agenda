@@ -126,5 +126,5 @@ if (isset( $_SESSION['accessLevel'] ))
 }
 else
 {
-	echo "You do not have the required priveleges. Contact the administrator if you should have priveleges.";
+	echo "<br />You do not have the required priveleges. Contact the administrator if you should have priveleges.";
 }

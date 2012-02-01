@@ -102,7 +102,7 @@ body {
 }
 
 #loginBox{
-    border:1px solid black; /* tmp, make borders visible while devving*/
+    border:1px solid black;
     border-top: none;
     background: #ADD8E6;
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#ADD8E6)); /* Safari, Chrome */
@@ -133,6 +133,18 @@ body {
     margin-top: 12px;
     cursor: pointer;
     font: 16px Calibri, Arial; /* for some reason, font isnt inherited */
+}
+
+#loginStatus {
+    display: block; /* Change to 'none' to hide */
+    border: 1px solid black;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    position: absolute;
+    margin-left: 779px;
+    width: 180px;
+    height: 128px;
 }
 
 /* LIBRARY ****************************************************************** */
@@ -243,42 +255,43 @@ included the code you did, and what exactly uses it. */
 }
 
 /* Used by agenda page */
-#agenda .event{
+#agenda .event-even {
     height: 85px;
     margin-bottom: 5px; /* space between two events */
     border-style: solid;
     border-color: black;
     border-width: 1px;
     border-right-style:none;
-}
-
-/* Even entries in de agenda use this to determine their BG color */
-#agenda .even {
     background: #ADD8E6; /* fallback bg color */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#ADD8E6)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFFFFF, #ADD8E6); /* Firefox */
-
 }
 
-/* Odd entries in de agenda use this to determine their BG color */
-#agenda .odd {
+/* Used by agenda page */
+#agenda .event-odd {
+    height: 85px;
+    margin-bottom: 5px; /* space between two events */
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-right-style:none;
     background: #9370D8; /* fallback bg color */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#A52A2A)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFFFFF, #9370D8); /* Firefox */
 }
 
-#agenda .event .date {
+#agenda .event-odd .date, #agenda .event-even .date {
     width: 85px;
     height:85px;
     float: left;
     text-align: center;
 }
 
-#agenda .event .day{
+#agenda .event-odd .day, #agenda .event-even .day {
     font-size: 28pt;
 }
 
-#agenda .event .comment {
+#agenda .event-odd .comment, #agenda .event-even .comment {
     /*border:1px solid red; /* tmp, make borders visible while devving*/
     display: inline;
     width: 450px;
@@ -288,11 +301,11 @@ included the code you did, and what exactly uses it. */
     font-size: 11pt;
 }
 
-#agenda .event .comment .summary{
+#agenda .event-odd .comment .summary, #agenda .event-even .comment .summary {
     font-weight: bold;
 }
 
-#agenda .event .comment .description{
+#agenda .event-odd .comment .description, #agenda .event-even .comment .description {
     margin-bottom: 0px; /* space between summary and meta-info*/
     height: 60%;
     text-overflow: ellipsis;
@@ -302,12 +315,12 @@ included the code you did, and what exactly uses it. */
     /*white-space: nowrap*/
 }
 
-#agenda .event .comment .meta{
+#agenda .event-odd .comment .meta, #agenda .event-even .comment .meta {
     color: gray;
     font-size: 9pt;
 }
 
-#agenda .event img{
+#agenda .event-odd img, #agenda .event-odd img, {
     float: right;
     height: 85px;
     width: 85px;
