@@ -97,7 +97,8 @@
                             echo "                            <div id=\"dateYear\">" . date("Y", $row->beginDate) . "</div>\n";
                             echo "                        </div>\n";
                             echo "                        <div class=\"image\"><img src=\"" . $row->image . "\" alt=\"Afbeelding\" itemprop=\"photo\"></div>";
-                            echo "                        <div class=\"title\"><a href=\"#" . $row->id . "\" onclick=\"expandEntry('" . $row->id . "');\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a></div> <a href=\"index.php?page=event-review&id=" . $row->id . "\">  <img src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\"></a>\n" ;
+                            echo "                        <div class=\"title\"><a href=\"#" . $row->id . "\" onclick=\"expandEntry('" . $row->id . "');\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">". $row->title ."</span></a></div> <a href=\"index.php?page=event-review&id=" . $row->id . "\">";
+                            echo "                            <img id=\"btn-icon\" src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\"></a>\n" ;
                             echo "                        <div id=\"" . $row->id . "\" class=\"description\" itemprop=\"description\">". $row->description ."</div>\n";
                             echo "                        <div class=\"meta\">\n";
                             echo "                            <span itemprop=\"startDate\" datetime=\"2022-07-04T18:00\">" . date("d-m-Y H:i:s", $row->beginDate) . "</span> tot\n";
@@ -110,7 +111,7 @@
                             echo "                                <span itemprop=\"locality\">Amsterdam</span>,\n";
                             echo "                                <span itemprop=\"country-name\">Nederland</span>\n";
                             echo "                            </span>\n";
-                            echo "                            <span itemprop=\"geo\">";
+                            echo "                            <span itemprop=\"geo\">\n";
                             echo "                                <meta itemprop=\"latitude\" content=\"52.354496\" />\n";
                             echo "                                <meta itemprop=\"longitude\" content=\"4.954206\" />\n";
                             echo "                            </span>\n";
