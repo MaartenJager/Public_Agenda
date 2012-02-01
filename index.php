@@ -38,7 +38,7 @@
                         require($page);
                     }
                     else{
-                        echo "<h1>Oeps...</h1>
+                        echo "<h1>Oeps...</h1>";
                         echo "<p><404 - Opgevraagde pagina bestaat niet/p>";
                     }
                         
