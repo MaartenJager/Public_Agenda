@@ -56,7 +56,7 @@
         <input type="email" name="email" value="<?php echo $row->email ?>" disabled="disabled">
 
         <label>Wachtwoord</label>
-        <input type="password" name="password" value="" disabled="disabled" required>
+        <input type="password" name="password" value="" required>
 
         <input id="button" name="editUser" type="submit" value="Update">
     </form>
