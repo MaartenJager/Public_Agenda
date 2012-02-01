@@ -307,11 +307,6 @@ thead th, tfoot th{
     overflow-x: hidden;
 }
 
-#agendaPicture {
-    width: 120px;
-    height: 120px;
-}
-
 #dateDay {
     font: 42px Calibri, Arial;
 }
