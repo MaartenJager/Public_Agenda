@@ -48,7 +48,23 @@
             print_r($row);
         ?>
     </p>
-    
+
+    <form action="formhandler.php" method="post">
+        <label>Voornaam</label>
+        <input type="text" name="firstName" value="<?php echo $row->firstName ?>" disabled="disabled">
+
+        <label>Achternaam</label>
+        <input type="text" name="name" value="<?php echo $row->name ?>" disabled="disabled">
+
+        <label>Email (tevens de login naam)</label>
+        <input type="email" name="email" value="<?php echo $row->email ?>" disabled="disabled">
+
+        <label>Wachtwoord</label>
+        <input type="password" name="password" value="" disabled="disabled" required>
+
+        <input id="button" name="editUser" type="submit" value="Update">
+    </form>
+
 
 <?php else: ?>
     <p>U bent niet ingelogd, geen profiel om weer te geven!</p>
