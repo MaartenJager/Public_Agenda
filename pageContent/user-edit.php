@@ -40,15 +40,6 @@
         $sth->execute();
     ?>
 
-    
-    <p>
-        id: <?php echo $id; ?>
-        <?php
-            $row = $sth->fetch();
-            print_r($row);
-        ?>
-    </p>
-
     <form action="formhandler.php" method="post">
         <label>Voornaam</label>
         <input type="text" name="firstName" value="<?php echo $row->firstName ?>" disabled="disabled">
