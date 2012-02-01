@@ -9,7 +9,7 @@
                             WHERE approvedBy IS NOT NULL";
     if(isset($_POST['search'])){
         if(isset($_POST['eventName']) && $_POST['eventName']!=""){
-            $query = $query . " AND (title LIKE '%" . $_POST['eventName'] . "%' OR description LIKE '%" . $_POST['description'] . "%')";
+            $query = $query . " AND (title LIKE '%" . $_POST['eventName'] . "%' OR description LIKE '%" . $_POST['eventName'] . "%')";
         }
     }
     $query = $query . " ORDER BY events.beginDate ASC";
