@@ -10,9 +10,11 @@ body {
     width: 960px;
     margin: 5px auto 0px auto;
     border: 1px solid;
+    
+    background: #FFCC33; /* Fallback for other browsers */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFCC33), to(#FFFFFF));
     background: -moz-linear-gradient(top, #FFCC33, #FFFFFF) repeat-x;
-    background: #FFCC33; /* Fallback for other browsers */
+
 }
 
 /* LAYOUT ******************************************************************* */
@@ -29,9 +31,11 @@ body {
     text-align: center;
     list-style: none;
     height: 30px;
+    
+    background: #D2691E; /* Fallback for other browsers */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFA500), to(#A52A2A));
     background: -moz-linear-gradient(top, #FFA500, #A52A2A);
-    background: #D2691E; /* Fallback for other browsers */
+
     border-bottom: 1px solid;
 }
 
@@ -56,16 +60,16 @@ body {
     border: 1px solid;
     padding: 5px;
     /* Button color when not touched/pressed */
+    background: #DD0000; /* Fallback for other browsers */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#A52A2A));
     background: -moz-linear-gradient(top, #FFFF00, #A52A2A);
-    background: #DD0000; /* Fallback for other browsers */
 }
 
 #menu li a:active, #menu li a:hover {
     /* Button color when touched/pressed */
+    background: #BB0000; /* Fallback for other browsers */
     background: -webkit-gradient(linear, left top, left bottom, from(#A52A2A), to(#FFFF00));
     background: -moz-linear-gradient(top, #A52A2A, #FFFF00);
-    background: #BB0000; /* Fallback for other browsers */
 }
 
 #container {
@@ -135,9 +139,10 @@ body {
     border-right: none;
     float: right;
     height: 32px;
-    background: #D3D3D3;
+
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#D3D3D3)); /* Safari, Chrome */
     background: -moz-linear-gradient(top, #FFFFFF, #D3D3D3); /* Firefox */
+    background: #D3D3D3; /* Fallback for other browsers */
 }
 
 #loginStatusContent {
@@ -258,10 +263,10 @@ thead th, tfoot th{
     border-style: solid;
     border-color: black;
     border-width: 1px;
-    
+
+    background: #ADD8E6; /* Fallback for other browsers */    
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#ADD8E6));
     background: -moz-linear-gradient(top, #FFFFFF, #ADD8E6);
-    background: #ADD8E6; /* Fallback for other browsers */
 }
 
 #agenda .event-odd {
@@ -271,10 +276,10 @@ thead th, tfoot th{
     border-style: solid;
     border-color: black;
     border-width: 1px;
-    
+
+    background: #90EE90; /* Fallback for other browsers */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#90EE90));
     background: -moz-linear-gradient(top, #FFFFFF, #90EE90);
-    background: #90EE90; /* Fallback for other browsers */
 }
 
 #agenda .event-odd .date, #agenda .event-even .date {
