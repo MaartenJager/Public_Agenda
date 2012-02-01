@@ -83,13 +83,6 @@
                 Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
-                        echo $firstDate . "\n";
-                        echo $lastDate . "\n";
-   echo "fm" . $firstMonthSearch . "\n";
-  echo  "lm" . $lastMonthSearch . "\n";
-  echo  "fd" . $firstDaySearch . "\n";
-  echo  "ld" . $lastDaySearch . "\n";
-
                         echo $query;
                         $counter = 0;
                         // showing the results
