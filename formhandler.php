@@ -20,7 +20,7 @@
                     echo "id uit form:   " . $_POST['id'] . "<br>";
                     echo "id uit sessie: " . $_SESSION['userId'] . "<br>";
                     
-                    if(!($_POST['id']) == $_SESSION['userId']){
+                    if( ($_POST['id']) != ($_SESSION['userId']) ){
                         echo "accessLevel in form is niet gelijk aan daadwerkelijke <br>";
                         header("Location: index.php?page=error-permissions");
                     }
