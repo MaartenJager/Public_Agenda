@@ -40,7 +40,7 @@
             echo $userRow->accessLevel;            
             echo "<br><br>";
             
-            $_SESSION['userId'] = $userRow->id;
+            
 
             /*** if we have no result then fail boat ***/
             if($accessLevel == false)
@@ -53,6 +53,8 @@
             {
                     /*** set the session user_id variable ***/
                     $_SESSION['accessLevel'] = $accessLevel;
+                    $_SESSION['userId'] = $userRow->id;
+                    $_SESSION['email'] = $_POST['email'];
 
                     /*** tell the user we are logged in ***/
                     echo "You are now logged in<br><br>"; 
