@@ -24,7 +24,6 @@
 
                 <div id="checkbox_below">
                     <label>Zoeken op (begin)datum</label>
-                    <p>Gebruik * als joker.</p>
                     <select name="searchDay">
                         <option value="00">*</option>
                         <option value="01">1</option>
@@ -83,6 +82,7 @@
                         <option value="2014">2014</option>
                         <option value="2015">2015</option>
                     </select>
+                    <p>Gebruik * als joker.</p>
 
                     <input id="button" name="search" type="submit" value="Zoek" />
                 </div>

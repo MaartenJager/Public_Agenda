@@ -7,13 +7,22 @@
                             INNER JOIN users ON (events.createdBy = users.id)
                             INNER JOIN locations ON (events.location = locations.id)
                             WHERE approvedBy IS NOT NULL";
+    $wordSearch = false;
     if(isset($_POST['search'])){
         if(isset($_POST['eventName']) && $_POST['eventName']!=""){
-            $query = $query . " AND (title LIKE '%" . $_POST['eventName'] . "%' OR description LIKE '%" . $_POST['eventName'] . "%')";
+            $query = $query . " AND (title LIKE :eventName OR description LIKE :eventName)";
+//          $query = $query . " AND (title LIKE '%" . $_POST['eventName'] . "%' OR description LIKE '%" . $_POST['eventName'] . "%')";
+            $wordSearch = true;
         }
     }
     $query = $query . " ORDER BY events.beginDate ASC";
-    $sth = $dbh->query($query);
+
+
+    $sth = $dbh->prepare($query);
+    if($wordSearch){
+        $eventName = "%" . strip_tags($_POST['eventName']) . "%";
+        $sth->bindParam(':eventName', $eventName);
+    }
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
 ?>

@@ -54,13 +54,11 @@
                     /*** set the session user_id variable ***/
                     $_SESSION['accessLevel'] = $accessLevel;
                     $_SESSION['userId'] = $userRow->id;
-                    $_SESSION['email'] = $_POST['email'];
+                    $_SESSION['email'] = $email;
 
                     /*** tell the user we are logged in ***/
                     echo "You are now logged in<br><br>"; 
-                    $message = 'You are now logged in';
-                    echo '<a href="http://websec.science.uva.nl/webdb1241">Click here to return to the page '
-                    . $email . '</a>'; 
+                    //header("Location: /webdb1241/index.php");
             }
         }
         catch(Exception $e)
