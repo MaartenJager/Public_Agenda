@@ -6,7 +6,7 @@
    
     <body>
     <?php
-		require_once("inc/nav.inc");
+		
 		echo '
 			<div id="header">
 				<div id="loginStatus">
@@ -15,6 +15,7 @@
 					</div>
 				</div>
 			</div>';
+		require_once("inc/nav.inc");
     ?>
         
 

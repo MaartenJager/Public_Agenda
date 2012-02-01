@@ -54,7 +54,7 @@
                     /*** set the session user_id variable ***/
                     $_SESSION['accessLevel'] = $accessLevel;
                     $_SESSION['userId'] = $userRow->id;
-                    $_SESSION['email'] = $_POST['email'];
+                    $_SESSION['email'] = $email;
 
                     /*** tell the user we are logged in ***/
                     echo "You are now logged in<br><br>"; 
