@@ -7,7 +7,7 @@
                             INNER JOIN users ON (events.createdBy = users.id)
                             INNER JOIN locations ON (events.location = locations.id)
                             WHERE approvedBy IS NOT NULL";
-    if(isset($_POST(['search'])) {
+    if(isset($_POST['search'])){
         $query = $query . " AND title='a'"
     }
     $query = $query . " ORDER BY events.beginDate ASC";
