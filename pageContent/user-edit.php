@@ -12,12 +12,12 @@
         <?php
             //Rechten om iemand anders zijn profiel aan te passen, haal id uit URL
             if (isset( $GET['id']) ){                
-            echo "<p>Hieronder is het opgevraagde profiel in te zien/te bewerken:</p>"
+            echo "<p>Hieronder is het opgevraagde profiel in te zien/te bewerken:</p>";
                 $id = strip_tags($_GET['id']);
             }
             //Indien geen id meegegeven in URL geef dan huidige ingelogd gebruiker in
             else{                   
-                echo "<p>Hieronder is uw profiel in te zien/te bewerken:</p>"
+                echo "<p>Hieronder is uw profiel in te zien/te bewerken:</p>";
                 $id = $_SESSION['userId'];
             }
         ?>
