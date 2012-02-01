@@ -61,6 +61,8 @@
         <label>Wachtwoord bevestigen</label>
         <input type="password" name="password2" value="" required>
 
+        <input type="hidden" name="id" value="<? echo $id ?>">
+
         <input id="button" name="editUser" type="submit" value="Update">
     </form>
 
