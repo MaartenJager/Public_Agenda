@@ -63,13 +63,6 @@
 
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
-    
-    
-    $sth = $dbh->prepare("SELECT * FROM genre_event_koppeling WHERE eventId=:id");
-    $sth->bindParam(':id', $id);
-    $sth->setFetchMode(PDO::FETCH_OBJ);
-    $sth->execute();
-    $booleanArray = array_fill(0, 8, FALSE);
 ?>
 
 <script language="JavaScript">
