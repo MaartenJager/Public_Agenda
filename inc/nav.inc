@@ -16,7 +16,7 @@ if (isset( $_SESSION['accessLevel'] ))
 	{
 		echo '
 		<li><a href="index.php?page=event-add">Evenement toevoegen</a></li>
-		<li><a href="index.php?page=logout">Logout</a></li>';
+		<li><a href="logout.php">Logout</a></li>';
 	}	
 	if ($_SESSION['accessLevel'] == 2)
 	{		
