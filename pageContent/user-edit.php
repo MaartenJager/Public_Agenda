@@ -13,21 +13,24 @@
         $sth->execute();
     ?>
 
-    <?php if ( ($_SESSION['accessLevel'] == 1) || ($_SESSION['accessLevel'] == 2)): ?>
-        <p>Hieronder worden uw gegevens weergegeven zoals deze bij ons bekend zijn:</p>
-        <p>
-            id: <?php echo $id; ?>
-            <?php
-                $row = $sth->fetch();
-                print_r($row);
-            ?>
-        </p>
+    <?php if ($_SESSION['accessLevel'] == 1): ?>
+       
         
-    <?php elseif ($_SESSION['accessLevel'] == 3): ?>
+    <?php elseif ($_SESSION['accessLevel'] == 2): ?>
         <!--- ingelogd met level 3 -->
     <?php else: ?>
         Wel ingelogd, geen rechten!?
     <?php endif; ?>
+
+     <p>Hieronder worden uw gegevens weergegeven zoals deze bij ons bekend zijn:</p>
+    <p>
+        id: <?php echo $id; ?>
+        <?php
+            $row = $sth->fetch();
+            print_r($row);
+        ?>
+    </p>
+    
 
 <?php else: ?>
     <p>U bent niet ingelogd, geen profiel om weer te geven!</p>
