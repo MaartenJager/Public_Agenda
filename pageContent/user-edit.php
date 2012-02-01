@@ -4,7 +4,6 @@
     <?php if ($_SESSION['accessLevel'] == 1): ?>
         <?php
             echo "<p>Hieronder is uw profiel in te zien/te bewerken:</p>"
-            //Rechten om alleen eigen profiel aan te passen
             $id = $_SESSION['userId'];
         ?>
        
