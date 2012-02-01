@@ -5,7 +5,12 @@
     </head>
 
     <body>
-        <div id="header"></div>
+        <div id="header">
+            <div id="loginStatus">
+                <p>Goededag VOORNAAM, u bent ingelogd op account EMAIL.</p>
+                <p>Druk hier om uw wachtwoord te wijzigen.</p>
+            </div>
+        </div>
         <?php require_once("inc/nav.inc"); ?>
 
         <div id="container">
