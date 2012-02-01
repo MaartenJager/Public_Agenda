@@ -70,12 +70,12 @@
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
     $booleanArray = array_fill(0, 8, FALSE);
-    
-    while( $row2 = $sth->fetch() ) {
-        $i=1;
-        while( $i != $row2->genreId ) {
-            $i++;
-        }
+
+    // Todo:
+    // - Get total amount of genres available, preset strings to their genre names (currently hardcoded)
+    $i=1;
+    while( $i < 9 ) {
+        $i++;
         $tempInt=$i-1;
         $booleanArray[$tempInt] = TRUE;
     }
