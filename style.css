@@ -292,8 +292,8 @@ thead th, tfoot th{
 }
 
 #agenda img {
-    width: 120px;
-    height: 120px;
+    width: 16px;
+    height: 16px;
 }
 
 #agenda .meta {
@@ -305,6 +305,11 @@ thead th, tfoot th{
     margin-right: 128px;
     height: 70px;
     overflow-x: hidden;
+}
+
+#agendaPicture {
+    width: 120px;
+    height: 120px;
 }
 
 #dateDay {
