@@ -12,7 +12,7 @@
 			echo '
 					<div id="loginStatus">
 						<div id="loginStatusContent">
-							<p>Ingelogd als ' . $_SESSION['email'] . ' <---> <a href="#">Wachtwoord wijzigen</a></p>
+							<p>Ingelogd als ' . $_SESSION['email'] . ' LINK HIERNAAST <a href="#">Wachtwoord wijzigen</a></p>
 						</div>
 					</div>
 				';
