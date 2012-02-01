@@ -5,8 +5,8 @@
     </head>
    
     <body>
-    <?php require_once("inc/nav.inc"); ?>
     <?php
+    session_start();
     echo '
         <div id="header">
             <div id="loginStatus">
@@ -16,7 +16,7 @@
             </div>
         </div>';
     ?>
-        
+        <?php require_once("inc/nav.inc"); ?>
 
         <div id="container">
             <section id="main">
