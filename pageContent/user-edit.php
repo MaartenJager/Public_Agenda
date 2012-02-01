@@ -9,5 +9,5 @@
     <?php endif; ?>
 
 <?php else: ?>
-    "Niet ingelogd.";
+    Niet ingelogd
 <?php endif; ?>
