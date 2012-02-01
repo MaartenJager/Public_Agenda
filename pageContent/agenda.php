@@ -8,7 +8,11 @@
                             INNER JOIN locations ON (events.location = locations.id)
                             WHERE approvedBy IS NOT NULL";
     $wordSearch = false;
-    $yearSearch = false;
+    $dateSearch = false;
+    $firstMonthSearch = 1;
+    $lastMonthSearch = 12;
+    $firstDaySearch = 1;
+    $lastDaySearch = 31;
     if(isset($_POST['search'])){
         if(isset($_POST['eventName']) && $_POST['eventName']!=""){
             $query = $query . " AND (title LIKE :eventName OR description LIKE :eventName)";
@@ -16,20 +20,43 @@
         }
         if(isset($_POST['searchYear']) && $_POST['searchYear']!='*'){
             $query = $query . " AND ((beginDate>:firstDate AND beginDate<:lastDate) OR (endDate>:lastDate AND endDate<:lastDate))";
-            $yearSearch = true;
+            $dateSearch = true;
+            if(isset($_POST['searchMonth']) && $_POST['searchMonth']!='*'){
+                $firstMonthSearch = strip_tags($_POST['searchMonth']);
+                $lastMonthSearch = strip_tags($_POST['searchMonth']);
+                if(isset($_POST['searchDay']) && $_POST['searchDay']!='*'){
+                    $firstDaySearch = strip_tags($_POST['searchDay']);
+                    $lastDaySearch = strip_tags($_POST['searchDay']);
+                }
+                else
+                {
+                    if($firstMonthSearch == 4 || $firstMonthSearch == 6 || $firstMonthSearch == 9 || $firstMonthSearch == 11){
+                        $lastDaySearch = 30;
+                    }
+                    if($firstMonthSearch == 2){
+                        if((!($_POST['searchYear'] % 4) && ($_POST['searchYear'] % 100)) || !($_POST['searchYear'] % 400)){
+                            $lastDaySearch = 29;
+                        }
+                        else
+                        {
+                            $lastDaySearch = 28;
+                        }
+                    }
+                }
+            }
         }
     }
-    $query = $query . " ORDER BY events.beginDate ASC";
 
+    $query = $query . " ORDER BY events.beginDate ASC";
 
     $sth = $dbh->prepare($query);
     if($wordSearch){
         $eventName = "%" . strip_tags($_POST['eventName']) . "%";
         $sth->bindParam(':eventName', $eventName);
     }
-    if($yearSearch){
-        $firstDate = mktime(0, 0, 0, 1, 1, strip_tags($_POST['searchYear']));
-        $lastDate = mktime(23, 59, 59, 12, 31, strip_tags($_POST['searchYear']));
+    if($dateSearch){
+        $firstDate = mktime(0, 0, 0, $firstMonthSearch, $firstDaySearch, strip_tags($_POST['searchYear']));
+        $lastDate = mktime(23, 59, 59, $lastMonthSearch, $lastDaySearch, strip_tags($_POST['searchYear']));
         $sth->bindParam(':firstDate', $firstDate);
         $sth->bindParam(':lastDate', $lastDate);
     }
