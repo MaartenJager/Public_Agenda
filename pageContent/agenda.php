@@ -81,8 +81,6 @@
     }
 ?>
 
-?>
-
 <script language="JavaScript">
     function expandEntry(id) {
         if (document.getElementById(id).style.height == 'auto') {
