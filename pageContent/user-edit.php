@@ -13,8 +13,7 @@
         <p>Hieronder is het opgevraagde profiel in te zien/te bewerken:</p>
         <?php
             //Rechten om iemand anders zijn profiel aan te passen, haal id uit G
-            if (isset( $GET['id'] )
-            {
+            if (isset( $GET['id'] ){
                 $id = strip_tags($_GET['id']);
             }
         ?>
