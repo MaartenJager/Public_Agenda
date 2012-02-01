@@ -18,13 +18,13 @@
             $query = $query . " AND (title LIKE :eventName OR description LIKE :eventName)";
             $wordSearch = true;
         }
-        if(isset($_POST['searchYear']) && $_POST['searchYear']!='*'){
+        if(isset($_POST['searchYear']) && $_POST['searchYear']!=00){
             $query = $query . " AND ((beginDate>:firstDate AND beginDate<:lastDate) OR (endDate>:lastDate AND endDate<:lastDate))";
             $dateSearch = true;
-            if(isset($_POST['searchMonth']) && $_POST['searchMonth']!='*'){
+            if(isset($_POST['searchMonth']) && $_POST['searchMonth']!=00){
                 $firstMonthSearch = strip_tags($_POST['searchMonth']);
                 $lastMonthSearch = strip_tags($_POST['searchMonth']);
-                if(isset($_POST['searchDay']) && $_POST['searchDay']!='*'){
+                if(isset($_POST['searchDay']) && $_POST['searchDay']!=00){
                     $firstDaySearch = strip_tags($_POST['searchDay']);
                     $lastDaySearch = strip_tags($_POST['searchDay']);
                 }
