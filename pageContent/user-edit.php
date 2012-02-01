@@ -45,7 +45,7 @@
         }
     ?>
 
-    <form action="formhandler.php" method="post">
+    <form action="formhandler.php" method="post" onSubmit="return checkPasswords(this);">>
         <label>Voornaam</label>
         <input type="text" name="firstName" value="<?php echo $row->firstName ?>" disabled="disabled">
 
