@@ -85,6 +85,10 @@
                     <?php
                         echo $firstDate;
                         echo $lastDate;
+   echo $firstMonthSearch;
+  echo  $lastMonthSearch;
+  echo  $firstDaySearch;
+  echo  $lastDaySearch;
 
                         echo $query;
                         $counter = 0;
