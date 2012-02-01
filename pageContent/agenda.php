@@ -83,6 +83,9 @@
                 Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
+                        echo $firstDate;
+                        echo $lastDate;
+
                         echo $query;
                         $counter = 0;
                         // showing the results
