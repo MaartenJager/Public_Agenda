@@ -18,13 +18,13 @@
             $query = $query . " AND (title LIKE :eventName OR description LIKE :eventName)";
             $wordSearch = true;
         }
-        if(isset($_POST['searchYear']) && $_POST['searchYear']!='*'){
-            $query = $query . " AND ((beginDate>:firstDate AND beginDate<:lastDate) OR (endDate>:lastDate AND endDate<:lastDate))";
+        if(isset($_POST['searchYear']) && $_POST['searchYear']!=00){
+            $query = $query . " AND ((beginDate>:firstDate AND beginDate<:lastDate) OR (endDate>:lastDate AND endDate<:lastDate) OR (beginDate<:firstDate AND endDate>:lastDate))";
             $dateSearch = true;
-            if(isset($_POST['searchMonth']) && $_POST['searchMonth']!='*'){
+            if(isset($_POST['searchMonth']) && $_POST['searchMonth']!=00){
                 $firstMonthSearch = strip_tags($_POST['searchMonth']);
                 $lastMonthSearch = strip_tags($_POST['searchMonth']);
-                if(isset($_POST['searchDay']) && $_POST['searchDay']!='*'){
+                if(isset($_POST['searchDay']) && $_POST['searchDay']!=00){
                     $firstDaySearch = strip_tags($_POST['searchDay']);
                     $lastDaySearch = strip_tags($_POST['searchDay']);
                 }
@@ -83,8 +83,12 @@
                 Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
-                        echo $firstDate;
-                        echo $lastDate;
+                        echo $firstDate . "\n";
+                        echo $lastDate . "\n";
+   echo "fm" . $firstMonthSearch . "\n";
+  echo  "lm" . $lastMonthSearch . "\n";
+  echo  "fd" . $firstDaySearch . "\n";
+  echo  "ld" . $lastDaySearch . "\n";
 
                         echo $query;
                         $counter = 0;
