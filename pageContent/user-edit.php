@@ -13,7 +13,10 @@
         $sth->execute();
     ?>
 
-    <?php if ($_SESSION['accessLevel'] == 1): ?>
+    <?php
+        //Level 1: Mag alleen zijn eigen gegevens aanpassen
+        if ($_SESSION['accessLevel'] == 1):
+    ?>
        
         
     <?php elseif ($_SESSION['accessLevel'] == 2): ?>
@@ -22,7 +25,7 @@
         Wel ingelogd, geen rechten!?
     <?php endif; ?>
 
-     <p>Hieronder worden uw gegevens weergegeven zoals deze bij ons bekend zijn:</p>
+    <p>Hieronder worden uw gegevens weergegeven zoals deze bij ons bekend zijn:</p>
     <p>
         id: <?php echo $id; ?>
         <?php
