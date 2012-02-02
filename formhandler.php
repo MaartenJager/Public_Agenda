@@ -399,6 +399,7 @@
     }
 
     function checkForUploadedImage(){
+        if(isset($_FILES['new_image']['name'])){
         $urlImage = "";
         //Image upload
         $targetPath = "uploads/";
@@ -441,9 +442,14 @@
         }
         else
         {
-            echo "Ongeldige file, plaatje van het formaat gif of jpeg zijn!<br />";
+            echo "Ongeldige file, afbeelding moet van het formaat gif of jpeg zijn!<br />";
         }
         return $urlImage;
+        }
+        else
+        {
+            echo "Geen afbeelding geselecteerd.<br />";
+        }
     }
 
 $dbh = null;
