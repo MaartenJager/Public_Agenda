@@ -441,7 +441,7 @@
         }
         else
         {
-            echo "Ongeldige file<br />";
+            echo "Ongeldige file, plaatje van het formaat gif of jpeg zijn!<br />";
         }
         return $urlImage;
     }
