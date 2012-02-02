@@ -152,5 +152,5 @@ if (isset( $_SESSION['accessLevel'] ))
 else
 {
     echo "<br />You are not logged in. You need to log in to view this page.";
-    header("Location: index.php?page=error-permissions");
+    header("Location: index.php?page=error-loggedin");
 }

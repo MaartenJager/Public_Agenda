@@ -277,8 +277,10 @@
                 }
             }
         }
-        else{
+        else
+        {
             echo "U bent niet ingelogd en hebt dus geen rechten om deze actie uit te voeren!";
+            header("Location: index.php?page=error-permissions");
         }
     }
 
