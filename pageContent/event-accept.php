@@ -78,7 +78,7 @@ echo <<<EOT
         <input name="event_id$i" value="$id" type="hidden">
 EOT;
             }
-        if($eventsExistant){ 
+        if($eventsExistant){
 echo <<<EOT
 
         </tbody>
