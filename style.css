@@ -284,8 +284,6 @@ thead th, tfoot th{
 }
 
 #agenda .image {
-    border-left: 1px solid;
-    border-bottom: 1px solid;
     float: right;
     width: 120px;
     height: 120px;
@@ -297,12 +295,14 @@ thead th, tfoot th{
 }
 
 #agenda .meta {
+    margin-left: 5px;
     font: 11px Calibri, Arial;
     color: grey;
 }
 
 #agenda .description {
     margin-right: 128px;
+    width: 690px;
     height: 70px;
     min-height: 70px; /* Prevent really short descriptions from glitching out */
     overflow-x: hidden;
