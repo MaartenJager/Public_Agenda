@@ -121,7 +121,7 @@ if (isset( $_SESSION['accessLevel'] ))
                         </form>
 
                         <script>
-                            function checkCheckBoxes()
+                            function checkCheckBoxesTEMP()
                             {
                             alert ("werkt test");
                                 var checkboxes = document.event-add.getElementsByTagName(\'input\');
@@ -136,7 +136,10 @@ if (isset( $_SESSION['accessLevel'] ))
                                 alert ("No checkbox checked noob");
                                 return (false);
                             }
-
+                            function checkCheckBoxes()
+                            {                            
+                            	alert ("POP UP?");
+                            }
                         </script>
         ';
     }
