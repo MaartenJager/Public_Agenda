@@ -47,6 +47,55 @@
                 }
             }
         }
+
+        $searchGenre = false;
+        $query = $query . " AND ("
+        if( isset($_POST['genre_pop']) ){
+            $query = $query . "genreId=1 OR "
+            $searchGenre = true;
+        }
+
+        if( isset($_POST['genre_rock']) ){
+            $query = $query . "genreId=2 OR "
+            $searchGenre = true;
+        }
+
+        if( isset($_POST['genre_metal']) ){
+            $query = $query . "genreId=3 OR "
+            $searchGenre = true;
+        }
+
+        if( isset($_POST['genre_hiphop']) ){
+            $query = $query . "genreId=4 OR "
+            $searchGenre = true;
+        }
+
+        if( isset($_POST['genre_blues']) ){
+            $query = $query . "genreId=5 OR "
+            $searchGenre = true;
+        }
+
+        if( isset($_POST['genre_classic']) ){
+            $query = $query . "genreId=6 OR "
+            $searchGenre = true;
+        }
+
+        if( isset($_POST['genre_church']) ){
+            $query = $query . "genreId=7 OR "
+            $searchGenre = true;
+        }
+
+        if( isset($_POST['genre_other']) ){
+            $query = $query . "genreId=8 OR "
+            $searchGenre = true;
+        }
+        if($searchGenre) {
+            $query = $query . "0)";
+        }
+        else
+        {
+            $query = $query . "1)";
+        }
     }
 
     $query = $query . " ORDER BY events.beginDate ASC";
