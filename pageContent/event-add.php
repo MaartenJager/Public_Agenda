@@ -130,11 +130,11 @@ if (isset( $_SESSION['accessLevel'] ))
 									if (checkboxes[i].type.toLowerCase() == \'chechbox\' && checkboxes[i].checked)
 									{
 										alert ("Nice checkbox checked");
-										return (true);
+										
 									}
 								}
 								alert ("No checkbox checked noob");
-								return (false);
+								
 							}
 
 						</script>
