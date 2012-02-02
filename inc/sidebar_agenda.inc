@@ -23,7 +23,7 @@
                 </div>
 
                 <div id="checkbox_below">
-                    <label>Zoeken op datum (u kunt alleen zoeken op maand als u ook een jaar invuld etc.</label>
+                    <label>Zoeken op datum (u kunt alleen zoeken op maand als u ook een jaar invuld etc.)</label>
                     <select name="searchDay">
                         <option value="00">*</option>
                         <option value="01">1</option>
