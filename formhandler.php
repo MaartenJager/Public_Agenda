@@ -417,7 +417,7 @@
         if ((($_FILES["file"]["type"] == "image/gif")
           || ($_FILES["file"]["type"] == "image/jpeg")
           || ($_FILES["file"]["type"] == "image/pjpeg")) // old IE browser notation
-          && ($_FILES["file"]["size"] < 20000)){
+          && ($_FILES["file"]["size"] < 200000)){
             if ($_FILES["file"]["error"] > 0){
                 echo "Error: " . $_FILES["file"]["error"] . "<br />";
             }
