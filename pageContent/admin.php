@@ -16,7 +16,9 @@
 </script>
 
 <h1>Gebruikersbeheer</h1>
-
+<?php if (isset( $_SESSION['accessLevel'] )): ?>
+    <?php if ($_SESSION['accessLevel'] == 2): ?>
+                
                 <form action="sqlaction.php" method="post">
                     <table>
                         <thead>
@@ -46,7 +48,7 @@
                                     echo "      <a class=\"button\" href=\"sqlaction.php?type=user&action=delete&id=".$row->id."\"> \n";
                                     echo "          <img src=\"img/btn-delete.png\" title=\"Verwijder\" alt=\"Verwijder\" width=\"16\" height=\"16\">\n";
                                     echo "      </a> \n";
-                                    echo "      <a class=\"button\" href=\"formhandler.pdo?action=edit&id=".$row->id."\"> \n";
+                                    echo "      <a class=\"button\" href=\"index.php?page=user-edit&id=".$row->id."\"> \n";
                                     echo "          <img src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\">\n";
                                     echo "      </a> \n";
                                     echo "  </td>\n";
@@ -59,7 +61,7 @@
                 </form>
 
                 <div id="addUserButton">
-                    <input id="button" type="submit" value="Nieuwe gebruiker toevoegen" onclick="makeVisible();" />
+                    <input id="button" type="submit" value="Gebruiker toevoegen" onclick="makeVisible();" />
                 </div>
 
                 <div id="addUser">
@@ -86,3 +88,10 @@
                         <input id="button" name="addUser" type="submit" value="Voeg gebruiker toe">
                     </form>
                 </div>
+    
+    <?php else: ?>
+        <p>U bent wel ingelogd maar hebt niet de juiste permissies om deze admin-pagina te bekijken!</p>
+    <?php endif; ?>
+<?php else: ?>
+    <p>U bent niet ingelogd en hebt dus niet de juiste permissies om deze admin-pagina te bekijken!</p>
+<?php endif; ?>
