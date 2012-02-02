@@ -18,7 +18,7 @@
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $sth->execute();
     $booleanArray = array_fill(0, 8, FALSE);
-    
+
     while( $row2 = $sth->fetch() ) {
         $i=1;
         while( $i != $row2->genreId ) {
@@ -119,9 +119,9 @@ if (isset( $_SESSION['accessLevel'] ))
 
                     <label>Kies de locatie voor het event</label>
                     <select name=\"locationPicker\">
-                        <option value=\"1\">Death Metal zaal: locatie 1</option>
-                        <option value=\"2\">Zaal voor bijbelstudie: locatie 2</option>
-                        <option value=\"3\">Gedichtenzaal: locatie 3</option>
+                        <option value=\"1\" "; if($row->location == 1){ echo "selected=\"selected\""; } echo ">Death Metal zaal: locatie 1</option>
+                        <option value=\"2\" "; if($row->location == 2){ echo "selected=\"selected\""; } echo ">Zaal voor bijbelstudie: locatie 2</option>
+                        <option value=\"3\" "; if($row->location == 3){ echo "selected=\"selected\""; } echo ">Gedichtenzaal: locatie 3</option>
                     </select>
 
                     <label>Beschrijving van het evenement</label>
