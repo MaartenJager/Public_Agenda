@@ -88,7 +88,7 @@
                         $tempId = -1;
                         // showing the results
                         while($row = $sth->fetch()) {
-                            $id = $row->id
+                            $id = $row->id;
                             if($id != $tempId){
                                 $tempId = $row->id;
                                 $counter = $counter + 1;
