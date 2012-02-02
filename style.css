@@ -285,17 +285,6 @@ thead th, tfoot th{
     height: 100%;
 }
 
-#agenda .image {
-    float: right;
-    width: 120px;
-    height: 120px;
-}
-
-#agenda img {
-    width: 16px;
-    height: 16px;
-}
-
 #agenda .meta {
     margin-left: 5px;
     font: 11px Calibri, Arial;
@@ -307,6 +296,21 @@ thead th, tfoot th{
     height: 70px;
     min-height: 70px; /* Prevent really short descriptions from glitching out */
     overflow-x: hidden;
+}
+
+#agenda .summary {
+    font: 11px Calibri, Arial;
+}
+
+#eventPhoto {
+    float: right;
+    width: 120px;
+    height: 120px;
+}
+
+#btnIcon {
+    width: 16px;
+    height: 16px;
 }
 
 #dateDay {

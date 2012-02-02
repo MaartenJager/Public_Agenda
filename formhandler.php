@@ -2,16 +2,7 @@
     /* http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/
 * http://www.kitebird.com/articles/php-pdo.html
 * */
-    session_start();
-    
-    //Checkt of emailpattern wordt gevolgd en anders die bericht
-    $emailPattren = '/^([a-z0-9])(([-a-z0-9._])*([a-z0-9]))*\@([a-z0-9])' .
-            '(([a-z0-9-])*([a-z0-9]))+' . '(\.([a-z0-9])([-a-z0-9_-])?([a-z0-9])+)+$/i';    
-    $isEmailValid = preg_match($emailPattren, $_POST['id']);
-    if ($isemailValid == false)
-    {
-    	die("not a valid email address");
-    }
+    session_start(); 
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -330,8 +321,6 @@
 
         return $arrayCheckboxes;
     }
-    
-
 
     function replaceSlashes($date){
         return str_replace("/", "-", $date);
