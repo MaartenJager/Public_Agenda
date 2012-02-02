@@ -119,8 +119,8 @@ if (isset( $_SESSION['accessLevel'] ))
 
                     <label>Kies de locatie voor het event</label>
                     <select name=\"locationPicker\">
-                        <option value=\"1\" "; if($row->location == 1){ echo "selected=\"selected\""; } echo ">Death Metal zaal: locatie 1</option>
-                        <option value=\"2\" "; if($row->location == 2){ echo "selected=\"selected\""; } echo ">Zaal voor bijbelstudie: locatie 2</option>
+                        <option value=\"1\" "; if($row->location == 1){ echo "selected=\"selected\""; } echo ">Grote zaal: locatie 1</option>
+                        <option value=\"2\" "; if($row->location == 2){ echo "selected=\"selected\""; } echo ">Kleine zaal: locatie 2</option>
                         <option value=\"3\" "; if($row->location == 3){ echo "selected=\"selected\""; } echo ">Gedichtenzaal: locatie 3</option>
                     </select>
 
