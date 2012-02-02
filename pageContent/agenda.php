@@ -2,6 +2,7 @@
 /* Fetch all events from table EVENTS */
     require_once("inc-conf.php");
     require("inc-dbcon.php");
+    session_start();
 
     $query = "    SELECT events.* , users.name, users.firstName, locations.name AS locationName, genre_event_koppeling.genreId
     FROM events
