@@ -125,11 +125,11 @@ if (isset( $_SESSION['accessLevel'] ))
 							function checkCheckBoxes()
 							{
 								var count = 0;
-								for(x = 0; x < document.event-add.checkbox.length; x++)
+								for(x = 0; x < document.event-add.formCheckbox.length; x++)
 								{
-									if (document.event-add.checkbox[x].checked == true)
+									if (document.event-add.formCheckbox[x].checked == true)
 									{
-										count++
+										count++;
 										break;
 									}
 								}
@@ -137,6 +137,10 @@ if (isset( $_SESSION['accessLevel'] ))
 								if(count==0)
 								{
 									alert("Tenminste een genre moet worden aangevinkt.");
+								}
+								else
+								{
+									alert("Alles ok, overgaan tot toevoegen");
 								}
 							}
 						</script>
