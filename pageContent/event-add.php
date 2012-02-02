@@ -135,6 +135,7 @@ if (isset( $_SESSION['accessLevel'] ))
 								}
 								alert ("No checkbox checked noob");
 								return (false);
+							}
 
 						</script>
 		';
