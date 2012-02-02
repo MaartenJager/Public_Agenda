@@ -88,8 +88,8 @@ if (isset( $_SESSION['accessLevel'] ))
 		
 							<label>Kies de locatie voor het event</label>
 							<select name="locationPicker">
-								<option value="1">Death Metal zaal: locatie 1</option>
-								<option value="2">Zaal voor bijbelstudie: locatie 2</option>
+								<option value="1">Grote zaal: locatie 1</option>
+								<option value="2">Kleine zaal: locatie 2</option>
 								<option value="3">Gedichtenzaal: locatie 3</option>
 							</select>
 		
