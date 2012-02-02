@@ -399,7 +399,7 @@
     }
 
     function checkForUploadedImage(){
-        if($_FILES['new_image']['name'] != ''){
+        if($_FILES['userfile']['name'] != ''){
         $urlImage = "";
         //Image upload
         $targetPath = "uploads/";
