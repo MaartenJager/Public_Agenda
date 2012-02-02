@@ -164,8 +164,14 @@ if (isset( $_SESSION['accessLevel'] ))
                 </div>
 ";
     }
+    else
+    {
+        echo "<br />You do not have the required priveleges. Contact the administrator if you should have priveleges.";
+        header("Location: index.php?page=error-permissions");
+    }
 }
 else
 {
-	echo "no priveleges bitch";
+    echo "<br />You are not logged in. You need to log in to view this page.";
+    header("Location: index.php?page=error-permissions");
 }

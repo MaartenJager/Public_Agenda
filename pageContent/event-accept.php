@@ -28,6 +28,9 @@
 <h1>Evenementen Accepteren</h1>
 
 <?php
+
+if (isset( $_SESSION['accessLevel'] )){
+    if (($_SESSION['accessLevel'] == 2){
     if ($eventsExistant) {
 echo <<<EOT
 <form action="sqlaction.php" method="post">
@@ -88,4 +91,16 @@ EOT;
         {
             echo "                Geen nieuwe events";
         }
+}
+else
+{
+    echo "<br />You do not have the required priveleges. Contact the administrator if you should have priveleges.";
+    header("Location: index.php?page=error-permissions");
+}
+}
+else
+{
+    echo "<br />You are not logged in. You need to log in to view this page.";
+    header("Location: index.php?page=error-permissions");
+}
 ?>
