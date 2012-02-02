@@ -2,7 +2,6 @@
 /* Fetch all events from table EVENTS */
     require_once("inc-conf.php");
     require("inc-dbcon.php");
-    session_start();
 
     $query = "    SELECT events.* , users.name, users.firstName, locations.name AS locationName, genre_event_koppeling.genreId
     FROM events
@@ -156,9 +155,10 @@
                                 echo "                        <div class=\"title\">" . $row->title . " <a href=\"#" . $row->id . "\" onclick=\"expandEntry('" . $row->id . "');\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">(meer informatie)</span></a> ";
                                 if (isset( $_SESSION['accessLevel']) ){
                                     if ($_SESSION['accessLevel'] == 2){
-                                        echo "<a href=\"index.php?page=event-review&id=" . $row->id . "\"> <img src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\"></a> <a href=\"sqlaction.php?action=delete&type=event&id=" . $row->id . "\"> <img src=\"img/btn-delete.png\" title=\"Verwijderen\" alt=\"Verwijderen\" width=\"16\" height=\"16\"></a> </div>\n";
+                                        echo "<a href=\"index.php?page=event-review&id=" . $row->id . "\"> <img src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\"></a> <a href=\"sqlaction.php?action=delete&type=event&id=" . $row->id . "\"> <img src=\"img/btn-delete.png\" title=\"Verwijderen\" alt=\"Verwijderen\" width=\"16\" height=\"16\"></a> ";
                                     }
                                 }
+                                echo "</div>\n";
                                 echo "                        <div id=\"" . $row->id . "\" class=\"description\" itemprop=\"description\">". $row->description ."</div>\n";
                                 echo "                        <div class=\"meta\">\n";
                                 echo "                            <span itemprop=\"startDate\" datetime=\"2022-07-04T18:00\">" . date("d-m-Y H:i:s", $row->beginDate) . "</span> tot\n";
