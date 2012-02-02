@@ -6,7 +6,6 @@
     $query = "SELECT events.*, users.name, users.firstName, locations.name AS locationName FROM events
                             INNER JOIN users ON (events.createdBy = users.id)
                             INNER JOIN locations ON (events.location = locations.id)
-                            INNER JOIN genre_event_koppeling ON (events.id = genre_event_koppeling.genreid)
                             WHERE approvedBy IS NOT NULL";
     $wordSearch = false;
     $dateSearch = false;
