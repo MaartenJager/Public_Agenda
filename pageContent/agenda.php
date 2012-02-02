@@ -88,8 +88,8 @@
                         $tempId = -1;
                         // showing the results
                         while($row = $sth->fetch()) {
-<<<<<<< HEAD
-                            if ($row->id != $tempId){
+                            $id = $row->id
+                            if ($id != $tempId){
                                 $tempId = $row->id;
                                 $counter = $counter + 1;
                                 echo "\n                    <!-- Begin of item #" . $row->id . "-->\n";
