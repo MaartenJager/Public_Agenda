@@ -302,7 +302,7 @@ thead th, tfoot th{
     font: 11px Calibri, Arial;
 }
 
-#eventPhoto {
+#eventPhoto img{
     float: right;
     width: 120px;
     height: 120px;
