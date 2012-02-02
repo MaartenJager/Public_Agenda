@@ -125,15 +125,17 @@ if (isset( $_SESSION['accessLevel'] ))
 							function checkCheckBoxes()
 							{
 								var checkboxes = document.event-add.getElementsByTagName(\'input\');
-								for(var i = 0; i < chechboxes.length; i++)
+								for(var i = 0; i < checkboxes.length; i++)
 								{
-									if (checkboxes[i].type.toLowerCase() == \'chechbox\' && checkboxes[i].checked)
+									if (checkboxes[i].type.toLowerCase() == \'checkbox\' && checkboxes[i].checked)
 									{
 										alert ("Nice checkbox checked");
+										return (true);
 										
 									}
 								}
 								alert ("No checkbox checked noob");
+								return (false);
 								
 							}
 
