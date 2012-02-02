@@ -181,11 +181,12 @@
                             for($i=0; $i<8; $i++){
 
                                 if ($arrayCheckboxes[$i]){
-                                    //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
                                     $genreId = $i + 1;
 
                                     $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
-                                        VALUES ($id, $genreId)");
+                                        VALUES (:eventId, :genreId)");
+                                    $sth->bindParam(':eventId', $id);
+                                    $sth->bindParam(':genreId', $genreId);
                                     $sth->execute();
 
                                     echo "EEN GENRE OPGESLAGEN <br />";
@@ -269,7 +270,7 @@
                             $sth->bindParam(':creationDate', $time);
                             $sth->bindParam(':createdBy', $_SESSION['userId']);
 
-                            //Indien persoon met lvl2 een event toevoegd wordt dit automagisch goedgekeurd
+                            //Automatic approval for users with acceslevel 2
                             if( $_SESSION['accessLevel'] == 2) {
                                 echo "AccesLevel is 2, het event is automatisch goedgekeurd!<br />";
                                 $sth->bindParam(':approvedBy', $_SESSION['userId']);
@@ -282,6 +283,7 @@
 
                             $sth->execute();
 
+                            //Find last even id
                             $sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
                             $sth->execute();
                             $row = $sth->fetch();
@@ -292,11 +294,12 @@
                             for($i=0; $i<8; $i++){
 
                                 if ($arrayCheckboxes[$i]){
-                                    //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
                                     $genreId = $i + 1;  
 
                                     $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
-                                        VALUES ($lastEventId, $genreId)");
+                                        VALUES (:eventId, :genreId)");
+                                    $sth->bindParam(':eventId', $lastEventId);
+                                    $sth->bindParam(':genreId', $genreId);
                                     $sth->execute();
                                 }
                             }
