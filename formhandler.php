@@ -413,7 +413,7 @@
         //define final path for storage of img
         $targetPath = $targetPath . $imgFileName . ".". $fileExtension;
 
-        //check extensions & filesize < 20000k
+        //check extensions & filesize < 200000k
         if ((($_FILES["file"]["type"] == "image/gif")
           || ($_FILES["file"]["type"] == "image/jpeg")
           || ($_FILES["file"]["type"] == "image/pjpeg")) // oude IE browsers zijn raar
@@ -432,13 +432,15 @@
                     //correct
                     $urlImage = "http://websec.science.uva.nl/webdb1241/" . $targetPath;
                 }
-                else{
+                else
+                {
                     echo "Er is een fout opgetreden bij het uploaden van de afbeelding!<br />";
                     $urlImage = "";
                 }
             }
         }
-        else{
+        else
+        {
             echo "Ongeldige file<br />";
         }
         return $urlImage;
