@@ -55,10 +55,10 @@
         <label>Email (tevens de login naam)</label>
         <input type="email" name="email" value="<?php echo $row->email ?>" disabled="disabled">
 
-        <label>Wachtwoord</label>
+        <label>Nieuw wachtwoord</label>
         <input type="password" name="password" value="" required>
 
-        <label>Wachtwoord bevestigen</label>
+        <label>Nieuw wachtwoord bevestigen</label>
         <input type="password" name="password2" value="" required>
 
         <input type="hidden" name="id" value="<?php echo $id ?>">
