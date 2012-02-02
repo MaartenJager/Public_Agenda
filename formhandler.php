@@ -86,6 +86,7 @@
                     }
 
                     $dbh = null;
+                    header("Location: index.php?page=admin");
                 }
                 else
                 {
@@ -190,6 +191,8 @@
                                     echo "EEN GENRE OPGESLAGEN <br />";
                                 }
                             }
+                            $dbh = null;
+                            header("Location: index.php?page=event-accept");
                         }
                         else
                         {
@@ -297,6 +300,8 @@
                                     $sth->execute();
                                 }
                             }
+                            $dbh = null;
+                            header("Location: index.php?page=event-add");
                         }
                         else
                         {
