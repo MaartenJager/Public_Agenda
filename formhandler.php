@@ -99,190 +99,222 @@
             if(isset($_POST['editEvent'])){
                 echo "in editEvent <br>";
 
-                $beginDate = strip_tags($_POST['eventBeginDate']);
-                $endDate = strip_tags($_POST['eventEndDate']);
+                $arrayCheckboxes = checkGenres();
+                $oneGenreSelected = false;
+                foreach($arrayCheckboxes as &$checked){
+                    if($checked){
+                        $oneGenreSelected = true;
+                    }
+                }
 
-                $beginDate = replaceSlashes($beginDate);
-                $endDate = replaceSlashes($endDate);
+                if($oneGenreSelected){
+                    $beginDate = strip_tags($_POST['eventBeginDate']);
+                    $endDate = strip_tags($_POST['eventEndDate']);
 
-                if (datesValid($beginDate, $endDate)){
-                    //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
-                    $urlImage = checkForUploadedImage();
+                    $beginDate = replaceSlashes($beginDate);
+                    $endDate = replaceSlashes($endDate);
 
-                    //Convert beginDate to timestamp
-                    list($dd, $mm, $yyyy) = explode('-', $beginDate);
-                    $beginDateTimeStamp = mktime($_POST['eventBeginTimeHours'], $_POST['eventBeginTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
+                    if (datesValid($beginDate, $endDate)){
+                        //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
+                        $urlImage = checkForUploadedImage();
 
-                    //Convert endDate to timestamp
-                    list($dd, $mm, $yyyy) = explode('-', $endDate);
-                    $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
+                        //Convert beginDate to timestamp
+                        list($dd, $mm, $yyyy) = explode('-', $beginDate);
+                        $beginDateTimeStamp = mktime($_POST['eventBeginTimeHours'], $_POST['eventBeginTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
 
-                    //Check if begin date is before end date
-                    if ($beginDateTimeStamp<$endDateTimeStamp){
+                        //Convert endDate to timestamp
+                        list($dd, $mm, $yyyy) = explode('-', $endDate);
+                        $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
 
-                        //Add to DB
-                        //require("inc-dbcon.php");
+                        //Check if begin date is before end date
+                        if ($beginDateTimeStamp<$endDateTimeStamp){
 
-                        //Bij editen geéń nieuw plaatje geupload
-                        if ($urlImage == "") {
-                            $sth = $dbh->prepare("SELECT * FROM events WHERE id=:id");
+                            //Bij editen geéń nieuw plaatje geupload
+                            if ($urlImage == "") {
+                                $sth = $dbh->prepare("SELECT * FROM events WHERE id=:id");
 
-                            //Prepare data
-                            $id = strip_tags($_POST['id']);
-                            $sth->bindParam(':id', $id);
+                                //Prepare data
+                                $id = strip_tags($_POST['id']);
+                                $sth->bindParam(':id', $id);
 
-                            $sth->setFetchMode(PDO::FETCH_OBJ);
-                            $sth->execute();
-
-                            $row = $sth->fetch();
-
-                            //DEBUG
-                            print_r($row);
-                            
-                            $urlImage = $row->image;
-                        }
-
-
-                        $sth=$dbh->prepare("UPDATE events SET title=:eventName, beginDate=:beginDateTimeStamp, endDate=:endDateTimeStamp,
-    location=:location, description=:description, image=:image, creationDate=:creationDate, approvedBy=:approvedBy
-    WHERE id=:id");
-
-                        //Prepare data
-                        $eventName = strip_tags($_POST['eventName']);
-                        $beginDateTimeStamp = strip_tags($beginDateTimeStamp);
-                        $endDateTimeStamp = strip_tags($endDateTimeStamp);
-                        $locationPicker = strip_tags($_POST['locationPicker']);
-                        $eventDescription = strip_tags($_POST['eventDescription']);
-                        $urlImage = strip_tags($urlImage);
-                        $time = time();
-                        $id = strip_tags($_POST['id']);
-                        $sth->bindParam(':eventName' , $eventName);
-                        $sth->bindParam(':beginDateTimeStamp' , $beginDateTimeStamp);
-                        $sth->bindParam(':endDateTimeStamp' , $endDateTimeStamp);
-                        $sth->bindParam(':location' , $locationPicker);
-                        $sth->bindParam(':description', $eventDescription);
-                        $sth->bindParam(':image', $urlImage);
-                        $sth->bindParam(':creationDate', $time);
-                        //$sth->bindParam(':approvedBy', );
-                        $sth->bindValue(':approvedBy', 1);
-                        $sth->bindParam(':id', $id);
-
-                        $sth->execute();
-
-                        $sth = $dbh->prepare("DELETE FROM `webdb1241`.`genre_event_koppeling` WHERE `genre_event_koppeling`.`eventId` =:id");
-                        $sth->bindParam(':id', $id);
-                        $sth->execute();
-
-                        $arrayCheckboxes = checkGenres();
-
-                        for($i=0; $i<8; $i++){
-
-                            if ($arrayCheckboxes[$i]){
-                                //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
-                                $genreId = $i + 1;
-
-                                $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
-    VALUES ($id, $genreId)");
+                                $sth->setFetchMode(PDO::FETCH_OBJ);
                                 $sth->execute();
 
-                                echo "EEN GENRE OPGESLAGEN <br />";
+                                $row = $sth->fetch();
+
+                                //DEBUG
+                                print_r($row);
+
+                                $urlImage = $row->image;
+                            }
+
+
+                            $sth=$dbh->prepare("UPDATE events SET title=:eventName, beginDate=:beginDateTimeStamp, endDate=:endDateTimeStamp,
+                                location=:location, description=:description, image=:image, creationDate=:creationDate, approvedBy=:approvedBy
+                                WHERE id=:id");
+
+                            //Prepare data
+                            $eventName = strip_tags($_POST['eventName']);
+                            $beginDateTimeStamp = strip_tags($beginDateTimeStamp);
+                            $endDateTimeStamp = strip_tags($endDateTimeStamp);
+                            $locationPicker = strip_tags($_POST['locationPicker']);
+                            $eventDescription = strip_tags($_POST['eventDescription']);
+                            $urlImage = strip_tags($urlImage);
+                            $time = time();
+                            $id = strip_tags($_POST['id']);
+                            $sth->bindParam(':eventName' , $eventName);
+                            $sth->bindParam(':beginDateTimeStamp' , $beginDateTimeStamp);
+                            $sth->bindParam(':endDateTimeStamp' , $endDateTimeStamp);
+                            $sth->bindParam(':location' , $locationPicker);
+                            $sth->bindParam(':description', $eventDescription);
+                            $sth->bindParam(':image', $urlImage);
+                            $sth->bindParam(':creationDate', $time);
+                            //$sth->bindParam(':approvedBy', );
+                            $sth->bindValue(':approvedBy', 1);
+                            $sth->bindParam(':id', $id);
+
+                            $sth->execute();
+
+                            $sth = $dbh->prepare("DELETE FROM `webdb1241`.`genre_event_koppeling` WHERE `genre_event_koppeling`.`eventId` =:id");
+                            $sth->bindParam(':id', $id);
+                            $sth->execute();
+
+                            for($i=0; $i<8; $i++){
+
+                                if ($arrayCheckboxes[$i]){
+                                    //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
+                                    $genreId = $i + 1;
+
+                                    $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
+                                        VALUES ($id, $genreId)");
+                                    $sth->execute();
+
+                                    echo "EEN GENRE OPGESLAGEN <br />";
+                                }
                             }
                         }
+                        else
+                        {
+                            echo "Data-combinatie niet geldig (event mag niet eerder eindigen dan beginnen)";
+                        }
                     }
-                    else{
-                        echo "Data-combinatie niet geldig (event mag niet eerder eindigen dan beginnen)";
+                    else
+                    {
+                        echo "ongeldige datum";
                     }
+                }
+                else
+                {
+                    echo "Geen genre geselecteerd.";
                 }
             }
 
             /* addEvent post action */
             if(isset($_POST['addEvent'])){
+                echo "in addEvent <br>";
 
-                $beginDate = $_POST['eventBeginDate'];
-                $endDate = $_POST['eventEndDate'];
-
-                $beginDate = replaceSlashes($beginDate);
-                $endDate = replaceSlashes($endDate);
-
-                if (datesValid($beginDate, $endDate)){
-                    //Alle condities waar item aan moet voldoen controleren (denk aan begin-, einddatum, volgorde van data correct etc...)
-                    $urlImage = checkForUploadedImage();
-
-                    //Convert beginDate to timestamp
-                    list($dd, $mm, $yyyy) = explode('-', $beginDate);
-                    $beginDateTimeStamp = mktime($_POST['eventBeginTimeHours'], $_POST['eventBeginTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
-
-                    //Convert endDate to timestamp
-                    list($dd, $mm, $yyyy) = explode('-', $endDate);
-                    $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
-
-                    //Check if begin date is before end date
-                    if ($beginDateTimeStamp<$endDateTimeStamp){
-
-                        //Add to DB
-                        require("inc-dbcon.php");
-                        $sth = $dbh->prepare("INSERT INTO events (title, beginDate, endDate, location, description, image, creationDate, approvedBy, createdBy)
-                            VALUES
-                            (:eventName, :beginDateTimeStamp, :endDateTimeStamp, :location, :description, :image, :creationDate, :approvedBy, :createdBy)");
-
-                        //Prepare data
-                        $eventName = strip_tags($_POST['eventName']);
-                        $beginDateTimeStamp = strip_tags($beginDateTimeStamp);
-                        $endDateTimeStamp = strip_tags($endDateTimeStamp);
-                        $locationPicker = strip_tags($_POST['locationPicker']);
-                        $eventDescription = strip_tags($_POST['eventDescription']);
-                        $urlImage = strip_tags($urlImage);
-                        $time = time();
-                        
-                        $sth->bindParam(':eventName' , $eventName);
-                        $sth->bindParam(':beginDateTimeStamp' , $beginDateTimeStamp);
-                        $sth->bindParam(':endDateTimeStamp' , $endDateTimeStamp);
-                        $sth->bindParam(':location' , $locationPicker);
-                        $sth->bindParam(':description', $eventDescription);
-                        $sth->bindParam(':image', $urlImage);
-                        $sth->bindParam(':creationDate', $time);
-                        $sth->bindParam(':createdBy', $_SESSION['userId']);
-
-                        //Indien persoon met lvl2 een event toevoegd wordt dit automagisch goedgekeurd
-                        if( $_SESSION['accessLevel'] == 2) {
-                            echo "accesLevel is 2, automatisch goedgekeurd";
-                            $sth->bindParam(':approvedBy', $_SESSION['userId']);
-                        }
-                        else{
-                            "accesLevel is 1, approvedBy is NULL";
-                            $sth->bindValue(':approvedBy', null, PDO::PARAM_INT);
-                        }
-
-                        $sth->execute();
-
-                        $sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
-                        $sth->execute();
-                        $row = $sth->fetch();
-                        $lastEventId = $row['id'];
-
-                        $arrayCheckboxes = checkGenres();
-
-                        //FIXME: arraysize?
-                        for($i=0; $i<8; $i++){
-
-                            if ($arrayCheckboxes[$i]){
-                                //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
-                                $genreId = $i + 1;  
-
-                                $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
-                                    VALUES ($lastEventId, $genreId)");
-                                $sth->execute();
-
-                                echo "EEN GENRE OPGESLAGEN <br />";
-                            }
-                        }
-                    }
-                    else{
-                        echo "Data-combinatie niet geldig (event mag niet eerder eindigen dan beginnen)";
+                $arrayCheckboxes = checkGenres();
+                $oneGenreSelected = false;
+                foreach($arrayCheckboxes as &$checked){
+                    if($checked){
+                        $oneGenreSelected = true;
                     }
                 }
-                else{
-                    echo "ongeldige datum";
+
+                if($oneGenreSelected){
+
+                    $beginDate = $_POST['eventBeginDate'];
+                    $endDate = $_POST['eventEndDate'];
+
+                    $beginDate = replaceSlashes($beginDate);
+                    $endDate = replaceSlashes($endDate);
+
+                    if (datesValid($beginDate, $endDate)){
+                        //Get image
+                        $urlImage = checkForUploadedImage();
+
+                        //Convert beginDate to timestamp
+                        list($dd, $mm, $yyyy) = explode('-', $beginDate);
+                        $beginDateTimeStamp = mktime($_POST['eventBeginTimeHours'], $_POST['eventBeginTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
+
+                        //Convert endDate to timestamp
+                        list($dd, $mm, $yyyy) = explode('-', $endDate);
+                        $endDateTimeStamp = mktime($_POST['eventEndTimeHours'], $_POST['eventEndTimeMinutes'], 0, $mm, $dd, $yyyy, -1);
+
+                        //Check if begin date is before end date
+                        if ($beginDateTimeStamp<$endDateTimeStamp){
+
+                            //Add to DB
+                            require("inc-dbcon.php");
+                            $sth = $dbh->prepare("INSERT INTO events (title, beginDate, endDate, location, description, image, creationDate, approvedBy, createdBy)
+                                VALUES
+                                (:eventName, :beginDateTimeStamp, :endDateTimeStamp, :location, :description, :image, :creationDate, :approvedBy, :createdBy)");
+
+                            //Prepare data
+                            $eventName = strip_tags($_POST['eventName']);
+                            $beginDateTimeStamp = strip_tags($beginDateTimeStamp);
+                            $endDateTimeStamp = strip_tags($endDateTimeStamp);
+                            $locationPicker = strip_tags($_POST['locationPicker']);
+                            $eventDescription = strip_tags($_POST['eventDescription']);
+                            $urlImage = strip_tags($urlImage);
+                            $time = time();
+
+                            $sth->bindParam(':eventName' , $eventName);
+                            $sth->bindParam(':beginDateTimeStamp' , $beginDateTimeStamp);
+                            $sth->bindParam(':endDateTimeStamp' , $endDateTimeStamp);
+                            $sth->bindParam(':location' , $locationPicker);
+                            $sth->bindParam(':description', $eventDescription);
+                            $sth->bindParam(':image', $urlImage);
+                            $sth->bindParam(':creationDate', $time);
+                            $sth->bindParam(':createdBy', $_SESSION['userId']);
+
+                            //Indien persoon met lvl2 een event toevoegd wordt dit automagisch goedgekeurd
+                            if( $_SESSION['accessLevel'] == 2) {
+                                echo "accesLevel is 2, automatisch goedgekeurd";
+                                $sth->bindParam(':approvedBy', $_SESSION['userId']);
+                            }
+                            else
+                            {
+                                "accesLevel is 1, approvedBy is NULL";
+                                $sth->bindValue(':approvedBy', null, PDO::PARAM_INT);
+                            }
+
+                            $sth->execute();
+
+                            $sth=$dbh->prepare("SELECT id FROM events ORDER BY id DESC LIMIT 1");
+                            $sth->execute();
+                            $row = $sth->fetch();
+                            $lastEventId = $row['id'];
+
+                            $arrayCheckboxes = checkGenres();
+
+                            for($i=0; $i<8; $i++){
+
+                                if ($arrayCheckboxes[$i]){
+                                    //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
+                                    $genreId = $i + 1;  
+
+                                    $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
+                                        VALUES ($lastEventId, $genreId)");
+                                    $sth->execute();
+
+                                    echo "EEN GENRE OPGESLAGEN <br />";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            echo "Data-combinatie niet geldig (event mag niet eerder eindigen dan beginnen)";
+                        }
+                    }
+                    else
+                    {
+                        echo "ongeldige datum";
+                    }
+                }
+                else
+                {
+                    echo "Geen genre geselecteerd.";
                 }
             }
         }
