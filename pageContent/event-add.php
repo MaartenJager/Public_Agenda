@@ -88,8 +88,8 @@ if (isset( $_SESSION['accessLevel'] ))
 		
 							<label>Kies de locatie voor het event</label>
 							<select name="locationPicker">
-								<option value="1">Death Metal zaal: locatie 1</option>
-								<option value="2">Zaal voor bijbelstudie: locatie 2</option>
+								<option value="1">Grote zaal: locatie 1</option>
+								<option value="2">Kleine zaal: locatie 2</option>
 								<option value="3">Gedichtenzaal: locatie 3</option>
 							</select>
 		
@@ -117,9 +117,29 @@ if (isset( $_SESSION['accessLevel'] ))
 							<div id="checkbox_below">
 								 <label>Voeg een afbeelding toe</label>
 								 <input type="file" name="file" id ="file" />
-								 <input id="button" name="addEvent" type="submit" value="Submit" />
+								 <input id="button" name="addEvent" type="submit" value="Submit" onclick="checkCheckBoxes()" />
 							</div>
-						</form>   
+						</form>
+						
+						<script>
+							function checkCheckBoxes()
+							{
+								var count = 0;
+								for(x = 0; x < document.event-add.checkbox.length; x++)
+								{
+									if (document.event-add.checkbox[x].checked == true)
+									{
+										count++
+										break;
+									}
+								}
+						
+								if(count==0)
+								{
+									alert("Tenminste een genre moet worden aangevinkt.");
+								}
+							}
+						</script>
 		';
 	}
 }

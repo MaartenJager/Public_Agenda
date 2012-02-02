@@ -4,6 +4,8 @@
 * */
     session_start(); 
     
+
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         //Controleer of de gebruik ingelogd is, zoja ga door!
@@ -61,27 +63,43 @@
             }
 
             /* addUser post action */
-            if(isset($_POST['addUser'])){
-                $password = sha1($_POST['password']);
-                try{
-                    //Prepare statement
-                    $sth = $dbh->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
-                        values
-                        (:name, :firstName, :email, :password, :accessLevel) ");
+			//Checkt of emailpattern wordt gevolgd en anders die bericht
 
-                    //Prepare data
-                    $sth->bindParam(':name' , $_POST['name']);
-                    $sth->bindParam(':firstName' , $_POST['firstName']);
-                    $sth->bindParam(':email' , $_POST['email']);
-                    $sth->bindParam(':password'   , $password);
-                    $sth->bindParam(':accessLevel', $_POST['accessLevel']);
+       
+            
+            if(isset($_POST['addUser']))
+            {
+            	$emailPattren = '/^([a-z0-9])(([-a-z0-9._])*([a-z0-9]))*\@([a-z0-9])' .
+					'(([a-z0-9-])*([a-z0-9]))+' . '(\.([a-z0-9])([-a-z0-9_-])?([a-z0-9])+)+$/i';    
+				$isEmailValid = preg_match($emailPattren, $_POST['id']);            	
+            	if ($isEmailValid == true)
+            	{
+            			
+					$password = sha1($_POST['password']);
+					try{
+						//Prepare statement
+						$sth = $dbh->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
+							values
+							(:name, :firstName, :email, :password, :accessLevel) ");
+	
+						//Prepare data
+						$sth->bindParam(':name' , $_POST['name']);
+						$sth->bindParam(':firstName' , $_POST['firstName']);
+						$sth->bindParam(':email' , $_POST['email']);
+						$sth->bindParam(':password'   , $password);
+						$sth->bindParam(':accessLevel', $_POST['accessLevel']);
+	
+						$sth->execute();
+					}
 
-                    $sth->execute();
-                }
-
-                catch(PDOException $e) {
-                    echo $e->getMessage();
-                }
+					catch(PDOException $e) {
+						echo $e->getMessage();
+					}
+				}
+				else
+				{
+					die ("not a valid mail address");
+				}
 
                 $dbh = null;
             }
@@ -235,13 +253,13 @@
                         $sth->bindParam(':createdBy', $_SESSION['userId']);
 
                         //Indien persoon met lvl2 een event toevoegd wordt dit automagisch goedgekeurd
-                        if( $_SESSION['accessLevel'] == 2) {
+                        if(if ($_SESSION['accessLevel'] == 2)){
                             echo "accesLevel is 2, automatisch goedgekeurd";
                             $sth->bindParam(':approvedBy', $_SESSION['userId']);
                         }
                         else{
                             "accesLevel is 1, approvedBy is NULL";
-                            $sth->bindValue(':approvedBy', null, PDO::PARAM_INT);
+                            $sth->bindParam(':approvedBy', NULL);
                         }
 
                         $sth->execute();
@@ -321,6 +339,8 @@
 
         return $arrayCheckboxes;
     }
+    
+
 
     function replaceSlashes($date){
         return str_replace("/", "-", $date);
