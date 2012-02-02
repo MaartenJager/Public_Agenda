@@ -4,6 +4,15 @@
 * */
     session_start();
     
+    //Checkt of emailpattern wordt gevolgd en anders die bericht
+    $emailPattren = '/^([a-z0-9])(([-a-z0-9._])*([a-z0-9]))*\@([a-z0-9])' .
+            '(([a-z0-9-])*([a-z0-9]))+' . '(\.([a-z0-9])([-a-z0-9_-])?([a-z0-9])+)+$/i';    
+    $isEmailValid = preg_match($emailPattren, $_POST['id']);
+    if ($isemailValid == false)
+    {
+    	die("not a valid email address");
+    }
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         //Controleer of de gebruik ingelogd is, zoja ga door!
@@ -321,6 +330,8 @@
 
         return $arrayCheckboxes;
     }
+    
+
 
     function replaceSlashes($date){
         return str_replace("/", "-", $date);

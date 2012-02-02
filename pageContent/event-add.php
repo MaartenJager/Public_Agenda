@@ -117,9 +117,29 @@ if (isset( $_SESSION['accessLevel'] ))
 							<div id="checkbox_below">
 								 <label>Voeg een afbeelding toe</label>
 								 <input type="file" name="file" id ="file" />
-								 <input id="button" name="addEvent" type="submit" value="Submit" />
+								 <input id="button" name="addEvent" type="submit" value="Submit" onclick="checkCheckBoxes()" />
 							</div>
-						</form>   
+						</form>
+						
+						<script>
+							function checkCheckBoxes()
+							{
+								var count = 0;
+								for(x = 0; x < document.event-add.checkbox.length; x++)
+								{
+									if (document.event-add.checkbox[x].checked == true)
+									{
+										count++
+										break;
+									}
+								}
+						
+								if(count==0)
+								{
+									alert("Tenminste een genre moet worden aangevinkt.");
+								}
+							}
+						</script>
 		';
 	}
 }
