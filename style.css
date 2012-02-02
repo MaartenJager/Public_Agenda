@@ -262,6 +262,7 @@ thead th, tfoot th{
     background: #90EE90; /* Fallback for other browsers */
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#90EE90));
     background: -moz-linear-gradient(top, #FFFFFF, #90EE90);
+    margin-bottom: 5px;
 }
 
 #agenda .event-even {
@@ -269,6 +270,7 @@ thead th, tfoot th{
     background: #ADD8E6; /* Fallback for other browsers */    
     background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#ADD8E6));
     background: -moz-linear-gradient(top, #FFFFFF, #ADD8E6);
+    margin-bottom: 5px;
 }
 
 #agenda .title {
@@ -302,7 +304,6 @@ thead th, tfoot th{
 
 #agenda .description {
     margin-right: 128px;
-    width: 520px;
     height: 70px;
     min-height: 70px; /* Prevent really short descriptions from glitching out */
     overflow-x: hidden;
