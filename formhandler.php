@@ -236,9 +236,11 @@
 
                         //Indien persoon met lvl2 een event toevoegd wordt dit automagisch goedgekeurd
                         if(if ($_SESSION['accessLevel'] == 2)){
+                            echo "accesLevel is 2, automatisch goedgekeurd";
                             $sth->bindParam(':approvedBy', $_SESSION['userId']);
                         }
                         else{
+                            "accesLevel is 1, approvedBy is NULL";
                             $sth->bindParam(':approvedBy', NULL);
                         }
 
@@ -256,7 +258,7 @@
 
                             if ($arrayCheckboxes[$i]){
                                 //Laatste eventId (zojuist) zoeken en opslaan in $lastEventId
-                                $genreId = $i + 1;
+                                $genreId = $i + 1;  
 
                                 $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
                                     VALUES ($lastEventId, $genreId)");
