@@ -132,6 +132,7 @@
                 Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
+                        $months = array("januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december");
                         $counter = 0;
                         $tempId = -1;
                         // showing the results
@@ -147,7 +148,7 @@
                                     echo "                    <div class=\"event-even\">\n";
                                 echo "                        <div class=\"date\">\n" ;
                                 echo "                            <div id=\"dateDay\">" . date("d", $row->beginDate) . "</div>\n";
-                                echo "                            <div id=\"dateMonth\">" . date("F", $row->beginDate) . "</div>\n";
+                                echo "                            <div id=\"dateMonth\">" . $months[date("n", $row->beginDate)] . "</div>\n";
                                 echo "                            <div id=\"dateYear\">" . date("Y", $row->beginDate) . "</div>\n";
                                 echo "                        </div>\n";
                                 echo "                        <div class=\"image\"><img src=\"" . $row->image . "\" itemprop=\"photo\"></div>";
