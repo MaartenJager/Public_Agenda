@@ -444,7 +444,6 @@
             echo "Ongeldige file, afbeelding moet van het formaat gif of jpeg zijn!<br />";
         }
         return $urlImage;
-        }
     }
 
 $dbh = null;
