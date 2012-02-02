@@ -48,7 +48,7 @@
                 else
                 {
                     $password = sha1($_POST['password']);
-                    echo "Beide ingegeven passwords zijn gelijk en na hashing: " . $password . "<br />";
+                    echo "Beide ingegeven passwords zijn gelijk<br />";
 
                     echo "Verbinding met DB wordt gelegd<br />";
                     $sth=$dbh->prepare("UPDATE users SET password=:password WHERE id=:id");
