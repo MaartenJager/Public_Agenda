@@ -132,7 +132,6 @@
                 Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
-                        echo $query;
                         $counter = 0;
                         $tempId = -1;
                         // showing the results
