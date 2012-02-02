@@ -13,33 +13,32 @@
 
             /* editUser post action */
             if(isset($_POST['editUser'])){
-                echo "in editUser";
+                echo "in editUser<br />";
 
                 //Controler of gebruik ingelogd is
                 if (isset( $_SESSION['accessLevel'] )){
-                    echo "accessLevel is set<br>";
+                    echo "AccessLevel is geselecteerd<br />";
 
                     //Ingelogd met level 1? Alleen eigen passwd mag aangepast worden!
                     if ($_SESSION['accessLevel'] == 1){
-                        echo "accessLevel is 1<br>";
-                        echo "id uit form:   " . $_POST['id'] . "<br>";
-                        echo "id uit sessie: " . $_SESSION['userId'] . "<br>";
+                        echo "accessLevel is 1<br />";
+                        echo "id uit form:   " . $_POST['id'] . "<br />";
+                        echo "id uit sessie: " . $_SESSION['userId'] . "<br />";
 
                         //Probeert men toch een andere id aan te passen? Doe niets en geef error weer!
                         if( ($_POST['id']) != ($_SESSION['userId']) ){
-                            echo "accessLevel in form is niet gelijk aan daadwerkelijke <br>";
                             header("Location: index.php?page=error-permissions");
                         }
 
                         //Gebruiker met lvl 1 probeert eigen gegevens aan te passen. Groen licht!
                         else{
-                            echo "accessLevel in form is gelijk aan daadwerkelijke <br>";
+                            echo "AccessLevel in form is gelijk aan daadwerkelijke accessLevel!<br />";
                         }
                     }
 
                     //Gebruiker met lvl 2 mag elke gebruiker aanpassen. Geen verdere controles.
                     elseif($_SESSION['accessLevel'] == 2){
-                        echo "accessLevel is 2<br>";
+                        echo "accessLevel is 2<br />";
                         header("Location: index.php?page=error-permissions");
                     }
                 }
@@ -49,9 +48,9 @@
                 }
                 else{           
                     $password = sha1($_POST['password']);
-                    echo "Beide ingegeven passwords zijn gelijk en na hashing: " . $password . "<br>";
+                    echo "Beide ingegeven passwords zijn gelijk en na hashing: " . $password . "<br />";
 
-                    echo "Verbinding met DB wordt gelegd";
+                    echo "Verbinding met DB wordt gelegd<br />";
                     $sth=$dbh->prepare("UPDATE users SET password=:password WHERE id=:id");
                     $sth->bindParam(':password', $password);
                     $sth->bindParam(':id', $_POST['id']);
@@ -62,37 +61,36 @@
             /* addUser post action */
             if(isset($_POST['addUser'])){
                 $password = sha1($_POST['password']);
-            	$emailPattren = '/^([a-z0-9])(([-a-z0-9._])*([a-z0-9]))*\@([a-z0-9])' .
-					'(([a-z0-9-])*([a-z0-9]))+' . '(\.([a-z0-9])([-a-z0-9_-])?([a-z0-9])+)+$/i';    
-				$isEmailValid = preg_match($emailPattren, $_POST['email']);            	
-            	if ($isEmailValid == true)
-            	{                
-					try{
-						//Prepare statement
-						$sth = $dbh->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
-							values
-							(:name, :firstName, :email, :password, :accessLevel) ");
-	
-						//Prepare data
-						$sth->bindParam(':name' , $_POST['name']);
-						$sth->bindParam(':firstName' , $_POST['firstName']);
-						$sth->bindParam(':email' , $_POST['email']);
-						$sth->bindParam(':password'   , $password);
-						$sth->bindParam(':accessLevel', $_POST['accessLevel']);
-	
-						$sth->execute();
-					}
-	
-					catch(PDOException $e) {
-						echo $e->getMessage();
-					}
-	
-					$dbh = null;
-				}
-				else
-				{
-					echo "The email address is not valid";
-				}
+                $emailPattren = '/^([a-z0-9])(([-a-z0-9._])*([a-z0-9]))*\@([a-z0-9])' .
+                    '(([a-z0-9-])*([a-z0-9]))+' . '(\.([a-z0-9])([-a-z0-9_-])?([a-z0-9])+)+$/i';
+                $isEmailValid = preg_match($emailPattren, $_POST['email']);
+                if ($isEmailValid == true){
+                    try{
+                        //Prepare statement
+                        $sth = $dbh->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
+                            values
+                            (:name, :firstName, :email, :password, :accessLevel) ");
+
+                        //Prepare data
+                        $sth->bindParam(':name' , $_POST['name']);
+                        $sth->bindParam(':firstName' , $_POST['firstName']);
+                        $sth->bindParam(':email' , $_POST['email']);
+                        $sth->bindParam(':password'   , $password);
+                        $sth->bindParam(':accessLevel', $_POST['accessLevel']);
+
+                        $sth->execute();
+                    }
+
+                    catch(PDOException $e) {
+                        echo $e->getMessage();
+                    }
+
+                    $dbh = null;
+                }
+                else
+                {
+                    echo "Ongeldig e-mailadress!<br />";
+                }
             }
 
             /* editEvent post action */
@@ -195,17 +193,17 @@
                         }
                         else
                         {
-                            echo "Data-combinatie niet geldig (event mag niet eerder eindigen dan beginnen)";
+                            echo "Data-combinatie niet geldig (event mag niet eerder eindigen dan beginnen)!<br />";
                         }
                     }
                     else
                     {
-                        echo "ongeldige datum";
+                        echo "Ongeldige datum!<br />";
                     }
                 }
                 else
                 {
-                    echo "Geen genre geselecteerd.";
+                    echo "Geen genre geselecteerd.<br />";
                 }
             }
 
@@ -270,12 +268,12 @@
 
                             //Indien persoon met lvl2 een event toevoegd wordt dit automagisch goedgekeurd
                             if( $_SESSION['accessLevel'] == 2) {
-                                echo "accesLevel is 2, automatisch goedgekeurd";
+                                echo "AccesLevel is 2, het event is automatisch goedgekeurd!<br />";
                                 $sth->bindParam(':approvedBy', $_SESSION['userId']);
                             }
                             else
                             {
-                                "accesLevel is 1, approvedBy is NULL";
+                                "AccesLevel is 1, het event moet nog goedgekeurd worden door een administartor.<br />";
                                 $sth->bindValue(':approvedBy', null, PDO::PARAM_INT);
                             }
 
@@ -297,30 +295,23 @@
                                     $sth=$dbh->prepare("INSERT INTO genre_event_koppeling (`eventId`, `genreId`)
                                         VALUES ($lastEventId, $genreId)");
                                     $sth->execute();
-
-                                    echo "EEN GENRE OPGESLAGEN <br />";
                                 }
                             }
                         }
                         else
                         {
-                            echo "Data-combinatie niet geldig (event mag niet eerder eindigen dan beginnen)";
+                            echo "Data-combinatie niet geldig (event mag niet eerder eindigen dan beginnen)!<br />";
                         }
-                    }
-                    else
-                    {
-                        echo "ongeldige datum";
                     }
                 }
                 else
                 {
-                    echo "Geen genre geselecteerd.";
+                    echo "Er is geen genre geselecteerd. Selecteer aub minstens 1 genre.<br />";
                 }
             }
         }
         else
         {
-            echo "U bent niet ingelogd en hebt dus geen rechten om deze actie uit te voeren!";
             header("Location: index.php?page=error-permissions");
         }
     }
@@ -382,23 +373,27 @@
 
                 if (is_numeric($dd) && is_numeric($mm) && is_numeric($yyyy)){
                     if (checkdate($mm,$dd,$yyyy)){
-                        echo "Entry dates are correct<br/>";
+                        echo "Data zijn geldig.<br/>";
                         return TRUE;
                     }
-                    else{
-                        echo "End date is numeric but not a valid date<br />";
+                    else
+                    {
+                        echo "Eind datum is geen geldige datum!<br />";
                     }
                 }
-                else{
-                    echo "Begin date is not numeric or in format dd-mm-yyyy<br />";
+                else
+                {
+                    echo "Eind datum is niet numeriek of in de dd-mm-yyyy notatie!<br />";
                 }
             }
-            else{
-                echo "Begin date is numeric but not a valid date<br />";
+            else
+            {
+            echo "Begin datum is geen geldige datum!<br />";
             }
         }
-        else{
-            echo "Begin date is not numeric or in format dd-mm-yyyy<br />";
+        else
+        {
+            echo "Begin datum is niet numeriek of in de dd-mm-yyyy notatie!<br />";
         }
         return FALSE;
     }
@@ -429,27 +424,23 @@
             else{
                 echo "Upload: " . $_FILES["file"]["name"] . "<br />";
                 echo "Type: " . $_FILES["file"]["type"] . "<br />";
-                echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-                echo "Will be temp stored in: " . $_FILES["file"]["tmp_name"] . "<br />";
+                echo "Grootte: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
 
                 //save file to disk & check for upload image
                 if(move_uploaded_file($_FILES['file']['tmp_name'], $targetPath)){
-                    echo "The file with original name ". basename( $_FILES['file']['name']).
-                    " has been uploaded in and with new file name: ". $targetPath . "<br />";
 
                     //correct
                     $urlImage = "http://websec.science.uva.nl/webdb1241/" . $targetPath;
                 }
                 else{
-                    echo "There was an error uploading the file, please try again!<br />";
+                    echo "Er is een fout opgetreden bij het uploaden van de afbeelding!<br />";
                     $urlImage = "";
                 }
             }
         }
         else{
-            echo "Invalid file<br />";
+            echo "Ongeldige file<br />";
         }
-
         return $urlImage;
     }
 
