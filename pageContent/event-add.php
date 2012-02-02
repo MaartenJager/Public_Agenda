@@ -124,25 +124,18 @@ if (isset( $_SESSION['accessLevel'] ))
 						<script>
 							function checkCheckBoxes()
 							{
-								var count = 0;
-								for(x = 0; x < document.event-add.formCheckbox.length; x++)
+								var chechkboxes = getElementsByTagName(\'input\');
+								for(var i = 0; i < chechboxes.length; i++)
 								{
-									if (document.event-add.formCheckbox[x].checked == true)
+									if (checkboxes[i].type.toLowerCase() == \'chechbox\' && checkboxes[i].checked)
 									{
-										count++;
-										break;
+										alert ("Nice checkbox checked");
+										return (true);
 									}
 								}
-						
-								if(count==0)
-								{
-									alert("Tenminste een genre moet worden aangevinkt.");
-								}
-								else
-								{
-									alert("Alles ok, overgaan tot toevoegen");
-								}
-							}
+								alert ("No checkbox checked noob");
+								return (false);
+
 						</script>
 		';
 	}
