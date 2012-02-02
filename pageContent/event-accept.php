@@ -30,7 +30,7 @@
 <?php
 
 if (isset( $_SESSION['accessLevel'] )){
-    if (($_SESSION['accessLevel'] == 2){
+    if ($_SESSION['accessLevel'] == 2){
     if ($eventsExistant) {
 echo <<<EOT
 <form action="sqlaction.php" method="post">
