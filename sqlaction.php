@@ -21,6 +21,7 @@
                                 $id = ($_GET['id']);
                                 echo "Event:" . $id . " verwijder!";
                                 deleteEvent($id);
+                                header("Location: index.php?page=event-accept");
                             }
                         }
                     }
@@ -34,6 +35,7 @@
                                 $id = ($_GET['id']);
                                 echo "User:" . $id . " verwijder!";
                                 deleteUser($id);
+                                header("Location: index.php?page=admin");
                             }
                         }
                     }
@@ -51,6 +53,7 @@
                                 $id = ($_GET['id']);
                                 echo "\nID:" . $id;
                                 approveEvent($id);
+                                header("Location: index.php?page=event-accept");
                             }
                         }
                     }
@@ -74,7 +77,7 @@
                     }
                     else
                     {
-                        $continue = false;
+                        header("Location: index.php?page=event-accept");
                     }
                 }
             }
