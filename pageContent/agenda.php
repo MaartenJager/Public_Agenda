@@ -148,7 +148,7 @@
                                     echo "                    <div class=\"event-even\">\n";
                                 echo "                        <div class=\"date\">\n" ;
                                 echo "                            <div id=\"dateDay\">" . date("d", $row->beginDate) . "</div>\n";
-                                echo "                            <div id=\"dateMonth\">" . $months[date("n", $row->beginDate)] . "</div>\n";
+                                echo "                            <div id=\"dateMonth\">" . $months[date("n", $row->beginDate) - 1] . "</div>\n";
                                 echo "                            <div id=\"dateYear\">" . date("Y", $row->beginDate) . "</div>\n";
                                 echo "                        </div>\n";
                                 echo "                        <div id=\"eventPhoto\"><img src=\"" . $row->image . "\" itemprop=\"photo\"></div>";
