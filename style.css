@@ -285,12 +285,6 @@ thead th, tfoot th{
     height: 100%;
 }
 
-#agenda .image {
-    float: right;
-    width: 120px;
-    height: 120px;
-}
-
 #agenda img {
     width: 16px;
     height: 16px;
@@ -311,6 +305,12 @@ thead th, tfoot th{
 
 #agenda .summary {
     font: 11px Calibri, Arial;
+}
+
+#eventPhoto {
+    float: right;
+    width: 120px;
+    height: 120px;
 }
 
 #dateDay {
