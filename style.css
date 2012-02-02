@@ -285,11 +285,6 @@ thead th, tfoot th{
     height: 100%;
 }
 
-#agenda img {
-    width: 16px;
-    height: 16px;
-}
-
 #agenda .meta {
     margin-left: 5px;
     font: 11px Calibri, Arial;
@@ -311,6 +306,11 @@ thead th, tfoot th{
     float: right;
     width: 120px;
     height: 120px;
+}
+
+#btnIcon {
+    width: 16px;
+    height: 16px;
 }
 
 #dateDay {
