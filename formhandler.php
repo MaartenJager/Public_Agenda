@@ -235,7 +235,7 @@
                         $sth->bindParam(':createdBy', $_SESSION['userId']);
 
                         //Indien persoon met lvl2 een event toevoegd wordt dit automagisch goedgekeurd
-                        if(if ($_SESSION['accessLevel'] == 2)){
+                        if( $_SESSION['accessLevel'] == 2) {
                             echo "accesLevel is 2, automatisch goedgekeurd";
                             $sth->bindParam(':approvedBy', $_SESSION['userId']);
                         }
