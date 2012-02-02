@@ -95,6 +95,7 @@
 					catch(PDOException $e) {
 						echo $e->getMessage();
 					}
+				}
 				else
 				{
 					die ("not a valid mail address");
