@@ -63,27 +63,37 @@
             /* addUser post action */
             if(isset($_POST['addUser'])){
                 $password = sha1($_POST['password']);
-                try{
-                    //Prepare statement
-                    $sth = $dbh->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
-                        values
-                        (:name, :firstName, :email, :password, :accessLevel) ");
-
-                    //Prepare data
-                    $sth->bindParam(':name' , $_POST['name']);
-                    $sth->bindParam(':firstName' , $_POST['firstName']);
-                    $sth->bindParam(':email' , $_POST['email']);
-                    $sth->bindParam(':password'   , $password);
-                    $sth->bindParam(':accessLevel', $_POST['accessLevel']);
-
-                    $sth->execute();
-                }
-
-                catch(PDOException $e) {
-                    echo $e->getMessage();
-                }
-
-                $dbh = null;
+            	$emailPattren = '/^([a-z0-9])(([-a-z0-9._])*([a-z0-9]))*\@([a-z0-9])' .
+					'(([a-z0-9-])*([a-z0-9]))+' . '(\.([a-z0-9])([-a-z0-9_-])?([a-z0-9])+)+$/i';    
+				$isEmailValid = preg_match($emailPattren, $_POST['email']);            	
+            	if ($isEmailValid == true)
+            	{                
+					try{
+						//Prepare statement
+						$sth = $dbh->prepare("INSERT INTO users (name, firstName, email, password, accessLevel)
+							values
+							(:name, :firstName, :email, :password, :accessLevel) ");
+	
+						//Prepare data
+						$sth->bindParam(':name' , $_POST['name']);
+						$sth->bindParam(':firstName' , $_POST['firstName']);
+						$sth->bindParam(':email' , $_POST['email']);
+						$sth->bindParam(':password'   , $password);
+						$sth->bindParam(':accessLevel', $_POST['accessLevel']);
+	
+						$sth->execute();
+					}
+	
+					catch(PDOException $e) {
+						echo $e->getMessage();
+					}
+	
+					$dbh = null;
+				}
+				else
+				{
+					echo "The email address is not valid";
+				}
             }
 
             /* editEvent post action */
