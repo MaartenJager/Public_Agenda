@@ -2,8 +2,8 @@
     /* http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/
 * http://www.kitebird.com/articles/php-pdo.html
 * */
-    session_start(); 
-    
+    session_start();
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         //Controleer of de gebruik ingelogd is, zoja ga door!

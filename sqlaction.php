@@ -3,6 +3,8 @@
      * http://www.kitebird.com/articles/php-pdo.html
      */
 
+    session_start();
+
     /* Controleer op DELETE actie */
     if (isset( $_SESSION['accessLevel']) ){
         if ($_SESSION['accessLevel'] == 2){
