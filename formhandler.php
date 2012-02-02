@@ -241,7 +241,7 @@
                         }
                         else{
                             "accesLevel is 1, approvedBy is NULL";
-                            $sth->bindParam(':approvedBy', NULL);
+                            $sth->bindValue(':approvedBy', null, PDO::PARAM_INT);
                         }
 
                         $sth->execute();
