@@ -124,40 +124,6 @@
                                 echo "                    </div>\n";
                                 echo "                    <!-- End of item -->\n";
                             }
-=======
-                            $counter = $counter + 1;
-                            echo "\n                    <!-- Begin of item #" . $row->id . "-->\n";
-                            if ($counter % 2)
-                                echo "                    <div class=\"event-odd\">\n";
-                            else
-                                echo "                    <div class=\"event-even\">\n";
-                            echo "                        <div class=\"date\">\n" ;
-                            echo "                            <div id=\"dateDay\">" . date("d", $row->beginDate) . "</div>\n";
-                            echo "                            <div id=\"dateMonth\">" . date("F", $row->beginDate) . "</div>\n";
-                            echo "                            <div id=\"dateYear\">" . date("Y", $row->beginDate) . "</div>\n";
-                            echo "                        </div>\n";
-                            echo "                        <div class=\"image\"><img id=\"eventPhoto\" src=\"" . $row->image . "\" itemprop=\"photo\"></div>";
-                            echo "                        <div class=\"title\">" . $row->title . " <a href=\"#" . $row->id . "\" onclick=\"expandEntry('" . $row->id . "');\" itemprop=\"url\"><span class=\"summary\" itemprop=\"summary\">(meer informatie)</span></a> <a href=\"index.php?page=event-review&id=" . $row->id . "\"> <img id=\"btnIcon\" src=\"img/btn-edit.png\" title=\"Aanpassen\" alt=\"Aanpassen\" width=\"16\" height=\"16\"></a> <a href=\"sqlaction.php?action=delete&type=event&id=" . $row->id . "\"> <img id=\"btnIcon\" src=\"img/btn-delete.png\" title=\"Verwijderen\" alt=\"Verwijderen\" width=\"16\" height=\"16\"></a> </div>\n";
-                            echo "                        <div id=\"" . $row->id . "\" class=\"description\" itemprop=\"description\">". $row->description ."</div>\n";
-                            echo "                        <div class=\"meta\">\n";
-                            echo "                            <span itemprop=\"startDate\" datetime=\"2022-07-04T18:00\">" . date("d-m-Y H:i:s", $row->beginDate) . "</span> tot\n";
-                            echo "                            <span itemprop=\"endDate\" datetime=\"2022-07-04T22:00\">" . date("d-m-Y H:i:s", $row->endDate) . "</span>\n";
-                            echo "                        </div>\n";
-                            echo "                        <div class=\"meta\">\n";
-                            echo "                            <span itemprop=\"location\">" . $row->locationName . "(\n";
-                            echo "                                <span itemprop=\"address\" itemscope itemtype=\"http://data-vocabulary.org/Address\">\n";
-                            echo "                                <span itemprop=\"street-address\">Science Park 904</span>,\n";
-                            echo "                                <span itemprop=\"locality\">Amsterdam</span>,\n";
-                            echo "                                <span itemprop=\"country-name\">Nederland</span>\n";
-                            echo "                            </span>\n";
-                            echo "                            <span itemprop=\"geo\">\n";
-                            echo "                                <meta itemprop=\"latitude\" content=\"52.354496\" />\n";
-                            echo "                                <meta itemprop=\"longitude\" content=\"4.954206\" />\n";
-                            echo "                            </span>\n";
-                            echo "                        </div>\n";
-                            echo "                    </div>\n";
-                            echo "                    <!-- End of item -->\n";
->>>>>>> e1be0ae674ffc92b439527b0ee301ead38d1362c
                         }
                     ?>
                 </div>
