@@ -6,7 +6,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-        //Controleer of de gebruik ingelogd is, zoja ga door!
+        //Check if user is logged in
         if (isset( $_SESSION['accessLevel']) ){
             /* Connect to DB */
             require("inc-dbcon.php");
@@ -15,38 +15,38 @@
             if(isset($_POST['editUser'])){
                 echo "in editUser<br />";
 
-                //Controler of gebruik ingelogd is
+                //Check if user is logged in
                 if (isset( $_SESSION['accessLevel'] )){
                     echo "AccessLevel is geselecteerd<br />";
 
-                    //Ingelogd met level 1? Alleen eigen passwd mag aangepast worden!
+                    //Check for access level one
                     if ($_SESSION['accessLevel'] == 1){
                         echo "accessLevel is 1<br />";
                         echo "id uit form:   " . $_POST['id'] . "<br />";
                         echo "id uit sessie: " . $_SESSION['userId'] . "<br />";
 
-                        //Probeert men toch een andere id aan te passen? Doe niets en geef error weer!
+                        //Check if trying to access other account
                         if( ($_POST['id']) != ($_SESSION['userId']) ){
                             header("Location: index.php?page=error-permissions");
                         }
 
-                        //Gebruiker met lvl 1 probeert eigen gegevens aan te passen. Groen licht!
+                        //Check if trying to access own account
                         else{
                             echo "AccessLevel in form is gelijk aan daadwerkelijke accessLevel!<br />";
                         }
                     }
 
-                    //Gebruiker met lvl 2 mag elke gebruiker aanpassen. Geen verdere controles.
+                    //Check for access level 2
                     elseif($_SESSION['accessLevel'] == 2){
                         echo "accessLevel is 2<br />";
-                        header("Location: index.php?page=error-permissions");
                     }
                 }
 
                 if( ($_POST['password']) != ($_POST['password2']) ){
                     header("Location: index.php?page=error-password");
                 }
-                else{           
+                else
+                {
                     $password = sha1($_POST['password']);
                     echo "Beide ingegeven passwords zijn gelijk en na hashing: " . $password . "<br />";
 
@@ -407,7 +407,7 @@
         $imgFileName = mt_rand(0, 99999999);
 
         $orgFileName = $_FILES['file']['name'];
-        //get fileextension.. somehow causes a warning but works perfectly
+        //get fileextension
         $temp = explode(".", $orgFileName);
         $fileExtension = end($temp);
         //define final path for storage of img
@@ -416,7 +416,7 @@
         //check extensions & filesize < 200000k
         if ((($_FILES["file"]["type"] == "image/gif")
           || ($_FILES["file"]["type"] == "image/jpeg")
-          || ($_FILES["file"]["type"] == "image/pjpeg")) // oude IE browsers zijn raar
+          || ($_FILES["file"]["type"] == "image/pjpeg")) // old IE browser notation
           && ($_FILES["file"]["size"] < 20000)){
             if ($_FILES["file"]["error"] > 0){
                 echo "Error: " . $_FILES["file"]["error"] . "<br />";
