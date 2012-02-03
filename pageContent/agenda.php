@@ -121,8 +121,8 @@
         $sth->bindParam(':lastDate', $lastDate);
     }
     if($offsetUsed){
-        $offset = strip_tags($_GET['offset']);
-        $offsetMax = $offset + 10;
+        $offset = "" . strip_tags($_GET['offset']);
+        $offsetMax = "" . $offset + 10;
         $sth->bindParam(':offset', $offset, PDO::PARAM_INT);
         $sth->bindParam(':offsetMax', $offsetMax, PDO::PARAM_INT);
     }
