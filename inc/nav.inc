@@ -28,7 +28,7 @@
     }
     else
     {
-            echo '<script>document.write("<li><a href="#" onclick="toggleVisibility(\'loginBox\');">Login</a></li>")</script>
+            echo '<script>document.write("<li><a href=\"#\" onclick=\"toggleVisibility(\'loginBox\');\">Login</a></li>")</script>
             <noscript>
             	<li><a href="index.php?page=loginnojs">Login</a></li>	
             </noscript>             
