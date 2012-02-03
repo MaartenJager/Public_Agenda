@@ -8,7 +8,7 @@
     INNER JOIN users ON ( events.createdBy = users.id )
     INNER JOIN locations ON ( events.location = locations.id )
     INNER JOIN genre_event_koppeling ON ( events.id = genre_event_koppeling.eventId )
-    WHERE approvedBy IS NOT NULL";
+    WHERE approvedBy IS NOT NULL AND endDate>" . time();
     $wordSearch = false;
     $dateSearch = false;
     $firstMonthSearch = 1;
