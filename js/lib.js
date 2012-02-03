@@ -12,3 +12,5 @@ function checkPasswords(form){
         return false;
     }    
 }
+
+

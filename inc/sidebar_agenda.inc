@@ -23,7 +23,7 @@
                 </div>
 
                 <div id="checkbox_below">
-                    <label>Zoeken op datum (u kunt alleen zoeken op maand als u ook een jaar invuld etc.)</label>
+                    <label>Zoeken op datum</label>
                     <select name="searchDay">
                         <option value="00">*</option>
                         <option value="01">1</option>
@@ -91,7 +91,7 @@
                         <option value="2019">2019</option>
                         <option value="2020">2020</option>
                     </select>
-                    <p>Gebruik * als joker.</p>
+                    <p>Gebruik * als joker. Op maand zoeken is enkel mogelijk als u ook een jaar invult.</p>
 
                     <input id="button" name="search" type="submit" value="Zoek" />
                 </div>
