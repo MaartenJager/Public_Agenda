@@ -99,11 +99,14 @@
     }
 
     $query = $query . " ORDER BY events.beginDate";
+    $offsetUsed = false;
     if(isset($_GET['offset'])){
+        $query = $query . " ASC LIMIT :offset , :offsetMax";
+        $offsetUsed = true;
     }
     else
     {
-        $query = $query . " ASC LIMIT 0,10";
+        $query = $query . " ASC LIMIT 0 , 10";
     }
 
     $sth = $dbh->prepare($query);
@@ -116,6 +119,12 @@
         $lastDate = mktime(23, 59, 59, $lastMonthSearch, $lastDaySearch, strip_tags($_POST['searchYear']));
         $sth->bindParam(':firstDate', $firstDate);
         $sth->bindParam(':lastDate', $lastDate);
+    }
+    if($offsetUsed){
+        $offset = strip_tags($_GET['offset']);
+        $offsetMax = $offset + 10;
+        $sth->bindParam(':offset', $offset);
+        $sth->bindParam(':offsetMax', $offsetMax);
     }
 
     $sth->setFetchMode(PDO::FETCH_OBJ);
