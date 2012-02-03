@@ -98,7 +98,16 @@
         }
     }
 
-    $query = $query . " ORDER BY events.beginDate ASC";
+    $query = $query . " ORDER BY events.beginDate";
+    $offsetUsed = false;
+    if(isset($_GET['offset'])){
+        $query = $query . " ASC LIMIT :offset , :offsetMax";
+        $offsetUsed = true;
+    }
+    else
+    {
+        $query = $query . " ASC LIMIT 0 , 10";
+    }
 
     $sth = $dbh->prepare($query);
     if($wordSearch){
@@ -110,6 +119,12 @@
         $lastDate = mktime(23, 59, 59, $lastMonthSearch, $lastDaySearch, strip_tags($_POST['searchYear']));
         $sth->bindParam(':firstDate', $firstDate);
         $sth->bindParam(':lastDate', $lastDate);
+    }
+    if($offsetUsed){
+        $offset = strip_tags($_GET['offset']);
+        $offsetMax = $offset + 10;
+        $sth->bindParam(':offset', $offset, PDO::PARAM_INT);
+        $sth->bindParam(':offsetMax', $offsetMax, PDO::PARAM_INT);
     }
 
     $sth->setFetchMode(PDO::FETCH_OBJ);
@@ -132,6 +147,7 @@
                 Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
+                        echo $query . "<br />";
                         $months = array("januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december");
                         $counter = 0;
                         $tempId = -1;
@@ -181,4 +197,5 @@
                             }
                         }
                     ?>
+                Volgende knop\n
                 </div>
