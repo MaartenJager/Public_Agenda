@@ -202,6 +202,6 @@
                      <input id="button" name="eventLookup" type="submit" value="Volgende" />
                 </form>
                 <?php if($offsetUsed){ echo "<form enctype=\"multipart/form-data\" name=\"agendaLookup\" action=\"index.php?page=agenda&offset=" . ($offset - 10) . "\" method=\"post\">
-                     <input id=\"button\" name=\"eventLookup\" type=\"submit\" value=\"Volgende\" />
+                     <input id=\"button\" name=\"eventLookup\" type=\"submit\" value=\"Vorige\" />
                 </form>"; } ?>
                 </div>
