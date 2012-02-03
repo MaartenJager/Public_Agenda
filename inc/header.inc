@@ -3,7 +3,7 @@
         <meta name="author" content="Projectgroep 1241" />
         <script type="text/javascript" src="js/lib.js"></script>
             <noscript>
-        <div id="loginBox">
+        <div id="loginBox2">
             <div id="loginBoxContent">
                 <form name="login" action="login.php" method="post">
                     <label>Inloggen</label>
