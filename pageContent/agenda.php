@@ -99,7 +99,7 @@
     }
 
     $query = $query . " ORDER BY events.beginDate";
-    if(isset($get['offset']){
+    if(isset($_GET['offset'])){
     }
     else
     {
