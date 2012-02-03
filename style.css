@@ -107,7 +107,7 @@ body {
     color: grey;
 }
 
-#loginBox, #loginBox2 {
+#loginBox {
     display: none;
 
     border: 1px solid black;
@@ -123,11 +123,8 @@ body {
     height: 144px;
 }
 
-#loginBox2 {
-	display: block;
-}
 
-#loginBox input, #loginBox2 input {
+#loginBox input {
     margin-top: 8px;
     border: 1px solid #D1C7AC;
     border-radius: 7px 7px 7px 7px;
