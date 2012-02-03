@@ -1,7 +1,7 @@
 <meta charset="utf-8">
         <meta name="description" content="omschrijving" />
         <meta name="author" content="Projectgroep 1241" />
-        <script language="JavaScript"> src="js/lib.js"></script>
+        <script type="text/javascript" src="js/lib.js"></script>
         
 <?php
     if (isset($_SESSION['accessLevel'])) {
