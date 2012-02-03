@@ -128,7 +128,7 @@
     }
 
     $sth->setFetchMode(PDO::FETCH_OBJ);
-    $sth->execute();
+//    $sth->execute();
 ?>
 
 <script language="JavaScript">
@@ -147,7 +147,7 @@
                 Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
-                        echo $query;
+                        echo $query . "\n\n\n\n\";
                         $months = array("januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december");
                         $counter = 0;
                         $tempId = -1;
