@@ -98,7 +98,7 @@
         }
     }
 
-    $query = $query . " ORDER BY events.beginDate"
+    $query = $query . " ORDER BY events.beginDate";
     if(isset($get['offset']){
     }
     else
