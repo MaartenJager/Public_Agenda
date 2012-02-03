@@ -197,6 +197,9 @@
                                 echo "                    <!-- End of item -->\n";
                             }
                         }
+                        if($counter == 0){
+                            Geen evenementen beschikbaar.
+                        }
                     ?>
                 <form enctype="multipart/form-data" name="agendaLookup" action="index.php?page=agenda&offset=<?php if($offsetUsed){ echo $offset + 10; } else { echo "10"; } ?>"  method="post">
                      <input id="button" name="eventLookup" type="submit" value="Volgende" />
