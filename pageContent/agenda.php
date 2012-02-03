@@ -100,7 +100,7 @@
 
     $query = $query . " ORDER BY events.beginDate";
     $offsetUsed = false;
-    if(isset($_GET['offset'])){
+    if(isset($_GET['offset']) && $_GET['offset'] != 0){
         $query = $query . " ASC LIMIT :offset , :offsetMax";
         $offsetUsed = true;
     }
