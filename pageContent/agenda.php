@@ -122,7 +122,7 @@
     }
     if($offsetUsed){
         $offset = (0 + strip_tags($_GET['offset']));
-        $offsetMax = "" . $offset + 10;
+        $offsetMax = "" . $offset + 9;
         $sth->bindParam(':offset', $offset, PDO::PARAM_INT);
         $sth->bindParam(':offsetMax', $offsetMax, PDO::PARAM_INT);
     }
