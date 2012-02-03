@@ -98,7 +98,13 @@
         }
     }
 
-    $query = $query . " ORDER BY events.beginDate ASC LIMIT 0,10";
+    $query = $query . " ORDER BY events.beginDate"
+    if(isset($get['offset']){
+    }
+    else
+    {
+        $query = $query . " ASC LIMIT 0,10";
+    }
 
     $sth = $dbh->prepare($query);
     if($wordSearch){
@@ -181,4 +187,5 @@
                             }
                         }
                     ?>
+                Volgende knop\n
                 </div>
