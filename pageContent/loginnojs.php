@@ -1,5 +1,5 @@
  
-        <div id="loginBox">
+        <div id="loginBox2">
             <div id="loginBoxContent">
                 <form name="login" action="login.php" method="post">
                     <label>Inloggen</label>
