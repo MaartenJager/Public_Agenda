@@ -148,7 +148,6 @@
                 Gebruik dan de zoekopties links van de agenda.</p>
                 <div id="agenda">
                     <?php
-                        echo $query . "<br />";
                         $months = array("januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december");
                         $counter = 0;
                         $tempId = -1;
