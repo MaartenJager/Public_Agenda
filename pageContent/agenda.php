@@ -197,8 +197,8 @@
                             }
                         }
                     ?>
-                <form enctype="multipart/form-data" name="agenda" action="formhandler.php"  method="get">
-                     <input id="button" name="Zoek events" type="submit" value="Accepteer" />
+                <form enctype="multipart/form-data" name="agenda" action="agenda"  method="get">
+                     <input id="button" name="Zoek events" type="submit" value="Volgende-->" />
                      <input type="hidden" name="offset" value="<?php if($offsetUsed){ echo $offset + 10; } else { echo "10"; } ?>" />
                 </form>
                 </div>
