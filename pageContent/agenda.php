@@ -163,7 +163,7 @@
                                 else
                                     echo "                    <div class=\"event-even\">\n";
                                 echo "                        <div class=\"date\">\n" ;
-                                echo "                            <div id=\"dateDay\">" . date("d", $row->beginDate) . "</div>\n";
+                                echo "                            <div id=\"dateDay\"    if($offsetUsed){>" . date("d", $row->beginDate) . "</div>\n";
                                 echo "                            <div id=\"dateMonth\">" . $months[date("n", $row->beginDate) - 1] . "</div>\n";
                                 echo "                            <div id=\"dateYear\">" . date("Y", $row->beginDate) . "</div>\n";
                                 echo "                        </div>\n";
@@ -197,5 +197,8 @@
                             }
                         }
                     ?>
-                Volgende knop\n
+                <form enctype="multipart/form-data" name="agenda" action="formhandler.php"  method="get">
+                     <input id="button" name="Zoek events" type="submit" value="Accepteer" />
+                     <input type="hidden" name="offset" value="<?php if($offsetUsed){ echo $offset + 10; } else { echo "10"; } ?>" />
+                </form>
                 </div>
