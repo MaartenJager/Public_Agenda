@@ -107,6 +107,7 @@
     else
     {
         $query = $query . " ASC LIMIT 0 , 10";
+        $offset = 0;
     }
 
     $sth = $dbh->prepare($query);
