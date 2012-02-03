@@ -98,7 +98,7 @@
         }
     }
 
-    $query = $query . " ORDER BY events.beginDate ASC";
+    $query = $query . " ORDER BY events.beginDate ASC LIMIT 0,10";
 
     $sth = $dbh->prepare($query);
     if($wordSearch){
