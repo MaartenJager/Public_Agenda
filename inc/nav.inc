@@ -28,11 +28,8 @@
     }
     else
     {
-            echo '<li><a href="#" onclick="toggleVisibility(\'loginBox\');">Login</a></li>
-            <noscript>
-            	<meta http-equiv="refresh" content="0" url="index.php?page=loginnojs" /> 
-
-            </noscript>             
+            echo '<li><a href="index.php?page=loginnojs" onclick="toggleVisibility(\'loginBox\');">Login</a></li>
+       
             
             ';
     }
