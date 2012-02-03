@@ -123,8 +123,8 @@
     if($offsetUsed){
         $offset = strip_tags($_GET['offset']);
         $offsetMax = $offset + 10;
-        $sth->bindParam(':offset', $offset);
-        $sth->bindParam(':offsetMax', $offsetMax);
+        $sth->bindParam(':offset', $offset, PDO::PARAM_INT);
+        $sth->bindParam(':offsetMax', $offsetMax, PDO::PARAM_INT);
     }
 
     $sth->setFetchMode(PDO::FETCH_OBJ);
