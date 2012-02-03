@@ -3,7 +3,7 @@
     require_once("inc-conf.php");
     require("inc-dbcon.php");
 
-    $query = "    SELECT events.* , users.name, users.firstName, locations.name AS locationName, genre_event_koppeling.genreId
+    $query = "SELECT events.* , users.name, users.firstName, locations.name AS locationName, genre_event_koppeling.genreId
     FROM events
     INNER JOIN users ON ( events.createdBy = users.id )
     INNER JOIN locations ON ( events.location = locations.id )
