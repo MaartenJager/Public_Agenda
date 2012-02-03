@@ -5,34 +5,37 @@
 
     session_start();
 
-    /* Controleer op DELETE actie */
+    /* Check for necessary accesslevel */
     if (isset( $_SESSION['accessLevel']) ){
         if ($_SESSION['accessLevel'] == 2){
+            /* Check if user is trying to delete */
             if(isset($_GET['action'])){
                 if( ($_GET['action']) == "delete" ){
 
-                    /* Controleer of er een EVENT verwijderd dient te worden */
+                    /* Check if user is trying to delete an event */
                     if(isset($_GET['type'])){
                         if( ($_GET['type']) == "event" ){
 
-                            /* Controleer of er een ID is meegestuurd */
+                            /* Check if an ID has been sent along */
                             if(isset($_GET['id'])){
                                 $id = ($_GET['id']);
                                 echo "Event:" . $id . " verwijder!";
                                 deleteEvent($id);
+                                header("Location: index.php?page=event-accept");
                             }
                         }
                     }
 
-                    /* Controleer of er een USER verwijderd dient te worden */
+                    /* Check if user is trying to delete a user */
                     if(isset($_GET['type'])){
                         if( ($_GET['type']) == "user" ){
 
-                            /* Controleer of er een ID is meegestuurd */
+                            /* Check if an ID has been sent along */
                             if(isset($_GET['id'])){
                                 $id = ($_GET['id']);
                                 echo "User:" . $id . " verwijder!";
                                 deleteUser($id);
+                                header("Location: index.php?page=admin");
                             }
                         }
                     }
@@ -40,16 +43,17 @@
 
                 /*controleer voor approves*/
                 elseif( ($_GET['action']) == "approve" ){
-                    /* Controleer of er een EVENT geaccepteert dient te worden */
+                    /* Check if user is trying to approve an event */
                     if(isset($_GET['type'])){
                         if( ($_GET['type']) == "event" ){
                             echo("type is EVENT");
 
-                            /* Controleer of er een ID is meegestuurd */
+                            /* Check if an ID has been sent along */
                             if(isset($_GET['id'])){
                                 $id = ($_GET['id']);
                                 echo "\nID:" . $id;
                                 approveEvent($id);
+                                header("Location: index.php?page=event-accept");
                             }
                         }
                     }
@@ -73,7 +77,7 @@
                     }
                     else
                     {
-                        $continue = false;
+                        header("Location: index.php?page=event-accept");
                     }
                 }
             }
@@ -89,7 +93,7 @@
     }
 
 
-    /* Functies voor events */
+    /* Functies for events */
     function deleteEvent($id){
         try{
             /* Connect to DB */
@@ -117,7 +121,7 @@
 
         $dhb = null;
     }
-    
+
     function approveEvent($id){
         try{
             /* Connect to DB */
@@ -160,5 +164,3 @@
         $dhb = null;
     }
 ?>
-
-

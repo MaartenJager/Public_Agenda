@@ -12,3 +12,21 @@ function checkPasswords(form){
         return false;
     }    
 }
+
+
+function checkCheckBoxesTEMP()
+{
+	alert ("werkt test");
+	var checkboxes = document.event-add.getElementsByTagName(\'input\');
+	for(var i = 0; i < checkboxes.length; i++)
+	{
+		if (checkboxes[i].type.toLowerCase() == \'checkbox\' && checkboxes[i].checked)
+		{
+			alert ("Nice checkbox checked");
+			return (true);
+		}
+	}
+	alert ("No checkbox checked noob");
+	return (false);
+}
+
